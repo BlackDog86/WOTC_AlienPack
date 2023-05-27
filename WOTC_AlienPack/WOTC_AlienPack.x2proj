@@ -48,16 +48,10 @@ DISCLAIMER: this mod is a port of a mod not made for War of the Chosen ported by
     <Content Include="Config\XComGameData_WeaponData.ini">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Config\XComMissions.ini">
-      <SubType>Content</SubType>
-    </Content>
     <Content Include="Config\XComWOTC_AlienPack.ini">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Config\XComWOTC_AlienPackVariations.ini">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Config\XComWOTC_PerkPack.ini">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Content\AdvDroneMatinee.upk">
@@ -224,9 +218,6 @@ DISCLAIMER: this mod is a port of a mod not made for War of the Chosen ported by
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\UIScreenListener_GameLoad.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\WOTC_AlienPack\Classes\UIScreenListener_Shell.uc">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\UIScreenListener_TacticalHUD.uc">

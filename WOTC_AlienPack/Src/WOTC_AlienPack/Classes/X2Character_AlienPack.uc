@@ -5,16 +5,6 @@
 //---------------------------------------------------------------------------------------
 class X2Character_AlienPack extends X2Character config(WOTC_AlienPack);
 
-//struct AIJobInfo_Addition
-//{
-	//var Name JobName;						// Name of this job.
-	//var Name Preceding;						// Name of unit before current in the list, if any
-	//var Name Succeeding;					// Name of unit after current in the list, if any
-	//var int DefaultPosition;				// Default index to insert at if cannot find based on name
-//};
-
-//var config array<AIJobInfo_Addition> JobListingAdditions; // Definition of qualifications for each job for this new character
-
 static function array<X2DataTemplate> CreateTemplates()
 {
 	local array<X2DataTemplate> Templates;
@@ -1497,65 +1487,3 @@ static function X2CharacterTemplate CreateTemplate_HiveQueen()
 
 	return CharTemplate;
 }
-// ------------------------------------------------------------
-// ------ AI Jobs -- currently not working --------------------
-
-//static function AddAIJobs()
-//{
-	//local X2AIJobManager JobMgr;
-	//local AIJobInfo_Addition Addition;
-	//local int AdditionIndex;
-	//local AIJobInfo JobInfo;
-	//local name MyName;
-//
-	//MyName = 'MutonM2_LW';
-	//
-	////retrieve AIJobManager
-	//JobMgr = `AIJOBMGR;
-//
-	////TODO : figure out how to insert additional characters into the X2AIJobManager.JobInfo.ValidChar array
-	//foreach default.JobListingAdditions(Addition)
-	//{
-		//JobInfo = JobMgr.GetJobListing(Addition.JobName);
-		//if(JobInfo.JobName == '') continue;
-		//
-		//if(Addition.Preceding != '')
-		//{
-			//AdditionIndex = JobInfo.ValidChar.Find(Addition.Preceding);
-			//if(AdditionIndex != INDEX_NONE)
-			//{
-				//// found preceding, insert addition after it
-				//JobInfo.ValidChar.InsertItem(AdditionIndex+1, MyName);
-				//continue;
-			//}
-		//}
-		//if(Addition.Succeeding != '')
-		//{
-			//AdditionIndex = JobInfo.ValidChar.Find(Addition.Succeeding);
-			//if(AdditionIndex != INDEX_NONE)
-			//{
-				//// found succeeding, insert addition before it
-				//JobInfo.ValidChar.InsertItem(AdditionIndex, MyName);
-				//continue;
-			//}
-		//}
-//
-		////default to default index value
-		//if (Addition.DefaultPosition < JobInfo.ValidChar.Length)
-		//if(Addition.DefaultPosition < 0)
-		//{
-			//JobInfo.ValidChar.InsertItem(0, MyName);
-		//}
-		//
-		//if (JobInfo.ValidChar.Length > 0)
-		//{
-			//if (Addition.DefaultPosition < JobInfo.ValidChar.Length)
-			//{
-				//JobInfo.ValidChar.InsertItem(Addition.DefaultPosition, MyName);
-			//} else {  //  if this tile is not configured, use the last configured tile
-				//JobInfo.ValidChar.AddItem(MyName);
-			//}
-		//}
-	//}
-//}
-//
