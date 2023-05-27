@@ -533,11 +533,12 @@ static function X2DataTemplate CreateDroneRepairAbility()
 static function X2AbilityTemplate AddDroneMeleeStun()
 {
 	local X2AbilityTemplate Template;
-	local X2AbilityCost_ActionPoints ActionPointCost;
-	local X2AbilityToHitCalc_StandardAim HitCalc;
-	//local X2Effect_ApplyWeaponDamage PhysicalDamageEffect;
-	local X2Effect_Stunned				    StunnedEffect;
-	local X2Condition_UnitProperty			AdjacencyCondition;
+	local X2AbilityCost_ActionPoints			ActionPointCost;
+	local X2AbilityToHitCalc_StandardAim		HitCalc;
+	//local X2Effect_ApplyWeaponDamage			PhysicalDamageEffect;
+	local X2Effect_Stunned						StunnedEffect;
+	local X2Condition_UnitProperty				AdjacencyCondition;
+	local X2AbilityCooldown_LocalAndGlobal		Cooldown;
 
 	`CREATE_X2ABILITY_TEMPLATE(Template, 'LWDroneMeleeStun');
 	Template.IconImage = "img:///UILibrary_PerkIcons.UIPerk_stun";
@@ -553,6 +554,10 @@ static function X2AbilityTemplate AddDroneMeleeStun()
 	ActionPointCost.iNumPoints = 1;
 	ActionPointCost.bConsumeAllPoints = true;
 	Template.AbilityCosts.AddItem(ActionPointCost);
+
+	Cooldown = new class'X2AbilityCooldown_LocalAndGlobal';
+	Cooldown.iNumTurns = 1;
+	Template.AbilityCooldown = Cooldown;
 
 	HitCalc = new class'X2AbilityToHitCalc_StandardAim';
 	HitCalc.BuiltInHitMod = default.DRONE_STUN_HIT_MODIFIER;
