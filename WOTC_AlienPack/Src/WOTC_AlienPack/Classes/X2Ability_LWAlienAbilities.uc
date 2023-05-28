@@ -67,7 +67,6 @@ static function array<X2DataTemplate> CreateTemplates()
 	Templates.AddItem(CreateMassReanimateAbility());
 	Templates.AddItem(CreateReadyForAnythingAbility());
 	Templates.AddItem(ReadyForAnythingFlyover());
-	Templates.AddItem(CreateChryssalidSoldierSlashAbility());
 	Templates.AddItem(AddRepairServosAbility());
 	Templates.AddItem(PurePassive('RepairServosPassive', "img:///UILibrary_LWAlienPack.LW_AbilityDamageControl", true, 'eAbilitySource_Perk'));
 	return Templates;
