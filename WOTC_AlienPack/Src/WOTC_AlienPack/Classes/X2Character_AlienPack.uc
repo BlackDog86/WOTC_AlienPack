@@ -122,7 +122,7 @@ static function X2CharacterTemplate CreateTemplate_MutonM2_LW()
 
 	CharTemplate.AddTemplateAvailablility(CharTemplate.BITFIELD_GAMEAREA_Multiplayer); // Allow in MP!
 	CharTemplate.MPPointValue = CharTemplate.XpKillscore * 10;
-	CharTemplate.strBehaviorTree = "MutonM2_LWRoot";  // new config behavior tree parsing means we could use the group instead
+	CharTemplate.strBehaviorTree = "MutonCenturion_LW::CharacterRoot";  // new config behavior tree parsing means we could use the group instead
 
 	//probably keep cinematic intro, since it's a lot of work to create a new one -- alternatively no cinematic intro for tier 2
 	CharTemplate.SightedNarrativeMoments.AddItem(XComNarrativeMoment'X2NarrativeMoments.TACTICAL.AlienSitings.T_Central_AlienSightings_Muton');
@@ -193,7 +193,7 @@ static function X2CharacterTemplate CreateTemplate_MutonM2_Dummy()
 
 	CharTemplate.AddTemplateAvailablility(CharTemplate.BITFIELD_GAMEAREA_Multiplayer); // Allow in MP!
 	CharTemplate.MPPointValue = CharTemplate.XpKillscore * 10;
-	CharTemplate.strBehaviorTree = "MutonM2_LWRoot";  // new config behavior tree parsing means we could use the group instead
+	CharTemplate.strBehaviorTree = "MutonCenturion_LW::CharacterRoot";  // new config behavior tree parsing means we could use the group instead
 
 	//probably keep cinematic intro, since it's a lot of work to create a new one -- alternatively no cinematic intro for tier 2
 	CharTemplate.SightedNarrativeMoments.AddItem(XComNarrativeMoment'X2NarrativeMoments.TACTICAL.AlienSitings.T_Central_AlienSightings_Muton');
@@ -271,7 +271,7 @@ static function X2CharacterTemplate CreateTemplate_MutonM3_LW()
 
 	CharTemplate.AddTemplateAvailablility(CharTemplate.BITFIELD_GAMEAREA_Multiplayer); // Allow in MP!
 	CharTemplate.MPPointValue = CharTemplate.XpKillscore * 10;
-	CharTemplate.strBehaviorTree = "MutonM3_LWRoot"; // new config behavior tree parsing means we could use the group instead
+	CharTemplate.strBehaviorTree = "MutonElite_LW::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
 
 	//probably keep cinematic intro, since it's a lot of work to create a new one -- alternatively no cinematic intro for tier 3
 	CharTemplate.SightedNarrativeMoments.AddItem(XComNarrativeMoment'X2NarrativeMoments.TACTICAL.AlienSitings.T_Central_AlienSightings_Muton');
@@ -364,7 +364,7 @@ static function X2CharacterTemplate CreateTemplate_Naja(name TemplateName)
 	CharTemplate.SightedNarrativeMoments.AddItem(XComNarrativeMoment'X2NarrativeMoments.TACTICAL.AlienSitings.T_Tygan_AlienSightings_Viper');
 	CharTemplate.SightedNarrativeMoments.AddItem(XComNarrativeMoment'X2NarrativeMoments.TACTICAL.AlienSitings.T_Central_AlienSightings_Viper');
 
-	CharTemplate.strBehaviorTree = "LWNajaRoot"; // new config behavior tree parsing means we could use the group instead
+	CharTemplate.strBehaviorTree = "Naja_LW::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
 
 	CharTemplate.strTargetIconImage = class'UIUtilities_Image'.const.TargetIcon_Alien;
 
@@ -442,11 +442,11 @@ static function X2CharacterTemplate CreateTemplate_Sidewinder(name TemplateName)
 	switch(TemplateName)
 	{
 		case 'SidewinderM1':
-			CharTemplate.strBehaviorTree = "LWSidewinderRoot"; // new config behavior tree parsing means we could use the group instead
+			CharTemplate.strBehaviorTree = "Sidewinder_LW::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
 			break;
 		case 'SidewinderM2':
 		case 'SidewinderM3':
-			CharTemplate.strBehaviorTree = "LWSidewinderHitAndRunRoot"; // new config behavior tree parsing means we could use the group instead
+			CharTemplate.strBehaviorTree = "SidewinderHitAndRun_LW::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
 		default:
 	}
 
@@ -615,7 +615,7 @@ static function X2CharacterTemplate CreateTemplate_SectoidM2_LW()  // I have big
 	CharTemplate.AddTemplateAvailablility(CharTemplate.BITFIELD_GAMEAREA_Multiplayer); // Allow in MP!
 	CharTemplate.MPPointValue = CharTemplate.XpKillscore * 10;
 
-	CharTemplate.strBehaviorTree = "SectoidM2_LWRoot"; // new config behavior tree parsing means we could use the group instead
+	CharTemplate.strBehaviorTree = "SectoidCommander_LW::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
 
 	CharTemplate.SightedNarrativeMoments.AddItem(XComNarrativeMoment'X2NarrativeMoments.TACTICAL.AlienSitings.T_Tygan_AlienSightings_Sectoid');
 
@@ -786,7 +786,7 @@ static function X2CharacterTemplate CreateTemplate_AdvGunner(name TemplateName)
 	CharTemplate.AddTemplateAvailablility(CharTemplate.BITFIELD_GAMEAREA_Multiplayer); // Allow in MP!
 	CharTemplate.MPPointValue = CharTemplate.XpKillscore * 10;
 
-	CharTemplate.strBehaviorTree = "LWAdventGunnerRoot"; // new config behavior tree parsing means we could use the group instead
+	CharTemplate.strBehaviorTree = "AdventGunner_LW::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
 
 	CharTemplate.strHackIconImage = "UILibrary_Common.TargetIcons.Hack_captain_icon";
 	CharTemplate.strTargetIconImage = class'UIUtilities_Image'.const.TargetIcon_Advent;
@@ -890,7 +890,7 @@ static function X2CharacterTemplate CreateTemplate_AdvSentry(name TemplateName)
 	CharTemplate.AddTemplateAvailablility(CharTemplate.BITFIELD_GAMEAREA_Multiplayer); // Allow in MP!
 	CharTemplate.MPPointValue = CharTemplate.XpKillscore * 10;
 
-	CharTemplate.strBehaviorTree = "LWAdventSentryRoot"; // new config behavior tree parsing means we could use the group instead
+	CharTemplate.strBehaviorTree = "AdventSentry_LW::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
 
 	CharTemplate.strHackIconImage = "UILibrary_Common.TargetIcons.Hack_captain_icon";
 	CharTemplate.strTargetIconImage = class'UIUtilities_Image'.const.TargetIcon_Advent;
@@ -993,7 +993,7 @@ static function X2CharacterTemplate CreateTemplate_AdvGrenadier(name TemplateNam
 	CharTemplate.AddTemplateAvailablility(CharTemplate.BITFIELD_GAMEAREA_Multiplayer); // Allow in MP!
 	CharTemplate.MPPointValue = CharTemplate.XpKillscore * 10;
 
-	CharTemplate.strBehaviorTree = "LWAdventGrenadierRoot"; // new config behavior tree parsing means we could use the group instead
+	CharTemplate.strBehaviorTree = "AdventGrenadier_LW::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
 
 	CharTemplate.strTargetIconImage = class'UIUtilities_Image'.const.TargetIcon_Advent;
 	CharTemplate.strHackIconImage = "UILibrary_Common.TargetIcons.Hack_captain_icon";
@@ -1088,7 +1088,7 @@ static function X2CharacterTemplate CreateTemplate_AdvRocketeer(name TemplateNam
 	CharTemplate.AddTemplateAvailablility(CharTemplate.BITFIELD_GAMEAREA_Multiplayer); // Allow in MP!
 	CharTemplate.MPPointValue = CharTemplate.XpKillscore * 10;
 
-	CharTemplate.strBehaviorTree = "LWAdventRocketeerRoot"; // new config behavior tree parsing means we could use the group instead
+	CharTemplate.strBehaviorTree = "AdventRocketeer_LW::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
 
 	CharTemplate.strHackIconImage = "UILibrary_Common.TargetIcons.Hack_captain_icon";
 	CharTemplate.strTargetIconImage = class'UIUtilities_Image'.const.TargetIcon_Advent;
@@ -1228,7 +1228,7 @@ static function X2CharacterTemplate CreateTemplate_AdvMECArcher(name TemplateNam
 	if (TemplateName == 'AdvMecArcherM2')
 		CharTemplate.Abilities.AddItem('BiggestBooms');
 
-	CharTemplate.strBehaviorTree = "LWAdventMECArcherRoot"; // new config behavior tree parsing means we could use the group instead
+	CharTemplate.strBehaviorTree = "AdvMECMk2_Root"; // new config behavior tree parsing means we could use the group instead
 
 	CharTemplate.strHackIconImage = "UILibrary_Common.TargetIcons.Hack_robot_icon";
 	CharTemplate.strTargetIconImage = class'UIUtilities_Image'.const.TargetIcon_Advent;
@@ -1329,7 +1329,7 @@ static function X2CharacterTemplate CreateTemplate_Drone(name TemplateName)
 
 	CharTemplate.AddTemplateAvailablility(CharTemplate.BITFIELD_GAMEAREA_Multiplayer); // Allow in MP!
 	CharTemplate.MPPointValue = CharTemplate.XpKillscore * 10;
-	CharTemplate.strBehaviorTree = "LWDroneRoot"; // new config behavior tree parsing means we could use the group instead
+	CharTemplate.strBehaviorTree = "AdventDrone_LW::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
 
 	//TODO: investigate possibilities for adding first-sighting narrative moment for new unit
 	//CharTemplate.SightedNarrativeMoments.AddItem(XComNarrativeMoment'X2NarrativeMoments.TACTICAL.AlienSitings.T_Central_AlienSightings_Muton');
@@ -1408,7 +1408,7 @@ static function X2CharacterTemplate CreateTemplate_ChryssalidSoldier()
 
 	CharTemplate.SightedNarrativeMoments.AddItem(XComNarrativeMoment'X2NarrativeMoments.TACTICAL.AlienSitings.T_Central_AlienSightings_Cryssalid');
 
-	CharTemplate.strBehaviorTree = "LWHiveQueenRoot"; // new config behavior tree parsing means we could use the group instead
+	CharTemplate.strBehaviorTree = "HiveQueen_LW::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
 
 	CharTemplate.strTargetIconImage = class'UIUtilities_Image'.const.TargetIcon_Alien;
 
@@ -1481,7 +1481,7 @@ static function X2CharacterTemplate CreateTemplate_HiveQueen()
 
 	CharTemplate.SightedNarrativeMoments.AddItem(XComNarrativeMoment'X2NarrativeMoments.TACTICAL.AlienSitings.T_Central_AlienSightings_Cryssalid');
 
-	CharTemplate.strBehaviorTree = "LWHiveQueenRoot"; // new config behavior tree parsing means we could use the group instead
+	CharTemplate.strBehaviorTree = "HiveQueen_LW::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
 
 	CharTemplate.strTargetIconImage = class'UIUtilities_Image'.const.TargetIcon_Alien;
 
