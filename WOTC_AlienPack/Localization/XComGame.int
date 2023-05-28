@@ -368,16 +368,6 @@ LocFriendlyName="Chryssalid Soldier Slash"
 LocLongDescription="Your slash attacks do lots of damage."
 LocHelpText="Your slash attacks do lots of damage."
 
-;;;;;;;;;;;;;;;;;;;;;;;;;; Hive Queen ;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-[HiveQueen X2CharacterTemplate]
-strCharacterName="Hive Queen"
-
-[HiveQueenSlash X2AbilityTemplate]
-LocFriendlyName="Greater Chryssalid Slash"
-LocLongDescription="Your slash attacks do lots of damage."
-LocHelpText="Your slash attacks do lots of damage."
-
 ;;;;;;;;;;;;;;;;;;;;;;;;; Perk Pack Abilities ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; LOC IS COPIED FROM PERKPACK
 

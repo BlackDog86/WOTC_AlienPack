@@ -68,7 +68,6 @@ static function array<X2DataTemplate> CreateTemplates()
 	Templates.AddItem(CreateReadyForAnythingAbility());
 	Templates.AddItem(ReadyForAnythingFlyover());
 	Templates.AddItem(CreateChryssalidSoldierSlashAbility());
-	Templates.AddItem(CreateHiveQueenSlashAbility());
 	Templates.AddItem(AddRepairServosAbility());
 	Templates.AddItem(PurePassive('RepairServosPassive', "img:///UILibrary_LWAlienPack.LW_AbilityDamageControl", true, 'eAbilitySource_Perk'));
 	return Templates;
@@ -1059,56 +1058,4 @@ simulated function ReadyForAnything_BuildVisualization(XComGameState VisualizeGa
 
 	SoundAndFlyOver = X2Action_PlaySoundAndFlyOver(class'X2Action_PlaySoundAndFlyOver'.static.AddToVisualizationTree(ActionMetadata, Context));
 	SoundAndFlyOver.SetSoundAndFlyOverParameters(SoundCue'SoundUI.OverWatchCue', Ability.GetMyTemplate().LocFlyOverText, '', eColor_Alien, "img:///UILibrary_PerkIcons.UIPerk_overwatch");
-}
-
-static function X2AbilityTemplate CreateChryssalidSoldierSlashAbility()
-{
-	local X2AbilityTemplate 		Template;
-	local X2Effect_HiveQueenSlash	DamageEffect;
-
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'ChryssalidSoldierSlash');
-	Template.IconImage = "img:///UILibrary_PerkIcons.UIPerk_chryssalid_slash";
-
-	Template.AbilitySourceName = 'eAbilitySource_Standard';
-	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
-	Template.Hostility = eHostility_Neutral;
-	Template.AbilityToHitCalc = default.DeadEye;
-	Template.AbilityTargetStyle = default.SelfTarget;
-	Template.AbilityTriggers.AddItem(default.UnitPostBeginPlayTrigger);
-	Template.bIsPassive = true;
-	DamageEffect = new class'X2Effect_HiveQueenSlash';
-	DamageEffect.BonusDamage = default.CHRYSSALID_SOLDIER_SLASH_BONUS_DAMAGE;
-	DamageEffect.BuildPersistentEffect(1, true, false, false);
-	DamageEffect.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,, 'eAbilitySource_Perk');
-	Template.AddTargetEffect(DamageEffect);
-	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
-
-	return Template;
-
-}
-
-static function X2AbilityTemplate CreateHiveQueenSlashAbility()
-{
-	local X2AbilityTemplate 		Template;
-	local X2Effect_HiveQueenSlash	DamageEffect;
-
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'HiveQueenSlash');
-	Template.IconImage = "img:///UILibrary_PerkIcons.UIPerk_chryssalid_slash";
-
-	Template.AbilitySourceName = 'eAbilitySource_Standard';
-	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
-	Template.Hostility = eHostility_Neutral;
-	Template.AbilityToHitCalc = default.DeadEye;
-	Template.AbilityTargetStyle = default.SelfTarget;
-	Template.AbilityTriggers.AddItem(default.UnitPostBeginPlayTrigger);
-	Template.bIsPassive = true;
-	DamageEffect = new class'X2Effect_HiveQueenSlash';
-	DamageEffect.BonusDamage = default.HIVE_QUEEN_SLASH_BONUS_DAMAGE;
-	DamageEffect.BuildPersistentEffect(1, true, false, false);
-	DamageEffect.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,, 'eAbilitySource_Perk');
-	Template.AddTargetEffect(DamageEffect);
-	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
-
-	return Template;
-
 }

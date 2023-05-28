@@ -87,9 +87,6 @@ DISCLAIMER: this mod is a port of a mod not made for War of the Chosen ported by
     <Content Include="Content\LWDroneWeapon.upk">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Content\LWHiveQueen.upk">
-      <SubType>Content</SubType>
-    </Content>
     <Content Include="Content\LWMutonM2.upk">
       <SubType>Content</SubType>
     </Content>
@@ -257,9 +254,6 @@ DISCLAIMER: this mod is a port of a mod not made for War of the Chosen ported by
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_HitandRun_AP.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_HiveQueenSlash.uc">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_Infighter_AP.uc">
