@@ -11,7 +11,6 @@ This mod adds a series of new alien and ADVENT enemies to the campaign:
 * Sidewinder, a speedy alien skirmisher related to the Viper
 * Sectoid Commander, a stronger sectoid with area-of-effect abilities
 * ADVENT MEC Archer, a mechanized unit built to bombard at long ranges
-* Hive Queen, a monstrously large and dangerous Chryssalid
 * ADVENT Sentry, a soldier specializing in overwatch abilities
 * ADVENT Grenadier, a soldier with a grenade launcher
 * ADVENT Rocketeer, a soldier with a rocket launcher

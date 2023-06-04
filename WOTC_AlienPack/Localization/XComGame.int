@@ -159,10 +159,10 @@ LaunchedAbilityHelpText="Launch an Alien Grenade at target area. Shreds armor."
 strCharacterName="Naja"
 
 [NajaM2 X2CharacterTemplate]
-strCharacterName="Naja Serpens"
+strCharacterName="Advanced Naja"
 
 [NajaM3 X2CharacterTemplate]
-strCharacterName="Naja Elite"
+strCharacterName="Elite Naja"
 
 [NajaM1_WPN X2WeaponTemplate]
 FriendlyName="Naja Sniper Rifle"
@@ -179,10 +179,10 @@ FriendlyName="Naja Sniper Rifle"
 strCharacterName="Sidewinder"
 
 [SidewinderM2 X2CharacterTemplate]
-strCharacterName="Sidewinder Serpens"
+strCharacterName="Advanced Sidewinder"
 
 [SidewinderM3 X2CharacterTemplate]
-strCharacterName="Sidewinder Elite"
+strCharacterName="Elite Sidewinder "
 
 [SidewinderM1_WPN X2WeaponTemplate]
 FriendlyName="Sidewinder Scramgun"
@@ -196,10 +196,10 @@ FriendlyName="Sidewinder Scramgun"
 ;;;;;;;;;;;;;;;;;;;;;;;;;; Viper ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [ViperM2_LW X2CharacterTemplate]
-strCharacterName="Viper Serpens"
+strCharacterName="Advanced Viper"
 
 [ViperM3_LW X2CharacterTemplate]
-strCharacterName="Viper Elite"
+strCharacterName="Elite Viper"
 
 [ViperM2_LW_WPN]
 FriendlyName="Beam Rifle"
@@ -357,16 +357,6 @@ FriendlyName="Rocket Artillery"
 
 [AdvMECArcherM2 X2CharacterTemplate]
 strCharacterName="MEC Longbow"
-
-;;;;;;;;;;;;;;;;;;;;;;;;;; Chryssalid Soldier ;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-[ChryssalidSoldier X2CharacterTemplate]
-strCharacterName="Chryssalid Soldier"
-
-[ChryssalidSoldierSlash X2AbilityTemplate]
-LocFriendlyName="Chryssalid Soldier Slash"
-LocLongDescription="Your slash attacks do lots of damage."
-LocHelpText="Your slash attacks do lots of damage."
 
 ;;;;;;;;;;;;;;;;;;;;;;;;; Perk Pack Abilities ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; LOC IS COPIED FROM PERKPACK
