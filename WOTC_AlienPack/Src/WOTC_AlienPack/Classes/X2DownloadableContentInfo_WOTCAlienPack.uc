@@ -41,7 +41,7 @@ static event InstallNewCampaign(XComGameState StartState)
 /// </summary>
 static event OnLoadedSavedGameToStrategy()
 {
-	AddAndRegisterCustomizationManager();
+	AddAndRegisterCustomizationManager();		
 }
 
 /// <summary>
@@ -60,9 +60,8 @@ static function AddAndRegisterCustomizationManager()
 	if(AlienCustomizationManager == none)
 	{
 		AlienCustomizationManager = class'XComGameState_AlienCustomizationManager'.static.CreateAlienCustomizationManager();
-		AlienCustomizationManager.RegisterListeners();
 	}
-
+	AlienCustomizationManager.RegisterListeners();
 	// not needed since we aren't going to try and install the AlienCustomization manager when loading into tactical mission
 	//if(`TACTICALRULES.TacticalGameIsInPlay())
 		//AlienCustomizationManager.UpdateAllCustomizations();

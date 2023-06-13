@@ -32,7 +32,7 @@ auto state Idle
 			}
 		}
 	}
-
+	
 	//cycle through remaining aliens and update their materials if their pawns have loaded
 	function TryToUpdateAllAliens()
 	{

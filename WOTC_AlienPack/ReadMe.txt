@@ -17,7 +17,7 @@ This mod adds a series of new alien and ADVENT enemies to the campaign:
 * ADVENT Gunner, a suppression specialist
 * Many of these have upgraded versions that appear later in the campaign, and the mod includes upgraded Vipers and Archons as well, for a total of 29 new enemies for you to face.
 
-The mod also includes an ini-configurable system to build and color new types of ADVENT troopers using base-game parts. Some aliens can also be recolored with this system. The ini file that manages this is XComWOTC_AlienVariations.
+The mod also includes an ini-configurable system to build and color new types of ADVENT troopers using base-game parts. Some aliens can also be recolored with this system. The ini file that manages this is WOTC_AlienVariations.
 
 ----------------------------------
 

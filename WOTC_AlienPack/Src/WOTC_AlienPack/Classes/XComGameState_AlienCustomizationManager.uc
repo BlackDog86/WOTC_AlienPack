@@ -126,15 +126,20 @@ simulated function RegisterListeners()
 
 	EventManager = `XEVENTMGR;
 	ThisObj = self;
-	//EventManager.RegisterForEvent(ThisObj, 'OnTacticalBeginPlay', OnTacticalBeginPlay, ELD_OnStateSubmitted, 80 /* High priority so Customization is tweaked early*/ ,, true);
+	
 	EventManager.RegisterForEvent(ThisObj, 'OnUnitBeginPlay', OnUnitBeginPlay, ELD_OnStateSubmitted, 55,, true);  // trigger when a unit normally enters play
-	//EventManager.RegisterForEvent(ThisObj, 'OnCreateCinematicPawn', OnCinematicPawnCreation, ELD_Immediate, 55,, true);  // trigger when unit cinematic pawn is created -- moved inside the 'OnUnitBeginPlay' handler
+	EventManager.RegisterForEvent(ThisObj, 'OnUnitShownInBestiary', OnUnitShownInBestiary, ELD_Immediate, 55,, true);  // trigger when a unit normally enters play
 }
 
-// loops over alien units and tweaks Customization
-function EventListenerReturn OnUnitBeginPlay(Object EventData, Object EventSource, XComGameState GameState, Name EventID, Object CallbackData)
+// Loops over alien units and tweaks Customization. Replaces the previous
+// fix for issue #117.
+static function EventListenerReturn OnUnitBeginPlay(
+    Object EventData,
+    Object EventSource,
+    XComGameState GameState,
+    Name EventID,
+    Object CallbackData)
 {
-	local XComGameStateHistory History;
 	local XComGameState NewGameState;
 	local XComGameState_Unit_AlienCustomization AlienCustomization;
 	local LWUnitVariation UnitVariation;
@@ -142,31 +147,33 @@ function EventListenerReturn OnUnitBeginPlay(Object EventData, Object EventSourc
 	local XComGameState_Unit UnitState, UpdatedUnitState;
 	local X2EventManager EventManager;
 	local Object CustomizationObject;
+	local XComGameStateHistory History;
 
 	History = `XCOMHISTORY;
 	EventManager = `XEVENTMGR;
 
+	`Log("We're now in the OnUnitBeginPlay Listener");
 	`APTRACE("Alien Pack Customization Manager : OnUnitBeginPlay triggered.");
 	UnitState = XComGameState_Unit(EventData);
 
 	`APTRACE("AlienCustomization: Num Variations =" @ default.UnitVariations.Length);
 
-	if(UnitState != none && (UnitState.IsAlien() || UnitState.IsAdvent()))
+	if (UnitState != none && (UnitState.IsAlien() || UnitState.IsAdvent()))
 	{
 		`APTRACE("AlienCustomization: Placing Unit:" @ UnitState.GetFullName());
 		AlienCustomization = class'XComGameState_Unit_AlienCustomization'.static.GetCustomizationComponent(UnitState);
-		if(AlienCustomization == none || AlienCustomization.bAutomatic) // only add if new or overriding an automatic customization
+		if (AlienCustomization == none || AlienCustomization.bAutomatic) // only add if new or overriding an automatic customization
 		{
 			foreach default.UnitVariations(UnitVariation)
 			{
 				`APTRACE("AlienCustomization: Testing Variation for :" @ UnitVariation.CharacterNames[0]);
 
-				if(UnitVariation.CharacterNames.Find(UnitState.GetMyTemplateName()) != -1)
+				if (UnitVariation.CharacterNames.Find(UnitState.GetMyTemplateName()) != -1) 
 				{
 					`APTRACE("AlienCustomization: Valid template found :" @ UnitVariation.CharacterNames[0]);
 
 					//valid unit type without random variation, so roll the dice
-					if(`SYNC_FRAND() < UnitVariation.Probability || UnitVariation.Automatic)
+					if (`SYNC_FRAND_STATIC() < UnitVariation.Probability || UnitVariation.Automatic)
 					{
 						`APTRACE("AlienCustomization: Template passed, applying :" @ UnitVariation.CharacterNames[0]);
 
@@ -183,10 +190,11 @@ function EventListenerReturn OnUnitBeginPlay(Object EventData, Object EventSourc
 
 						AlienCustomization.ApplyCustomization();
 
+
 						CustomizationObject = AlienCustomization;
 						EventManager.RegisterForEvent(CustomizationObject, 'OnCreateCinematicPawn', AlienCustomization.OnCinematicPawnCreation, ELD_Immediate, 55, UnitState);  // trigger when unit cinematic pawn is created
 
-						if(!AlienCustomization.bAutomatic)
+						if (!AlienCustomization.bAutomatic)
 							return ELR_NoInterrupt;
 					}
 				}
@@ -215,72 +223,58 @@ function UpdateAllCustomizations()
 	}
 }
 
-// DEPRECATED -- Moved to the AlienCustomization with a filter on the unit
-////assumes that a alienvariation component is already present, if needed
-//function EventListenerReturn OnCinematicPawnCreation(Object EventData, Object EventSource, XComGameState GameState, Name EventID, Object CallbackData)
-//{
-	//local XComGameState_Unit_AlienCustomization AlienCustomization;
-	//local XComGameState_Unit UnitState;
-	//local UIPawnMgr PawnMgr;
-	//local XComUnitPawn Pawn;
-	//local int PawnInfoIndex;
-	//local XComGameState_Item PrimaryWeapon, SecondaryWeapon;
-	//local XComWeapon PrimaryWeaponPawn, SecondaryWeaponPawn;
-	//local array<PawnInfo> PawnStore;
-//
-	//UnitState = XComGameState_Unit(EventSource);
-	//Pawn = XComUnitPawn(EventData);
-//
-	//if(UnitState == none || Pawn == none)
-		//return ELR_NoInterrupt;
-		//
-	//AlienCustomization = class'XComGameState_Unit_AlienCustomization'.static.GetCustomizationComponent(UnitState);
-	//if(AlienCustomization == none)
-		//return ELR_NoInterrupt;
-//
-	//AlienCustomization.ApplyCustomization(Pawn, false); // update the supplied cinematic pawn instead of the default visualizer, and don't update default items
-//
-	////TODO : handle retrieving item pawns from cosmetic pawns for updating
-	//PawnMgr = `HQPRES.GetUIPawnMgr();
-	//if(PawnMgr == none)
-		//return ELR_NoInterrupt;
-//
-	//PawnInfoIndex = PawnMgr.Pawns.Find('PawnRef', UnitState.ObjectID);
-	//if (PawnInfoIndex != -1)
-		//PawnStore = PawnMgr.Pawns;
-	//else
-		//PawnInfoIndex = PawnMgr.CinematicPawns.Find('PawnRef', UnitState.ObjectID);
-//
-	//if (PawnInfoIndex == -1)
-	//{
-		//`REDSCREEN("AlienCustomizationManager : OnCinematicPawnCreation called with no pawn found in UIPawnMgr");
-		//return ELR_NoInterrupt;
-	//}
-	//else
-	//{
-		//PawnStore = PawnMgr.CinematicPawns;
-	//}
-//
-	//PrimaryWeapon = UnitState.GetPrimaryWeapon();
-	//if(PrimaryWeapon != none)
-	//{
-		//PrimaryWeaponPawn = XComWeapon(PawnStore[PawnInfoIndex].Weapons[eInvSlot_PrimaryWeapon]);
-		//if(PrimaryWeaponPawn != none)
-			//AlienCustomization.ApplyItemMaterialCustomization(PrimaryWeapon, AlienCustomization.PrimaryWeaponAppearance, PrimaryWeaponPawn);
-	//}
-	//SecondaryWeapon = UnitState.GetSecondaryWeapon();
-	//if(SecondaryWeapon != none)
-	//{
-		//SecondaryWeaponPawn = XComWeapon(PawnStore[PawnInfoIndex].Weapons[eInvSlot_SecondaryWeapon]);
-		//if(SecondaryWeaponPawn != none)
-			//AlienCustomization.ApplyItemMaterialCustomization(SecondaryWeapon, AlienCustomization.SecondaryWeaponAppearance, SecondaryWeaponPawn);
-	//}
-//
-	//
-	//return ELR_NoInterrupt;
-//}
-
-defaultproperties
+// Loops over alien units and tweaks Customization in the Bestiary. ONLY CALLED/USED from the UFOPedia/Bestiary mod
+static function EventListenerReturn OnUnitShownInBestiary( Object EventData, Object EventSource, XComGameState GameState, Name EventID, Object CallbackData)
 {
-	bTacticalTransient=true
+	local XComGameState NewGameState;
+	local XComGameStateContext_ChangeContainer ChangeContainer;
+	local XComGameState_Unit_AlienCustomization AlienCustomization;
+	local XComGameState_Unit UnitState, UpdatedUnitState;
+	local LWUnitVariation UnitVariation;
+	local XComUnitPawn Pawn;
+
+	UnitState = XComGameState_Unit(EventData);
+	Pawn = XComUnitPawn(EventSource);
+
+	`Log("We're in the bestiary Listener");
+	`APTRACE("AlienCustomization_Bestiary: Num Variations =" @ default.UnitVariations.Length);
+
+	if (UnitState != none && (UnitState.IsAlien() || UnitState.IsAdvent()))
+	{
+		`APTRACE("AlienCustomization_Bestiary: Placing Unit:" @ UnitState.GetFullName());
+		AlienCustomization = class'XComGameState_Unit_AlienCustomization'.static.GetCustomizationComponent(UnitState);
+		if (AlienCustomization == none || AlienCustomization.bAutomatic) // only add if new or overriding an automatic customization
+		{
+			foreach default.UnitVariations(UnitVariation)
+			{
+				`APTRACE("AlienCustomization_Bestiary: Testing Variation for :" @ UnitVariation.CharacterNames[0]);
+
+				if (UnitVariation.CharacterNames.Find(UnitState.GetMyTemplateName()) != -1) 
+				{
+					`APTRACE("AlienCustomization_Bestiary: Valid template found :" @ UnitVariation.CharacterNames[0]);
+
+					//valid unit type without random variation, so roll the dice
+					if (`SYNC_FRAND_STATIC() < UnitVariation.Probability || UnitVariation.Automatic)
+					{
+						`APTRACE("AlienCustomization_Bestiary: Template passed, applying :" @ UnitVariation.CharacterNames[0]);
+
+						NewGameState = class'XComGameStateContext_ChangeContainer'.static.CreateChangeState("Creating Alien Customization Component");
+						UpdatedUnitState = XComGameState_Unit(NewGameState.ModifyStateObject(class'XComGameState_Unit', UnitState.ObjectID));
+						AlienCustomization = class'XComGameState_Unit_AlienCustomization'.static.CreateCustomizationComponent(UpdatedUnitState, NewGameState);
+						AlienCustomization.GenerateCustomization(UnitVariation, UpdatedUnitState, NewGameState);
+						`GAMERULES.SubmitGameState(NewGameState);
+
+						AlienCustomization.ApplyCustomization(Pawn);
+
+						if (!AlienCustomization.bAutomatic)
+						{
+							return ELR_NoInterrupt;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	return ELR_NoInterrupt;
 }
