@@ -18,7 +18,7 @@ Viper (M2, M3) - More robust & high damage versions of vanilla <br>
 Naja (M1, M2, M3) - Viper-sniper - high aim, squadsight, large engagement distance but quite squishy - positional play critical! (no bind / pull). <br>
 Sidewinder (M1, M2, M3) - Flanking viper - High crit damage, average robustness, no bind / pull <br>
 Sectoid Commander (M2) - Has mass mindspin and mass zombie spawn (among other abilities - see main LW2 pack for more details). <br>
-
+Advent MEC (M2 - Archer, M3 - Longbow) <br>
 
 Please note that as of v0.1, the chryssalid soldier & hive queen have been removed - their AI & abilities were not changed from the vanilla game so essentially these just became 'bullet sponge' versions of the vanilla enemies & weren't particularly engaging (the hive queen burrowing and running away in particular seemed very 'off' to me). If this mod is well recieved, I may decide to add some of my own chryssalids to the pack to add a bit of variety but I didn't want to incorporate Hive or ABA chryssalids in the pack so it would have maximum capability with both of these other (excellent) mods.
 
