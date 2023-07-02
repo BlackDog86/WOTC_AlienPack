@@ -37,16 +37,16 @@ static function array<X2DataTemplate> CreateTemplates()
 	Templates.AddItem(AddTacticalSenseAbility());
 	Templates.AddItem(AddTraverseFireAbility());
 	TEmplates.AddItem(AddAreaSuppressionAbility());
-	Templates.AddItem(AreaSuppressionShot_LW_AP());
+	Templates.AddItem(AreaSuppressionShot_LW());
 	return Templates;
 }
 
 static function X2AbilityTemplate AddCenterMassAbility()
 {
 	local X2AbilityTemplate						Template;
-	local X2Effect_PrimaryHitBonusDamage_AP     DamageEffect;
+	local X2Effect_PrimaryHitBonusDamage     DamageEffect;
 
-	`CREATE_X2ABILITY_TEMPLATE (Template, 'CenterMass_AP');
+	`CREATE_X2ABILITY_TEMPLATE (Template, 'CenterMass');
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityCenterMass"; //TODO
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
@@ -55,7 +55,7 @@ static function X2AbilityTemplate AddCenterMassAbility()
 	Template.AbilityTargetStyle = default.SelfTarget;
 	Template.AbilityTriggers.AddItem(default.UnitPostBeginPlayTrigger);
 	Template.bIsPassive = true;
-	DamageEffect = new class'X2Effect_PrimaryHitBonusDamage_AP';
+	DamageEffect = new class'X2Effect_PrimaryHitBonusDamage';
 	DamageEffect.BonusDmg = 1;
 	DamageEffect.BuildPersistentEffect(1, true, false, false);
 	DamageEffect.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,,Template.AbilitySourceName);
@@ -68,9 +68,9 @@ static function X2AbilityTemplate AddCenterMassAbility()
 static function X2AbilityTemplate AddHitandRunAbility()
 {
 	local X2AbilityTemplate				Template;
-	local X2Effect_HitandRun_AP			HitandRunEffect;
+	local X2Effect_HitandRun			HitandRunEffect;
 
-	`CREATE_X2ABILITY_TEMPLATE (Template, 'HitandRun_AP');
+	`CREATE_X2ABILITY_TEMPLATE (Template, 'HitandRun');
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
 	Template.Hostility = eHostility_Neutral;
@@ -79,14 +79,14 @@ static function X2AbilityTemplate AddHitandRunAbility()
 	Template.AbilityTargetStyle = default.SelfTarget;
 	Template.AbilityTriggers.AddItem(default.UnitPostBeginPlayTrigger);
 	Template.bIsPassive = true;
-	HitandRunEffect = new class'X2Effect_HitandRun_AP';
+	HitandRunEffect = new class'X2Effect_HitandRun';
 	HitandRunEffect.BuildPersistentEffect(1, true, false, false);
 	HitandRunEffect.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage,,,Template.AbilitySourceName);
 	HitandRunEffect.DuplicateResponse = eDupe_Ignore;
 	Template.AddTargetEffect(HitandRunEffect);
 	Template.bCrossClassEligible = false;
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
-	//  NOTE: Visualization handled in X2Effect_HitandRun_AP
+	//  NOTE: Visualization handled in X2Effect_HitandRun
 	return Template;
 }
 
@@ -94,9 +94,9 @@ static function X2AbilityTemplate AddHitandRunAbility()
 static function X2AbilityTemplate AddDamnGoodGroundAbility()
 {
 	local X2AbilityTemplate					Template;
-	local X2Effect_DamnGoodGround_AP		AimandDefModifiers;
+	local X2Effect_DamnGoodGround		AimandDefModifiers;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'DamnGoodGround_AP');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'DamnGoodGround');
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityDamnGoodGround"; //TODO
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
@@ -105,7 +105,7 @@ static function X2AbilityTemplate AddDamnGoodGroundAbility()
 	Template.AbilityTargetStyle = default.SelfTarget;
 	Template.AbilityTriggers.AddItem(default.UnitPostBeginPlayTrigger);
 	Template.bIsPassive = true;
-	AimandDefModifiers = new class 'X2Effect_DamnGoodGround_AP';
+	AimandDefModifiers = new class 'X2Effect_DamnGoodGround';
 	AimandDefModifiers.BuildPersistentEffect (1, true, true);
 	AimandDefModifiers.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,,Template.AbilitySourceName);
 	Template.AddTargetEffect (AimandDefModifiers);
@@ -142,9 +142,9 @@ static function X2AbilityTemplate AddExecutionerAbility()
 static function X2AbilityTemplate AddTacticalSenseAbility()
 {
 	local X2AbilityTemplate				Template;
-	local X2Effect_TacticalSense_AP		MyDefModifier;
+	local X2Effect_TacticalSense		MyDefModifier;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'TacticalSense_AP');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'TacticalSense');
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityTacticalSense"; //TODO
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
@@ -153,7 +153,7 @@ static function X2AbilityTemplate AddTacticalSenseAbility()
 	Template.AbilityTargetStyle = default.SelfTarget;
 	Template.bIsPassive = true;
 	Template.AbilityTriggers.AddItem(default.UnitPostBeginPlayTrigger);
-	MyDefModifier = new class 'X2Effect_TacticalSense_AP';
+	MyDefModifier = new class 'X2Effect_TacticalSense';
 	MyDefModifier.BuildPersistentEffect (1, true, true);
 	MyDefModifier.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,,Template.AbilitySourceName);
 	Template.AddTargetEffect (MyDefModifier);
@@ -167,9 +167,9 @@ static function X2AbilityTemplate AddTacticalSenseAbility()
 static function X2AbilityTemplate AddInfighterAbility()
 {
 	local X2AbilityTemplate						Template;
-	local X2Effect_Infighter_AP					DodgeBonus;
+	local X2Effect_Infighter					DodgeBonus;
 
-	`CREATE_X2ABILITY_TEMPLATE (Template, 'Infighter_AP');
+	`CREATE_X2ABILITY_TEMPLATE (Template, 'Infighter');
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityInfighter"; //TODO
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
@@ -178,7 +178,7 @@ static function X2AbilityTemplate AddInfighterAbility()
 	Template.AbilityTargetStyle = default.SelfTarget;
 	Template.AbilityTriggers.AddItem(default.UnitPostBeginPlayTrigger);
 	Template.bIsPassive = true;
-	DodgeBonus = new class 'X2Effect_Infighter_AP';
+	DodgeBonus = new class 'X2Effect_Infighter';
 	DodgeBonus.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,,Template.AbilitySourceName);
 	DodgeBonus.BuildPersistentEffect(1, true);
 	Template.AddTargetEffect(DodgeBonus);
@@ -191,9 +191,9 @@ static function X2AbilityTemplate AddInfighterAbility()
 static function X2AbilityTemplate AddDepthPerceptionAbility()
 {
 	local X2AbilityTemplate					Template;
-	local X2Effect_DepthPerception_AP		AttackBonus;
+	local X2Effect_DepthPerception		AttackBonus;
 
-	`CREATE_X2ABILITY_TEMPLATE (Template, 'DepthPerception_AP');
+	`CREATE_X2ABILITY_TEMPLATE (Template, 'DepthPerception');
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityDepthPerception"; //TODO
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
@@ -202,7 +202,7 @@ static function X2AbilityTemplate AddDepthPerceptionAbility()
 	Template.AbilityTargetStyle = default.SelfTarget;
 	Template.AbilityTriggers.AddItem(default.UnitPostBeginPlayTrigger);
 	//Template.bIsPassive = true;
-	AttackBonus = new class 'X2Effect_DepthPerception_AP';
+	AttackBonus = new class 'X2Effect_DepthPerception';
 	AttackBonus.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,,Template.AbilitySourceName);
 	AttackBonus.BuildPersistentEffect(1, true);
 	Template.AddTargetEffect(AttackBonus);
@@ -221,7 +221,7 @@ static function X2AbilityTemplate AddLightEmUpAbility()
 	local X2Condition_Visibility            VisibilityCondition;
 
 	// Macro to do localisation and stuffs
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'LightEmUp_AP');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'LightEmUp');
 
 	// Icon Properties
 	Template.bDontDisplayInAbilitySummary = false;
@@ -306,9 +306,9 @@ static function X2AbilityTemplate AddLightEmUpAbility()
 static function X2AbilityTemplate AddTraverseFireAbility()
 {
 	local X2AbilityTemplate					Template;
-	local X2Effect_TraverseFire_AP			ActionEffect;
+	local X2Effect_TraverseFire			ActionEffect;
 
-	`CREATE_X2ABILITY_TEMPLATE (Template, 'TraverseFire_AP');
+	`CREATE_X2ABILITY_TEMPLATE (Template, 'TraverseFire');
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityTraverseFire"; //TODO
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
@@ -317,7 +317,7 @@ static function X2AbilityTemplate AddTraverseFireAbility()
 	Template.AbilityTargetStyle = default.SelfTarget;
 	Template.AbilityTriggers.AddItem(default.UnitPostBeginPlayTrigger);
 	Template.bIsPassive = true;
-	ActionEffect = new class 'X2Effect_TraverseFire_AP';
+	ActionEffect = new class 'X2Effect_TraverseFire';
 	ActionEffect.SetDisplayInfo (ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,,Template.AbilitySourceName);
 	ActionEffect.BuildPersistentEffect(1, true);
 	Template.AddTargetEffect(ActionEffect);
@@ -330,9 +330,9 @@ static function X2AbilityTemplate AddTraverseFireAbility()
 static function X2AbilityTemplate AddLockedOnAbility()
 {
 	local X2AbilityTemplate         Template;
-	local X2Effect_LockedOn_AP		LockedOnEffect;
+	local X2Effect_LockedOn		LockedOnEffect;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'LockedOn_AP');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'LockedOn');
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityLockedOn"; //TODO
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
@@ -342,7 +342,7 @@ static function X2AbilityTemplate AddLockedOnAbility()
 	Template.AbilityTriggers.AddItem(default.UnitPostBeginPlayTrigger);
 	Template.bIsPassive = true;
 	Template.bCrossClassEligible = true;
-	LockedOnEffect = new class'X2Effect_LockedOn_AP';
+	LockedOnEffect = new class'X2Effect_LockedOn';
 	LockedOnEffect.BuildPersistentEffect(1, true, true,, eGameRule_TacticalGameStart);
 	LockedOnEffect.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,,Template.AbilitySourceName);
 	Template.AddTargetEffect(LockedOnEffect);
@@ -355,9 +355,9 @@ static function X2AbilityTemplate AddLockedOnAbility()
 static function X2AbilityTemplate AddLightningReflexes_LWAbility()
 {
 	local X2AbilityTemplate                 Template;
-	local X2Effect_LightningReflexes_LW_AP	PersistentEffect;
+	local X2Effect_LightningReflexes_LW	PersistentEffect;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'LightningReflexes_LW_AP');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'LightningReflexes_LW');
 	Template.IconImage = "img:///UILibrary_PerkIcons.UIPerk_lightningreflexes";
 	Template.Hostility = eHostility_Neutral;
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
@@ -367,7 +367,7 @@ static function X2AbilityTemplate AddLightningReflexes_LWAbility()
 	Template.AbilityTargetStyle = default.SelfTarget;
 	Template.AbilityTriggers.AddItem(default.UnitPostBeginPlayTrigger);
 	Template.bIsPassive = true;
-	PersistentEffect = new class'X2Effect_LightningReflexes_LW_AP';
+	PersistentEffect = new class'X2Effect_LightningReflexes_LW';
 	PersistentEffect.BuildPersistentEffect(1, true, false);
 	PersistentEffect.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,, Template.AbilitySourceName);
 	Template.AddTargetEffect(PersistentEffect);
@@ -388,7 +388,7 @@ static function X2AbilityTemplate AddAreaSuppressionAbility()
 	local X2Effect_Suppression							SuppressionEffect;
 	local X2AbilityTarget_Single						PrimaryTarget;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'AreaSuppression_AP');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'AreaSuppression');
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityAreaSuppression";
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_AlwaysShow;
@@ -451,7 +451,7 @@ static function X2AbilityTemplate AddAreaSuppressionAbility()
 
 	Template.AbilityMultiTargetConditions.AddItem(default.LivingHostileUnitOnlyProperty);
 
-	SuppressionEffect = new class'X2Effect_AreaSuppression_AP';
+	SuppressionEffect = new class'X2Effect_AreaSuppression';
 	SuppressionEffect.BuildPersistentEffect(1, false, true, false, eGameRule_PlayerTurnBegin);
 	SuppressionEffect.bRemoveWhenTargetDies = true;
 	SuppressionEffect.bRemoveWhenSourceDamaged = true;
@@ -463,7 +463,7 @@ static function X2AbilityTemplate AddAreaSuppressionAbility()
 	Template.AddMultiTargetEffect(SuppressionEffect);
 	Template.AddMultiTargetEffect(class'X2Ability_GrenadierAbilitySet'.static.HoloTargetEffect());
 
-	Template.AdditionalAbilities.AddItem('AreaSuppressionShot_AP');
+	Template.AdditionalAbilities.AddItem('AreaSuppressionShot');
 	//Template.AdditionalAbilities.AddItem('LockdownBonuses');
 
 	//Template.TargetingMethod = class'X2TargetingMethod_AreaSuppression';
@@ -478,7 +478,7 @@ static function X2AbilityTemplate AddAreaSuppressionAbility()
 }
 
 
-static function X2AbilityTemplate AreaSuppressionShot_LW_AP()
+static function X2AbilityTemplate AreaSuppressionShot_LW()
 {
 	local X2AbilityTemplate                 		Template;
 	local X2AbilityCost_ReserveActionPoints 		ReserveActionPointCost;
@@ -489,7 +489,7 @@ static function X2AbilityTemplate AreaSuppressionShot_LW_AP()
 	local X2Effect_RemoveEffects            		RemoveSuppression;
 	local X2Effect                          		ShotEffect;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'AreaSuppressionShot_AP');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'AreaSuppressionShot');
 
 	Template.bDontDisplayInAbilitySummary = true;
 	ReserveActionPointCost = new class'X2AbilityCost_ReserveActionPoints';
@@ -507,7 +507,7 @@ static function X2AbilityTemplate AreaSuppressionShot_LW_AP()
 	Template.AbilityTargetConditions.AddItem(default.LivingHostileTargetProperty);
 
 	TargetEffectCondition = new class'X2Condition_UnitEffectsWithAbilitySource';
-	TargetEffectCondition.AddRequireEffect(class'X2Effect_AreaSuppression_AP'.default.EffectName, 'AA_UnitIsNotSuppressed');
+	TargetEffectCondition.AddRequireEffect(class'X2Effect_AreaSuppression'.default.EffectName, 'AA_UnitIsNotSuppressed');
 	Template.AbilityTargetConditions.AddItem(TargetEffectCondition);
 
 	TargetVisibilityCondition = new class'X2Condition_Visibility';
@@ -518,7 +518,7 @@ static function X2AbilityTemplate AreaSuppressionShot_LW_AP()
 	Template.bAllowAmmoEffects = true;
 
 	RemoveSuppression = new class'X2Effect_RemoveEffects';
-	RemoveSuppression.EffectNamesToRemove.AddItem(class'X2Effect_AreaSuppression_AP'.default.EffectName);
+	RemoveSuppression.EffectNamesToRemove.AddItem(class'X2Effect_AreaSuppression'.default.EffectName);
 	RemoveSuppression.bCheckSource = true;
 	RemoveSuppression.SetupEffectOnShotContextResult(true, true);
 	Template.AddShooterEffect(RemoveSuppression);
@@ -624,7 +624,7 @@ static function AreaSuppressionBuildVisualizationSync(name EffectName, XComGameS
 {
 	local X2Action_ExitCover ExitCover;
 
-	if (EffectName == class'X2Effect_AreaSuppression_AP'.default.EffectName)
+	if (EffectName == class'X2Effect_AreaSuppression'.default.EffectName)
 	{
 		ExitCover = X2Action_ExitCover(class'X2Action_ExitCover'.static.AddToVisualizationTree( BuildTrack, VisualizeGameState.GetContext() ));
 		ExitCover.bIsForSuppression = true;

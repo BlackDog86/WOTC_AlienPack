@@ -1,7 +1,11 @@
 //---------------------------------------------------------------------------------------
 //  FILE:    LWUpdateAlienCustomizationAction.uc
-//  AUTHOR:  Amineri / Long War Studios
+//  AUTHOR:  Amineri / Pavonis Interactive
 //  PURPOSE: Actor started after loading tactical game to listen for aliens loading and updating their materials
+//           PAL: Just to clarify, this is needed specifically for customised units
+//           that are loaded as part of a tactical save game, since the 'OnUnitBeginPlay'
+//           hook that we normally use is never triggered in that case. And there don't
+//           seem to be any other available hooks either.
 //---------------------------------------------------------------------------------------
 class LWUpdateAlienCustomizationAction extends Actor;
 
@@ -9,7 +13,7 @@ class LWUpdateAlienCustomizationAction extends Actor;
 
 var array<XComGameState_Unit> UnitsToUpdate;
 var XComGameStateHistory History;
-var int Count;
+var int Count; 
 
 // This is the automatic state to execute.
 auto state Idle
@@ -32,7 +36,7 @@ auto state Idle
 			}
 		}
 	}
-	
+
 	//cycle through remaining aliens and update their materials if their pawns have loaded
 	function TryToUpdateAllAliens()
 	{
@@ -46,7 +50,7 @@ auto state Idle
 			{
 				if(AlienCustomization.ApplyCustomization())
 				{
-					//UnitsToUpdate.RemoveItem(Unit);
+					UnitsToUpdate.RemoveItem(Unit);
 				}
 			}
 		}
