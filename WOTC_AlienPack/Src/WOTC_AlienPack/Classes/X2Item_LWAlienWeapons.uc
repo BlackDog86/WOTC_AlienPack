@@ -437,7 +437,7 @@ static function X2DataTemplate CreateTemplate_Naja_WPN(name TemplateName)
 	}
 	if (TemplateName == 'NajaM2_WPN' || TemplateName == 'NajaM3_WPN')
 	{
-		Template.Abilities.AddItem('Executioner_LW'); //weapon perk
+		Template.Abilities.AddItem('Executioner_AP'); //weapon perk
 		Template.Abilities.AddItem('LongWatch'); // weapon perk
 	}
 	if (TemplateName == 'NajaM3_WPN')
@@ -471,7 +471,7 @@ static function X2DataTemplate CreateTemplate_Sidewinder_WPN(name TemplateName)
 	
 	Template.WeaponPanelImage = "_ConventionalRifle";                       // used by the UI. Probably determines iconview of the weapon.
 	Template.ItemCat = 'weapon';
-	Template.WeaponCat = 'smg';
+	Template.WeaponCat = 'rifle';
 	Template.WeaponTech = 'beam';
 	Template.strImage = "img:///LWSidewinderSMG.Textures.LWBeamSMG_Common"; 
 	Template.RemoveTemplateAvailablility(Template.BITFIELD_GAMEAREA_Multiplayer); //invalidates multiplayer availability
@@ -637,7 +637,7 @@ static function X2DataTemplate CreateTemplate_AdvSentry_WPN(name TemplateName)
 	if (TemplateName == 'AdvSentryM3_WPN')
 	{
 		Template.Abilities.AddItem('CoolUnderPressure');
-		Template.Abilities.AddItem('Sentinel_LW');
+		Template.Abilities.AddItem('Sentinel');
 		Template.Abilities.AddItem('CoveringFire');
 	}
 
