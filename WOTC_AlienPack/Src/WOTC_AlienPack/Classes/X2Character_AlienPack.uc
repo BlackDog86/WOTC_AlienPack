@@ -130,83 +130,7 @@ static function X2CharacterTemplate CreateTemplate_MutonM2_LW()
 
 	CharTemplate.AddTemplateAvailablility(CharTemplate.BITFIELD_GAMEAREA_Multiplayer); // Allow in MP!
 	CharTemplate.MPPointValue = CharTemplate.XpKillscore * 10;
-	CharTemplate.strBehaviorTree = "MutonCenturion_LW::CharacterRoot";  // new config behavior tree parsing means we could use the group instead
-
-	//probably keep cinematic intro, since it's a lot of work to create a new one -- alternatively no cinematic intro for tier 2
-	CharTemplate.SightedNarrativeMoments.AddItem(XComNarrativeMoment'X2NarrativeMoments.TACTICAL.AlienSitings.T_Central_AlienSightings_Muton');
-
-	CharTemplate.strTargetIconImage = class'UIUtilities_Image'.const.TargetIcon_Alien;
-
-	return CharTemplate;
-}
-
-
-static function X2CharacterTemplate CreateTemplate_MutonM2_Dummy()
-{
-	local X2CharacterTemplate CharTemplate;
-	local LootReference Loot;
-
-	`CREATE_X2CHARACTER_TEMPLATE(CharTemplate, 'MutonM2');
-	CharTemplate.CharacterGroupName = 'Muton';
-	CharTemplate.DefaultLoadout='MutonM2_LW_Loadout';
-	CharTemplate.BehaviorClass=class'XGAIBehavior';
-	CharTemplate.strPawnArchetypes.AddItem("LWMutonM2.ARC_GameUnit_MutonM2"); 
-	Loot.ForceLevel=0;
-	Loot.LootTableName='Muton_BaseLoot'; 
-	CharTemplate.Loot.LootReferences.AddItem(Loot);
-
-	// Timed Loot
-	Loot.ForceLevel = 0;
-	Loot.LootTableName = 'GenericMidAlienLoot_LW'; 
-	CharTemplate.TimedLoot.LootReferences.AddItem(Loot);
-
-	Loot.LootTableName = 'GenericMidAlienVultureLoot_LW';
-	CharTemplate.VultureLoot.LootReferences.AddItem(Loot);
-
-	//CharTemplate.strMatineePackage = "CIN_Muton"; 
-	CharTemplate.strMatineePackages.AddItem("CIN_Muton"); //update with new cinematic?
-
-	CharTemplate.UnitSize = 1;
-	// Traversal Rules -- same as base Muton
-	CharTemplate.bCanUse_eTraversal_Normal = true;
-	CharTemplate.bCanUse_eTraversal_ClimbOver = true;
-	CharTemplate.bCanUse_eTraversal_ClimbOnto = true;
-	CharTemplate.bCanUse_eTraversal_ClimbLadder = true;
-	CharTemplate.bCanUse_eTraversal_DropDown = true;
-	CharTemplate.bCanUse_eTraversal_Grapple = false;
-	CharTemplate.bCanUse_eTraversal_Landing = true;
-	CharTemplate.bCanUse_eTraversal_BreakWindow = true;
-	CharTemplate.bCanUse_eTraversal_KickDoor = true;
-	CharTemplate.bCanUse_eTraversal_JumpUp = false;
-	CharTemplate.bCanUse_eTraversal_WallClimb = false;
-	CharTemplate.bCanUse_eTraversal_BreakWall = false;
-	CharTemplate.bAppearanceDefinesPawn = false;    
-	CharTemplate.bCanTakeCover = true;
-
-	CharTemplate.bIsAlien = true;
-	CharTemplate.bIsAdvent = false;
-	CharTemplate.bIsCivilian = false;
-	CharTemplate.bIsPsionic = false;
-	CharTemplate.bIsRobotic = false;
-	CharTemplate.bIsSoldier = false;
-	CharTemplate.bIsChosen = false;
-
-	CharTemplate.bCanBeTerrorist = false;
-	CharTemplate.bCanBeCriticallyWounded = false;
-	CharTemplate.bIsAfraidOfFire = true;
-
-	CharTemplate.bAllowSpawnFromATT = false;
-
-	CharTemplate.Abilities.AddItem('CounterattackPreparation');
-	CharTemplate.Abilities.AddItem('CounterattackDescription');
-	CharTemplate.Abilities.AddItem('WarCry');
-	CharTemplate.Abilities.AddItem('Beastmaster_LW');
-	// WOTC abilities
-	CharTemplate.Abilities.AddItem('DarkEventAbility_Barrier');
-
-	CharTemplate.AddTemplateAvailablility(CharTemplate.BITFIELD_GAMEAREA_Multiplayer); // Allow in MP!
-	CharTemplate.MPPointValue = CharTemplate.XpKillscore * 10;
-	CharTemplate.strBehaviorTree = "MutonCenturion_LW::CharacterRoot";  // new config behavior tree parsing means we could use the group instead
+	CharTemplate.strBehaviorTree = "LWMutonM2::CharacterRoot";  // new config behavior tree parsing means we could use the group instead
 
 	//probably keep cinematic intro, since it's a lot of work to create a new one -- alternatively no cinematic intro for tier 2
 	CharTemplate.SightedNarrativeMoments.AddItem(XComNarrativeMoment'X2NarrativeMoments.TACTICAL.AlienSitings.T_Central_AlienSightings_Muton');
@@ -285,7 +209,7 @@ static function X2CharacterTemplate CreateTemplate_MutonM3_LW()
 
 	CharTemplate.AddTemplateAvailablility(CharTemplate.BITFIELD_GAMEAREA_Multiplayer); // Allow in MP!
 	CharTemplate.MPPointValue = CharTemplate.XpKillscore * 10;
-	CharTemplate.strBehaviorTree = "MutonElite_LW::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
+	CharTemplate.strBehaviorTree = "LWMutonM3::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
 
 	//probably keep cinematic intro, since it's a lot of work to create a new one -- alternatively no cinematic intro for tier 3
 	CharTemplate.SightedNarrativeMoments.AddItem(XComNarrativeMoment'X2NarrativeMoments.TACTICAL.AlienSitings.T_Central_AlienSightings_Muton');
@@ -401,7 +325,7 @@ static function X2CharacterTemplate CreateTemplate_Naja(name TemplateName)
 	CharTemplate.SightedNarrativeMoments.AddItem(XComNarrativeMoment'X2NarrativeMoments.TACTICAL.AlienSitings.T_Tygan_AlienSightings_Viper');
 	CharTemplate.SightedNarrativeMoments.AddItem(XComNarrativeMoment'X2NarrativeMoments.TACTICAL.AlienSitings.T_Central_AlienSightings_Viper');
 
-	CharTemplate.strBehaviorTree = "Naja_LW::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
+	CharTemplate.strBehaviorTree = "LWNaja::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
 
 	CharTemplate.strTargetIconImage = class'UIUtilities_Image'.const.TargetIcon_Alien;
 
@@ -494,11 +418,11 @@ static function X2CharacterTemplate CreateTemplate_Sidewinder(name TemplateName)
 	switch(TemplateName)
 	{
 		case 'SidewinderM1':
-			CharTemplate.strBehaviorTree = "Sidewinder_LW::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
+			CharTemplate.strBehaviorTree = "LWSidewinder::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
 			break;
 		case 'SidewinderM2':
 		case 'SidewinderM3':
-			CharTemplate.strBehaviorTree = "SidewinderHitAndRun_LW::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
+			CharTemplate.strBehaviorTree = "LWSidewinderHitAndRun::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
 		default:
 	}
 
@@ -675,7 +599,7 @@ static function X2CharacterTemplate CreateTemplate_SectoidM2_LW()  // I have big
 	CharTemplate.AddTemplateAvailablility(CharTemplate.BITFIELD_GAMEAREA_Multiplayer); // Allow in MP!
 	CharTemplate.MPPointValue = CharTemplate.XpKillscore * 10;
 
-	CharTemplate.strBehaviorTree = "SectoidCommander_LW::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
+	CharTemplate.strBehaviorTree = "LWSectoidM2::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
 
 	CharTemplate.SightedNarrativeMoments.AddItem(XComNarrativeMoment'X2NarrativeMoments.TACTICAL.AlienSitings.T_Tygan_AlienSightings_Sectoid');
 
@@ -868,7 +792,7 @@ static function X2CharacterTemplate CreateTemplate_AdvGunner(name TemplateName)
 	CharTemplate.AddTemplateAvailablility(CharTemplate.BITFIELD_GAMEAREA_Multiplayer); // Allow in MP!
 	CharTemplate.MPPointValue = CharTemplate.XpKillscore * 10;
 
-	CharTemplate.strBehaviorTree = "AdventGunner_LW::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
+	CharTemplate.strBehaviorTree = "LWAdventGunner::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
 
 	CharTemplate.strHackIconImage = "UILibrary_Common.TargetIcons.Hack_captain_icon";
 	CharTemplate.strTargetIconImage = class'UIUtilities_Image'.const.TargetIcon_Advent;
@@ -977,7 +901,7 @@ static function X2CharacterTemplate CreateTemplate_AdvSentry(name TemplateName)
 	CharTemplate.AddTemplateAvailablility(CharTemplate.BITFIELD_GAMEAREA_Multiplayer); // Allow in MP!
 	CharTemplate.MPPointValue = CharTemplate.XpKillscore * 10;
 
-	CharTemplate.strBehaviorTree = "AdventSentry_LW::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
+	CharTemplate.strBehaviorTree = "LWAdventSentry::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
 
 	CharTemplate.strHackIconImage = "UILibrary_Common.TargetIcons.Hack_captain_icon";
 	CharTemplate.strTargetIconImage = class'UIUtilities_Image'.const.TargetIcon_Advent;
@@ -1086,7 +1010,7 @@ static function X2CharacterTemplate CreateTemplate_AdvGrenadier(name TemplateNam
 	CharTemplate.AddTemplateAvailablility(CharTemplate.BITFIELD_GAMEAREA_Multiplayer); // Allow in MP!
 	CharTemplate.MPPointValue = CharTemplate.XpKillscore * 10;
 
-	CharTemplate.strBehaviorTree = "AdventGrenadier_LW::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
+	CharTemplate.strBehaviorTree = "LWAdventGrenadier::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
 
 	CharTemplate.strTargetIconImage = class'UIUtilities_Image'.const.TargetIcon_Advent;
 	CharTemplate.strHackIconImage = "UILibrary_Common.TargetIcons.Hack_captain_icon";
@@ -1185,7 +1109,7 @@ static function X2CharacterTemplate CreateTemplate_AdvRocketeer(name TemplateNam
 	CharTemplate.AddTemplateAvailablility(CharTemplate.BITFIELD_GAMEAREA_Multiplayer); // Allow in MP!
 	CharTemplate.MPPointValue = CharTemplate.XpKillscore * 10;
 
-	CharTemplate.strBehaviorTree = "AdventRocketeer_LW::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
+	CharTemplate.strBehaviorTree = "LWAdventRocketeer::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
 
 	CharTemplate.strHackIconImage = "UILibrary_Common.TargetIcons.Hack_captain_icon";
 	CharTemplate.strTargetIconImage = class'UIUtilities_Image'.const.TargetIcon_Advent;
@@ -1431,7 +1355,7 @@ static function X2CharacterTemplate CreateTemplate_Drone(name TemplateName)
 
 	CharTemplate.AddTemplateAvailablility(CharTemplate.BITFIELD_GAMEAREA_Multiplayer); // Allow in MP!
 	CharTemplate.MPPointValue = CharTemplate.XpKillscore * 10;
-	CharTemplate.strBehaviorTree = "AdventDrone_LW::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
+	CharTemplate.strBehaviorTree = "LWDrone::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
 
 	//TODO: (ID 507) investigate possibilities for adding first-sighting narrative moment for new unit
 	//CharTemplate.SightedNarrativeMoments.AddItem(XComNarrativeMoment'X2NarrativeMoments.TACTICAL.AlienSitings.T_Central_AlienSightings_Muton');
@@ -1511,82 +1435,7 @@ static function X2CharacterTemplate CreateTemplate_ChryssalidSoldier()
 
 	CharTemplate.SightedNarrativeMoments.AddItem(XComNarrativeMoment'X2NarrativeMoments.TACTICAL.AlienSitings.T_Central_AlienSightings_Cryssalid');
 
-	CharTemplate.strBehaviorTree = "LWHiveQueenRoot"; // new config behavior tree parsing means we could use the group instead
-
-	CharTemplate.strTargetIconImage = class'UIUtilities_Image'.const.TargetIcon_Alien;
-
-	return CharTemplate;
-}
-
-static function X2CharacterTemplate CreateTemplate_HiveQueen()
-{
-	local X2CharacterTemplate CharTemplate;
-	local LootReference Loot;
-
-	`CREATE_X2CHARACTER_TEMPLATE(CharTemplate, 'HiveQueen');
-	CharTemplate.CharacterGroupName = 'Chryssalid';
-	CharTemplate.DefaultLoadout='Chryssalid_Loadout';
-	CharTemplate.BehaviorClass=class'XGAIBehavior';
-	CharTemplate.strPawnArchetypes.AddItem("LWHiveQueen.Archetypes.ARC_GameUnit_ChryssalidM3");
-	Loot.ForceLevel=0;
-	Loot.LootTableName='Chryssalid_BaseLoot';  
-	CharTemplate.Loot.LootReferences.AddItem(Loot);
-
-	// Timed Loot
-	//Loot.ForceLevel = 0;
-	//Loot.LootTableName = 'Chryssalid_TimedLoot';
-	//CharTemplate.TimedLoot.LootReferences.AddItem(Loot);
-	//Loot.LootTableName = 'Chryssalid_VultureLoot';
-	//CharTemplate.VultureLoot.LootReferences.AddItem(Loot);
-
-	CharTemplate.strMatineePackages.AddItem("CIN_Chryssalid");
-
-	CharTemplate.UnitSize = 3; // really, truly big
-	// Traversal Rules
-	CharTemplate.bCanUse_eTraversal_Normal = true;
-	CharTemplate.bCanUse_eTraversal_ClimbOver = true;
-	CharTemplate.bCanUse_eTraversal_ClimbOnto = true;
-	CharTemplate.bCanUse_eTraversal_ClimbLadder = false;
-	CharTemplate.bCanUse_eTraversal_DropDown = true;
-	CharTemplate.bCanUse_eTraversal_Grapple = false;
-	CharTemplate.bCanUse_eTraversal_Landing = true;
-	CharTemplate.bCanUse_eTraversal_BreakWindow = true;
-	CharTemplate.bCanUse_eTraversal_KickDoor = true;
-	CharTemplate.bCanUse_eTraversal_JumpUp = true;
-	CharTemplate.bCanUse_eTraversal_WallClimb = false;
-	CharTemplate.bCanUse_eTraversal_BreakWall = false;
-	CharTemplate.bAppearanceDefinesPawn = false;    
-	CharTemplate.bCanTakeCover = false;
-
-	CharTemplate.bIsAlien = true;
-	CharTemplate.bIsAdvent = false;
-	CharTemplate.bIsCivilian = false;
-	CharTemplate.bIsPsionic = false;
-	CharTemplate.bIsRobotic = false;
-	CharTemplate.bIsSoldier = false;
-	CharTemplate.bIsMeleeOnly = true;
-
-	CharTemplate.bCanBeTerrorist = false;
-	CharTemplate.bCanBeCriticallyWounded = false;
-	CharTemplate.bIsAfraidOfFire = true;
-
-	CharTemplate.bAllowSpawnFromATT = false;
-
-	CharTemplate.AddTemplateAvailablility(CharTemplate.BITFIELD_GAMEAREA_Multiplayer); // Allow in MP!
-	CharTemplate.MPPointValue = CharTemplate.XpKillscore * 10;
-	CharTemplate.strScamperBT = "ChryssalidScamperRoot";
-
-	CharTemplate.Abilities.AddItem('ChryssalidSlash');
-	CharTemplate.Abilities.AddItem('ChryssalidBurrow'); // REMOVE?
-	CharTemplate.Abilities.AddItem('ChyssalidPoison');
-	CharTemplate.Abilities.AddItem('ChryssalidImmunities');
-	CharTemplate.Abilities.AddItem('HiveQueenSlash');
-	// WOTC abilities
-	CharTemplate.Abilities.AddItem('DarkEventAbility_Barrier');
-
-	CharTemplate.SightedNarrativeMoments.AddItem(XComNarrativeMoment'X2NarrativeMoments.TACTICAL.AlienSitings.T_Central_AlienSightings_Cryssalid');
-
-	CharTemplate.strBehaviorTree = "LWHiveQueenRoot"; // new config behavior tree parsing means we could use the group instead
+	CharTemplate.strBehaviorTree = "LWHiveQueen::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
 
 	CharTemplate.strTargetIconImage = class'UIUtilities_Image'.const.TargetIcon_Alien;
 
