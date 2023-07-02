@@ -24,12 +24,12 @@ function XComGameState_Effect GetOwningEffect()
 simulated function EventListenerReturn ResetUses(Object EventData, Object EventSource, XComGameState GameState, Name EventID, Object CallbackData)
 {
 	local XComGameState								NewGameState;
-	local XComGameState_Effect_EffectCounter_AP		ThisEffect;
+	local XComGameState_Effect_EffectCounter		ThisEffect;
 
 	if(uses != 0)
 	{
 		NewGameState = class'XComGameStateContext_ChangeContainer'.static.CreateChangeState("Update: Reset Effect Counter");
-		ThisEffect=XComGameState_Effect_EffectCounter_AP(NewGameState.CreateStateObject(Class,ObjectID));
+		ThisEffect=XComGameState_Effect_EffectCounter(NewGameState.CreateStateObject(Class,ObjectID));
 		ThisEffect.uses = 0;
 		NewGameState.AddStateObject(ThisEffect);
 		`TACTICALRULES.SubmitGameState(NewGameState);
@@ -40,10 +40,10 @@ simulated function EventListenerReturn ResetUses(Object EventData, Object EventS
 simulated function EventListenerReturn IncrementUses(Object EventData, Object EventSource, XComGameState GameState, Name EventID, Object CallbackData)
 {
 	local XComGameState								NewGameState;
-	local XComGameState_Effect_EffectCounter_AP		ThisEffect;
+	local XComGameState_Effect_EffectCounter		ThisEffect;
 
 	NewGameState = class'XComGameStateContext_ChangeContainer'.static.CreateChangeState("Update: Increment Effect Counter");
-	ThisEffect=XComGameState_Effect_EffectCounter_AP(NewGameState.CreateStateObject(Class,ObjectID));
+	ThisEffect=XComGameState_Effect_EffectCounter(NewGameState.CreateStateObject(Class,ObjectID));
 	ThisEffect.uses += 1;
 	//`LOG (EventID $ ": Incremented to" @ string (Thiseffect.uses));
 	NewGameState.AddStateObject(ThisEffect);

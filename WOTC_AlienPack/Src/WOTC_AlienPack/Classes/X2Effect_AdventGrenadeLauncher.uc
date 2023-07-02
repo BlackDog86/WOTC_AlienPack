@@ -40,7 +40,8 @@ simulated protected function OnEffectAdded(const out EffectAppliedData ApplyEffe
 	//  populate a version of the ability for every grenade in the inventory
 	foreach CurrentInventory(InventoryItem)
 	{
-		`APTRACE("ADVENT Grenade Launcher: Checking item" @ InventoryItem.GetMyTemplateName());
+		
+		("ADVENT Grenade Launcher: Checking item" @ InventoryItem.GetMyTemplateName());
 		if (InventoryItem.bMergedOut)
 			continue;
 

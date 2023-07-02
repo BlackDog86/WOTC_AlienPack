@@ -10,7 +10,7 @@ var config int LOCKEDON_AIM_BONUS;
 
 simulated protected function OnEffectAdded(const out EffectAppliedData ApplyEffectParameters, XComGameState_BaseObject kNewTargetState, XComGameState NewGameState, XComGameState_Effect NewEffectState)
 {
-	local XComGameState_Effect_LastShotDetails_AP	LastShotDetails;
+	local XComGameState_Effect_LastShotDetails	LastShotDetails;
 	local X2EventManager						EventMgr;
 	local Object								ListenerObj;
 	local XComGameState_Unit					UnitState;
@@ -20,7 +20,7 @@ simulated protected function OnEffectAdded(const out EffectAppliedData ApplyEffe
 
 	if (GetLastShotDetails(NewEffectState) == none)
 	{
-		LastShotDetails = XComGameState_Effect_LastShotDetails_AP(NewGameState.CreateStateObject(class'XComGameState_Effect_LastShotDetails_AP'));
+		LastShotDetails = XComGameState_Effect_LastShotDetails(NewGameState.CreateStateObject(class'XComGameState_Effect_LastShotDetails'));
 		LastShotDetails.InitComponent();
 		NewEffectState.AddComponentObject(LastShotDetails);
 		NewGameState.AddStateObject(LastShotDetails);
@@ -54,7 +54,7 @@ simulated function OnEffectRemoved(const out EffectAppliedData ApplyEffectParame
 static function XComGameState_Effect_LastShotDetails GetLastShotDetails(XComGameState_Effect Effect)
 {
 	if (Effect != none) 
-		return XComGameState_Effect_LastShotDetails (Effect.FindComponentObject(class'XComGameState_Effect_LastShotDetails_AP'));
+		return XComGameState_Effect_LastShotDetails (Effect.FindComponentObject(class'XComGameState_Effect_LastShotDetails'));
 	return none;
 }
 
@@ -62,7 +62,7 @@ function GetToHitModifiers(XComGameState_Effect EffectState, XComGameState_Unit 
 {
 	local XComGameState_Item						SourceWeapon;
 	local ShotModifierInfo							ShotInfo;
-	local XComGameState_Effect_LastShotDetails_AP		LastShot;
+	local XComGameState_Effect_LastShotDetails		LastShot;
 
 	if (XComGameState_Ability(`XCOMHISTORY.GetGameStateForObjectID(EffectState.ApplyEffectParameters.AbilityStateObjectRef.ObjectID)) == none)
 		return;

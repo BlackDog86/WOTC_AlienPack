@@ -101,7 +101,7 @@ static function UpdateForAreaSuppression()
 					{
 						//found the correct condition, so add the new exclude condition
 						`APDEBUG("Updating " $ AbilityName $ " for AreaSuppression Exclusion");
-						SuppressedCondition.AddExcludeEffect(class'X2Effect_AreaSuppression_AP'.default.EffectName, 'AA_UnitIsSuppressed');
+						SuppressedCondition.AddExcludeEffect(class'X2Effect_AreaSuppression'.default.EffectName, 'AA_UnitIsSuppressed');
 					}
 				}
 			}

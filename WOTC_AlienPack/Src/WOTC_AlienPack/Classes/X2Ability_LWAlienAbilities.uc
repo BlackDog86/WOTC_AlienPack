@@ -4,7 +4,7 @@
 //  PURPOSE: Defines alienpack ability templates
 //---------------------------------------------------------------------------------------
 
-class X2Ability_LWAlienAbilities extends X2Ability config(LW_AlienPack);
+class X2Ability_LWAlienAbilities extends X2Ability config(WOTC_AlienPack);
 
 var config float WARCRY_RADIUS_METERS;
 var config int WARCRY_DURATION;
@@ -55,8 +55,6 @@ static function array<X2DataTemplate> CreateTemplates()
 {
 	local array<X2DataTemplate> Templates;
 
-	`LWTrace("  >> X2Ability_LWAlienAbilities.CreateTemplates()");
-	
 	Templates.AddItem(CreateMutonM2_LWAbility_Beastmaster());
 	Templates.AddItem(CreateMutonM2_LWAbility_WarCry());
 	Templates.AddItem(CreateMutonM2_LWAbility_BayonetCharge());
@@ -132,7 +130,7 @@ static function X2AbilityTemplate CreateMutonM2_LWAbility_BeastMaster()
 	local X2AbilityTemplate					Template;
 	local X2AbilityTargetStyle				TargetStyle;
 	local X2AbilityTrigger					Trigger;
-	local X2Effect_BeastMaster_LW			BeastMasterEffect;
+	local X2Effect_BeastMaster				BeastMasterEffect;
 
 	`CREATE_X2ABILITY_TEMPLATE(Template, 'Beastmaster_LW');
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
@@ -144,7 +142,7 @@ static function X2AbilityTemplate CreateMutonM2_LWAbility_BeastMaster()
 	Template.AbilityTargetStyle = TargetStyle;
 	Trigger = new class 'X2AbilityTrigger_UnitPostBeginPlay';
 	Template.AbilityTriggers.AddItem(Trigger);
-	BeastMasterEffect = new class'X2Effect_BeastMaster_LW';
+	BeastMasterEffect = new class'X2Effect_BeastMaster';
 	BeastMasterEffect.BuildPersistentEffect (1, true, false);
 		//BuildPersistentEffect(int _iNumTurns, optional bool _bInfiniteDuration, optional bool _bRemoveWhenSourceDies, optional bool _bIgnorePlayerCheckOnTick, optional XComGameStateContext_TacticalGameRule.GameRuleStateChange _WatchRule)
 	BeastMasterEffect.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyHelpText(), Template.IconImage,,, Template.AbilitySourceName);

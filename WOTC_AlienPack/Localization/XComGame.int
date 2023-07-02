@@ -516,56 +516,56 @@ AbilityDescName="mag rifle"
 ;;;;;;;;;;;;;;;;;;;;;;;;; Perk Pack Abilities ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; LOC IS COPIED FROM PERKPACK
 
-[LightningReflexes_LW_AP X2AbilityTemplate]
+[LightningReflexes_LW X2AbilityTemplate]
 LocFriendlyName="Lightning Reflexes"
 LocFlyOverText="Lightning Reflexes"
 LocLongDescription="Reaction fire shots against you have a significantly decreased chance to hit. The bonus goes down with each additional reaction shot you face."
 LocHelpText="Reaction fire shots against you have a decreased chance to hit."
 LocPromotionPopupText="<Bullet/> Reaction fire shots against you have a significantly decreased chance to hit.<br/><Bullet/> The first reaction shot against you during a turn is at -100 to hit; the second at -80; the third at -60; the fourth at -40, and the fifth at -20. Further reaction shots at are normal to hit chances.<br/>"
 
-[LockedOn_AP X2AbilityTemplate]
+[LockedOn X2AbilityTemplate]
 LocFriendlyName="Locked On"
 LocFlyOverText="Locked On"
 LocLongDescription="Gain +10 aim for successive shots at the same enemy unit."
 LocHelpText="Gain +10 aim for successive shots at the same enemy unit."
 LocPromotionPopupText="<Bullet/> Gain +10 aim for repeated shots with your primary weapon at the same target. Not cumulative, and only applies to enemy units.<br/><Bullet/> Area-of-Effect-based shots do not grant the bonus."
 
-[TraverseFire_AP X2AbilityTemplate]
+[TraverseFire X2AbilityTemplate]
 LocFriendlyName="Traverse Fire"
 LocFlyOverText="Traverse Fire"
 LocLongDescription="After taking a standard shot with your primary weapon with your first action, you may take an additional non-movement action."
 LocHelpText="After taking a standard shot with your primary weapon with your first action, you may take an additional non-movement action."
 LocPromotionPopupText="<Bullet/> After taking a standard shot your primary weapon with your first action, you may take an additional non-movement action.<br/>"
 
-[LightEmUp_AP X2AbilityTemplate]
+[LightEmUp X2AbilityTemplate]
 LocFriendlyName="Light 'Em Up"
 LocFlyOverText="Light 'Em Up"
 LocLongDescription="Taking a standard shot with your primary weapon as your first action no longer ends your turn."
 LocHelpText="Taking a standard shot with your primary weapon as your first action no longer ends your turn."
 LocPromotionPopupText="<Bullet/> Taking a standard shot with your primary weapon as your first action no longer ends your turn.<br/>"
 
-[Infighter_AP X2AbilityTemplate]
+[Infighter X2AbilityTemplate]
 LocFriendlyName="Infighter"
 LocFlyOverText="Infighter"
 LocLongDescription="Gain 25 dodge against attacks within four tiles."
 LocHelpText="Gain 25 dodge against attacks within four tiles."
 LocPromotionPopupText="<Bullet/> Gain 25 dodge against attacks within four tiles.<br/><Bullet/> Dodge bonus also applies to melee attacks.<br/>"
 
-[DepthPerception_AP X2AbilityTemplate]
+[DepthPerception X2AbilityTemplate]
 LocFriendlyName="Depth Perception"
 LocFlyOverText="Depth Perception"
 LocLongDescription="Gain 5 aim and reduce enemies' dodge by 25 when at a higher elevation than your target."
 LocHelpText="Gain 5 aim and reduce enemies' dodge by 25 when at a higher elevation than your target."
 LocPromotionPopupText="<Bullet/> Gain 5 aim and reduce enemies' dodge by 25 when at a higher elevation than your target.<br/>"
 
-[TacticalSense_AP X2AbilityTemplate]
+[TacticalSense X2AbilityTemplate]
 LocFriendlyName="Tactical Sense"
 LocFlyOverText="Tactical Sense"
 LocLongDescription="Gain 5 defense for each enemy you can see, up to a maximum of 20 defense."
 LocHelpText="Gain 5 defense for each enemy you can see, up to a maximum of 20 defense."
 LocPromotionPopupText="<Bullet/> Gain 5 defense for each living enemy you can see, up to a maximum of 20 defense.<br/><Bullet/> Units visible at squadsight ranges do not confer bonus.<br/>"
 
-[DamnGoodGround_AP X2AbilityTemplate]
+[DamnGoodGround X2AbilityTemplate]
 LocFriendlyName="Damn Good Ground"
 LocFlyOverText="Damn Good Ground"
 LocLongDescription="Confers +10 aim and +10 defense against targets at a lower elevation."
@@ -579,21 +579,21 @@ LocLongDescription="Confers +10 aim and +10 critical chance against targets at h
 LocHelpText="Confers +10 aim and +10 critical chance against targets at half or less of their original hit points."
 LocPromotionPopupText="<Bullet/> Confers +10 aim and +10 critical chance against targets at half or less of their original hit points.<br/>"
 
-[HitandRun_AP X2AbilityTemplate]
+[HitandRun X2AbilityTemplate]
 LocFriendlyName="Hit and Run"
 LocFlyOverText="Hit and Run"
 LocLongDescription="Once per turn, gain an additional move action after taking a standard shot at a flanked or exposed target with your primary weapon. "
 LocHelpText="Once per turn, gain an additional move action after taking a standard shot at a flanked or exposed target with your primary weapon."
 LocPromotionPopupText="<Bullet/> Once per turn, gain an additional move action after taking a standard shot at a flanked or exposed target with your primary weapon.<br/><Bullet/> Hit and Run cannot be used after Run and Gun is activated.<br/><Bullet/> Bonus full actions from Serial and Death from Above will be awarded first."
 
-[CenterMass_AP X2AbilityTemplate]
+[CenterMass X2AbilityTemplate]
 LocFriendlyName="Center Mass"
 LocFlyOverText="Center Mass"
 LocLongDescription="You do one additional point of base damage with your primary weapon."
 LocHelpText="You do one additional point of base damage with your primary weapon."
 LocPromotionPopupText="<Bullet/> You do one additional point of base damage with your primary weapon."
 
-[AreaSuppression_AP X2AbilityTemplate]
+[AreaSuppression X2AbilityTemplate]
 LocFriendlyName="Area Suppression"
 LocFlyOverText="Area Suppression"
 LocLongDescription="Fire a barrage that pins down multiple targets within a 3-tile radius, granting reaction fire against the first one that moves, and imposing a <Ability:SUPPRESSIONPENALTY/> penalty all targets' aim until suppression is removed."

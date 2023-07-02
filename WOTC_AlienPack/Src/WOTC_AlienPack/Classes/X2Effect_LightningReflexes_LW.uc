@@ -5,7 +5,7 @@ var config int LR_LW_PENALTY_REDUCTION_PER_SHOT;
 
 simulated protected function OnEffectAdded(const out EffectAppliedData ApplyEffectParameters, XComGameState_BaseObject kNewTargetState, XComGameState NewGameState, XComGameState_Effect NewEffectState)
 {
-	local XComGameState_Effect_IncomingReactionFire_AP			LightningReflexesEffectState;
+	local XComGameState_Effect_IncomingReactionFire			LightningReflexesEffectState;
 	local X2EventManager									EventMgr;
 	local Object											ListenerObj;
 	local XComGameState_Unit								UnitState;
@@ -15,7 +15,7 @@ simulated protected function OnEffectAdded(const out EffectAppliedData ApplyEffe
 
 	if (GetLightningReflexesEffectState(NewEffectState) == none)
 	{
-		LightningReflexesEffectState = XComGameState_Effect_IncomingReactionFire_AP(NewGameState.CreateStateObject(class'XComGameState_Effect_IncomingReactionFire_AP'));
+		LightningReflexesEffectState = XComGameState_Effect_IncomingReactionFire(NewGameState.CreateStateObject(class'XComGameState_Effect_IncomingReactionFire'));
 		LightningReflexesEffectState.InitComponent();
 		LightningReflexesEffectState.InitFlyoverComponent();
 		NewGameState.AddStateObject(LightningReflexesEffectState);
@@ -30,8 +30,8 @@ simulated protected function OnEffectAdded(const out EffectAppliedData ApplyEffe
 	EventMgr.RegisterForEvent(ListenerObj, 'PlayerTurnBegun', LightningReflexesEffectState.ResetUses, ELD_OnStateSubmitted);
 	EventMgr.RegisterForEvent(ListenerObj, 'UnitMoveFinished', LightningReflexesEffectState.ResetFlyover, ELD_OnStateSubmitted, , UnitState);
 	EventMgr.RegisterForEvent(ListenerObj, 'AbilityActivated', LightningReflexesEffectState.IncomingReactionFireCheck, ELD_OnStateSubmitted);
-	EventMgr.RegisterForEvent(ListenerObj, 'LightningReflexesLWTriggered_AP', LightningReflexesEffectState.IncrementUses, ELD_OnStateSubmitted,, UnitState);
-	EventMgr.RegisterForEvent(ListenerObj, 'LightningReflexesLWTriggered_AP2', LightningReflexesEffectState.TriggerLRFlyover, ELD_OnStateSubmitted,, UnitState);
+	EventMgr.RegisterForEvent(ListenerObj, 'LightningReflexesLWTriggered', LightningReflexesEffectState.IncrementUses, ELD_OnStateSubmitted,, UnitState);
+	EventMgr.RegisterForEvent(ListenerObj, 'LightningReflexesLWTriggered_2', LightningReflexesEffectState.TriggerLRFlyover, ELD_OnStateSubmitted,, UnitState);
 }
 
 simulated function OnEffectRemoved(const out EffectAppliedData ApplyEffectParameters, XComGameState NewGameState, bool bCleansed, XComGameState_Effect RemovedEffectState)
@@ -54,7 +54,7 @@ simulated function OnEffectRemoved(const out EffectAppliedData ApplyEffectParame
 static function XComGameState_Effect_IncomingReactionFire GetLightningReflexesEffectState(XComGameState_Effect Effect)
 {
 	if (Effect != none) 
-		return XComGameState_Effect_IncomingReactionFire(Effect.FindComponentObject(class'XComGameState_Effect_IncomingReactionFire_AP'));
+		return XComGameState_Effect_IncomingReactionFire(Effect.FindComponentObject(class'XComGameState_Effect_IncomingReactionFire'));
 	return none;
 }
 

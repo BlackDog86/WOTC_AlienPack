@@ -116,12 +116,15 @@ var config WeaponDamageValue AdvScout_WPN_BASEDAMAGE;
 var config WeaponDamageValue AdvGeneralM1_LW_WPN_BASEDAMAGE;
 var config WeaponDamageValue AdvGeneralM2_LW_WPN_BASEDAMAGE;
 
+// ***** Range Modifier Tables *****
+var config array<int> MIDSHORT_CONVENTIONAL_RANGE;
+var config array<int> MIDSHORT_MAGNETIC_RANGE;
+var config array<int> MIDSHORT_BEAM_RANGE;
+
 static function array<X2DataTemplate> CreateTemplates()
 {
 	local array<X2DataTemplate> Templates;
-	
-	`LWTrace("  >> X2Item_LWAlienWeapons.CreateTemplates()");
-	
+		
 	Templates.AddItem(CreateMutonM2_LWGrenade());
 	Templates.AddItem(CreateTemplate_MutonM2_LW_WPN());
 	Templates.AddItem(CreateTemplate_MutonM2_LW_MeleeAttack());
@@ -473,7 +476,7 @@ static function X2DataTemplate CreateTemplate_Sidewinder_WPN(name TemplateName)
 	Template.strImage = "img:///LWSidewinderSMG.Textures.LWBeamSMG_Common"; 
 	Template.RemoveTemplateAvailablility(Template.BITFIELD_GAMEAREA_Multiplayer); //invalidates multiplayer availability
 
-	Template.RangeAccuracy = class'X2Item_SMGWeapon'.default.MIDSHORT_CONVENTIONAL_RANGE;
+	Template.RangeAccuracy = class'X2Item_LWAlienWeapons'.default.MIDSHORT_CONVENTIONAL_RANGE;
 	
 	if (TemplateName == 'SidewinderM1_WPN')
 		Template.BaseDamage = default.SIDEWINDER_WPN_BASEDAMAGE;
@@ -973,7 +976,7 @@ static function X2DataTemplate CreateTemplate_LWDrone_WPN(name TemplateName)
 	Template.iSoundRange = default.LWDRONE_DRONEWEAPON_ISOUNDRANGE;
 	Template.iEnvironmentDamage = default.LWDRONE_DRONEWEAPON_IENVIRONMENTDAMAGE;
 	Template.iIdealRange = default.LWDRONE_IDEALRANGE;
-	Template.RangeAccuracy = class'X2Item_SMGWeapon'.default.MIDSHORT_CONVENTIONAL_RANGE;
+	Template.RangeAccuracy = class'X2Item_LWAlienWeapons'.default.MIDSHORT_CONVENTIONAL_RANGE;
 
 	Template.iClipSize = 99;
 	Template.InfiniteAmmo = true;

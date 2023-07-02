@@ -67,7 +67,7 @@ function XComGameState.EventListenerReturn TriggerLRFlyover(Object EventData, Ob
         class'UIWorldMessageMgr'.static.DamageDisplay(TargetUnitUnit.GetPawn().GetHeadShotLocation(), TargetUnitUnit.GetVisualizedStateReference(), class'XLocalizedData'.default.LightningReflexesMessage);
 
         NewGameState = class'XComGameStateContext_ChangeContainer'.static.CreateChangeState("Update: Toggle LR flyover");
-        ThisEffect=XComGameState_Effect_IncomingReactionFire_AP(NewGameState.CreateStateObject(Class,ObjectID));
+        ThisEffect=XComGameState_Effect_IncomingReactionFire(NewGameState.CreateStateObject(Class,ObjectID));
         ThisEffect.FlyoverTriggered = true;
         NewGameState.AddStateObject(ThisEffect);
         `TACTICALRULES.SubmitGameState(NewGameState);
@@ -85,7 +85,7 @@ simulated function EventListenerReturn ResetFlyover(Object EventData, Object Eve
   if(FlyoverTriggered)
   {
     NewGameState = class'XComGameStateContext_ChangeContainer'.static.CreateChangeState("Update: Reset Flyover");
-    ThisEffect=XComGameState_Effect_IncomingReactionFire_AP(NewGameState.CreateStateObject(Class,ObjectID));
+    ThisEffect=XComGameState_Effect_IncomingReactionFire(NewGameState.CreateStateObject(Class,ObjectID));
     ThisEffect.FlyoverTriggered = false;
     NewGameState.AddStateObject(ThisEffect);
     `TACTICALRULES.SubmitGameState(NewGameState);

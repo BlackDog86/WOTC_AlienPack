@@ -227,7 +227,6 @@ function UpdateAllCustomizations()
 static function EventListenerReturn OnUnitShownInBestiary( Object EventData, Object EventSource, XComGameState GameState, Name EventID, Object CallbackData)
 {
 	local XComGameState NewGameState;
-	local XComGameStateContext_ChangeContainer ChangeContainer;
 	local XComGameState_Unit_AlienCustomization AlienCustomization;
 	local XComGameState_Unit UnitState, UpdatedUnitState;
 	local LWUnitVariation UnitVariation;

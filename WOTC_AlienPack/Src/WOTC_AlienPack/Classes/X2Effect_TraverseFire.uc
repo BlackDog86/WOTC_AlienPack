@@ -11,7 +11,7 @@ var config array<name> TF_ABILITYNAMES;
 
 simulated protected function OnEffectAdded(const out EffectAppliedData ApplyEffectParameters, XComGameState_BaseObject kNewTargetState, XComGameState NewGameState, XComGameState_Effect NewEffectState)
 {
-	local XComGameState_Effect_EffectCounter_AP	TFEffectState;
+	local XComGameState_Effect_EffectCounter	TFEffectState;
 	local X2EventManager						EventMgr;
 	local Object								ListenerObj, EffectObj;
 	local XComGameState_Unit					UnitState;
@@ -22,7 +22,7 @@ simulated protected function OnEffectAdded(const out EffectAppliedData ApplyEffe
 
 	if (GetTFCounter(NewEffectState) == none)
 	{
-		TFEffectState = XComGameState_Effect_EffectCounter_AP(NewGameState.CreateStateObject(class'XComGameState_Effect_EffectCounter_AP'));
+		TFEffectState = XComGameState_Effect_EffectCounter(NewGameState.CreateStateObject(class'XComGameState_Effect_EffectCounter'));
 		TFEffectState.InitComponent();
 		NewEffectState.AddComponentObject(TFEffectState);
 		NewGameState.AddStateObject(TFEffectState);
@@ -57,13 +57,13 @@ simulated function OnEffectRemoved(const out EffectAppliedData ApplyEffectParame
 static function XComGameState_Effect_EffectCounter GetTFCounter(XComGameState_Effect Effect)
 {
 	if (Effect != none) 
-		return XComGameState_Effect_EffectCounter(Effect.FindComponentObject(class'XComGameState_Effect_EffectCounter_AP'));
+		return XComGameState_Effect_EffectCounter(Effect.FindComponentObject(class'XComGameState_Effect_EffectCounter'));
 	return none;
 }
 
 function bool PostAbilityCostPaid(XComGameState_Effect EffectState, XComGameStateContext_Ability AbilityContext, XComGameState_Ability kAbility, XComGameState_Unit SourceUnit, XComGameState_Item AffectWeapon, XComGameState NewGameState, const array<name> PreCostActionPoints, const array<name> PreCostReservePoints)
 {
-	local XComGameState_Effect_EffectCounter_AP	CurrentTFCounter, UpdatedTFCounter;
+	local XComGameState_Effect_EffectCounter	CurrentTFCounter, UpdatedTFCounter;
 	local X2EventManager						EventMgr;
 	local XComGameState_Ability					AbilityState;
 
@@ -90,7 +90,7 @@ function bool PostAbilityCostPaid(XComGameState_Effect EffectState, XComGameStat
 		{
 			if (SourceUnit.NumActionPoints() == 0 && PreCostActionPoints.Length > 1)
 			{
-				UpdatedTFCounter = XComGameState_Effect_EffectCounter_AP(NewGameState.CreateStateObject(class'XComGameState_Effect_EffectCounter_AP', CurrentTFCounter.ObjectID));
+				UpdatedTFCounter = XComGameState_Effect_EffectCounter(NewGameState.CreateStateObject(class'XComGameState_Effect_EffectCounter', CurrentTFCounter.ObjectID));
 				SourceUnit.ActionPoints.AddItem(class'X2CharacterTemplateManager'.default.RunandGunActionPoint);
 				UpdatedTFCounter.uses += 1;
 				NewGameState.AddStateObject(UpdatedTFCounter);

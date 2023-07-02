@@ -17,7 +17,6 @@ function TryToUpdateAlien()
 	local XComGameState_Unit_AlienCustomization AlienCustomization;
 
 	UnitState = XComGameState_Unit(Metadata.StateObject_NewState);
-	`LWTrace("Executing state: Customizing alien " $ UnitState.GetMyTemplateName());
 
 	AlienCustomization = class'XComGameState_Unit_AlienCustomization'.static.GetCustomizationComponent(UnitState);
 	if (AlienCustomization != none)

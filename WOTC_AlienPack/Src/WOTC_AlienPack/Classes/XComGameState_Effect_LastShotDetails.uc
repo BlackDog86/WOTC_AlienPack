@@ -29,7 +29,7 @@ function XComGameState_Effect GetOwningEffect()
 simulated function EventListenerReturn RecordShot(Object EventData, Object EventSource, XComGameState GameState, Name EventID, Object CallbackData)
 {
 	local XComGameState								NewGameState;
-	local XComGameState_Effect_LastShotDetails_AP		ThisEffect;
+	local XComGameState_Effect_LastShotDetails		ThisEffect;
 	local XComGameState_Ability						ActivatedAbilityState;
 	local XComGameStateContext_Ability				ActivatedAbilityStateContext;
 	local XComGameState_Unit						TargetUnit;
@@ -44,7 +44,7 @@ simulated function EventListenerReturn RecordShot(Object EventData, Object Event
 			If (TargetUnit != none)
 			{
 				NewGameState = class'XComGameStateContext_ChangeContainer'.static.CreateChangeState("Update: Gather Shot Details");
-				ThisEffect=XComGameState_Effect_LastShotDetails_AP(NewGameState.CreateStateObject(Class,ObjectID));
+				ThisEffect=XComGameState_Effect_LastShotDetails(NewGameState.CreateStateObject(Class,ObjectID));
 				ThisEffect.b_AnyShotTaken = true;
 				ThisEffect.LastShotTarget = TargetUnit;
 				ThisEffect.LSTObjID = TargetUnit.ObjectID;

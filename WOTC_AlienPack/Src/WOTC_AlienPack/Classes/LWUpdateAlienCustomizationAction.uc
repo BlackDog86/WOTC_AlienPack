@@ -9,7 +9,7 @@
 //---------------------------------------------------------------------------------------
 class LWUpdateAlienCustomizationAction extends Actor;
 
-`include(LW_AlienPack_Integrated\LW_AlienPack.uci)
+`include(WOTC_AlienPack\Src\WOTC_AlienPack.uci)
 
 var array<XComGameState_Unit> UnitsToUpdate;
 var XComGameStateHistory History;

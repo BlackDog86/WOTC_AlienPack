@@ -5,9 +5,9 @@
 //  PURPOSE: Early game hook to allow template modifications.
 //--------------------------------------------------------------------------------------- 
 
-class UIScreenListener_Shell_LWAlienPack extends UIScreenListener config(LW_AlienPack);
+class UIScreenListener_Shell_LWAlienPack extends UIScreenListener config(WOTC_AlienPack);
 
-`include(LW_AlienPack_Integrated\LW_AlienPack.uci)
+`include(WOTC_AlienPack\Src\WOTC_AlienPack.uci)
 
 struct AIJobInfo_Addition
 {
