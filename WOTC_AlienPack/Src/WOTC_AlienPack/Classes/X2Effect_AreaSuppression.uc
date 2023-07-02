@@ -3,7 +3,7 @@
 //  AUTHOR:  Amineri (Long War Studios)
 //  PURPOSE: Implements AoE Damage immunities for Bastion, based on Solace ability
 //---------------------------------------------------------------------------------------
-class X2Effect_AreaSuppression_AP extends X2Effect_Suppression config(WOTC_AlienPack);
+class X2Effect_AreaSuppression extends X2Effect_Suppression config(WOTC_AlienPack);
 
 var config int AREA_SUPPRESSION_AMMO_COST;
 

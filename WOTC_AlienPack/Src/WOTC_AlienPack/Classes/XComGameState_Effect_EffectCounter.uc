@@ -6,11 +6,11 @@
 //		per turn.
 //---------------------------------------------------------------------------------------
 
-class XComGameState_Effect_EffectCounter_AP extends XComGameState_BaseObject;
+class XComGameState_Effect_EffectCounter extends XComGameState_BaseObject;
 
 var int uses;
 
-function XComGameState_Effect_EffectCounter_AP InitComponent()
+function XComGameState_Effect_EffectCounter InitComponent()
 {
 	uses = 0;
 	return self;

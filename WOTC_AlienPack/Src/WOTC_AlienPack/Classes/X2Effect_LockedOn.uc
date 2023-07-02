@@ -4,7 +4,7 @@
 //  PURPOSE: Sets up LockedOn Perk Effect
 //---------------------------------------------------------------------------------------
 
-class X2Effect_LockedOn_AP extends X2Effect_Persistent config (WOTC_AlienPack);
+class X2Effect_LockedOn extends X2Effect_Persistent config (WOTC_AlienPack);
 
 var config int LOCKEDON_AIM_BONUS;
 
@@ -51,10 +51,10 @@ simulated function OnEffectRemoved(const out EffectAppliedData ApplyEffectParame
 	NewGameState.RemoveStateObject(EffectComponent.ObjectID);
 }
 
-static function XComGameState_Effect_LastShotDetails_AP GetLastShotDetails(XComGameState_Effect Effect)
+static function XComGameState_Effect_LastShotDetails GetLastShotDetails(XComGameState_Effect Effect)
 {
 	if (Effect != none) 
-		return XComGameState_Effect_LastShotDetails_AP (Effect.FindComponentObject(class'XComGameState_Effect_LastShotDetails_AP'));
+		return XComGameState_Effect_LastShotDetails (Effect.FindComponentObject(class'XComGameState_Effect_LastShotDetails_AP'));
 	return none;
 }
 

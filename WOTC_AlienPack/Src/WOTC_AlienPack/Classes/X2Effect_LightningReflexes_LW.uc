@@ -1,4 +1,4 @@
-Class X2Effect_LightningReflexes_LW_AP extends X2Effect_Persistent config (WOTC_AlienPack);
+Class X2Effect_LightningReflexes_LW extends X2Effect_Persistent config (WOTC_AlienPack);
 
 var config int LR_LW_FIRST_SHOT_PENALTY;
 var config int LR_LW_PENALTY_REDUCTION_PER_SHOT;
@@ -51,10 +51,10 @@ simulated function OnEffectRemoved(const out EffectAppliedData ApplyEffectParame
 	NewGameState.RemoveStateObject(EffectComponent.ObjectID);
 }
 
-static function XComGameState_Effect_IncomingReactionFire_AP GetLightningReflexesEffectState(XComGameState_Effect Effect)
+static function XComGameState_Effect_IncomingReactionFire GetLightningReflexesEffectState(XComGameState_Effect Effect)
 {
 	if (Effect != none) 
-		return XComGameState_Effect_IncomingReactionFire_AP(Effect.FindComponentObject(class'XComGameState_Effect_IncomingReactionFire_AP'));
+		return XComGameState_Effect_IncomingReactionFire(Effect.FindComponentObject(class'XComGameState_Effect_IncomingReactionFire_AP'));
 	return none;
 }
 

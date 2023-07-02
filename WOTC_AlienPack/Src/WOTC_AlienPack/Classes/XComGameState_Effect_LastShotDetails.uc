@@ -6,7 +6,7 @@
 //			Used for HyperReactivePupils,
 //---------------------------------------------------------------------------------------
 
-class XComGameState_Effect_LastShotDetails_AP extends XComGameState_BaseObject config (WOTC_AlienPack);
+class XComGameState_Effect_LastShotDetails extends XComGameState_BaseObject config (WOTC_AlienPack);
 
 var config array<name> SHOTFIRED_ABILITYNAMES;
 
@@ -15,7 +15,7 @@ var bool				b_LastShotHit;
 var XComGameState_Unit	LastShotTarget;
 var int					LSTObjID;
 
-function XComGameState_Effect_LastShotDetails_AP InitComponent()
+function XComGameState_Effect_LastShotDetails InitComponent()
 {
 	b_AnyShotTaken = false;
 	return self;

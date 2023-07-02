@@ -5,7 +5,7 @@
 //		incoming reaction fire for the purpose of triggering other abilities.
 //---------------------------------------------------------------------------------------
 
-class XComGameState_Effect_IncomingReactionFire_AP extends XComGameState_Effect_EffectCounter_AP config (WOTC_AlienPack);
+class XComGameState_Effect_IncomingReactionFire extends XComGameState_Effect_EffectCounter config (WOTC_AlienPack);
 
 var config array<name> LR_REACTION_FIRE_ABILITYNAMES;
 var bool FlyoverTriggered;
@@ -42,7 +42,7 @@ function XComGameState.EventListenerReturn IncomingReactionFireCheck(Object Even
 }
 
 
-function XComGameState_Effect_IncomingReactionFire_AP InitFlyoverComponent()
+function XComGameState_Effect_IncomingReactionFire InitFlyoverComponent()
 {
   FlyoverTriggered = false;
   return self;
@@ -53,7 +53,7 @@ function XComGameState.EventListenerReturn TriggerLRFlyover(Object EventData, Ob
   local XComGameState_Unit	DefendingUnit;
   local XGUnit TargetUnitUnit;
   local XComGameState								NewGameState;
-  local XComGameState_Effect_IncomingReactionFire_AP ThisEffect;
+  local XComGameState_Effect_IncomingReactionFire ThisEffect;
 
   DefendingUnit = XComGameState_Unit(EventSource);
   if (DefendingUnit != none)
@@ -80,7 +80,7 @@ function XComGameState.EventListenerReturn TriggerLRFlyover(Object EventData, Ob
 simulated function EventListenerReturn ResetFlyover(Object EventData, Object EventSource, XComGameState GameState, Name EventID, Object CallbackData)
 {
   local XComGameState								NewGameState;
-  local XComGameState_Effect_IncomingReactionFire_AP ThisEffect;
+  local XComGameState_Effect_IncomingReactionFire ThisEffect;
 
   if(FlyoverTriggered)
   {

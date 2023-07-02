@@ -30,7 +30,7 @@ LocHelpText="Allows a melee attack anywhere within sprint distance."
 LocFlyOverText="Bayonet Charge"
 LocPromotionPopupText="<Bullet/> Allows a melee attack anywhere within sprint distance.<br/><Bullet/> 4-turn cooldown.<br/>"
 
-[Beastmaster X2AbilityTemplate]
+[Beastmaster_LW X2AbilityTemplate]
 LocFriendlyName="Beastmaster"
 LocLongDescription="Immune to damage from Berserkers."
 LocHelpText="Immune to damage from Berserkers."
@@ -84,9 +84,11 @@ LocPromotionPopupText="<Bullet/> Reanimate all nearby dead organics, turning the
 [ReadyForAnything X2AbilityTemplate]
 LocFriendlyName="Ready For Anything"
 LocFlyOverText="Overwatch: Ready For Anything"
-LocHelpText="Enter overwatch after firing a standard shot with your primary weapon."
-LocLongDescription="Enter overwatch after firing a standard shot with your primary weapon."
-LocPromotionPopupText="<Bullet/> Enter overwatch after firing a standard shot with your primary weapon."
+; LWOTC Needs Translation
+LocHelpText="Enter overwatch after firing a turn-ending standard shot with your primary weapon."
+LocLongDescription="Enter overwatch after firing a turn-ending standard shot with your primary weapon."
+LocPromotionPopupText="<Bullet/> Enter overwatch after firing a turn-ending standard shot with your primary weapon."
+; End Translation
 
 [ReadyForAnythingFlyover X2AbilityTemplate]
 LocFriendlyName="Ready For Anything"
@@ -121,6 +123,9 @@ strCharacterName="Muton Centurion"
 FriendlyName="Centurion Rifle"
 BriefSummary="XCOM has managed to salvage a variety of standard infantry small arms; this is the most common variety, similar to the rifle used twenty years before. While decidedly inferior to ADVENT magnetic technology, it can at least be upgraded using additional weapons salvage, once a standard technical approach is unked."
 TacticalText="<Bullet/> Firing the primary weapon always ends the soldier's turn\n<Bullet/> If the soldier fires with both actions available, three shots will be taken at reduced accuracy, but overall increased efficiency\n<Bullet/> Use upgrades looted from enemies to improve assault rifle tactical effectiveness"
+; LWOTC Needs Translation
+AbilityDescName="plasma rifle"
+; End translation
 
 [MutonM2_LWGrenade X2GrenadeTemplate]
 FriendlyName="Alien Grenade"
@@ -142,6 +147,9 @@ strCharacterName="Muton Elite"
 
 [MutonM3_LW_Wpn X2WeaponTemplate]
 FriendlyName="Elite Plasma Cannon"
+; LWOTC Needs Translation
+AbilityDescName="plasma cannon"
+; End translation
 
 [MutonM3_LWGrenade X2GrenadeTemplate]
 FriendlyName="Alien Grenade"
@@ -166,12 +174,21 @@ strCharacterName="Elite Naja"
 
 [NajaM1_WPN X2WeaponTemplate]
 FriendlyName="Naja Sniper Rifle"
+; LWOTC Needs Translation
+AbilityDescName="sniper rifle"
+; End translation
 
 [NajaM2_WPN X2WeaponTemplate]
 FriendlyName="Naja Sniper Rifle"
+; LWOTC Needs Translation
+AbilityDescName="sniper rifle"
+; End translation
 
 [NajaM3_WPN X2WeaponTemplate]
 FriendlyName="Naja Sniper Rifle"
+; LWOTC Needs Translation
+AbilityDescName="sniper rifle"
+; End translation
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; Sidewinder ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -186,12 +203,21 @@ strCharacterName="Elite Sidewinder "
 
 [SidewinderM1_WPN X2WeaponTemplate]
 FriendlyName="Sidewinder Scramgun"
+; LWOTC Needs Translation
+AbilityDescName="scramgun"
+; End translation
 
 [SidewinderM2_WPN X2WeaponTemplate]
 FriendlyName="Sidewinder Scramgun"
+; LWOTC Needs Translation
+AbilityDescName="scramgun"
+; End translation
 
 [SidewinderM3_WPN X2WeaponTemplate]
 FriendlyName="Sidewinder Scramgun"
+; LWOTC Needs Translation
+AbilityDescName="scramgun"
+; End translation
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; Viper ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -201,11 +227,17 @@ strCharacterName="Advanced Viper"
 [ViperM3_LW X2CharacterTemplate]
 strCharacterName="Elite Viper"
 
-[ViperM2_LW_WPN]
+[ViperM2_LW_WPN X2WeaponTemplate]
 FriendlyName="Beam Rifle"
+; LWOTC Needs Translation
+AbilityDescName="plasma rifle"
+; End translation
 
-[ViperM3_LW_WPN]
+[ViperM3_LW_WPN X2WeaponTemplate]
 FriendlyName="Beam Rifle"
+; LWOTC Needs Translation
+AbilityDescName="plasma rifle"
+; End translation
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; ArchonM2_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -223,19 +255,28 @@ strCharacterName="Sectoid Commander"
 strCharacterName="ADVENT Gunner"
 
 [AdvGunnerM1_WPN X2WeaponTemplate]
-FriendlyName="Gauss AutoMag"
+FriendlyName="AutoMag"
+; LWOTC Needs Translation
+AbilityDescName="cannon"
+; End translation
 
 [AdvGunnerM2 X2CharacterTemplate]
 strCharacterName="ADVENT Heavy Gunner"
 
 [AdvGunnerM2_WPN X2WeaponTemplate]
-FriendlyName="Gauss AutoMag"
+FriendlyName="AutoMag"
+; LWOTC Needs Translation
+AbilityDescName="cannon"
+; End translation
 
 [AdvGunnerM3 X2CharacterTemplate]
 strCharacterName="ADVENT Elite Gunner"
 
 [AdvGunnerM3_WPN X2WeaponTemplate]
-FriendlyName="Gauss AutoMag"
+FriendlyName="AutoMag"
+; LWOTC Needs Translation
+AbilityDescName="cannon"
+; End translation
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; AdvSentryM1-3 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -245,18 +286,27 @@ strCharacterName="ADVENT Sentry"
 
 [AdvSentryM1_WPN X2WeaponTemplate]
 FriendlyName="ADVENT Mag Rifle"
+; LWOTC Needs Translation
+AbilityDescName="mag rifle"
+; End translation
 
 [AdvSentryM2 X2CharacterTemplate]
 strCharacterName="ADVENT Guardian"
 
 [AdvSentryM2_WPN X2WeaponTemplate]
 FriendlyName="ADVENT Mag Rifle"
+; LWOTC Needs Translation
+AbilityDescName="mag rifle"
+; End translation
 
 [AdvSentryM3 X2CharacterTemplate]
 strCharacterName="ADVENT Sentinel"
 
 [AdvSentryM3_WPN X2WeaponTemplate]
 FriendlyName="ADVENT Mag Rifle"
+; LWOTC Needs Translation
+AbilityDescName="mag rifle"
+; End translation
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; AdvGrenadierM1-3 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -308,7 +358,6 @@ ThrownAbilityHelpText="Creates pools of acid that will damage units."
 LaunchedAbilityname="Launch Acid Grenade"
 LaunchedAbilityHelpText="Creates pools of acid that will damage units."
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;; AdvRocketeerM1-3 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [AdvRocketeerM1 X2CharacterTemplate]
@@ -338,9 +387,15 @@ strCharacterName="ADVENT Hunter Drone"
 
 [LWDroneM1_WPN X2WeaponTemplate]
 FriendlyName="Drone Shock"
+; LWOTC Needs Translation
+AbilityDescName="shock weapon"
+; End translation
 
 [LWDroneM2_WPN X2WeaponTemplate]
 FriendlyName="Drone Electroshock"
+; LWOTC Needs Translation
+AbilityDescName="shock weapon"
+; End translation
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; AdvMecArcherM1 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -349,14 +404,114 @@ strCharacterName="MEC Archer"
 
 [AdvMECArcher_WPN X2WeaponTemplate]
 FriendlyName="MEC MiniMag"
+; LWOTC Needs Translation
+AbilityDescName="minigun"
+; End translation
 
 [AdvMECArcher_Shoulder_WPN X2WeaponTemplate]
 FriendlyName="Rocket Artillery"
+; LWOTC Needs Translation
+AbilityDescName="micromissiles"
+; End translation
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; AdvMecArcherM2 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [AdvMECArcherM2 X2CharacterTemplate]
 strCharacterName="MEC Longbow"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;; Chryssalid Soldier ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[ChryssalidSoldier X2CharacterTemplate]
+strCharacterName="Chryssalid Soldier"
+
+[ChryssalidSoldierSlash X2AbilityTemplate]
+LocFriendlyName="Chryssalid Soldier Slash"
+LocLongDescription="Your slash attacks do lots of damage."
+LocHelpText="Your slash attacks do lots of damage."
+
+;;;;;;;;;;;;;;;;;;;;;;;;;; Hive Queen ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[HiveQueen X2CharacterTemplate]
+strCharacterName="Hive Queen"
+
+[HiveQueenSlash X2AbilityTemplate]
+LocFriendlyName="Greater Chryssalid Slash"
+LocLongDescription="Your slash attacks do lots of damage."
+LocHelpText="Your slash attacks do lots of damage."
+
+;;;;;;;;;;;;;;;;;;;;;;;;; Additional ADVENT Trooper types ;;;;;;;;;;;;;;;;;;;;;;;;
+
+[AdvSergeantM1 X2CharacterTemplate]
+strCharacterName="ADVENT Sergeant"
+
+[AdvSergeantM1_WPN X2WeaponTemplate]
+FriendlyName="ADVENT Mag Rifle"
+; LWOTC Needs Translation
+AbilityDescName="mag rifle"
+; End translation
+
+[AdvSergeantM2 X2CharacterTemplate]
+strCharacterName="ADVENT First Sergeant"
+
+[AdvSergeantM2_WPN X2WeaponTemplate]
+FriendlyName="ADVENT Mag Rifle"
+; LWOTC Needs Translation
+AbilityDescName="mag rifle"
+; End translation
+
+[AdvShockTroop X2CharacterTemplate]
+strCharacterName="ADVENT Shock Trooper"
+
+[AdvShockTroop_WPN X2WeaponTemplate]
+FriendlyName="ADVENT Mag Rifle"
+; LWOTC Needs Translation
+AbilityDescName="mag rifle"
+; End translation
+
+[AdvCommando X2CharacterTemplate]
+strCharacterName="ADVENT Commando"
+
+[AdvCommando_WPN X2WeaponTemplate]
+FriendlyName="ADVENT Mag Rifle"
+; LWOTC Needs Translation
+AbilityDescName="mag rifle"
+; End translation
+
+[AdvVanguard X2CharacterTemplate]
+strCharacterName="ADVENT Vanguard"
+
+[AdvVanguard_WPN X2WeaponTemplate]
+FriendlyName="ADVENT Mag Rifle"
+; LWOTC Needs Translation
+AbilityDescName="mag rifle"
+; End translation
+
+[AdvScout X2CharacterTemplate]
+strCharacterName="ADVENT Scout"
+
+[AdvScout_WPN X2WeaponTemplate]
+FriendlyName="ADVENT Mag Rifle"
+; LWOTC Needs Translation
+AbilityDescName="mag rifle"
+; End translation
+
+[AdvGeneralM1_LW X2CharacterTemplate]
+strCharacterName="ADVENT General"
+
+[AdvGeneralM1_LW_WPN X2WeaponTemplate]
+FriendlyName="ADVENT Mag Rifle"
+; LWOTC Needs Translation
+AbilityDescName="mag rifle"
+; End translation
+
+[AdvGeneralM2_LW X2CharacterTemplate]
+strCharacterName="ADVENT General"
+
+[AdvGeneralM2_LW_WPN X2WeaponTemplate]
+FriendlyName="ADVENT Mag Rifle"
+; LWOTC Needs Translation
+AbilityDescName="mag rifle"
+; End translation
 
 ;;;;;;;;;;;;;;;;;;;;;;;;; Perk Pack Abilities ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; LOC IS COPIED FROM PERKPACK
@@ -444,3 +599,4 @@ LocFlyOverText="Area Suppression"
 LocLongDescription="Fire a barrage that pins down multiple targets within a 3-tile radius, granting reaction fire against the first one that moves, and imposing a <Ability:SUPPRESSIONPENALTY/> penalty all targets' aim until suppression is removed."
 LocHelpText="Suppress multiple targets within an area of effect."
 LocPromotionPopupText="<Bullet/> The first unit that attempts to move will face reaction fire, and suppression will be cancelled.<br/><Bullet/> Does not work with shotguns or sniper rifles<br/><Bullet/> Suppression costs <Ability:SelfAmmoCost/> ammo points to use, but has no cooldown.<br/><Bullet/> Suppression will be canceled if the suppressing unit is damaged.<br/><Bullet/> If multiple units suppress a target, the aim penalty will stack.<br/>"
+

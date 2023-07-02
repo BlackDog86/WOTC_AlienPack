@@ -4,7 +4,7 @@
 //  PURPOSE: Sets up aim and defense bonuses for DP
 //---------------------------------------------------------------------------------------
 
-class X2Effect_DepthPerception_AP extends X2Effect_Persistent config (WOTC_AlienPack);
+class X2Effect_DepthPerception extends X2Effect_Persistent config (WOTC_AlienPack);
 
 var config int DP_AIM_BONUS;
 var config int DP_ANTIDODGE_BONUS;

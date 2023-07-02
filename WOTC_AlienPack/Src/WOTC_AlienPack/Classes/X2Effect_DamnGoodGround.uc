@@ -4,7 +4,7 @@
 //  PURPOSE: Sets up aim and defense bonuses for DG
 //---------------------------------------------------------------------------------------
 
-class X2Effect_DamnGoodGround_AP extends X2Effect_Persistent config (WOTC_AlienPack);
+class X2Effect_DamnGoodGround extends X2Effect_Persistent config (WOTC_AlienPack);
 
 var config int DGG_AIM_BONUS;
 var config int DGG_DEF_BONUS;

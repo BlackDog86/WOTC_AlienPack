@@ -4,7 +4,7 @@
 //  PURPOSE: Conditionally refunds actions for Traverse Fire
 //---------------------------------------------------------------------------------------
 
-class X2Effect_TraverseFire_AP extends X2Effect_Persistent config (WOTC_AlienPack);
+class X2Effect_TraverseFire extends X2Effect_Persistent config (WOTC_AlienPack);
 
 var config int TF_USES_PER_TURN;
 var config array<name> TF_ABILITYNAMES;
@@ -54,10 +54,10 @@ simulated function OnEffectRemoved(const out EffectAppliedData ApplyEffectParame
 	NewGameState.RemoveStateObject(EffectComponent.ObjectID);
 }
 
-static function XComGameState_Effect_EffectCounter_AP GetTFCounter(XComGameState_Effect Effect)
+static function XComGameState_Effect_EffectCounter GetTFCounter(XComGameState_Effect Effect)
 {
 	if (Effect != none) 
-		return XComGameState_Effect_EffectCounter_AP(Effect.FindComponentObject(class'XComGameState_Effect_EffectCounter_AP'));
+		return XComGameState_Effect_EffectCounter(Effect.FindComponentObject(class'XComGameState_Effect_EffectCounter_AP'));
 	return none;
 }
 
