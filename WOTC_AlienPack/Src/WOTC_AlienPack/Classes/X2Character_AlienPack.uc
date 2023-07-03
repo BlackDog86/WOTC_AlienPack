@@ -1608,13 +1608,3 @@ static function X2CharacterTemplate CreateTemplate_AdvGeneric(name TemplateName)
 
 	return CharTemplate;
 }
-
-
-
-
-
-
-
-
-
-

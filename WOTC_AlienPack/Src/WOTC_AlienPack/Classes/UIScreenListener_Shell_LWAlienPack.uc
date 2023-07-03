@@ -167,4 +167,3 @@ defaultProperties
 {
     ScreenClass = none
 }
-
