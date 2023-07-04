@@ -1425,7 +1425,6 @@ static function X2CharacterTemplate CreateTemplate_ChryssalidSoldier()
 	CharTemplate.strScamperBT = "ChryssalidScamperRoot";
 
 	CharTemplate.Abilities.AddItem('ChryssalidSlash');
-	CharTemplate.Abilities.AddItem('ChryssalidBurrow'); // REMOVE?
 	CharTemplate.Abilities.AddItem('ChyssalidPoison');
 	CharTemplate.Abilities.AddItem('ChryssalidImmunities');
 	CharTemplate.Abilities.AddItem('ChryssalidSoldierSlash');
