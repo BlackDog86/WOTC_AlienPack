@@ -71,6 +71,7 @@ static function array<X2DataTemplate> CreateTemplates()
 	Templates.AddItem(CreateHiveQueenSlashAbility());
 	Templates.AddItem(AddRepairServosAbility());
 	Templates.AddItem(AddFireOnDeathAbility());
+	Templates.AddItem(AddHitandSlitherAbility());
 	Templates.AddItem(PurePassive('RepairServosPassive', "img:///UILibrary_LWAlienPack.LW_AbilityDamageControl", true, 'eAbilitySource_Perk'));
 	return Templates;
 }
@@ -615,6 +616,29 @@ static function X2AbilityTemplate CreateAdventGrenadeLauncherAbility()
 	return Template;
 }
 
+static function X2AbilityTemplate AddHitandSlitherAbility()
+{
+	local X2AbilityTemplate					Template;
+	local X2Effect_HitandRun				HitandRunEffect;
+
+	`CREATE_X2ABILITY_TEMPLATE (Template, 'HitandSlither');
+	Template.AbilitySourceName = 'eAbilitySource_Perk';
+	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
+	Template.Hostility = eHostility_Neutral;
+	Template.IconImage = "img:///UILibrary_LW_PerkPack.LW_AbilityHitandRun";
+	Template.AbilityToHitCalc = default.DeadEye;
+	Template.AbilityTargetStyle = default.SelfTarget;
+	Template.AbilityTriggers.AddItem(default.UnitPostBeginPlayTrigger);
+	HitandRunEffect = new class'X2Effect_HitandRun';
+	HitandRunEffect.BuildPersistentEffect(1, true, false, false);
+	HitandRunEffect.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage,,,Template.AbilitySourceName);
+	HitandRunEffect.DuplicateResponse = eDupe_Ignore;
+	Template.AddTargetEffect(HitandRunEffect);
+	Template.bCrossClassEligible = false;
+	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
+	//  NOTE: Visualization handled in X2Effect_HitandRun
+	return Template;
+}
 
 static function X2DataTemplate CreateMassMindspinAbility()
 {
