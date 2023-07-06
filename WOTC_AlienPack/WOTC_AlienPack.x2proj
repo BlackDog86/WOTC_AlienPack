@@ -297,6 +297,9 @@ Creds to the original authors here.
     <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_WarCry.uc">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Src\WOTC_AlienPack\Classes\X2EventListener_AlienCustomization.uc">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2Item_LWAlienWeapons.uc">
       <SubType>Content</SubType>
     </Content>

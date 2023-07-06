@@ -17,10 +17,6 @@ var config array<name> droneNames;
 /// </summary>
 static event OnLoadedSavedGame()
 {
-	local XComGameState_AlienCustomizationManager AlienCustomizationManager;
-
-	AlienCustomizationManager = class'XComGameState_AlienCustomizationManager'.static.CreateAlienCustomizationManager();
-	AlienCustomizationManager.RegisterListeners();
 }
 
 /// <summary>
@@ -30,10 +26,6 @@ static event OnLoadedSavedGame()
 /// </summary>
 static event InstallNewCampaign(XComGameState StartState)
 {
-	local XComGameState_AlienCustomizationManager AlienCustomizationManager;
-
-	AlienCustomizationManager = class'XComGameState_AlienCustomizationManager'.static.CreateAlienCustomizationManager(StartState);
-	AlienCustomizationManager.RegisterListeners();
 }
 
 /// <summary>
@@ -41,7 +33,7 @@ static event InstallNewCampaign(XComGameState StartState)
 /// </summary>
 static event OnLoadedSavedGameToStrategy()
 {
-	AddAndRegisterCustomizationManager();		
+
 }
 
 /// <summary>
@@ -49,23 +41,8 @@ static event OnLoadedSavedGameToStrategy()
 /// </summary>
 static event OnExitPostMissionSequence()
 {
-	AddAndRegisterCustomizationManager();
 }
 
-static function AddAndRegisterCustomizationManager()
-{
-	local XComGameState_AlienCustomizationManager AlienCustomizationManager;
-
-	AlienCustomizationManager =  XComGameState_AlienCustomizationManager(`XCOMHISTORY.GetSingleGameStateObjectForClass(class'XComGameState_AlienCustomizationManager', true));
-	if(AlienCustomizationManager == none)
-	{
-		AlienCustomizationManager = class'XComGameState_AlienCustomizationManager'.static.CreateAlienCustomizationManager();
-	}
-	AlienCustomizationManager.RegisterListeners();
-	// not needed since we aren't going to try and install the AlienCustomization manager when loading into tactical mission
-	//if(`TACTICALRULES.TacticalGameIsInPlay())
-		//AlienCustomizationManager.UpdateAllCustomizations();
-}
 
 /// <summary>
 /// Called after the Templates have been created (but before they are validated) while this DLC / Mod is installed.
