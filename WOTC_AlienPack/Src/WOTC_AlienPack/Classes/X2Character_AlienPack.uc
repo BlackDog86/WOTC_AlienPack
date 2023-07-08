@@ -65,6 +65,18 @@ static function array<X2DataTemplate> CreateTemplates()
 	return Templates;
 }
 
+simulated function string GetAdventMatineePrefix(XComGameState_Unit UnitState)
+{
+	if(UnitState.kAppearance.iGender == eGender_Male)
+	{
+		return UnitState.GetMyTemplate().RevealMatineePrefix $ "_Male";
+	}
+	else
+	{
+		return UnitState.GetMyTemplate().RevealMatineePrefix $ "_Female";
+	}
+}
+
 static function X2CharacterTemplate CreateTemplate_MutonM2_LW()
 {
 	local X2CharacterTemplate CharTemplate;
@@ -303,8 +315,7 @@ static function X2CharacterTemplate CreateTemplate_Naja(name TemplateName)
 	CharTemplate.ImmuneTypes.AddItem('Poison');
 
 	CharTemplate.bAllowSpawnFromATT = false;
-
-	CharTemplate.Abilities.AddItem('FireControl25');
+		
 	// WOTC abilities
 	CharTemplate.Abilities.AddItem('DarkEventAbility_Barrier');
 
@@ -749,6 +760,7 @@ static function X2CharacterTemplate CreateTemplate_AdvGunner(name TemplateName)
 
 	CharTemplate.strMatineePackages.AddItem("CIN_Advent");
 	CharTemplate.RevealMatineePrefix = "CIN_Advent_Trooper";
+	CharTemplate.GetRevealMatineePrefixFn = GetAdventMatineePrefix;
 
 	CharTemplate.UnitSize = 1;
 	// Traversal Rules
@@ -850,6 +862,7 @@ static function X2CharacterTemplate CreateTemplate_AdvSentry(name TemplateName)
 
 	CharTemplate.strMatineePackages.AddItem("CIN_Advent");
 	CharTemplate.RevealMatineePrefix = "CIN_Advent_Trooper";
+	CharTemplate.GetRevealMatineePrefixFn = GetAdventMatineePrefix;
 
 	CharTemplate.UnitSize = 1;
 
@@ -956,7 +969,8 @@ static function X2CharacterTemplate CreateTemplate_AdvGrenadier(name TemplateNam
 
 	CharTemplate.strMatineePackages.AddItem("CIN_Advent");
 	CharTemplate.RevealMatineePrefix = "CIN_Advent_Trooper";
-
+	CharTemplate.GetRevealMatineePrefixFn = GetAdventMatineePrefix;
+	
 	CharTemplate.UnitSize = 1;
 
 	// Traversal Rules
@@ -1058,6 +1072,7 @@ static function X2CharacterTemplate CreateTemplate_AdvRocketeer(name TemplateNam
 
 	CharTemplate.strMatineePackages.AddItem("CIN_Advent");
 	CharTemplate.RevealMatineePrefix = "CIN_Advent_Trooper";
+	CharTemplate.GetRevealMatineePrefixFn = GetAdventMatineePrefix;
 
 	CharTemplate.UnitSize = 1;
 
@@ -1438,6 +1453,7 @@ static function X2CharacterTemplate CreateTemplate_AdvGeneric(name TemplateName)
 	CharTemplate.CharacterGroupName = 'AdventTrooper'; 
 	CharTemplate.strMatineePackages.AddItem("CIN_Advent");
 	CharTemplate.RevealMatineePrefix = "CIN_Advent_Trooper";
+	CharTemplate.GetRevealMatineePrefixFn = GetAdventMatineePrefix;
 	CharTemplate.SightedNarrativeMoments.AddItem(XComNarrativeMoment'X2NarrativeMoments.TACTICAL.AlienSitings.T_Central_AlienSightings_AdvTrooperM1');
     CharTemplate.BehaviorClass = class'XGAIBehavior';
 
