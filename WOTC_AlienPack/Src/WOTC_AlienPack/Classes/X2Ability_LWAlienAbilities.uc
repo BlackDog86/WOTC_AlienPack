@@ -72,7 +72,6 @@ static function array<X2DataTemplate> CreateTemplates()
 	Templates.AddItem(AddRepairServosAbility());
 	Templates.AddItem(AddFireOnDeathAbility());
 	Templates.AddItem(AddHitandSlitherAbility());
-	Templates.AddItem(CreateDroneShieldAbility());
 	Templates.AddItem(PurePassive('RepairServosPassive', "img:///UILibrary_LWAlienPack.LW_AbilityDamageControl", true, 'eAbilitySource_Perk'));
 	return Templates;
 }
@@ -124,72 +123,6 @@ static function X2AbilityTemplate AddRepairServosAbility()
 	Template.BuildInterruptGameStateFn = TypicalAbility_BuildInterruptGameState;
 
 	Template.AdditionalAbilities.AddItem('RepairServosPassive');
-
-	return Template;
-}
-
-static function X2DataTemplate CreateDroneShieldAbility()
-{
-	local X2AbilityTemplate							Template;
-	local X2AbilityCost_ActionPoints				ActionPointCost;
-	local X2Condition_UnitProperty					UnitPropertyCondition;
-	local X2Effect_EnergyShield ShieldedEffect;
-	local X2Condition_Visibility					TargetVisibilityCondition;
-	local X2AbilityTarget_Single					SingleTarget;
-	local X2AbilityCooldown							Cooldown;
-
-	`CREATE_X2ABILITY_TEMPLATE (Template, 'AL_DroneShield');
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityDroneRepair"; //from old EW Repair Servos icon
-	Template.AbilitySourceName = 'eAbilitySource_Perk';
-	Template.Hostility = eHostility_Neutral;
-	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_AlwaysShow;
-
-	Template.AbilityToHitCalc = default.DeadEye;
-	Template.AbilityTriggers.AddItem(default.PlayerInputTrigger);
-
-	// Only at single targets that are in range.
-	SingleTarget = new class'X2AbilityTarget_Single';
-	SingleTarget.OnlyIncludeTargetsInsideWeaponRange = true;
-	Template.AbilityTargetStyle = SingleTarget;
-
-	ActionPointCost = new class'X2AbilityCost_ActionPoints';
-	ActionPointCost.iNumPoints = default.DRONE_REPAIR_ACTION_COST;
-	ActionPointCost.bConsumeAllPoints = false;
-	Template.AbilityCosts.AddItem(ActionPointCost);
-
-	Cooldown = new class'X2AbilityCooldown';
-	Cooldown.iNumTurns = 2; // just to prevent from triggering twice in a turn
-	Template.AbilityCooldown = Cooldown;
-
-	TargetVisibilityCondition = new class'X2Condition_Visibility';
-	TargetVisibilityCondition.bRequireGameplayVisible = true;
-	Template.AbilityTargetConditions.AddItem(TargetVisibilityCondition);
-
-	Template.bCrossClassEligible = false;
-	Template.bDisplayInUITooltip = true;
-	Template.bDisplayInUITacticalText = true;
-	Template.bShowActivation = true;
-	Template.DisplayTargetHitChance = false;
-
-	UnitPropertyCondition = new class'X2Condition_UnitProperty';
-    UnitPropertyCondition.ExcludeDead = true;
-    UnitPropertyCondition.ExcludeHostileToSource = true;
-    UnitPropertyCondition.ExcludeFriendlyToSource = false;
-    UnitPropertyCondition.ExcludeFullHealth = false;
-	UnitPropertyCondition.ExcludeOrganic = false;
-	UnitPropertyCondition.ExcludeRobotic = false;
-	UnitPropertyCondition.FailOnNonUnits = true;
-    Template.AbilityTargetConditions.AddItem(UnitPropertyCondition);
-
-	ShieldedEffect = new class'X2Effect_EnergyShield';
-	ShieldedEffect.BuildPersistentEffect(class'X2Ability_AdventShieldbearer'.default.ENERGY_SHIELD_DURATION, false, true, , eGameRule_PlayerTurnEnd);
-	ShieldedEffect.SetDisplayInfo(ePerkBuff_Bonus, Template.LocFriendlyName, Template.GetMyLongDescription(), "img:///UILibrary_PerkIcons.UIPerk_adventshieldbearer_energyshield", true);
-	ShieldedEffect.AddPersistentStatChange(eStat_ShieldHP, 3);
-	Template.AddTargetEffect(ShieldedEffect);
-
-	Template.CustomFireAnim = 'NO_Repair';
-	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
-	Template.BuildVisualizationFn = TypicalAbility_BuildVisualization;
 
 	return Template;
 }
