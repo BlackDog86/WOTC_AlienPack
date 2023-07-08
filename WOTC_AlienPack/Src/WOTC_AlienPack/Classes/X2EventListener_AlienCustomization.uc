@@ -6,7 +6,7 @@
 //           XComGameState_AlienCustomizationManager.
 //---------------------------------------------------------------------------------------
 
-class X2EventListener_AlienCustomization extends X2EventListener config(WOTC_AlienPackVariations);// dependson(XComGameState_AlienCustomizationManager);
+class X2EventListener_AlienCustomization extends X2EventListener config(WOTC_AlienPackVariations);
 
 `include(WOTC_AlienPack\Src\WOTC_AlienPack.uci)
 
@@ -186,6 +186,7 @@ static function EventListenerReturn OnUnitBeginPlay(
 						ChangeContainer = XComGameStateContext_ChangeContainer(NewGameState.GetContext());
 						ChangeContainer.BuildVisualizationFn = CustomizeAliens_BuildVisualization;
 						ChangeContainer.SetAssociatedPlayTiming(SPT_BeforeSequential);
+						ChangeContainer.SetDesiredVisualizationBlockIndex(GameState.HistoryIndex);
 						`GAMERULES.SubmitGameState(NewGameState);
 
 						AlienCustomization.ApplyCustomization();
@@ -194,7 +195,8 @@ static function EventListenerReturn OnUnitBeginPlay(
 						EventManager.RegisterForEvent(CustomizationObject, 'OnCreateCinematicPawn', AlienCustomization.OnCinematicPawnCreation, ELD_Immediate, 55, UnitState);  // trigger when unit cinematic pawn is created
 
 						if (!AlienCustomization.bAutomatic)
-							return ELR_NoInterrupt;
+							return ELR_NoInterrupt;		
+					
 					}
 				}
 			}
@@ -203,6 +205,9 @@ static function EventListenerReturn OnUnitBeginPlay(
 
 	return ELR_NoInterrupt;
 }
+
+
+
 
 // A BuildVisualization function that ensures that alien pack enemies have their
 // pawns updated via X2Action_CustomizeAlienPackRNFs.

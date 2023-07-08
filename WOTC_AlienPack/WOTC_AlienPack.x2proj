@@ -31,6 +31,9 @@ Creds to the original authors here.
     <Content Include="Config\XComEncounterLists.ini">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Config\XComEncounters.ini">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Config\XComEngine.ini" />
     <Content Include="Config\XComGame.ini">
       <SubType>Content</SubType>
@@ -307,9 +310,6 @@ Creds to the original authors here.
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2TargetingMethod_MassMindspin.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\WOTC_AlienPack\Classes\XComGameState_AlienCustomizationManager.uc">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\XComGameState_Effect_EffectCounter.uc">

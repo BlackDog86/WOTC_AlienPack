@@ -11,7 +11,6 @@ event OnInit(UIScreen Screen)
 	}
 }
 
-
 //handles updating cinematic pawn creation
 function EventListenerReturn OnCinematicPawnCreated(Object EventData, Object EventSource, XComGameState GameState, Name EventID, Object CallbackData)
 {

@@ -3,8 +3,7 @@
 //  AUTHOR:  Amineri / Long War Studios
 //  PURPOSE: This component stores the appearance and related info for a single customizated alien unit
 //---------------------------------------------------------------------------------------
-class XComGameState_Unit_AlienCustomization extends XComGameState_BaseObject 
-		dependson(XComGameState_AlienCustomizationManager) config(WOTC_AlienPack);
+class XComGameState_Unit_AlienCustomization extends XComGameState_BaseObject config(WOTC_AlienPack);
 
 `include(WOTC_AlienPack\Src\WOTC_AlienPack.uci)
 
