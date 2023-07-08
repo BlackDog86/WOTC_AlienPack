@@ -749,7 +749,6 @@ static function X2CharacterTemplate CreateTemplate_AdvGunner(name TemplateName)
 
 	CharTemplate.strMatineePackages.AddItem("CIN_Advent");
 	CharTemplate.RevealMatineePrefix = "CIN_Advent_Trooper";
-	CharTemplate.GetRevealMatineePrefixFn = GetAdventMatineePrefix;
 
 	CharTemplate.UnitSize = 1;
 	// Traversal Rules
@@ -851,7 +850,6 @@ static function X2CharacterTemplate CreateTemplate_AdvSentry(name TemplateName)
 
 	CharTemplate.strMatineePackages.AddItem("CIN_Advent");
 	CharTemplate.RevealMatineePrefix = "CIN_Advent_Trooper";
-	CharTemplate.GetRevealMatineePrefixFn = GetAdventMatineePrefix;
 
 	CharTemplate.UnitSize = 1;
 
@@ -958,7 +956,6 @@ static function X2CharacterTemplate CreateTemplate_AdvGrenadier(name TemplateNam
 
 	CharTemplate.strMatineePackages.AddItem("CIN_Advent");
 	CharTemplate.RevealMatineePrefix = "CIN_Advent_Trooper";
-	CharTemplate.GetRevealMatineePrefixFn = GetAdventMatineePrefix;
 
 	CharTemplate.UnitSize = 1;
 
@@ -1061,7 +1058,6 @@ static function X2CharacterTemplate CreateTemplate_AdvRocketeer(name TemplateNam
 
 	CharTemplate.strMatineePackages.AddItem("CIN_Advent");
 	CharTemplate.RevealMatineePrefix = "CIN_Advent_Trooper";
-	CharTemplate.GetRevealMatineePrefixFn = GetAdventMatineePrefix;
 
 	CharTemplate.UnitSize = 1;
 
@@ -1261,18 +1257,6 @@ static function X2CharacterTemplate CreateTemplate_AdvMECArcher(name TemplateNam
 	return CharTemplate;
 }
 
-simulated function string GetAdventMatineePrefix(XComGameState_Unit UnitState)
-{
-	if(UnitState.kAppearance.iGender == eGender_Male)
-	{
-		return UnitState.GetMyTemplate().RevealMatineePrefix $ "_Male";
-	}
-	else
-	{
-		return UnitState.GetMyTemplate().RevealMatineePrefix $ "_Female";
-	}
-}
-
 static function X2CharacterTemplate CreateTemplate_Drone(name TemplateName)
 {
 	local X2CharacterTemplate CharTemplate;
@@ -1309,7 +1293,7 @@ static function X2CharacterTemplate CreateTemplate_Drone(name TemplateName)
 		Loot.LootTableName = 'LWDroneM2_VultureLoot';  
 	CharTemplate.VultureLoot.LootReferences.AddItem(Loot);
 
-
+	CharTemplate.strMatineePackages.AddItem("CIN_Drone");
 	//NEW CINEMATIC?
 
 	CharTemplate.UnitSize = 1;
@@ -1571,7 +1555,6 @@ static function X2CharacterTemplate CreateTemplate_AdvGeneric(name TemplateName)
 	CharTemplate.TimedLoot.LootReferences.AddItem(LootTimed);
 	CharTemplate.VultureLoot.LootReferences.AddItem(LootVulture);
 	
-	CharTemplate.GetRevealMatineePrefixFn = GetAdventMatineePrefix;
 	CharTemplate.UnitSize = 1;
 	CharTemplate.bCanUse_eTraversal_Normal = true;
 	CharTemplate.bCanUse_eTraversal_ClimbOver = true;

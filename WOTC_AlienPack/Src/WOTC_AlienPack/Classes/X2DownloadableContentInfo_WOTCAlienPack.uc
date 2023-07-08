@@ -4,7 +4,7 @@
 //  PURPOSE: Initializes AlienPack mod settings on campaign start or when loading campaign without mod previously active
 //---------------------------------------------------------------------------------------
 
-class X2DownloadableContentInfo_WOTCAlienPack extends X2DownloadableContentInfo;
+class X2DownloadableContentInfo_WOTCAlienPack extends X2DownloadableContentInfo config(WOTC_AlienPack);
 
 `include(WOTC_AlienPack\Src\WOTC_AlienPack.uci)
 
