@@ -6,6 +6,8 @@
 //---------------------------------------------------------------------------------------
 class X2Action_CustomizeAlienPackRNFs extends X2Action;
 
+`include(WOTC_AlienPack\Src\WOTC_AlienPack.uci)
+
 event bool BlocksAbilityActivation()
 {
 	return false;
@@ -21,6 +23,7 @@ function TryToUpdateAlien()
 	AlienCustomization = class'XComGameState_Unit_AlienCustomization'.static.GetCustomizationComponent(UnitState);
 	if (AlienCustomization != none)
 	{
+		`APTRACE("Applying customization using AlienPackRNFs");
 		AlienCustomization.ApplyCustomization();
 	}
 }

@@ -185,12 +185,10 @@ static function EventListenerReturn OnUnitBeginPlay(
 
 						ChangeContainer = XComGameStateContext_ChangeContainer(NewGameState.GetContext());
 						ChangeContainer.BuildVisualizationFn = CustomizeAliens_BuildVisualization;
-						ChangeContainer.SetAssociatedPlayTiming(SPT_BeforeSequential);
+						ChangeContainer.SetAssociatedPlayTiming(SPT_AfterSequential);
 						ChangeContainer.SetDesiredVisualizationBlockIndex(GameState.HistoryIndex);
 						`GAMERULES.SubmitGameState(NewGameState);
-
 						AlienCustomization.ApplyCustomization();
-
 						CustomizationObject = AlienCustomization;
 						EventManager.RegisterForEvent(CustomizationObject, 'OnCreateCinematicPawn', AlienCustomization.OnCinematicPawnCreation, ELD_Immediate, 55, UnitState);  // trigger when unit cinematic pawn is created
 
@@ -206,37 +204,31 @@ static function EventListenerReturn OnUnitBeginPlay(
 	return ELR_NoInterrupt;
 }
 
-
-
-
 // A BuildVisualization function that ensures that alien pack enemies have their
 // pawns updated via X2Action_CustomizeAlienPackRNFs.
 static function CustomizeAliens_BuildVisualization(XComGameState VisualizeGameState)
 {
-	local XComGameState_Unit UnitState;
-	local VisualizationActionMetadata EmptyMetadata, ActionMetadata;
-	local XComGameState_Unit_AlienCustomization AlienCustomization;
-
+	local XComGameState_Unit						UnitState;
+	local VisualizationActionMetadata				EmptyMetadata, ActionMetadata;
+	local XComGameState_Unit_AlienCustomization		AlienCustomization;
+	
 	if (VisualizeGameState.GetNumGameStateObjects() > 0)
 	{
 		foreach VisualizeGameState.IterateByClassType(class'XComGameState_Unit', UnitState)
 		{
 			AlienCustomization = class'XComGameState_Unit_AlienCustomization'.static.GetCustomizationComponent(UnitState);
-			if (AlienCustomization == none)
-			{
-				continue;
-			}
-			
+			if (AlienCustomization != none && UnitState != none)
+			{			
 			ActionMetadata = EmptyMetadata;
 			ActionMetadata.StateObject_OldState = UnitState;
 			ActionMetadata.StateObject_NewState = UnitState;
-
 			ActionMetadata.VisualizeActor = UnitState.GetVisualizer();
-
-			class'X2Action_CustomizeAlienPackRNFs'.static.AddToVisualizationTree(
-				ActionMetadata,
-				VisualizeGameState.GetContext(),
-				false);
+		
+				class'X2Action_CustomizeAlienPackRNFs'.static.AddToVisualizationTree(
+					ActionMetadata,
+					VisualizeGameState.GetContext(),
+					false);
+			}
 		}
 	}
 }
