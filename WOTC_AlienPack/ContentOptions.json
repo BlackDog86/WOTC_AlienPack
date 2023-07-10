@@ -1,0 +1,29 @@
+{
+    "sfStandalone": [
+        "AdvDroneMatinee",
+        "DroneRevealMatinee_ModShaderCache",
+        "LW_Perk_MutonM3",
+		"LW_Perk_Psi_MassMindspin",
+		"LW_Perk_Psi_MassReanimation",
+		"LW_Perk_RepairServos",
+		"LWAdvGrenadier",
+		"LWAdvGunner",
+		"LWAdvMec",
+		"LWAdvMecArcher",
+		"LWAdvRocketeer",
+		"LWAdvSentry",
+		"LWDrone",
+		"LWDroneWeapon",
+		"LWMutonM2",
+		"LWMutonM3",
+		"LWMutonM3Rifle",
+		"LWNaja",
+		"WOTC_AlienPack_ModShaderCache",
+		"LWSectoidM2",
+		"LWSidewinder",
+		"LWSidewinderSMG",
+		"NajaRifle",
+		"UILibrary_LWAlienPack",
+		"XAdventTrooper"
+	]
+}

@@ -16,8 +16,9 @@ Sectoid Commander: Dangerous psionic unit with mass-zombie raising capabilities.
 Creds to the original authors here.
 
 </Description>
-    <AssemblyName>LWOTC_AlienPack</AssemblyName>
-    <RootNamespace>LWOTC_AlienPack</RootNamespace>
+    <SteamPublishID>0</SteamPublishID>
+    <AssemblyName>WOTC_AlienPack</AssemblyName>
+    <RootNamespace>WOTC_AlienPack</RootNamespace>
     <ProjectGuid>{3f350978-33e7-493a-993b-92c1b54bf591}</ProjectGuid>
   </PropertyGroup>
   <ItemGroup>
@@ -56,7 +57,79 @@ Creds to the original authors here.
     <Content Include="Config\XComWOTC_AlienPackVariations.ini">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Content\AdvDroneMatinee.upk">
+    <Content Include="ContentForCook\AdvDroneMatinee.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ContentForCook\AdvGrenadeLauncher.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ContentForCook\LWAdvGrenadier.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ContentForCook\LWAdvGunner.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ContentForCook\LWAdvMec.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ContentForCook\LWAdvMecArcher.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ContentForCook\LWAdvRocketeer.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ContentForCook\LWAdvSentry.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ContentForCook\LWDrone.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ContentForCook\LWDroneWeapon.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ContentForCook\LWMutonM2.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ContentForCook\LWMutonM3.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ContentForCook\LWMutonM3Rifle.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ContentForCook\LWNaja.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ContentForCook\LWSectoidM2.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ContentForCook\LWSidewinder.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ContentForCook\LWSidewinderSMG.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ContentForCook\LW_Perk_MutonM3.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ContentForCook\LW_Perk_Psi_MassMindspin.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ContentForCook\LW_Perk_Psi_MassReanimation.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ContentForCook\LW_Perk_RepairServos.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ContentForCook\NajaRifle.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ContentForCook\UILibrary_LWAlienPack.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ContentForCook\XAdventTrooper.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ContentOptions.json">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Content\CIN_Drone.umap">
@@ -65,73 +138,7 @@ Creds to the original authors here.
     <Content Include="Content\DroneRevealMatinee_ModShaderCache.upk">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Content\LWAdvGrenadier.upk">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Content\LWAdvGunner.upk">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Content\LWAdvMec.upk">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Content\LWAdvMecArcher.upk">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Content\LWAdvRocketeer.upk">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Content\LWAdvSentry.upk">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Content\LWDrone.upk">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Content\LWDroneWeapon.upk">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Content\LWMutonM2.upk">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Content\LWMutonM3.upk">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Content\LWMutonM3Rifle.upk">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Content\LWNaja.upk">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Content\LWOTC_AlienPack_ModShaderCache.upk">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Content\LWSectoidM2.upk">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Content\LWSidewinder.upk">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Content\LWSidewinderSMG.upk">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Content\LW_Perk_MutonM3.upk">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Content\LW_Perk_Psi_MassMindspin.upk">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Content\LW_Perk_Psi_MassReanimation.upk">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Content\LW_Perk_RepairServos.upk">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Content\NajaRifle.upk">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Content\UILibrary_LWAlienPack.upk">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Content\XAdventTrooper.upk">
+    <Content Include="Content\WOTC_AlienPack_ModShaderCache.upk">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Localization\WOTC_AlienPack.chn">
@@ -329,11 +336,17 @@ Creds to the original authors here.
     <Folder Include="Config\" />
     <Folder Include="Content\" />
     <Folder Include="Localization\" />
+    <Folder Include="ContentForCook" />
     <Folder Include="Src\" />
     <Folder Include="Src\WOTC_AlienPack" />
     <Folder Include="Src\WallClimbOverride" />
     <Folder Include="Src\WallClimbOverride\Classes" />
     <Folder Include="Src\WOTC_AlienPack\Classes" />
   </ItemGroup>
-  <Import Project="$(MSBuildLocalExtensionPath)\XCOM2.targets" />
+  <PropertyGroup>
+    <SolutionRoot>$(MSBuildProjectDirectory)\..\</SolutionRoot>
+    <ScriptsDir>$(SolutionRoot).scripts\</ScriptsDir>
+    <BuildCommonRoot>$(ScriptsDir)X2ModBuildCommon\</BuildCommonRoot>
+  </PropertyGroup>
+  <Import Project="$(BuildCommonRoot)XCOM2.targets" />
 </Project>
