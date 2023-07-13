@@ -153,7 +153,11 @@ static function bool AbilityTagExpandHandler_CH(string InString, out string OutS
 		case 'FIREDISCIPLINE_REACTIONFIRE_BONUS':
 			OutString = string(class'X2Effect_FireDiscipline'.default.FIREDISCIPLINE_REACTIONFIRE_BONUS);
 			return true;	
-        default:
+		case 'LONEWOLF_MIN_BONUS_TILES':
+			OutString = string(class'X2Effect_LoneWolf'.default.LONEWOLF_MIN_DIST_TILES - 
+					(class'X2Effect_LoneWolf'.default.LONEWOLF_AIM_BONUS / class'X2Effect_LoneWolf'.default.LONEWOLF_AIM_PER_TILE) + 1);
+			return true;
+		default:
             return false;
     }
     return false;    
