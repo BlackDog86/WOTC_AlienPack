@@ -289,6 +289,9 @@ Creds to the original authors here.
     <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_Executioner_AP.uc">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_FireDiscipline.uc">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_HardTarget.uc">
       <SubType>Content</SubType>
     </Content>

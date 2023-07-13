@@ -106,3 +106,69 @@ static function UpdateForAreaSuppression()
 		}
 	}
 }
+
+static function bool AbilityTagExpandHandler_CH(string InString, out string OutString, Object ParseObj, Object StrategyParseObj, XComGameState GameState)
+{
+	local XComGameState_Ability AbilityState;
+	local XComGameState_Effect EffectState;
+	local X2AbilityTemplate AbilityTemplate;
+	local X2ItemTemplate ItemTemplate;
+	local name Type;
+	local float TempFloat;
+	local int TempInt;
+
+    Type = name(InString);
+    switch(Type)
+    {
+		case 'BOUND_WEAPON_NAME':
+			AbilityTemplate = X2AbilityTemplate(ParseObj);
+			if (StrategyParseObj != none && AbilityTemplate != none)
+			{
+				ItemTemplate = GetItemBoundToAbilityFromUnit(XComGameState_Unit(StrategyParseObj), AbilityTemplate.DataName, GameState);
+			}
+			else
+			{
+				AbilityState = XComGameState_Ability(ParseObj);
+				EffectState = XComGameState_Effect(ParseObj);
+				if (EffectState != none)
+				{
+					AbilityState = XComGameState_Ability(`XCOMHISTORY.GetGameStateForObjectID(
+							EffectState.ApplyEffectParameters.AbilityStateObjectRef.ObjectID));
+				}
+
+				if (AbilityState != none)
+					ItemTemplate = AbilityState.GetSourceWeapon().GetMyTemplate();
+			}
+
+			if (ItemTemplate != none)
+			{
+				OutString = ItemTemplate.GetItemAbilityDescName();
+				return true;
+			}
+			OutString = AbilityTemplate.LocDefaultPrimaryWeapon;
+			return true;        
+		case 'DEFILADE_DEFENSE_BONUS':
+			OutString = string(class'X2Effect_Defilade'.default.DEFILADE_DEFENSE_BONUS);
+			return true;	
+		case 'FIREDISCIPLINE_REACTIONFIRE_BONUS':
+			OutString = string(class'X2Effect_FireDiscipline'.default.FIREDISCIPLINE_REACTIONFIRE_BONUS);
+			return true;	
+        default:
+            return false;
+    }
+    return false;    
+}
+
+static function X2ItemTemplate GetItemBoundToAbilityFromUnit(XComGameState_Unit UnitState, name AbilityName, XComGameState GameState)
+{
+	local SCATProgression Progression;
+
+	Progression = UnitState.GetSCATProgressionForAbility(AbilityName);
+	if (Progression.iRank == INDEX_NONE || Progression.iBranch == INDEX_NONE)
+		return none;
+
+	return UnitState.GetItemInSlot(
+		UnitState.AbilityTree[Progression.iRank].Abilities[Progression.iBranch].ApplyToWeaponSlot,
+		GameState).GetMyTemplate();
+}
+
