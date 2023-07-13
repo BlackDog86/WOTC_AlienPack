@@ -87,6 +87,9 @@ Creds to the original authors here.
     <Content Include="ContentForCook\LWDroneWeapon.upk">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ContentForCook\LWHiveQueen.upk">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ContentForCook\LWMutonM2.upk">
       <SubType>Content</SubType>
     </Content>
@@ -235,6 +238,9 @@ Creds to the original authors here.
     <Content Include="Src\WOTC_AlienPack\Classes\UIScreenListener_TacticalHUD_DroneMatinee.uc">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Src\WOTC_AlienPack\Classes\X2AbilityTarget_Single_CCS.uc">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2Ability_LWAlienAbilities.uc">
       <SubType>Content</SubType>
     </Content>
@@ -253,19 +259,37 @@ Creds to the original authors here.
     <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_AdventGrenadeLauncher.uc">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_Aggression.uc">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_AreaSuppression.uc">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_BeastMaster.uc">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_BringEmOn.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_CloseandPersonal.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_DamageControl.uc">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_DamnGoodGround.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_Defilade.uc">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_DepthPerception.uc">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_Executioner_AP.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_HardTarget.uc">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_HitandRun.uc">
@@ -286,10 +310,19 @@ Creds to the original authors here.
     <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_LoneWolf.uc">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_LowProfile_LW.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_LWOfficerCommandAura.uc">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_PrimaryHitBonusDamage.uc">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_ReadyForAnything.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_RemoveAreaSuppressionEffect.uc">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_RepairServos.uc">
@@ -307,6 +340,9 @@ Creds to the original authors here.
     <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_WarCry.uc">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_WilltoSurvive.uc">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2EventListener_AlienCustomization.uc">
       <SubType>Content</SubType>
     </Content>
@@ -314,6 +350,9 @@ Creds to the original authors here.
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2Item_Resources_AlienPack.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\WOTC_AlienPack\Classes\X2TargetingMethod_AreaSuppression.uc">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2TargetingMethod_MassMindspin.uc">

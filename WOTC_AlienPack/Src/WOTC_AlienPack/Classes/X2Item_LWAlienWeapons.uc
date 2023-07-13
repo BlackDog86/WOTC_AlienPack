@@ -565,6 +565,7 @@ static function X2DataTemplate CreateTemplate_AdvGunner_WPN(name TemplateName)
 	Template.Abilities.AddItem('OverwatchShot');
 	Template.Abilities.AddItem('Reload');
 	Template.Abilities.AddItem('HotLoadAmmo');
+	Template.Abilities.AddItem('Suppression');
 	Template.Abilities.AddItem('AreaSuppression');
 
 	if (TemplateName == 'AdvGunnerM2_WPN' || TemplateName == 'AdvGunnerM3_WPN')

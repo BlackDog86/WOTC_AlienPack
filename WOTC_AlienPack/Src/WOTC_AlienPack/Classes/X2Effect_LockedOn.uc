@@ -1,90 +1,94 @@
-//---------------------------------------------------------------------------------------
-//  FILE:    X2Effect_LockedOn
-//  AUTHOR:  John Lumpkin (Long War Studios)
-//  PURPOSE: Sets up LockedOn Perk Effect
-//---------------------------------------------------------------------------------------
-
-class X2Effect_LockedOn extends X2Effect_Persistent config (WOTC_AlienPack);
+class X2Effect_LockedOn extends X2Effect_Persistent config (LW_SoldierSkills);
 
 var config int LOCKEDON_AIM_BONUS;
+var config int LOCKEDON_CRIT_BONUS;
 
-simulated protected function OnEffectAdded(const out EffectAppliedData ApplyEffectParameters, XComGameState_BaseObject kNewTargetState, XComGameState NewGameState, XComGameState_Effect NewEffectState)
+function RegisterForEvents(XComGameState_Effect EffectGameState)
 {
-	local XComGameState_Effect_LastShotDetails	LastShotDetails;
-	local X2EventManager						EventMgr;
-	local Object								ListenerObj;
-	local XComGameState_Unit					UnitState;
+	local X2EventManager EventMgr;
+	local Object EffectObj;
 
 	EventMgr = `XEVENTMGR;
-	UnitState = XComGameState_Unit(`XCOMHISTORY.GetGameStateForObjectID(NewEffectState.ApplyEffectParameters.SourceStateObjectRef.ObjectID));
-
-	if (GetLastShotDetails(NewEffectState) == none)
-	{
-		LastShotDetails = XComGameState_Effect_LastShotDetails(NewGameState.CreateStateObject(class'XComGameState_Effect_LastShotDetails'));
-		LastShotDetails.InitComponent();
-		NewEffectState.AddComponentObject(LastShotDetails);
-		NewGameState.AddStateObject(LastShotDetails);
-	}
-	ListenerObj = LastShotDetails;
-	if (ListenerObj == none)
-	{
-		`Redscreen("LSD: Failed to find LSD Component when registering listener");
-		return;
-	}
-	EventMgr.RegisterForEvent(ListenerObj, 'AbilityActivated', LastShotDetails.RecordShot, ELD_OnStateSubmitted, 50, UnitState);
-}
-
-simulated function OnEffectRemoved(const out EffectAppliedData ApplyEffectParameters, XComGameState NewGameState, bool bCleansed, XComGameState_Effect RemovedEffectState)
-{
-	local XComGameState_BaseObject EffectComponent;
-	local Object EffectComponentObj;
-
-	super.OnEffectRemoved(ApplyEffectParameters, NewGameState, bCleansed, RemovedEffectState);
-
-	EffectComponent = GetLastShotDetails(RemovedEffectState);
-	if (EffectComponent == none)
-		return;
-
-	EffectComponentObj = EffectComponent;
-	`XEVENTMGR.UnRegisterFromAllEvents(EffectComponentObj);
-
-	NewGameState.RemoveStateObject(EffectComponent.ObjectID);
-}
-
-static function XComGameState_Effect_LastShotDetails GetLastShotDetails(XComGameState_Effect Effect)
-{
-	if (Effect != none) 
-		return XComGameState_Effect_LastShotDetails (Effect.FindComponentObject(class'XComGameState_Effect_LastShotDetails'));
-	return none;
+	EffectObj = EffectGameState;
+	EventMgr.RegisterForEvent(EffectObj, 'AbilityActivated', LockedOnListener, ELD_OnStateSubmitted,,,, EffectObj);
 }
 
 function GetToHitModifiers(XComGameState_Effect EffectState, XComGameState_Unit Attacker, XComGameState_Unit Target, XComGameState_Ability AbilityState, class<X2AbilityToHitCalc> ToHitType, bool bMelee, bool bFlanking, bool bIndirectFire, out array<ShotModifierInfo> ShotModifiers)
 {
-	local XComGameState_Item						SourceWeapon;
-	local ShotModifierInfo							ShotInfo;
-	local XComGameState_Effect_LastShotDetails		LastShot;
+	local XComGameState_Item SourceWeapon;
+	local ShotModifierInfo ShotMod;
+	local UnitValue ShotsValue, TargetValue;
 
-	if (XComGameState_Ability(`XCOMHISTORY.GetGameStateForObjectID(EffectState.ApplyEffectParameters.AbilityStateObjectRef.ObjectID)) == none)
-		return;
-	if (AbilityState == none)
-		return;
-	LastShot = GetLastShotDetails(EffectState);
-	if (!LastShot.b_AnyShotTaken)
-		return;
 	SourceWeapon = AbilityState.GetSourceWeapon();
-	if (SourceWeapon == Attacker.GetItemInSlot(eInvSlot_PrimaryWeapon))
+	if (SourceWeapon != none && !bIndirectFire && SourceWeapon.InventorySlot == eInvSlot_PrimaryWeapon)
 	{
-		if ((SourceWeapon != none) && (Target != none))
+		Attacker.GetUnitValue('LockedOnShots', ShotsValue);
+		Attacker.GetUnitValue('LockedOnTarget', TargetValue);
+
+		if (ShotsValue.fValue > 0 && TargetValue.fValue == Target.ObjectID)
 		{
-			if (Target.ObjectID == LastShot.LSTObjID)
-			{
-				ShotInfo.ModType = eHit_Success;
-				ShotInfo.Reason = FriendlyName;
-				ShotInfo.Value = default.LOCKEDON_AIM_BONUS;
-				ShotModifiers.AddItem(ShotInfo);
-			}
+			ShotMod.ModType = eHit_Success;
+			ShotMod.Reason = FriendlyName;
+			ShotMod.Value = default.LOCKEDON_AIM_BONUS;
+			ShotModifiers.AddItem(ShotMod);
+
+			ShotMod.ModType = eHit_Crit;
+			ShotMod.Reason = FriendlyName;
+			ShotMod.Value = default.LOCKEDON_CRIT_BONUS;
+			ShotModifiers.AddItem(ShotMod);
 		}
 	}
+}
+
+static function EventListenerReturn LockedOnListener(Object EventData, Object EventSource, XComGameState GameState, Name Event, Object CallbackData)
+{
+	local XComGameStateContext_Ability AbilityContext;
+	local XComGameState_Ability AbilityState;
+	local XComGameState NewGameState;
+	local XComGameState_Unit UnitState;
+	local XComGameState_Unit LockedOnOwnerUnitState;
+	local XComGameState_Item SourceWeapon;
+	local XComGameState_Effect EffectGameState;
+
+	AbilityContext = XComGameStateContext_Ability(GameState.GetContext());
+	`assert(AbilityContext != none);
+	if (AbilityContext.InterruptionStatus == eInterruptionStatus_Interrupt)
+		return ELR_NoInterrupt;
+
+	AbilityState = XComGameState_Ability(EventData);
+	`assert(AbilityState != none);
+	UnitState = XComGameState_Unit(EventSource);
+	`assert(UnitState != none);
+
+	EffectGameState = XComGameState_Effect(CallbackData);
+	if (EffectGameState == none)
+		return ELR_NoInterrupt;
+
+	LockedOnOwnerUnitState = XComGameState_Unit(`XCOMHISTORY.GetGameStateForObjectID(EffectGameState.ApplyEffectParameters.TargetStateObjectRef.ObjectID));
+
+	if (UnitState.ObjectID != LockedOnOwnerUnitState.ObjectID)
+		return ELR_NoInterrupt;
+
+	if (AbilityState.IsAbilityInputTriggered())
+	{
+		SourceWeapon = AbilityState.GetSourceWeapon();
+		if (AbilityState.GetMyTemplate().Hostility == eHostility_Offensive && SourceWeapon != none && SourceWeapon.InventorySlot == eInvSlot_PrimaryWeapon)
+		{
+			NewGameState = class'XComGameStateContext_ChangeContainer'.static.CreateChangeState("LockedOn");
+			UnitState = XComGameState_Unit(NewGameState.ModifyStateObject(UnitState.Class, UnitState.ObjectID));
+			UnitState.SetUnitFloatValue('LockedOnShots', 1, eCleanup_BeginTactical);
+			UnitState.SetUnitFloatValue('LockedOnTarget', AbilityContext.InputContext.PrimaryTarget.ObjectID, eCleanup_BeginTactical);
+
+			if (UnitState.ActionPoints.Length > 0)
+			{
+				//	show flyover for boost, but only if they have actions left to potentially use them
+				NewGameState.ModifyStateObject(class'XComGameState_Ability', EffectGameState.ApplyEffectParameters.AbilityStateObjectRef.ObjectID);		//	create this for the vis function
+				XComGameStateContext_ChangeContainer(NewGameState.GetContext()).BuildVisualizationFn = EffectGameState.TriggerAbilityFlyoverVisualizationFn;
+			}
+			`TACTICALRULES.SubmitGameState(NewGameState);
+		}
+	}
+	return ELR_NoInterrupt;
 }
 
 defaultproperties

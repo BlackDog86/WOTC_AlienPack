@@ -1,11 +1,11 @@
 ///---------------------------------------------------------------------------------------
 //  FILE:    X2Effect_AreaSuppression
-//  AUTHOR:  Amineri (Long War Studios)
+//  AUTHOR:  Amineri (Pavonis Interactive)
 //  PURPOSE: Implements AoE Damage immunities for Bastion, based on Solace ability
 //---------------------------------------------------------------------------------------
 class X2Effect_AreaSuppression extends X2Effect_Suppression config(WOTC_AlienPack);
 
-var config int AREA_SUPPRESSION_AMMO_COST;
+//`include(LW_PerkPack_Integrated\LW_PerkPack.uci)
 
 // prevent doubling up if unit is both suppressed and area suppressed, since regular suppression doesn't stack with itself
 function GetToHitModifiers(XComGameState_Effect EffectState, XComGameState_Unit Attacker, XComGameState_Unit Target, XComGameState_Ability AbilityState, class<X2AbilityToHitCalc> ToHitType, bool bMelee, bool bFlanking, bool bIndirectFire, out array<ShotModifierInfo> ShotModifiers)
@@ -96,7 +96,7 @@ simulated function bool UpdateVisualizedSuppressionTarget(XComGameState NewGameS
 			SourceUnit.m_kForceConstantCombatTarget.m_kConstantCombatUnitTargetingMe = none;
 		}
 		TargetUnit = XGUnit(TargetState.GetVisualizer());
-
+					
 		SourceUnit.ConstantCombatSuppressArea(false);
 		SourceUnit.ConstantCombatSuppress(true, TargetUnit);
 		SourceUnit.IdleStateMachine.CheckForStanceUpdate();
@@ -109,38 +109,36 @@ simulated function bool UpdateVisualizedSuppressionTarget(XComGameState NewGameS
 }
 
 // add check to attempt to switch visualiation targets instead of just ending suppression
-simulated function AddX2ActionsForVisualization_RemovedSource(XComGameState VisualizeGameState, out VisualizationActionMetadata ActionMetadata, const name EffectApplyResult, XComGameState_Effect RemovedEffect)
+simulated function AddX2ActionsForVisualization_RemovedSource(XComGameState VisualizeGameState, out VisualizationActionMetadata BuildTrack, const name EffectApplyResult, XComGameState_Effect RemovedEffect)
 {
 	if(UpdateVisualizedSuppressionTarget(VisualizeGameState, RemovedEffect))
 		return;
 
-	super.AddX2ActionsForVisualization_RemovedSource(VisualizeGameState, ActionMetadata, EffectApplyResult, RemovedEffect);
+	super.AddX2ActionsForVisualization_RemovedSource(VisualizeGameState, BuildTrack, EffectApplyResult, RemovedEffect);
 }
 
 // add check to attempt to switch visualiation targets instead of just ending suppression
-simulated function CleansedAreaSuppressionVisualization(XComGameState VisualizeGameState, out VisualizationActionMetadata ActionMetadata, const name EffectApplyResult, XComGameState_Effect RemovedEffect)
+simulated function CleansedAreaSuppressionVisualization(XComGameState VisualizeGameState, out VisualizationActionMetadata BuildTrack, const name EffectApplyResult, XComGameState_Effect RemovedEffect)
 {
 	local XComGameStateHistory History;
-	local X2Action_EnterCover Action;
-	local XComGameState_Unit UnitState;
-	local XComGameState SuppressionGameState;
 
 	if(UpdateVisualizedSuppressionTarget(VisualizeGameState, RemovedEffect))
 		return;
 
 	History = `XCOMHISTORY;
 
-	UnitState = XComGameState_Unit(History.GetGameStateForObjectID(RemovedEffect.ApplyEffectParameters.SourceStateObjectRef.ObjectID));
-	ActionMetadata.VisualizeActor = History.GetVisualizer(RemovedEffect.ApplyEffectParameters.SourceStateObjectRef.ObjectID);
-	History.GetCurrentAndPreviousGameStatesForObjectID(RemovedEffect.ApplyEffectParameters.SourceStateObjectRef.ObjectID, ActionMetadata.StateObject_OldState, ActionMetadata.StateObject_NewState, eReturnType_Reference, VisualizeGameState.HistoryIndex);
-	if (ActionMetadata.StateObject_NewState == none)
-		ActionMetadata.StateObject_NewState = ActionMetadata.StateObject_OldState;
-
-	class'X2Action_StopSuppression'.static.AddToVisualizationTree(ActionMetadata, VisualizeGameState.GetContext(), false, ActionMetadata.LastActionAdded);
-	Action = X2Action_EnterCover(class'X2Action_EnterCover'.static.AddToVisualizationTree(ActionMetadata, VisualizeGameState.GetContext(), false, ActionMetadata.LastActionAdded));
-
-	SuppressionGameState = History.GetGameStateFromHistory(UnitState.m_SuppressionHistoryIndex);
-	Action.AbilityContext = XComGameStateContext_Ability(SuppressionGameState.GetContext());
+	BuildTrack.VisualizeActor = History.GetVisualizer(RemovedEffect.ApplyEffectParameters.SourceStateObjectRef.ObjectID);
+	History.GetCurrentAndPreviousGameStatesForObjectID(RemovedEffect.ApplyEffectParameters.SourceStateObjectRef.ObjectID, BuildTrack.StateObject_OldState, BuildTrack.StateObject_NewState, eReturnType_Reference, VisualizeGameState.HistoryIndex);
+	if (BuildTrack.StateObject_NewState == none)
+	BuildTrack.StateObject_NewState = BuildTrack.StateObject_OldState;
+	
+	class'X2Action_StopSuppression'.static.AddToVisualizationTree(BuildTrack, VisualizeGameState.GetContext(), false, BuildTrack.LastActionAdded);
+	
+	// WOTC: I'm not sure this ever did anything. I can't see where m_SuppressionAbilityContext
+	// is set to anything other than None.
+	// UnitState = XComGameState_Unit(History.GetGameStateForObjectID(RemovedEffect.ApplyEffectParameters.SourceStateObjectRef.ObjectID));
+	// Action = X2Action_EnterCover(class'X2Action_EnterCover'.static.AddToVisualizationTree(BuildTrack, VisualizeGameState.GetContext(), false, BuildTrack.LastActionAdded));
+	// Action.AbilityContext = UnitState.m_SuppressionAbilityContext;
 }
 
 // this is only for removing from OTHER targets than the one being shot at
@@ -158,10 +156,10 @@ static function bool ShouldRemoveAreaSuppression(XComGameState_Unit SourceUnit, 
 		{
 			if (bBeforeAmmoReduction)
 			{
-				if (WeaponState.Ammo <= (2 * default.AREA_SUPPRESSION_AMMO_COST) - 1)
+				if (WeaponState.Ammo <= (2 * class'X2Ability_PPAlienAbilities'.default.AREA_SUPPRESSION_SHOT_AMMO_COST) - 1)
 					bShouldRemove = true;
 			}
-			else if (WeaponState.Ammo < (2 * default.AREA_SUPPRESSION_AMMO_COST) - 1)
+			else if (WeaponState.Ammo < (2 * class'X2Ability_PPAlienAbilities'.default.AREA_SUPPRESSION_SHOT_AMMO_COST) - 1)
 			{
 				bShouldRemove = true;
 			}
@@ -173,5 +171,5 @@ static function bool ShouldRemoveAreaSuppression(XComGameState_Unit SourceUnit, 
 
 DefaultProperties
 {
-	EffectName="AreaSuppression_AP"
+	EffectName="AreaSuppression"
 }

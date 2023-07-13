@@ -442,7 +442,7 @@ static function X2CharacterTemplate CreateTemplate_Sidewinder(name TemplateName)
 		case 'SidewinderM3':
 			CharTemplate.Abilities.AddItem('Infighter');
 		case 'SidewinderM2':
-			CharTemplate.Abilities.AddItem('HitandRun');
+			CharTemplate.Abilities.AddItem('HitandSlither');
 		case 'SidewinderM1':
 			CharTemplate.Abilities.AddItem('Shadowstep');
 		default:
