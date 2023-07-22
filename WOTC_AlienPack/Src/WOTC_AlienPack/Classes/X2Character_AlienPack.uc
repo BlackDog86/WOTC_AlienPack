@@ -517,9 +517,12 @@ static function X2CharacterTemplate CreateTemplate_ArchonM2_LW()
 
 	CharTemplate.bAllowSpawnFromATT = false;
 
+	CharTemplate.bImmueToFalling = true;
+
 	CharTemplate.bCanBeTerrorist = false;
 	CharTemplate.bCanBeCriticallyWounded = false;
 	CharTemplate.bIsAfraidOfFire = true;
+	CharTemplate.AcquiredPhobiaTemplate = 'FearOfArchons';
 
 	CharTemplate.AddTemplateAvailablility(CharTemplate.BITFIELD_GAMEAREA_Multiplayer); // Allow in MP!
 	CharTemplate.MPPointValue = CharTemplate.XpKillscore * 10;
@@ -1542,8 +1545,6 @@ static function X2CharacterTemplate CreateTemplate_AdvGeneric(name TemplateName)
 			LootBase.LootTableName='AdvTrooperM2_BaseLoot';
 			LootTimed.LootTableName='AdvTrooperM2_TimedLoot';
 			LootVulture.LootTableName='AdvTrooperM2_VultureLoot';
-			CharTemplate.Abilities.AddItem('CloseCombatSpecialist');	// weapon?
-			CharTemplate.Abilities.AddItem('CloseAndPersonal');			// weapon?
 			CharTemplate.Abilities.AddItem('WillToSurvive');
 			// Run and Gun, SUppression
 			break;

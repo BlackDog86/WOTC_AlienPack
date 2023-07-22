@@ -1093,8 +1093,6 @@ static function X2AbilityTemplate AddAreaSuppressionAbility()
 	Template.AddMultiTargetEffect(class'X2Ability_GrenadierAbilitySet'.static.HoloTargetEffect());
 	
 	Template.AdditionalAbilities.AddItem('AreaSuppressionShot_LW');
-	Template.AdditionalAbilities.AddItem('LockdownBonuses');
-	Template.AdditionalAbilities.AddItem('MayhemBonuses');
 
 	Template.TargetingMethod = class'X2TargetingMethod_AreaSuppression';
 

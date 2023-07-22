@@ -310,6 +310,9 @@ Creds to the original authors here.
     <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_LightningReflexes_LW.uc">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_LockdownDamage.uc">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_LockedOn.uc">
       <SubType>Content</SubType>
     </Content>

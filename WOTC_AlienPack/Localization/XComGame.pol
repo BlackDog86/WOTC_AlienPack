@@ -201,10 +201,10 @@ strCharacterName="Żmija serpens"
 [ViperM3_LW X2CharacterTemplate]
 strCharacterName="Elitarna żmija"
 
-[ViperM2_LW_WPN X2WeaponTemplate]
+[ViperM2_WPN X2WeaponTemplate]
 FriendlyName="Karabin wiązkowy"
 
-[ViperM3_LW_WPN X2WeaponTemplate]
+[ViperM3_WPN X2WeaponTemplate]
 FriendlyName="Karabin wiązkowy"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; ArchonM2_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;

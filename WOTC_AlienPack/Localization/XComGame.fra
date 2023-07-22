@@ -227,13 +227,13 @@ strCharacterName="Serpent Vipère"
 [ViperM3_LW X2CharacterTemplate]
 strCharacterName="Vipère d'élite"
 
-[ViperM2_LW_WPN X2WeaponTemplate]
+[ViperM2_WPN X2WeaponTemplate]
 FriendlyName="Fusil à rayons"
 ; LWOTC translated
 AbilityDescName="fusil plasmique"
 ; End translated
 
-[ViperM3_LW_WPN X2WeaponTemplate]
+[ViperM3_WPN X2WeaponTemplate]
 FriendlyName="Fusil à rayons"
 ; LWOTC translated
 AbilityDescName="fusil plasmique"

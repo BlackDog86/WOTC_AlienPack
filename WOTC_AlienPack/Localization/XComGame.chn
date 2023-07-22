@@ -209,11 +209,11 @@ strCharacterName="巨蛇座毒蛇怪"
 [ViperM3_LW X2CharacterTemplate]
 strCharacterName="毒蛇怪精英"
 
-[ViperM2_LW_WPN X2WeaponTemplate]
+[ViperM2_WPN X2WeaponTemplate]
 FriendlyName="光束步枪"
 AbilityDescName="等离子步枪"
 
-[ViperM3_LW_WPN X2WeaponTemplate]
+[ViperM3_WPN X2WeaponTemplate]
 FriendlyName="光束步枪"
 AbilityDescName="等离子步枪"
 

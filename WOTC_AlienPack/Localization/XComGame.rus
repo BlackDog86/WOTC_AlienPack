@@ -201,10 +201,10 @@ strCharacterName="Вайпер Серпенс"
 [ViperM3_LW X2CharacterTemplate]
 strCharacterName="Вайпер-гвардеец"
 
-[ViperM2_LW_WPN X2WeaponTemplate]
+[ViperM2_WPN X2WeaponTemplate]
 FriendlyName="Лучевая винтовка"
 
-[ViperM3_LW_WPN X2WeaponTemplate]
+[ViperM3_WPN X2WeaponTemplate]
 FriendlyName="Лучевая винтовка"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; ArchonM2_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;

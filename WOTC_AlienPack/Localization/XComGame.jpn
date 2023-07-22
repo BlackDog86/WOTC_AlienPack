@@ -201,10 +201,10 @@ strCharacterName="ヴァイパー・サーペンス"
 [ViperM3_LW X2CharacterTemplate]
 strCharacterName="ヴァイパー・エリート"
 
-[ViperM2_LW_WPN X2WeaponTemplate]
+[ViperM2_WPN X2WeaponTemplate]
 FriendlyName="ビームライフル"
 
-[ViperM3_LW_WPN X2WeaponTemplate]
+[ViperM3_WPN X2WeaponTemplate]
 FriendlyName="ビームライフル"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; ArchonM2_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;

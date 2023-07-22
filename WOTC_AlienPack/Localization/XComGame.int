@@ -130,13 +130,13 @@ strCharacterName="Advanced Viper"
 [ViperM3_LW X2CharacterTemplate]
 strCharacterName="Elite Viper"
 
-[ViperM2_LW_WPN X2WeaponTemplate]
+[ViperM2_WPN X2WeaponTemplate]
 FriendlyName="Beam Rifle"
 ; LWOTC Needs Translation
 AbilityDescName="plasma rifle"
 ; End translation
 
-[ViperM3_LW_WPN X2WeaponTemplate]
+[ViperM3_WPN X2WeaponTemplate]
 FriendlyName="Beam Rifle"
 ; LWOTC Needs Translation
 AbilityDescName="plasma rifle"

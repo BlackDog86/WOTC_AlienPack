@@ -201,10 +201,10 @@ strCharacterName="바이퍼 뱀자리"
 [ViperM3_LW X2CharacterTemplate]
 strCharacterName="바이퍼 엘리트"
 
-[ViperM2_LW_WPN X2WeaponTemplate]
+[ViperM2_WPN X2WeaponTemplate]
 FriendlyName="빔 소총"
 
-[ViperM3_LW_WPN X2WeaponTemplate]
+[ViperM3_WPN X2WeaponTemplate]
 FriendlyName="빔 소총"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; ArchonM2_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;

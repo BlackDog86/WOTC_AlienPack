@@ -162,8 +162,8 @@ static function array<X2DataTemplate> CreateTemplates()
 	Templates.AddItem(CreateTemplate_Sidewinder_WPN('SidewinderM2_WPN'));
 	Templates.AddItem(CreateTemplate_Sidewinder_WPN('SidewinderM3_WPN'));
 
-	Templates.AddItem(CreateTemplate_ViperMX_WPN('ViperM2_LW_WPN'));
-	Templates.AddItem(CreateTemplate_ViperMX_WPN('ViperM3_LW_WPN'));
+	Templates.AddItem(CreateTemplate_ViperMX_WPN('ViperM2_WPN'));
+	Templates.AddItem(CreateTemplate_ViperMX_WPN('ViperM3_WPN'));
 	
 	Templates.AddItem(CreateTemplate_SectoidM2_WPN());
 	Templates.AddItem(CreateTemplate_ArchonM2_WPN());
@@ -1160,7 +1160,7 @@ static function X2DataTemplate CreateTemplate_ArchonM2_Blazing_Pinions_WPN()
 {
 	local X2WeaponTemplate Template;
 
-	`CREATE_X2TEMPLATE(class'X2WeaponTemplate', Template, 'Archon_Blazing_PinionsM2_WPN');
+	`CREATE_X2TEMPLATE(class'X2WeaponTemplate', Template, 'ArchonM2_Blazing_Pinions_WPN');
 	
 	Template.WeaponPanelImage = "_ConventionalRifle";                       // used by the UI. Probably determines iconview of the weapon.
 	Template.ItemCat = 'weapon';
@@ -1363,9 +1363,9 @@ static function X2DataTemplate CreateTemplate_ViperMX_WPN(name TemplateName)
 	Template.RemoveTemplateAvailablility(Template.BITFIELD_GAMEAREA_Multiplayer); //invalidates multiplayer availability
     Template.RangeAccuracy = class'X2Item_DefaultWeapons'.default.FLAT_CONVENTIONAL_RANGE;
 	
-	if (TemplateName == 'ViperM2_LW_WPN')
+	if (TemplateName == 'ViperM2_WPN')
 		Template.BaseDamage = default.VIPERM2_WPN_BASEDAMAGE;
-	if (TemplateName == 'ViperM3_LW_WPN')
+	if (TemplateName == 'ViperM3_WPN')
 		Template.BaseDamage = default.VIPERM3_WPN_BASEDAMAGE;
 
 	Template.iClipSize = class'X2Item_DefaultWeapons'.default.ASSAULTRIFLE_MAGNETIC_ICLIPSIZE;
@@ -1406,31 +1406,52 @@ static function X2DataTemplate CreateTemplate_AdvElite_WPN(name TemplateName)
 	
 	switch (TemplateName)
 	{
-		case 'AdvSergeantM1_WPN': Template.BaseDamage = default.AdvSergeantM1_WPN_BASEDAMAGE; break;
-		case 'AdvSergeantM2_WPN': Template.BaseDamage = default.AdvSergeantM2_WPN_BASEDAMAGE;  break;
-		case 'AdvShockTroop_WPN': Template.BaseDamage = default.AdvShockTroop_WPN_BASEDAMAGE;  break;
-		case 'AdvCommando_WPN': Template.BaseDamage = default.AdvCommando_WPN_BASEDAMAGE; break;
-		case 'AdvVanguard_WPN': Template.BaseDamage = default.AdvVanguard_WPN_BASEDAMAGE; break;
-		case 'AdvScout_WPN': Template.BaseDamage = default.AdvScout_WPN_BASEDAMAGE; break;
-		case 'AdvGeneralM1_LW_WPN': Template.BaseDamage = default.AdvGeneralM1_LW_WPN_BASEDAMAGE; break;
-		case 'AdvGeneralM2_LW_WPN': Template.BaseDamage = default.AdvGeneralM2_LW_WPN_BASEDAMAGE; break;
+		case 'AdvSergeantM1_WPN':
+		Template.BaseDamage = default.AdvSergeantM1_WPN_BASEDAMAGE;
+		Template.iIdealRange = default.AdvSergeantM1_IDEALRANGE;
+		break;
+		
+		case 'AdvSergeantM2_WPN':
+		Template.BaseDamage = default.AdvSergeantM2_WPN_BASEDAMAGE;
+		Template.iIdealRange = default.AdvSergeantM2_IDEALRANGE;
+		break;
+		
+		case 'AdvShockTroop_WPN':
+		Template.BaseDamage = default.AdvShockTroop_WPN_BASEDAMAGE; 
+		Template.iIdealRange = default.AdvShockTroop_IDEALRANGE;
+		break;
+		
+		case 'AdvCommando_WPN':
+		Template.BaseDamage = default.AdvCommando_WPN_BASEDAMAGE; 
+		Template.iIdealRange = default.AdvCommando_IDEALRANGEE; 
+		break;
+		
+		case 'AdvVanguard_WPN':
+		Template.BaseDamage = default.AdvVanguard_WPN_BASEDAMAGE; 
+		Template.iIdealRange = default.AdvVanguard_IDEALRANGE;
+		Template.Abilities.AddItem('CloseCombatSpecialist');
+		Template.Abilities.AddItem('CloseAndPersonal');
+		break;
+
+		case 'AdvScout_WPN':
+		Template.BaseDamage = default.AdvScout_WPN_BASEDAMAGE;
+		Template.iIdealRange = default.AdvScout_IDEALRANGE;
+		break;
+
+		case 'AdvGeneralM1_LW_WPN':
+		Template.BaseDamage = default.AdvGeneralM1_LW_WPN_BASEDAMAGE;
+		Template.iIdealRange = default.AdvGeneralM1_IDEALRANGE;
+		break;
+
+		case 'AdvGeneralM2_LW_WPN':
+		Template.BaseDamage = default.AdvGeneralM2_LW_WPN_BASEDAMAGE;
+		Template.iIdealRange = default.AdvGeneralM2_IDEALRANGE;
+		break;
+
 		default: break;
 	}
 
-		switch (TemplateName)
-	{
-		case 'AdvSergeantM1_WPN': Template.iIdealRange = default.AdvSergeantM1_IDEALRANGE; break;
-		case 'AdvSergeantM2_WPN': Template.iIdealRange = default.AdvSergeantM2_IDEALRANGE;  break;
-		case 'AdvShockTroop_WPN': Template.iIdealRange = default.AdvShockTroop_IDEALRANGE;  break;
-		case 'AdvCommando_WPN': Template.iIdealRange = default.AdvCommando_IDEALRANGEE; break;
-		case 'AdvVanguard_WPN': Template.iIdealRange = default.AdvVanguard_IDEALRANGE; break;
-		case 'AdvScout_WPN': Template.iIdealRange = default.AdvScout_IDEALRANGE; break;
-		case 'AdvGeneralM1_LW_WPN': Template.iIdealRange = default.AdvGeneralM1_IDEALRANGE; break;
-		case 'AdvGeneralM2_LW_WPN': Template.iIdealRange = default.AdvGeneralM2_IDEALRANGE; break;
-		default: break;
-	}
-
-    Template.iEnvironmentDamage = class'X2Item_DefaultWeapons'.default.ASSAULTRIFLE_MAGNETIC_IENVIRONMENTDAMAGE;
+	Template.iEnvironmentDamage = class'X2Item_DefaultWeapons'.default.ASSAULTRIFLE_MAGNETIC_IENVIRONMENTDAMAGE;
 	Template.InventorySlot = eInvSlot_PrimaryWeapon;
 	Template.Abilities.AddItem('StandardShot');
 	Template.Abilities.AddItem('Overwatch');

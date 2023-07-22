@@ -201,10 +201,10 @@ strCharacterName="Serpens Vipera"
 [ViperM3_LW X2CharacterTemplate]
 strCharacterName="Vipera d'élite"
 
-[ViperM2_LW_WPN X2WeaponTemplate]
+[ViperM2_WPN X2WeaponTemplate]
 FriendlyName="Fucile energetico"
 
-[ViperM3_LW_WPN X2WeaponTemplate]
+[ViperM3_WPN X2WeaponTemplate]
 FriendlyName="Fucile energetico"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; ArchonM2_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;

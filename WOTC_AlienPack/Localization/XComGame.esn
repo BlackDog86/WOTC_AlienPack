@@ -227,13 +227,13 @@ strCharacterName="Serpens Víbora"
 [ViperM3_LW X2CharacterTemplate]
 strCharacterName="Víbora de élite"
 
-[ViperM2_LW_WPN X2WeaponTemplate]
+[ViperM2_WPN X2WeaponTemplate]
 FriendlyName="Fusil de rayo"
 ; LWOTC translated
 AbilityDescName="rifle de plasma"
 ; End translated
 
-[ViperM3_LW_WPN X2WeaponTemplate]
+[ViperM3_WPN X2WeaponTemplate]
 FriendlyName="Fusil de rayo"
 ; LWOTC translated
 AbilityDescName="rifle de plasma"
