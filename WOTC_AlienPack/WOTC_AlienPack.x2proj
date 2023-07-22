@@ -51,6 +51,9 @@ Creds to the original authors here.
     <Content Include="Config\XComGameData_WeaponData.ini">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Config\XComTemplateEditor.ini">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Config\XComWOTC_AlienPack.ini">
       <SubType>Content</SubType>
     </Content>
