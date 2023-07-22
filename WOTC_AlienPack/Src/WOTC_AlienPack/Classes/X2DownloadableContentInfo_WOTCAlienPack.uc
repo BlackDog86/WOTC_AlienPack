@@ -114,9 +114,7 @@ static function bool AbilityTagExpandHandler_CH(string InString, out string OutS
 	local X2AbilityTemplate AbilityTemplate;
 	local X2ItemTemplate ItemTemplate;
 	local name Type;
-	local float TempFloat;
-	local int TempInt;
-
+	
     Type = name(InString);
     switch(Type)
     {

@@ -147,10 +147,28 @@ AbilityDescName="plasma rifle"
 [ArchonM2_LW X2CharacterTemplate]
 strCharacterName="Great Archon"
 
+[ArchonM2_Wpn X2WeaponTemplate]
+FriendlyName="Great Archon Staff"
+FriendlyNamePlural="Great Archon Staves"
+BriefSummary="XCOM has managed to salvage a variety of standard infantry small arms; this is the most common variety, similar to the rifle used twenty years before. While decidedly inferior to ADVENT magnetic technology, it can at least be upgraded using additional weapons salvage, once a standard technical approach is discovered."
+TacticalText="<Bullet/> Firing the primary weapon always ends the soldier's turn\n<Bullet/> If the soldier fires with both actions available, three shots will be taken at reduced accuracy, but overall increased efficiency\n<Bullet/> Use upgrades looted from enemies to improve assault rifle tactical effectiveness"
+
+[ArchonM2Staff X2WeaponTemplate]
+FriendlyName="Great Archon Staff"
+FriendlyNamePlural="Great Archon Staves"
+BriefSummary="XCOM has managed to salvage a variety of standard infantry small arms; this is the most common variety, similar to the rifle used twenty years before. While decidedly inferior to ADVENT magnetic technology, it can at least be upgraded using additional weapons salvage, once a standard technical approach is discovered."
+TacticalText="<Bullet/> Firing the primary weapon always ends the soldier's turn\n<Bullet/> If the soldier fires with both actions available, three shots will be taken at reduced accuracy, but overall increased efficiency\n<Bullet/> Use upgrades looted from enemies to improve assault rifle tactical effectiveness"
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;; SectoidM2_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [SectoidM2_LW X2CharacterTemplate]
 strCharacterName="Sectoid Commander"
+
+[SectoidM2_WPN X2WeaponTemplate]
+FriendlyName="Commander's Beam Pistol"
+FriendlyNamePlural="Commander's Beam Pistols"
+BriefSummary="XCOM has managed to salvage a variety of standard infantry small arms; this is the most common variety, similar to the rifle used twenty years before. While decidedly inferior to ADVENT magnetic technology, it can at least be upgraded using additional weapons salvage, once a standard technical approach is discovered."
+TacticalText="<Bullet/> Firing the primary weapon always ends the soldier's turn\n<Bullet/> If the soldier fires with both actions available, three shots will be taken at reduced accuracy, but overall increased efficiency\n<Bullet/> Use upgrades looted from enemies to improve assault rifle tactical effectiveness"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; AdvGunnerM1 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -219,17 +237,26 @@ strCharacterName="ADVENT Engineer"
 [AdvGrenadierM1_GrenadeLauncher X2WeaponTemplate]
 FriendlyName="ADVENT Grenade Launcher"
 
+[AdvGrenadierM1_WPN X2WeaponTemplate]
+FriendlyName="ADVENT Mag Rifle"
+
 [AdvGrenadierM2 X2CharacterTemplate]
 strCharacterName="ADVENT Grenadier"
 
 [AdvGrenadierM2_GrenadeLauncher X2WeaponTemplate]
 FriendlyName="ADVENT Grenade Launcher"
 
+[AdvGrenadierM2_WPN X2WeaponTemplate]
+FriendlyName="ADVENT Mag Rifle"
+
 [AdvGrenadierM3 X2CharacterTemplate]
 strCharacterName="ADVENT Heavy Grenadier"
 
 [AdvGrenadierM3_GrenadeLauncher X2WeaponTemplate]
 FriendlyName="ADVENT Grenade Launcher"
+
+[AdvGrenadierM3_WPN X2WeaponTemplate]
+FriendlyName="ADVENT Mag Rifle"
 
 [AdvGrenadierFlashbangGrenade X2GrenadeTemplate]
 FriendlyName="Flashbang Grenade"
@@ -266,19 +293,32 @@ LaunchedAbilityHelpText="Creates pools of acid that will damage units."
 [AdvRocketeerM1 X2CharacterTemplate]
 strCharacterName="ADVENT Rocketeer"
 
+[AdvRocketeerM1_WPN X2WeaponTemplate]
+FriendlyName="ADVENT Mag Rifle"
+
 [AdvRocketeerM2 X2CharacterTemplate]
 strCharacterName="ADVENT Heavy Rocketeer"
+
+[AdvRocketeerM2_WPN X2WeaponTemplate]
+FriendlyName="ADVENT Mag Rifle"
 
 [AdvRocketeerM3 X2CharacterTemplate]
 strCharacterName="ADVENT Elite Rocketeer"
 
-[AdvRocketeerM1_RocketLauncher X2WeaponTemplate]
+[AdvRocketeerM3_WPN X2WeaponTemplate]
+FriendlyName="ADVENT Mag Rifle"
+
+[AdvRocketeer_RocketLauncher X2WeaponTemplate]
 FriendlyName="ADVENT Rocket Launcher"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; AdvMecM3 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [AdvMec_M3_LW X2CharacterTemplate]
 strCharacterName="Superheavy MEC"
+
+[AdvMECM3_WPN X2WeaponTemplate]
+FriendlyName="Heavy MEC Minigun"
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; DroneM1-2 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -305,13 +345,13 @@ AbilityDescName="shock weapon"
 [AdvMECArcherM1 X2CharacterTemplate]
 strCharacterName="MEC Archer"
 
-[AdvMECArcher_WPN X2WeaponTemplate]
-FriendlyName="MEC MiniMag"
+[AdvMECArcherM1_WPN X2WeaponTemplate]
+FriendlyName="MEC Minigun"
 ; LWOTC Needs Translation
 AbilityDescName="minigun"
 ; End translation
 
-[AdvMECArcher_Shoulder_WPN X2WeaponTemplate]
+[AdvMECArcherM1_Shoulder_WPN X2WeaponTemplate]
 FriendlyName="Rocket Artillery"
 ; LWOTC Needs Translation
 AbilityDescName="micromissiles"
@@ -321,6 +361,18 @@ AbilityDescName="micromissiles"
 
 [AdvMECArcherM2 X2CharacterTemplate]
 strCharacterName="MEC Longbow"
+
+[AdvMECArcherM2_WPN X2WeaponTemplate]
+FriendlyName="MEC Minigun"
+; LWOTC Needs Translation
+AbilityDescName="minigun"
+; End translation
+
+[AdvMECArcherM2_Shoulder_WPN X2WeaponTemplate]
+FriendlyName="Rocket Artillery"
+; LWOTC Needs Translation
+AbilityDescName="micromissiles"
+; End translation
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; Chryssalid Soldier ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

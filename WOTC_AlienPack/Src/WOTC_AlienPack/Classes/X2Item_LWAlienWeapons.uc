@@ -26,6 +26,14 @@ var config int MutonM3_LW_GRENADE_iRADIUS;
 var config WeaponDamageValue VIPERM2_WPN_BASEDAMAGE;
 var config WeaponDamageValue VIPERM3_WPN_BASEDAMAGE;
 
+var config WeaponDamageValue ARCHONM2_WPN_BASEDAMAGE;
+var config WeaponDamageValue ARCHONM2_BLAZINGPINIONS_BASEDAMAGE;
+var config int ARCHONM2_WPN_ICLIPSIZE;
+var config WeaponDamageValue ARCHONM2_MELEEATTACK_BASEDAMAGE;
+
+var config WeaponDamageValue SECTOIDM2_WPN_BASEDAMAGE;
+var config int SECTOIDM2_WPN_ICLIPSIZE;
+
 var config WeaponDamageValue NAJA_WPN_BASEDAMAGE;
 var config WeaponDamageValue NAJAM2_WPN_BASEDAMAGE;
 var config WeaponDamageValue NAJAM3_WPN_BASEDAMAGE;
@@ -38,16 +46,10 @@ var config WeaponDamageValue SIDEWINDERM3_WPN_BASEDAMAGE;
 var config int SIDEWINDER_WPN_ICLIPSIZE;
 var config int SIDEWINDER_IDEALRANGE;
 
-var config int ADVSENTRY_IDEALRANGE;
-var config WeaponDamageValue AdvSentryM1_WPN_BASEDAMAGE;
-var config WeaponDamageValue AdvSentryM2_WPN_BASEDAMAGE;
-var config WeaponDamageValue AdvSentryM3_WPN_BASEDAMAGE;
-
 var config int ADVGRENADIER_FLASHBANGGRENADE_RANGE;
 var config int ADVGRENADIER_FLASHBANGGRENADE_RADIUS;
 var config int ADVGRENADIER_FLASHBANGGRENADE_IENVIRONMENTDAMAGE;
 var config int ADVGRENADIER_FLASHBANGGRENADE_ICLIPSIZE;
-
 var config WeaponDamageValue ADVGRENADIER_FIREGRENADE_BASEDAMAGE;
 var config int ADVGRENADIER_FIREGRENADE_RANGE;
 var config int ADVGRENADIER_FIREGRENADE_RADIUS;
@@ -55,7 +57,6 @@ var config int ADVGRENADIER_FIREGRENADE_COVERAGE;
 var config int ADVGRENADIER_FIREGRENADE_ISOUNDRANGE;
 var config int ADVGRENADIER_FIREBOMB_IENVIRONMENTDAMAGE;
 var config int ADVGRENADIER_FIREBOMB_ICLIPSIZE;
-
 var config WeaponDamageValue ADVGRENADIER_ACIDGRENADE_BASEDAMAGE;
 var config int ADVGRENADIER_ACIDGRENADE_RANGE;
 var config int ADVGRENADIER_ACIDGRENADE_RADIUS;
@@ -63,58 +64,79 @@ var config int ADVGRENADIER_ACIDGRENADE_COVERAGE;
 var config int ADVGRENADIER_ACIDGRENADE_ISOUNDRANGE;
 var config int ADVGRENADIER_ACIDGRENADE_IENVIRONMENTDAMAGE;
 var config int ADVGRENADIER_ACIDGRENADE_ICLIPSIZE;
-
 var config int ADVGRENADIER_IDEALRANGE;
+var config WeaponDamageValue ADVGRENADIERM1_WPN_BASEDAMAGE;
+var config WeaponDamageValue ADVGRENADIERM2_WPN_BASEDAMAGE;
+var config WeaponDamageValue ADVGRENADIERM3_WPN_BASEDAMAGE;
 
-var config WeaponDamageValue ADVROCKETEERM1_ROCKETEERLAUNCHER_BASEDAMAGE;
-var config int ADVROCKETEERM1_ROCKETEERLAUNCHER_ISOUNDRANGE;
-var config int ADVROCKETEERM1_ROCKETEERLAUNCHER_IENVIRONMENTDAMAGE;
-var config int ADVROCKETEERM1_ROCKETEERLAUNCHER_CLIPSIZE;
-var config int ADVROCKETEERM1_ROCKETEERLAUNCHER_RANGE;
-var config int ADVROCKETEERM1_ROCKETEERLAUNCHER_RADIUS;
-var config int ADVROCKETEERM1_IDEALRANGE;
+var config WeaponDamageValue ADVROCKETEERM1_ROCKETLAUNCHER_BASEDAMAGE;
+var config WeaponDamageValue ADVROCKETEERM2_ROCKETLAUNCHER_BASEDAMAGE;
+var config WeaponDamageValue ADVROCKETEERM3_ROCKETLAUNCHER_BASEDAMAGE;
+var config int ADVROCKETEER_ROCKETLAUNCHER_ISOUNDRANGE;
+var config int ADVROCKETEER_ROCKETLAUNCHER_IENVIRONMENTDAMAGE;
+var config int ADVROCKETEER_ROCKETLAUNCHER_CLIPSIZE;
+var config int ADVROCKETEER_ROCKETLAUNCHER_RANGE;
+var config int ADVROCKETEER_ROCKETLAUNCHER_RADIUS;
+var config int ADVROCKETEER_IDEALRANGE;
+var config WeaponDamageValue ADVROCKETEERM1_WPN_BASEDAMAGE;
+var config WeaponDamageValue ADVROCKETEERM2_WPN_BASEDAMAGE;
+var config WeaponDamageValue ADVROCKETEERM3_WPN_BASEDAMAGE;
 
-var config WeaponDamageValue ADVGUNNER_WPN_BASEDAMAGE;
+var config int ADVSENTRY_IDEALRANGE;
+var config WeaponDamageValue AdvSentryM1_WPN_BASEDAMAGE;
+var config WeaponDamageValue AdvSentryM2_WPN_BASEDAMAGE;
+var config WeaponDamageValue AdvSentryM3_WPN_BASEDAMAGE;
+
+var config WeaponDamageValue ADVGUNNERM1_WPN_BASEDAMAGE;
 var config WeaponDamageValue ADVGUNNERM2_WPN_BASEDAMAGE;
 var config WeaponDamageValue ADVGUNNERM3_WPN_BASEDAMAGE;
 var config int ADVGUNNER_IDEALRANGE;
 var config int ADVGUNNER_WPN_CLIPSIZE;
 
+var config WeaponDamageValue LWDRONEM1_DRONEWEAPON_BASEDAMAGE;
+var config WeaponDamageValue LWDRONEM2_DRONEWEAPON_BASEDAMAGE;
+var config int LWDRONE_DRONEWEAPON_ISOUNDRANGE;
+var config int LWDRONE_DRONEWEAPON_IENVIRONMENTDAMAGE;
+var config int LWDRONE_DRONEWEAPON_RANGE;
+var config WeaponDamageValue LWDRONEM1_DRONEREPAIRWEAPON_BASEDAMAGE;
+var config WeaponDamageValue LWDRONEM2_DRONEREPAIRWEAPON_BASEDAMAGE;
+var config int LWDRONE_DRONEREPAIRWEAPON_ISOUNDRANGE;
+var config int LWDRONE_DRONEREPAIRWEAPON_IENVIRONMENTDAMAGE;
+var config int LWDRONE_DRONEREPAIRWEAPON_RANGE;
+var config int LWDRONE_IDEALRANGE;
+
+var config WeaponDamageValue AdvSergeantM1_WPN_BASEDAMAGE;
+var config int AdvSergeantM1_IDEALRANGE;
+var config WeaponDamageValue AdvSergeantM2_WPN_BASEDAMAGE;
+var config int AdvSergeantM2_IDEALRANGE;
+var config WeaponDamageValue AdvShockTroop_WPN_BASEDAMAGE;
+var config int AdvShockTroop_IDEALRANGE;
+var config WeaponDamageValue AdvCommando_WPN_BASEDAMAGE;
+var config int AdvCommando_IDEALRANGEE;
+var config WeaponDamageValue AdvVanguard_WPN_BASEDAMAGE;
+var config int ADVVANGUARD_IDEALRANGE;
+
+var config WeaponDamageValue AdvScout_WPN_BASEDAMAGE;
+var config int AdvScout_IDEALRANGE;
+var config WeaponDamageValue AdvGeneralM1_LW_WPN_BASEDAMAGE;
+var config int AdvGeneralM1_IDEALRANGE;
+var config WeaponDamageValue AdvGeneralM2_LW_WPN_BASEDAMAGE;
+var config int AdvGeneralM2_IDEALRANGE;
+
+var config WeaponDamageValue AdvMECArcherM1_Wpn_BaseDamage;
+var config WeaponDamageValue AdvMECArcherM1_MicroMissiles_BaseDamage;
+var config WeaponDamageValue AdvMECArcherM2_Wpn_BaseDamage;
+var config WeaponDamageValue AdvMECArcherM2_MicroMissiles_BaseDamage;
+
 var config int AdvMECArcher_IdealRange;
-var config WeaponDamageValue AdvMECArcher_Wpn_BaseDamage;
 var config int AdvMECArcher_Wpn_Clipsize;
 var config int AdvMECArcher_Wpn_EnvironmentDamage;
-var config WeaponDamageValue AdvMECArcher_MicroMissiles_BaseDamage;
 var config int AdvMECArcher_MicroMissiles_Clipsize;
 var config int AdvMECArcher_MicroMissiles_EnvironmentDamage;
 var config int AdvMECArcher_Micromissiles_Range;
 
-var config WeaponDamageValue LWDRONEM1_DRONEWEAPON_BASEDAMAGE;
-var config WeaponDamageValue LWDRONEM2_DRONEWEAPON_BASEDAMAGE;
-
-var config int LWDRONE_DRONEWEAPON_ISOUNDRANGE;
-var config int LWDRONE_DRONEWEAPON_IENVIRONMENTDAMAGE;
-var config int LWDRONE_DRONEWEAPON_RANGE;
-
-var config WeaponDamageValue LWDRONEM1_DRONEREPAIRWEAPON_BASEDAMAGE;
-var config WeaponDamageValue LWDRONEM2_DRONEREPAIRWEAPON_BASEDAMAGE;
-
-var config int LWDRONE_DRONEREPAIRWEAPON_ISOUNDRANGE;
-var config int LWDRONE_DRONEREPAIRWEAPON_IENVIRONMENTDAMAGE;
-var config int LWDRONE_DRONEREPAIRWEAPON_RANGE;
-
-var config int LWDRONE_IDEALRANGE;
-
-var config int ADVVANGUARD_IDEALRANGE;
-
-var config WeaponDamageValue AdvSergeantM1_WPN_BASEDAMAGE;
-var config WeaponDamageValue AdvSergeantM2_WPN_BASEDAMAGE;
-var config WeaponDamageValue AdvShockTroop_WPN_BASEDAMAGE;
-var config WeaponDamageValue AdvCommando_WPN_BASEDAMAGE;
-var config WeaponDamageValue AdvVanguard_WPN_BASEDAMAGE;
-var config WeaponDamageValue AdvScout_WPN_BASEDAMAGE;
-var config WeaponDamageValue AdvGeneralM1_LW_WPN_BASEDAMAGE;
-var config WeaponDamageValue AdvGeneralM2_LW_WPN_BASEDAMAGE;
+var config WeaponDamageValue ADVMECM3_WPN_BASEDAMAGE;
+var config int ADVMEC_M3_IDEALRANGE;
 
 // ***** Range Modifier Tables *****
 var config array<int> MIDSHORT_CONVENTIONAL_RANGE;
@@ -142,14 +164,15 @@ static function array<X2DataTemplate> CreateTemplates()
 
 	Templates.AddItem(CreateTemplate_ViperMX_WPN('ViperM2_LW_WPN'));
 	Templates.AddItem(CreateTemplate_ViperMX_WPN('ViperM3_LW_WPN'));
-
-	Templates.AddItem(CreateTemplate_AdvGunner_WPN('AdvGunnerM1_WPN'));
-	Templates.AddItem(CreateTemplate_AdvGunner_WPN('AdvGunnerM2_WPN'));
-	Templates.AddItem(CreateTemplate_AdvGunner_WPN('AdvGunnerM3_WPN'));
 	
-	Templates.AddItem(CreateTemplate_AdvSentry_WPN('AdvSentryM1_WPN'));
-	Templates.AddItem(CreateTemplate_AdvSentry_WPN('AdvSentryM2_WPN'));
-	Templates.AddItem(CreateTemplate_AdvSentry_WPN('AdvSentryM3_WPN'));
+	Templates.AddItem(CreateTemplate_SectoidM2_WPN());
+	Templates.AddItem(CreateTemplate_ArchonM2_WPN());
+	Templates.AddItem(CreateTemplate_ArchonM2_MeleeAttack());
+	Templates.AddItem(CreateTemplate_ArchonM2_Blazing_Pinions_WPN());
+	
+	Templates.AddItem(CreateTemplate_AdvGrenadier_WPN('AdvGrenadierM1_WPN'));
+	Templates.AddItem(CreateTemplate_AdvGrenadier_WPN('AdvGrenadierM2_WPN'));
+	Templates.AddItem(CreateTemplate_AdvGrenadier_WPN('AdvGrenadierM3_WPN'));
 
 	Templates.AddItem(CreateTemplate_AdvGrenadier_GrenadeLauncher('AdvGrenadierM1_GrenadeLauncher'));
 	Templates.AddItem(CreateTemplate_AdvGrenadier_GrenadeLauncher('AdvGrenadierM2_GrenadeLauncher'));
@@ -159,12 +182,32 @@ static function array<X2DataTemplate> CreateTemplates()
 	Templates.AddItem(CreateTemplate_AdvGrenadier_FireGrenade());
 	Templates.AddItem(CreateTemplate_AdvGrenadier_AcidGrenade());
 
+	Templates.AddItem(CreateTemplate_AdvRocketeer_WPN('AdvRocketeerM1_WPN'));
+	Templates.AddItem(CreateTemplate_AdvRocketeer_WPN('AdvRocketeerM2_WPN'));
+	Templates.AddItem(CreateTemplate_AdvRocketeer_WPN('AdvRocketeerM3_WPN'));
+
+	Templates.AddItem(CreateTemplate_AdvRocketeer_RocketLauncher('AdvRocketeerM1_RocketLauncher'));
+	Templates.AddItem(CreateTemplate_AdvRocketeer_RocketLauncher('AdvRocketeerM2_RocketLauncher'));
+	Templates.AddItem(CreateTemplate_AdvRocketeer_RocketLauncher('AdvRocketeerM3_RocketLauncher'));
+
+	Templates.AddItem(CreateTemplate_AdvGunner_WPN('AdvGunnerM1_WPN'));
+	Templates.AddItem(CreateTemplate_AdvGunner_WPN('AdvGunnerM2_WPN'));
+	Templates.AddItem(CreateTemplate_AdvGunner_WPN('AdvGunnerM3_WPN'));
+		
+	Templates.AddItem(CreateTemplate_AdvSentry_WPN('AdvSentryM1_WPN'));
+	Templates.AddItem(CreateTemplate_AdvSentry_WPN('AdvSentryM2_WPN'));
+	Templates.AddItem(CreateTemplate_AdvSentry_WPN('AdvSentryM3_WPN'));
+
 	Templates.AddItem(CreateHeavyPoweredArmor());
-	Templates.AddItem(CreateTemplate_AdvRocketeerM1_RocketLauncher());
+		
+	Templates.AddItem(CreateTemplate_AdvMECArcher_WPN('AdvMECArcherM1_WPN'));
+	Templates.AddItem(CreateTemplate_AdvMECArcher_WPN('AdvMECArcherM2_WPN'));
 
-	Templates.AddItem(CreateTemplate_AdvMECArcher_WPN());
-	Templates.AddItem(CreateTemplate_AdvMECArcher_Shoulder_WPN());
+	Templates.AddItem(CreateTemplate_AdvMECArcher_Shoulder_WPN('AdvMECArcherM1_Shoulder_WPN'));
+	Templates.AddItem(CreateTemplate_AdvMECArcher_Shoulder_WPN('AdvMECArcherM2_Shoulder_WPN'));
 
+	Templates.AddItem(CreateTemplate_AdvMECM3_WPN());
+	
 	Templates.AddItem(CreateTemplate_LWDrone_WPN('LWDroneM1_WPN'));
 	Templates.AddItem(CreateTemplate_LWDrone_WPN('LWDroneM2_WPN'));
 	
@@ -179,8 +222,7 @@ static function array<X2DataTemplate> CreateTemplates()
 	Templates.AddItem(CreateTemplate_AdvElite_WPN('AdvCommando_WPN'));
 	Templates.AddItem(CreateTemplate_AdvElite_WPN('AdvGeneralM1_LW_WPN'));
 	Templates.AddItem(CreateTemplate_AdvElite_WPN('AdvGeneralM2_LW_WPN'));
-
-	Templates.AddItem(CreateTemplate_Hunter_Flashbang());	
+	
 	return Templates;
 }
 
@@ -546,7 +588,7 @@ static function X2DataTemplate CreateTemplate_AdvGunner_WPN(name TemplateName)
 	Template.RangeAccuracy = class'X2Item_DefaultWeapons'.default.FLAT_CONVENTIONAL_RANGE;
 
 	if (TemplateName == 'AdvGunnerM1_WPN')
-		Template.BaseDamage = default.ADVGUNNER_WPN_BASEDAMAGE;
+		Template.BaseDamage = default.ADVGUNNERM1_WPN_BASEDAMAGE;
 	if (TemplateName == 'AdvGunnerM2_WPN')
 		Template.BaseDamage = default.ADVGUNNERM2_WPN_BASEDAMAGE;
 	if (TemplateName == 'AdvGunnerM3_WPN')
@@ -651,6 +693,89 @@ static function X2DataTemplate CreateTemplate_AdvSentry_WPN(name TemplateName)
 	return Template;
 }
 
+static function X2DataTemplate CreateTemplate_AdvGrenadier_WPN(name TemplateName)
+{
+	local X2WeaponTemplate Template;
+
+	`CREATE_X2TEMPLATE(class'X2WeaponTemplate', Template, TemplateName);
+
+	Template.WeaponPanelImage = "_ConventionalRifle";                       // used by the UI. Probably determines iconview of the weapon.
+	Template.ItemCat = 'weapon';
+	Template.WeaponCat = 'rifle';
+	Template.WeaponTech = 'magnetic';
+	Template.strImage = "img:///UILibrary_Common.AlienWeapons.AdventAssaultRifle";
+	Template.RemoveTemplateAvailablility(Template.BITFIELD_GAMEAREA_Multiplayer); //invalidates multiplayer availability
+
+	Template.RangeAccuracy = class'X2Item_DefaultWeapons'.default.FLAT_CONVENTIONAL_RANGE;
+    Template.iClipSize = class'X2Item_DefaultWeapons'.default.ASSAULTRIFLE_MAGNETIC_ICLIPSIZE; 
+    Template.iSoundRange = class'X2Item_DefaultWeapons'.default.ASSAULTRIFLE_MAGNETIC_ISOUNDRANGE;
+
+	if (TemplateName == 'AdvGrenadierM1_WPN')
+		Template.BaseDamage = default.AdvGrenadierM1_WPN_BASEDAMAGE;
+	if (TemplateName == 'AdvGrenadierM2_WPN')
+		Template.BaseDamage = default.AdvGrenadierM2_WPN_BASEDAMAGE;
+	if (TemplateName == 'AdvGrenadierM3_WPN')
+		Template.BaseDamage = default.AdvGrenadierM3_WPN_BASEDAMAGE;
+
+    Template.iEnvironmentDamage = class'X2Item_DefaultWeapons'.default.ASSAULTRIFLE_MAGNETIC_IENVIRONMENTDAMAGE;
+    Template.iIdealRange = default.AdvGrenadier_IDEALRANGE;
+
+	Template.InventorySlot = eInvSlot_PrimaryWeapon;
+	Template.Abilities.AddItem('StandardShot');
+	Template.Abilities.AddItem('Overwatch');
+	Template.Abilities.AddItem('OverwatchShot');
+	Template.Abilities.AddItem('Reload');
+
+	Template.GameArchetype = "WP_AssaultRifle_MG.WP_AssaultRifle_MG_Advent";
+	Template.iPhysicsImpulse = 5;
+	Template.CanBeBuilt = false;
+	Template.TradingPostValue = 30;
+	Template.DamageTypeTemplateName = 'Projectile_MagAdvent';
+
+	return Template;
+}
+
+static function X2DataTemplate CreateTemplate_AdvRocketeer_WPN(name TemplateName)
+{
+	local X2WeaponTemplate Template;
+
+	`CREATE_X2TEMPLATE(class'X2WeaponTemplate', Template, TemplateName);
+
+	Template.WeaponPanelImage = "_ConventionalRifle";                       // used by the UI. Probably determines iconview of the weapon.
+	Template.ItemCat = 'weapon';
+	Template.WeaponCat = 'rifle';
+	Template.WeaponTech = 'magnetic';
+	Template.strImage = "img:///UILibrary_Common.AlienWeapons.AdventAssaultRifle";
+	Template.RemoveTemplateAvailablility(Template.BITFIELD_GAMEAREA_Multiplayer); //invalidates multiplayer availability
+
+	Template.RangeAccuracy = class'X2Item_DefaultWeapons'.default.FLAT_CONVENTIONAL_RANGE;
+    Template.iClipSize = class'X2Item_DefaultWeapons'.default.ASSAULTRIFLE_MAGNETIC_ICLIPSIZE; 
+
+    Template.iSoundRange = class'X2Item_DefaultWeapons'.default.ASSAULTRIFLE_MAGNETIC_ISOUNDRANGE;
+	if (TemplateName == 'AdvRocketeerM1_WPN')
+		Template.BaseDamage = default.AdvRocketeerM1_WPN_BASEDAMAGE;
+	if (TemplateName == 'AdvRocketeerM2_WPN')
+		Template.BaseDamage = default.AdvRocketeerM2_WPN_BASEDAMAGE;
+	if (TemplateName == 'AdvRocketeerM3_WPN')
+		Template.BaseDamage = default.AdvRocketeerM3_WPN_BASEDAMAGE;
+
+    Template.iEnvironmentDamage = class'X2Item_DefaultWeapons'.default.ASSAULTRIFLE_MAGNETIC_IENVIRONMENTDAMAGE;
+    Template.iIdealRange = default.AdvGrenadier_IDEALRANGE;
+
+	Template.InventorySlot = eInvSlot_PrimaryWeapon;
+	Template.Abilities.AddItem('StandardShot');
+	Template.Abilities.AddItem('Overwatch');
+	Template.Abilities.AddItem('OverwatchShot');
+	Template.Abilities.AddItem('Reload');
+
+	Template.GameArchetype = "WP_AssaultRifle_MG.WP_AssaultRifle_MG_Advent";
+	Template.iPhysicsImpulse = 5;
+	Template.CanBeBuilt = false;
+	Template.TradingPostValue = 30;
+	Template.DamageTypeTemplateName = 'Projectile_MagAdvent';
+
+	return Template;
+}
 
 static function X2DataTemplate CreateTemplate_AdvGrenadier_GrenadeLauncher(name TemplateName)
 {
@@ -669,25 +794,7 @@ static function X2DataTemplate CreateTemplate_AdvGrenadier_GrenadeLauncher(name 
 	Template.iClipSize = class'X2Item_DefaultGrenades'.default.ADVGRENADELAUNCHER_ICLIPSIZE;
 	Template.Tier = 1;
 	Template.iIdealRange = default.ADVGRENADIER_IDEALRANGE;
-
-	// REMOVED because this seems to rely on HasSoldierAbility, which doesn't work for advent/aliens
-	//if (TemplateName == 'AdvGrenadeLauncherM1')
-	//{
-		//Template.IncreaseGrenadeRadius = default.ADVGRENADIERM1_GRENADELAUNCHER_RADIUSBONUS;
-		//Template.IncreaseGrenadeRange = default.ADVGRENADIERM1_GRENADELAUNCHER_RANGEBONUS;
-	//}
-	//if (TemplateName == 'AdvGrenadeLauncherM2')
-	//{
-		//Template.IncreaseGrenadeRadius = default.ADVGRENADIERM2_GRENADELAUNCHER_RADIUSBONUS;
-		//Template.IncreaseGrenadeRange = default.ADVGRENADIERM2_GRENADELAUNCHER_RANGEBONUS;
-	//}
-	//if (TemplateName == 'AdvGrenadeLauncherM3')
-	//{
-		//Template.IncreaseGrenadeRadius = default.ADVGRENADIERM3_GRENADELAUNCHER_RADIUSBONUS;
-		//Template.IncreaseGrenadeRange = default.ADVGRENADIERM3_GRENADELAUNCHER_RANGEBONUS;
-	//}
-
-	//Template.Abilities.AddItem('LaunchGrenade');  // remove this to prevent a "null" LaunchGrenade ability which confuses the AI
+	
 	Template.Abilities.AddItem('AdventGrenadeLauncher');
 
 	Template.GameArchetype = "AdvGrenadeLauncher.WP_AdvGrenadeLauncher";
@@ -807,21 +914,27 @@ static function X2DataTemplate CreateTemplate_AdvGrenadier_AcidGrenade()
 	return Template;
 }
 
-static function X2DataTemplate CreateTemplate_AdvRocketeerM1_RocketLauncher()
+static function X2DataTemplate CreateTemplate_AdvRocketeer_RocketLauncher(name TemplateName)
 {
 	local X2WeaponTemplate Template;
 
-	`CREATE_X2TEMPLATE(class'X2WeaponTemplate', Template, 'AdvRocketeerM1_RocketLauncher');
+	`CREATE_X2TEMPLATE(class'X2WeaponTemplate', Template, TemplateName);
 	Template.WeaponCat = 'heavy';
 	Template.strImage = "img:///UILibrary_StrategyImages.X2InventoryIcons.Inv_Rocket_Launcher";
 	Template.EquipSound = "StrategyUI_Heavy_Weapon_Equip";
 
-	Template.BaseDamage = default.ADVROCKETEERM1_ROCKETEERLAUNCHER_BASEDAMAGE;
-	Template.iSoundRange = default.ADVROCKETEERM1_ROCKETEERLAUNCHER_ISOUNDRANGE;
-	Template.iEnvironmentDamage = default.ADVROCKETEERM1_ROCKETEERLAUNCHER_IENVIRONMENTDAMAGE;
-	Template.iClipSize = default.ADVROCKETEERM1_ROCKETEERLAUNCHER_CLIPSIZE;
-	Template.iRange = default.ADVROCKETEERM1_ROCKETEERLAUNCHER_RANGE;
-	Template.iRadius = default.ADVROCKETEERM1_ROCKETEERLAUNCHER_RADIUS;
+	if (TemplateName == 'AdvRocketeerM1_RocketLauncher')
+		Template.BaseDamage = default.AdvRocketeerM1_ROCKETLAUNCHER_BASEDAMAGE;
+	if (TemplateName == 'AdvRocketeerM2_RocketLauncher')
+		Template.BaseDamage = default.AdvRocketeerM2_ROCKETLAUNCHER_BASEDAMAGE;
+	if (TemplateName == 'AdvRocketeerM3_RocketLauncher')
+		Template.BaseDamage = default.AdvRocketeerM3_ROCKETLAUNCHER_BASEDAMAGE;
+
+	Template.iSoundRange = default.ADVROCKETEER_ROCKETLAUNCHER_ISOUNDRANGE;
+	Template.iEnvironmentDamage = default.ADVROCKETEER_ROCKETLAUNCHER_IENVIRONMENTDAMAGE;
+	Template.iClipSize = default.ADVROCKETEER_ROCKETLAUNCHER_CLIPSIZE;
+	Template.iRange = default.ADVROCKETEER_ROCKETLAUNCHER_RANGE;
+	Template.iRadius = default.ADVROCKETEER_ROCKETLAUNCHER_RADIUS;
 	
 	Template.InventorySlot = eInvSlot_HeavyWeapon;
 	Template.StowedLocation = eSlot_HeavyWeapon;
@@ -867,13 +980,11 @@ static function X2DataTemplate CreateHeavyPoweredArmor()
 	return Template;
 }
 
-
-
-static function X2DataTemplate CreateTemplate_AdvMECArcher_WPN()
+static function X2DataTemplate CreateTemplate_AdvMECArcher_WPN(name TemplateName)
 {
 	local X2WeaponTemplate Template;
 
-	`CREATE_X2TEMPLATE(class'X2WeaponTemplate', Template, 'AdvMECArcher_WPN');
+	`CREATE_X2TEMPLATE(class'X2WeaponTemplate', Template, TemplateName);
 	
 	Template.WeaponPanelImage = "_ConventionalRifle";                       // used by the UI. Probably determines iconview of the weapon.
 	Template.ItemCat = 'weapon';
@@ -883,7 +994,12 @@ static function X2DataTemplate CreateTemplate_AdvMECArcher_WPN()
 	Template.RemoveTemplateAvailablility(Template.BITFIELD_GAMEAREA_Multiplayer); //invalidates multiplayer availability
 
 	Template.RangeAccuracy = class'X2Item_DefaultWeapons'.default.FLAT_CONVENTIONAL_RANGE;
-	Template.BaseDamage = default.ADVMECArcher_WPN_BASEDAMAGE;
+	
+	if (TemplateName == 'AdvMecArcherM1_WPN')
+		Template.BaseDamage = default.AdvMecArcherM1_WPN_BASEDAMAGE;
+	if (TemplateName == 'AdvMecArcherM2_WPN')
+		Template.BaseDamage = default.AdvMecArcherM2_WPN_BASEDAMAGE;
+	
 	Template.iClipSize = default.AdvMECArcher_Wpn_Clipsize;
 	Template.iSoundRange = class'X2Item_DefaultWeapons'.default.ASSAULTRIFLE_MAGNETIC_ISOUNDRANGE;
 	Template.iEnvironmentDamage = default.AdvMECArcher_Wpn_EnvironmentDamage;
@@ -910,11 +1026,11 @@ static function X2DataTemplate CreateTemplate_AdvMECArcher_WPN()
 	return Template;
 }
 
-static function X2DataTemplate CreateTemplate_AdvMECArcher_Shoulder_WPN()
+static function X2DataTemplate CreateTemplate_AdvMECArcher_Shoulder_WPN(name TemplateName)
 {
 	local X2WeaponTemplate Template;
 
-	`CREATE_X2TEMPLATE(class'X2WeaponTemplate', Template, 'AdvMECArcher_Shoulder_WPN');
+	`CREATE_X2TEMPLATE(class'X2WeaponTemplate', Template, TemplateName);
 	
 	Template.WeaponPanelImage = "_ConventionalRifle";                       // used by the UI. Probably determines iconview of the weapon.
 	Template.ItemCat = 'weapon';
@@ -924,7 +1040,12 @@ static function X2DataTemplate CreateTemplate_AdvMECArcher_Shoulder_WPN()
 	Template.RemoveTemplateAvailablility(Template.BITFIELD_GAMEAREA_Multiplayer); //invalidates multiplayer availability
 
 	Template.RangeAccuracy = class'X2Item_DefaultWeapons'.default.FLAT_CONVENTIONAL_RANGE;
-	Template.BaseDamage = default.AdvMECArcher_MicroMissiles_BaseDamage;
+	
+	if (TemplateName == 'AdvMecArcherM1_Shoulder_WPN')
+		Template.BaseDamage = default.AdvMECArcherM1_MicroMissiles_BaseDamage;
+	if (TemplateName == 'AdvMecArcherM2_Shoulder_WPN')
+		Template.BaseDamage = default.AdvMECArcherM2_MicroMissiles_BaseDamage;
+
 	Template.iClipSize = default.AdvMECArcher_MicroMissiles_Clipsize;
 	Template.iSoundRange = class'X2Item_DefaultWeapons'.default.ASSAULTRIFLE_MAGNETIC_ISOUNDRANGE;
 	Template.iEnvironmentDamage = default.AdvMECArcher_MicroMissiles_EnvironmentDamage;
@@ -954,6 +1075,199 @@ static function X2DataTemplate CreateTemplate_AdvMECArcher_Shoulder_WPN()
 	return Template;
 }
 
+static function X2DataTemplate CreateTemplate_AdvMECM3_WPN()
+{
+	local X2WeaponTemplate Template;
+
+	`CREATE_X2TEMPLATE(class'X2WeaponTemplate', Template, 'AdvMECM3_WPN');
+
+	Template.WeaponPanelImage = "_ConventionalRifle";                       // used by the UI. Probably determines iconview of the weapon.
+	Template.ItemCat = 'weapon';
+	Template.WeaponCat = 'rifle';
+	Template.WeaponTech = 'magnetic';
+	Template.strImage = "img:///UILibrary_Common.AlienWeapons.AdventMecGun";
+	Template.RemoveTemplateAvailablility(Template.BITFIELD_GAMEAREA_Multiplayer); //invalidates multiplayer availability
+
+	Template.RangeAccuracy = class'X2Item_DefaultWeapons'.default.MEDIUM_MAGNETIC_RANGE;
+	Template.BaseDamage = default.ADVMECM3_WPN_BASEDAMAGE;
+	Template.iClipSize = class'X2Item_DefaultWeapons'.default.ASSAULTRIFLE_MAGNETIC_ICLIPSIZE;
+	Template.iSoundRange = class'X2Item_DefaultWeapons'.default.ASSAULTRIFLE_MAGNETIC_ISOUNDRANGE;
+	Template.iEnvironmentDamage = class'X2Item_DefaultWeapons'.default.ASSAULTRIFLE_MAGNETIC_IENVIRONMENTDAMAGE;
+	Template.iIdealRange = default.ADVMEC_M3_IDEALRANGE;
+
+	Template.InventorySlot = eInvSlot_PrimaryWeapon;
+	Template.Abilities.AddItem('StandardShot');
+	Template.Abilities.AddItem('Overwatch');
+	Template.Abilities.AddItem('OverwatchShot');
+	Template.Abilities.AddItem('Reload');
+	Template.Abilities.AddItem('HotLoadAmmo');
+	Template.Abilities.AddItem('Suppression');
+
+	// This all the resources; sounds, animations, models, physics, the works.
+	Template.GameArchetype = "WP_AdvMec_Gun.WP_AdvMecGun";
+
+	Template.iPhysicsImpulse = 5;
+
+	Template.CanBeBuilt = false;
+	Template.TradingPostValue = 30;
+
+	Template.DamageTypeTemplateName = 'Projectile_Conventional';
+
+	return Template;
+}
+
+static function X2DataTemplate CreateTemplate_ArchonM2_WPN()
+{
+	local X2WeaponTemplate Template;
+
+	`CREATE_X2TEMPLATE(class'X2WeaponTemplate', Template, 'ArchonM2_WPN');
+	
+	Template.WeaponPanelImage = "_ConventionalRifle";                       // used by the UI. Probably determines iconview of the weapon.
+	Template.ItemCat = 'weapon';
+	Template.WeaponCat = 'rifle';
+	Template.WeaponTech = 'magnetic';
+	Template.strImage = "img:///UILibrary_Common.AlienWeapons.ArchonStaff";
+	Template.RemoveTemplateAvailablility(Template.BITFIELD_GAMEAREA_Multiplayer); //invalidates multiplayer availability
+
+	Template.RangeAccuracy = class'X2Item_DefaultWeapons'.default.FLAT_CONVENTIONAL_RANGE;
+	Template.BaseDamage = default.ARCHONM2_WPN_BASEDAMAGE;
+	Template.iClipSize = default.ARCHONM2_WPN_ICLIPSIZE;
+	Template.iSoundRange = class'X2Item_DefaultWeapons'.default.ASSAULTRIFLE_MAGNETIC_ISOUNDRANGE;
+	Template.iEnvironmentDamage =  class'X2Item_DefaultWeapons'.default.ASSAULTRIFLE_MAGNETIC_IENVIRONMENTDAMAGE;
+	Template.iIdealRange =  class'X2Item_DefaultWeapons'.default.ARCHON_IDEALRANGE;
+
+	Template.DamageTypeTemplateName = 'Heavy';
+	
+	Template.InventorySlot = eInvSlot_PrimaryWeapon;
+	Template.Abilities.AddItem('StandardShot');
+	Template.Abilities.AddItem('Overwatch');
+	Template.Abilities.AddItem('OverwatchShot');
+	Template.Abilities.AddItem('Reload');
+	Template.Abilities.AddItem('HotLoadAmmo');
+	
+	// This all the resources; sounds, animations, models, physics, the works.
+	Template.GameArchetype = "WP_Archon_Rifle.WP_ArchonRifle";
+
+	Template.iPhysicsImpulse = 5;
+
+	Template.CanBeBuilt = false;
+	Template.TradingPostValue = 30;
+
+	return Template;
+}
+
+static function X2DataTemplate CreateTemplate_ArchonM2_Blazing_Pinions_WPN()
+{
+	local X2WeaponTemplate Template;
+
+	`CREATE_X2TEMPLATE(class'X2WeaponTemplate', Template, 'Archon_Blazing_PinionsM2_WPN');
+	
+	Template.WeaponPanelImage = "_ConventionalRifle";                       // used by the UI. Probably determines iconview of the weapon.
+	Template.ItemCat = 'weapon';
+	Template.WeaponCat = 'rifle';
+	Template.WeaponTech = 'magnetic';
+	Template.strImage = "img:///UILibrary_Common.AlienWeapons.ArchonStaff";
+
+	Template.RangeAccuracy = class'X2Item_DefaultWeapons'.default.FLAT_CONVENTIONAL_RANGE;
+	Template.BaseDamage = default.ARCHONM2_BLAZINGPINIONS_BASEDAMAGE;
+	Template.iClipSize = 0;
+	Template.iSoundRange = 0;
+	Template.iEnvironmentDamage = class'X2Item_DefaultWeapons'.default.ARCHON_BLAZINGPINIONS_ENVDAMAGE;
+	Template.iIdealRange = 0;
+	Template.iPhysicsImpulse = 5;
+	Template.DamageTypeTemplateName = 'BlazingPinions';
+
+	Template.InventorySlot = eInvSlot_Utility;
+	Template.Abilities.AddItem('BlazingPinionsStage2');
+
+	// This all the resources; sounds, animations, models, physics, the works.
+	Template.GameArchetype = "WP_Archon_Blazing_Pinions.WP_Blazing_Pinions_CV";
+
+	Template.CanBeBuilt = false;
+	Template.TradingPostValue = 0;
+
+	return Template;
+}
+
+static function X2DataTemplate CreateTemplate_ArchonM2_MeleeAttack()
+{
+	local X2WeaponTemplate Template;
+
+	`CREATE_X2TEMPLATE(class'X2WeaponTemplate', Template, 'ArchonM2Staff');
+
+	Template.ItemCat = 'weapon';
+	Template.WeaponCat = 'baton';
+	Template.WeaponTech = 'magnetic';
+	Template.strImage = "img:///UILibrary_Common.AlienWeapons.ArchonStaff";
+	Template.InventorySlot = eInvSlot_SecondaryWeapon;
+	Template.StowedLocation = eSlot_RightBack;
+	// This all the resources; sounds, animations, models, physics, the works.
+	Template.GameArchetype = "WP_Archon_Staff.WP_ArchonStaff";
+	Template.RemoveTemplateAvailablility(Template.BITFIELD_GAMEAREA_Multiplayer); //invalidates multiplayer availability
+
+	Template.Aim = class'X2Item_DefaultWeapons'.default.GENERIC_MELEE_ACCURACY;
+
+	Template.iRange = 0;
+	Template.iRadius = 1;
+	Template.NumUpgradeSlots = 2;
+	Template.InfiniteAmmo = true;
+	Template.iPhysicsImpulse = 5;
+	Template.iIdealRange = 1;
+
+	Template.BaseDamage = default.ARCHONM2_MELEEATTACK_BASEDAMAGE;
+	Template.BaseDamage.DamageType='Melee';
+	Template.iSoundRange = 2;
+	Template.iEnvironmentDamage = 10;
+
+	//Build Data
+	Template.StartingItem = false;
+	Template.CanBeBuilt = false;
+
+	Template.Abilities.AddItem('StandardMelee');
+	Template.AddAbilityIconOverride('StandardMelee', "img:///UILibrary_PerkIcons.UIPerk_archon_beatdown");
+
+	return Template;
+}
+
+static function X2DataTemplate CreateTemplate_SectoidM2_WPN()
+{
+	local X2WeaponTemplate Template;
+
+	`CREATE_X2TEMPLATE(class'X2WeaponTemplate', Template, 'SectoidM2_WPN');
+	
+	Template.WeaponPanelImage = "_ConventionalRifle";                       // used by the UI. Probably determines iconview of the weapon.
+	Template.ItemCat = 'weapon';
+	Template.WeaponCat = 'rifle';
+	Template.WeaponTech = 'magnetic';
+	Template.strImage = "img:///UILibrary_Common.AlienWeapons.SectoidPistol";
+	Template.RemoveTemplateAvailablility(Template.BITFIELD_GAMEAREA_Multiplayer); //invalidates multiplayer availability
+
+	Template.RangeAccuracy = class'X2Item_DefaultWeapons'.default.FLAT_CONVENTIONAL_RANGE;
+	Template.BaseDamage = default.SECTOIDM2_WPN_BASEDAMAGE;
+	Template.iClipSize = default.SECTOIDM2_WPN_ICLIPSIZE;
+	Template.iSoundRange = class'X2Item_DefaultWeapons'.default.ASSAULTRIFLE_MAGNETIC_ISOUNDRANGE;
+	Template.iEnvironmentDamage = class'X2Item_DefaultWeapons'.default.ASSAULTRIFLE_MAGNETIC_IENVIRONMENTDAMAGE;
+	Template.iIdealRange = class'X2Item_DefaultWeapons'.default.SECTOID_IDEALRANGE;
+
+	Template.DamageTypeTemplateName = 'Heavy';
+	
+	Template.InventorySlot = eInvSlot_PrimaryWeapon;
+	Template.Abilities.AddItem('StandardShot');
+	Template.Abilities.AddItem('Overwatch');
+	Template.Abilities.AddItem('OverwatchShot');
+	Template.Abilities.AddItem('Reload');
+	Template.Abilities.AddItem('HotLoadAmmo');
+	
+	// This all the resources; sounds, animations, models, physics, the works.
+	Template.GameArchetype = "WP_Sectoid_ArmPistol.WP_SectoidPistol";
+
+	Template.iPhysicsImpulse = 5;
+
+	Template.CanBeBuilt = false;
+	Template.TradingPostValue = 30;
+
+	return Template;
+}
 
 static function X2DataTemplate CreateTemplate_LWDrone_WPN(name TemplateName)
 {
@@ -1103,9 +1417,20 @@ static function X2DataTemplate CreateTemplate_AdvElite_WPN(name TemplateName)
 		default: break;
 	}
 
-    Template.iEnvironmentDamage = class'X2Item_DefaultWeapons'.default.ASSAULTRIFLE_MAGNETIC_IENVIRONMENTDAMAGE;
-    Template.iIdealRange = default.ADVVANGUARD_IDEALRANGE; 
+		switch (TemplateName)
+	{
+		case 'AdvSergeantM1_WPN': Template.iIdealRange = default.AdvSergeantM1_IDEALRANGE; break;
+		case 'AdvSergeantM2_WPN': Template.iIdealRange = default.AdvSergeantM2_IDEALRANGE;  break;
+		case 'AdvShockTroop_WPN': Template.iIdealRange = default.AdvShockTroop_IDEALRANGE;  break;
+		case 'AdvCommando_WPN': Template.iIdealRange = default.AdvCommando_IDEALRANGEE; break;
+		case 'AdvVanguard_WPN': Template.iIdealRange = default.AdvVanguard_IDEALRANGE; break;
+		case 'AdvScout_WPN': Template.iIdealRange = default.AdvScout_IDEALRANGE; break;
+		case 'AdvGeneralM1_LW_WPN': Template.iIdealRange = default.AdvGeneralM1_IDEALRANGE; break;
+		case 'AdvGeneralM2_LW_WPN': Template.iIdealRange = default.AdvGeneralM2_IDEALRANGE; break;
+		default: break;
+	}
 
+    Template.iEnvironmentDamage = class'X2Item_DefaultWeapons'.default.ASSAULTRIFLE_MAGNETIC_IENVIRONMENTDAMAGE;
 	Template.InventorySlot = eInvSlot_PrimaryWeapon;
 	Template.Abilities.AddItem('StandardShot');
 	Template.Abilities.AddItem('Overwatch');
@@ -1118,41 +1443,6 @@ static function X2DataTemplate CreateTemplate_AdvElite_WPN(name TemplateName)
 	Template.CanBeBuilt = false;
 	Template.TradingPostValue = 30;
 	Template.DamageTypeTemplateName = 'Projectile_MagAdvent';
-
-	return Template;
-}
-
-
-	static function X2DataTemplate CreateTemplate_Hunter_Flashbang()
-{
-	local X2GrenadeTemplate Template;
-	local X2Effect_ApplyWeaponDamage WeaponDamageEffect;
-
-	`CREATE_X2TEMPLATE(class'X2GrenadeTemplate', Template, 'HunterFlashbang');
-
-	Template.strImage = "img:///UILibrary_StrategyImages.X2InventoryIcons..Inv_Flashbang_Grenade";
-	Template.AddAbilityIconOverride('ThrowGrenade', "img:///UILibrary_PerkIcons.UIPerk_grenade_flash");
-	Template.AddAbilityIconOverride('LaunchGrenade', "img:///UILibrary_PerkIcons.UIPerk_grenade_flash");
-	Template.iRange = default.ADVGRENADIER_FLASHBANGGRENADE_RANGE;
-	Template.iRadius = default.ADVGRENADIER_FLASHBANGGRENADE_RADIUS;
-	
-	Template.bFriendlyFire = false;
-	Template.bFriendlyFireWarning = false;
-	Template.Abilities.AddItem('ThrowGrenade');
-
-	Template.ThrownGrenadeEffects.AddItem(class'X2StatusEffects'.static.CreateDisorientedStatusEffect());
-
-	//We need to have an ApplyWeaponDamage for visualization, even if the grenade does 0 damage (makes the unit flinch, shows overwatch removal)
-	WeaponDamageEffect = new class'X2Effect_ApplyWeaponDamage';
-	WeaponDamageEffect.bExplosiveDamage = true;
-	Template.ThrownGrenadeEffects.AddItem(WeaponDamageEffect);
-
-	Template.LaunchedGrenadeEffects = Template.ThrownGrenadeEffects;
-	
-	Template.GameArchetype = "WP_Grenade_Flashbang.WP_Grenade_Flashbang";
-
-	Template.iEnvironmentDamage = default.ADVGRENADIER_FLASHBANGGRENADE_IENVIRONMENTDAMAGE;
-	Template.iClipSize = 50;
 
 	return Template;
 }
