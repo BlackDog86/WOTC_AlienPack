@@ -183,3 +183,34 @@ static function X2ItemTemplate GetItemBoundToAbilityFromUnit(XComGameState_Unit 
 		GameState).GetMyTemplate();
 }
 
+static function FinalizeUnitAbilitiesForInit(XComGameState_Unit UnitState, out array<AbilitySetupData> SetupData, optional XComGameState StartState, optional XComGameState_Player PlayerState, optional bool bMultiplayerDisplay)
+{
+	local X2AbilityTemplateManager	AbilityTemplateManager;
+	local AbilitySetupData			NewSetupData;
+	local XComGameState_Item		WeaponState;
+	local X2WeaponTemplate			WeaponTemplate;
+	local X2AbilityTemplate			PinionsAbilityTemplate;
+		
+	if (UnitState.HasAbilityFromAnySource('StandalonePinionsAbility'))
+	{
+		AbilityTemplateManager = class'X2AbilityTemplateManager'.static.GetAbilityTemplateManager();
+		PinionsAbilityTemplate = AbilityTemplateManager.FindAbilityTemplate('StandalonePinionsStage2');
+		WeaponState = UnitState.GetItemInSlot(eInvSlot_TertiaryWeapon);
+		if (WeaponState != none)
+		{
+			WeaponTemplate = X2WeaponTemplate(WeaponState.GetMyTemplate());
+			if (WeaponTemplate != none)
+			{
+				NewSetupData.TemplateName = 'StandalonePinionsStage2';
+				NewSetupData.Template = PinionsAbilityTemplate;
+				NewSetupData.SourceWeaponRef = WeaponState.GetReference();
+
+				`APTRACE("Updating pinions ability to unit: " @ UnitState.GetFullName() @ "weapon: " @ WeaponTemplate.DataName @ "in slot: " @ WeaponState.InventorySlot,, 'BD');
+				
+				SetupData.AddItem(NewSetupData);
+			}
+		}
+		`APTRACE("No weapon in tertiary slot or weaponstate doesn't exist!");
+	}
+	`APTRACE("Ability template doesn't exist on unit!");
+}

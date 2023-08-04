@@ -337,6 +337,26 @@ strCharacterName="變種人精英火箭兵"
 [AdvRocketeerM1_RocketLauncher X2WeaponTemplate]
 FriendlyName="變種人火箭發射器"
 
+;;;;;;;;;;;;;;;;;;;;;;;;;; Great Archon ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[ArchonM2_Wpn X2WeaponTemplate]
+FriendlyName="執政官法杖"
+FriendlyNamePlural="執政官法杖"
+BriefSummary="XCOM已經成功獲得了一些不同的標準步兵小型武器了，這是最基本的武器，類似20年前使用的步槍。雖然這些武器當然比起變種人磁力技術的武器差得多，但它們在標準技術研究完成後，至少可以用額外的武器碎片進行升級。"
+TacticalText="<Bullet/>用主武器射擊將會結束該士兵的回合\n<Bullet/>如果士兵在兩個行動點都可用時射擊，那麼他可以在減少精準度的條件下射擊3次，但總體上還是提升了效率\n<Bullet/>使用從變種人敵人身上取得的升級部件提升突擊步槍的戰術效果"
+
+[ArchonM2Staff X2WeaponTemplate]
+FriendlyName="執政官法杖"
+FriendlyNamePlural="執政官法杖"
+BriefSummary="XCOM已經成功獲得了一些不同的標準步兵小型武器了，這是最基本的武器，類似20年前使用的步槍。雖然這些武器當然比起變種人磁力技術的武器差得多，但它們在標準技術研究完成後，至少可以用額外的武器碎片進行升級。"
+TacticalText="<Bullet/>用主武器射擊將會結束該士兵的回合\n<Bullet/>如果士兵的兩個行動點數都用在射擊上，那麼他可以在減少精準度的條件下射擊3次，但總體上還是提升了效率\n<Bullet/>使用從敵人身上取得的升級部件提升突擊步槍的戰術效果"
+
+[StandalonePinionsStage1 X2AbilityTemplate]
+LocFriendlyName="燃燒羽翼"
+LocLongDescription="上升到極限高度，然後用爆裂彈密集轟炸大片區域。室內無法施放。"
+LocHelpText="用大量的爆裂彈密集轟炸目標區域。"
+LocFlyOverText="燃燒羽翼"
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;; AdvMecM3 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [AdvMec_M3_LW X2CharacterTemplate]

@@ -432,6 +432,8 @@ static function X2CharacterTemplate CreateTemplate_Sidewinder(name TemplateName)
 			CharTemplate.strBehaviorTree = "LWSidewinder::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
 			break;
 		case 'SidewinderM2':
+			CharTemplate.strBehaviorTree = "LWSidewinderHitAndRun::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
+			break;
 		case 'SidewinderM3':
 			CharTemplate.strBehaviorTree = "LWSidewinderHitAndRun::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
 		default:
@@ -528,10 +530,12 @@ static function X2CharacterTemplate CreateTemplate_ArchonM2_LW()
 	CharTemplate.MPPointValue = CharTemplate.XpKillscore * 10;
 	
 	CharTemplate.strScamperBT = "ScamperRoot_NoCover";
-
-	CharTemplate.Abilities.AddItem('FrenzyDamageListener');
-	CharTemplate.Abilities.AddItem('BlazingPinionsStage1');
+	CharTemplate.strBehaviorTree = "LWGreatArchon::CharacterRoot"; 
+	
+	CharTemplate.Abilities.AddItem('FrenzyDamageListener');	
+	CharTemplate.Abilities.AddItem('StandalonePinionsAbility');
 	CharTemplate.Abilities.AddItem('LightningReflexes_LW');
+
 	// WOTC abilities
 	CharTemplate.Abilities.AddItem('DarkEventAbility_Barrier');
 

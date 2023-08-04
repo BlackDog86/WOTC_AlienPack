@@ -322,6 +322,26 @@ strCharacterName="Artigliere d'élite ADVENT"
 [AdvRocketeerM1_RocketLauncher X2WeaponTemplate]
 FriendlyName="Lanciarazzi ADVENT"
 
+;;;;;;;;;;;;;;;;;;;;;;;;;; Great Archon;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[StandalonePinionsStage1 X2AbilityTemplate]
+LocFriendlyName="Meccanismi esplosivi"
+LocLongDescription="Raggiunge l'altitudine massima e bombarda un'ampia area con colpi esplosivi. L'attacco non può essere eseguito al chiuso."
+LocHelpText="Bombarda l'area bersaglio con un una pioggia di esplosivi."
+LocFlyOverText="Meccanismi esplosivi"
+
+[ArchonM2_Wpn X2WeaponTemplate]
+FriendlyName="Asta dell'Archon"
+FriendlyNamePlural="Aste dell'Archon"
+BriefSummary="Gli XCOM sono riusciti a recuperare una serie di armi da fanteria. Parliamo delle più comuni, simili ai fucili usati vent'anni fa. Pur essendo nettamente inferiori alle tecnologie magnetiche della ADVENT, le armi possono essere potenziate con pezzi di recupero aggiuntivi, una volta capito l'approccio tecnico."
+TacticalText="<Bullet/> Sparare con l'arma principale conclude sempre il turno del soldato.\n<Bullet/> Se il soldato spara con entrambe le azioni disponibili, verranno sparati tre colpi, con precisione ridotta ma con l'efficacia globale aumentata.\n<Bullet/> Usa i potenziamenti recuperati dai nemici per migliorare l'efficacia tattica del fucile d'assalto."
+
+[ArchonM2Staff X2WeaponTemplate]
+FriendlyName="Asta dell'Archon"
+FriendlyNamePlural="Aste dell'Archon"
+BriefSummary="Gli XCOM sono riusciti a recuperare una serie di armi da fanteria. Parliamo delle più comuni, simili ai fucili usati vent'anni fa. Pur essendo nettamente inferiori alle tecnologie magnetiche della ADVENT, le armi possono essere potenziate con pezzi di recupero aggiuntivi, una volta capito l'approccio tecnico."
+TacticalText="<Bullet/> Sparare con l'arma principale conclude sempre il turno del soldato.\n<Bullet/> Se il soldato spara con entrambe le azioni disponibili, verranno sparati tre colpi, con precisione ridotta ma con l'efficacia globale aumentata.\n<Bullet/> Usa i potenziamenti recuperati dai nemici per migliorare l'efficacia tattica del fucile d'assalto."
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;; AdvMecM3 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [AdvMec_M3_LW X2CharacterTemplate]

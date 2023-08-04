@@ -337,6 +337,24 @@ strCharacterName="变种人精英火箭兵"
 [AdvRocketeerM1_RocketLauncher X2WeaponTemplate]
 FriendlyName="变种人火箭发射器"
 
+[StandalonePinionsStage1 X2AbilityTemplate]
+LocFriendlyName="燃烧羽翼"
+LocLongDescription="上升到最高可能高度，然后用爆炸弹密集轰炸大片区域。不能在室内施放。"
+LocHelpText="用爆炸弹对目标区域进行密集轰炸。"
+LocFlyOverText="燃烧羽翼"
+
+[ArchonM2_Wpn X2WeaponTemplate]
+FriendlyName="执政官法杖"
+FriendlyNamePlural="执政官法杖"
+BriefSummary="XCOM已经成功获得了一些不同的标准步兵小型武器了，这是最基本的武器，类似20年前使用的步枪。虽然这些武器当然比起变种人磁力技术的武器差得多，但它们在标准技术研究完成后，至少可以用额外的武器碎片进行升级。"
+TacticalText="<Bullet/>用主武器射击将会结束该士兵的回合\n<Bullet/>如果士兵在两个行动点都可用时射击，那么他可以在减少精准度的条件下射击3次，但总体上还是提升了效率\n<Bullet/>使用从变种人敌人身上取得的升级部件提升突击步枪的战术效率"
+
+[ArchonM2Staff X2WeaponTemplate]
+FriendlyName="执政官法杖"
+FriendlyNamePlural="执政官法杖"
+BriefSummary="XCOM已经成功获得了一些不同的标准步兵小型武器了，这是最基本的武器，类似20年前使用的步枪。虽然这些武器当然比起变种人磁力技术的武器差得多，但它们在标准技术研究完成后，至少可以用额外的武器碎片进行升级。"
+TacticalText="<Bullet/>用主武器射击将会结束该士兵的回合\n<Bullet/>如果士兵在两个行动点都可用时射击，那么他可以在减少精准度的条件下射击3次，但总体上还是提升了效率\n<Bullet/>使用从变种人敌人身上取得的升级部件提升突击步枪的战术效率"
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;; AdvMecM3 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [AdvMec_M3_LW X2CharacterTemplate]

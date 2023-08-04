@@ -322,6 +322,26 @@ strCharacterName="アドヴェント・エリートロケット兵"
 [AdvRocketeerM1_RocketLauncher X2WeaponTemplate]
 FriendlyName="アドヴェント・ロケットランチャー"
 
+;;;;;;;;;;;;;;;;;;;;;;;;;; Great Archon ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[StandalonePinionsStage1 X2AbilityTemplate]
+LocFriendlyName="ブレイジング・ピニオン"
+LocLongDescription="可能な限り高く飛び上がり、広範囲に爆弾を降らせる。屋内では実行できない。"
+LocHelpText="ターゲットエリアに爆弾の雨を降らす。"
+LocFlyOverText="ブレイジング・ピニオン"
+
+[ArchonM2_Wpn X2WeaponTemplate]
+FriendlyName="アーコン・スタッフ"
+FriendlyNamePlural="アーコン・スタッフ"
+BriefSummary="これまでにXCOMはさまざまな標準的歩兵用小火器の回収に成功してきた。これは最もよく見られるタイプで、20年前に用いられていたライフルによく似ている。当然、アドヴェントの磁力兵器よりは劣るが、さらなる研究と兵器の回収によって改良の余地が残されているのが救いだ。"
+TacticalText="<Bullet/>メイン武器を撃った兵士はターン終了となる。\n<Bullet/>行動値2の状態で射撃した場合は3回発砲する。この場合、個々の命中率は下がるが、総合的な威力はむしろ高まる。\n<Bullet/>敵から奪ったアップグレードを使い、アサルトライフルの性能を強化せよ。"
+
+[ArchonM2Staff X2WeaponTemplate]
+FriendlyName="アーコン・スタッフ"
+FriendlyNamePlural="アーコン・スタッフ"
+BriefSummary="これまでにXCOMはさまざまな標準的歩兵用小火器の回収に成功してきた。これは最もよく見られるタイプで、20年前に用いられていたライフルによく似ている。当然、アドヴェントの磁力兵器よりは劣るが、さらなる研究と兵器の回収によって改良の余地が残されているのが救いだ。"
+TacticalText="<Bullet/>メイン武器を撃った兵士はターン終了となる。\n<Bullet/>行動値2の状態で射撃した場合は3回発砲する。この場合、個々の命中率は下がるが、総合的な威力はむしろ高まる。\n<Bullet/>敵から奪ったアップグレードを使い、アサルトライフルの性能を強化せよ。"
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;; AdvMecM3 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [AdvMec_M3_LW X2CharacterTemplate]

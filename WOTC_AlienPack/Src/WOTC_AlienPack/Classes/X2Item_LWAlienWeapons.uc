@@ -28,6 +28,7 @@ var config WeaponDamageValue VIPERM3_WPN_BASEDAMAGE;
 
 var config WeaponDamageValue ARCHONM2_WPN_BASEDAMAGE;
 var config WeaponDamageValue ARCHONM2_BLAZINGPINIONS_BASEDAMAGE;
+var config int ARCHONM2_BLAZINGPINIONS_ENVDAMAGE;
 var config int ARCHONM2_WPN_ICLIPSIZE;
 var config WeaponDamageValue ARCHONM2_MELEEATTACK_BASEDAMAGE;
 
@@ -1172,16 +1173,15 @@ static function X2DataTemplate CreateTemplate_ArchonM2_Blazing_Pinions_WPN()
 	Template.BaseDamage = default.ARCHONM2_BLAZINGPINIONS_BASEDAMAGE;
 	Template.iClipSize = 0;
 	Template.iSoundRange = 0;
-	Template.iEnvironmentDamage = class'X2Item_DefaultWeapons'.default.ARCHON_BLAZINGPINIONS_ENVDAMAGE;
+	Template.iEnvironmentDamage = default.ARCHONM2_BLAZINGPINIONS_ENVDAMAGE;
 	Template.iIdealRange = 0;
 	Template.iPhysicsImpulse = 5;
 	Template.DamageTypeTemplateName = 'BlazingPinions';
 
-	Template.InventorySlot = eInvSlot_Utility;
-	Template.Abilities.AddItem('BlazingPinionsStage2');
+	Template.InventorySlot = eInvSlot_TertiaryWeapon;
 
 	// This all the resources; sounds, animations, models, physics, the works.
-	Template.GameArchetype = "WP_Archon_Blazing_Pinions.WP_Blazing_Pinions_CV";
+	Template.GameArchetype = "LW_Perk_Blazing_Pinions.WP_Blazing_Pinions_LW";
 
 	Template.CanBeBuilt = false;
 	Template.TradingPostValue = 0;

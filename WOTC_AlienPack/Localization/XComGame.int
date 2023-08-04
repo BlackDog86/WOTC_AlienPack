@@ -148,16 +148,26 @@ AbilityDescName="plasma rifle"
 strCharacterName="Great Archon"
 
 [ArchonM2_Wpn X2WeaponTemplate]
-FriendlyName="Great Archon Staff"
+FriendlyName="Great Archon Staff - Ranged"
 FriendlyNamePlural="Great Archon Staves"
 BriefSummary="XCOM has managed to salvage a variety of standard infantry small arms; this is the most common variety, similar to the rifle used twenty years before. While decidedly inferior to ADVENT magnetic technology, it can at least be upgraded using additional weapons salvage, once a standard technical approach is discovered."
 TacticalText="<Bullet/> Firing the primary weapon always ends the soldier's turn\n<Bullet/> If the soldier fires with both actions available, three shots will be taken at reduced accuracy, but overall increased efficiency\n<Bullet/> Use upgrades looted from enemies to improve assault rifle tactical effectiveness"
 
+[ArchonM2_Blazing_Pinions_WPN]
+FriendlyName="Great Archon Staff - Pinions"
+FriendlyNamePlural="Great Archon Staves"
+
 [ArchonM2Staff X2WeaponTemplate]
-FriendlyName="Great Archon Staff"
+FriendlyName="Great Archon Staff - Melee"
 FriendlyNamePlural="Great Archon Staves"
 BriefSummary="XCOM has managed to salvage a variety of standard infantry small arms; this is the most common variety, similar to the rifle used twenty years before. While decidedly inferior to ADVENT magnetic technology, it can at least be upgraded using additional weapons salvage, once a standard technical approach is discovered."
 TacticalText="<Bullet/> Firing the primary weapon always ends the soldier's turn\n<Bullet/> If the soldier fires with both actions available, three shots will be taken at reduced accuracy, but overall increased efficiency\n<Bullet/> Use upgrades looted from enemies to improve assault rifle tactical effectiveness"
+
+[StandalonePinionsStage1 X2AbilityTemplate]
+LocFriendlyName="Blazing Pinions"
+LocLongDescription="Launch to the highest possible elevation, then bombard a large area with explosive shells. Can't be done indoors."
+LocHelpText="Bombard a target area with a hail of explosive shells."
+LocFlyOverText="Blazing Pinions"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; SectoidM2_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

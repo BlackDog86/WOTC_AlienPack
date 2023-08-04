@@ -322,6 +322,26 @@ strCharacterName="Elitarny rakietnik ADVENT-u"
 [AdvRocketeerM1_RocketLauncher X2WeaponTemplate]
 FriendlyName="Wyrzutnia rakiet ADVENT-u"
 
+;;;;;;;;;;;;;;;;;;;;;;;;;; Great Archon ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[StandalonePinionsStage1 X2AbilityTemplate]
+LocFriendlyName="Płonące skrzydła"
+LocLongDescription="Wzlatuje na najwyższe dostępne wzniesienie, a potem bombarduje duży obszar pociskami wybuchowymi. Nie można tego robić w pomieszczeniach."
+LocHelpText="Bombardowanie wskazanego celu gradem pocisków wybuchowych."
+LocFlyOverText="Płonące skrzydła"
+
+[ArchonM2_Wpn X2WeaponTemplate]
+FriendlyName="Laska archona"
+FriendlyNamePlural="Pałki archona"
+BriefSummary="XCOM zdobył wiele rodzajów standardowej broni osobistej piechoty. To najpopularniejsza wersja, zbliżona do karabinu używanego dwadzieścia lat temu. Nie dorównuje technologii magnetycznej ADVENT-u, ale można ulepszyć ją, korzystając z elementów zdobycznego uzbrojenia, gdy zostanie już odkryte standardowe podejście techniczne."
+TacticalText="<Bullet/> Oddanie strzału z broni głównej żołnierza zawsze kończy jego turę.\n<Bullet/> Jeżeli żołnierz strzeli, mając dostępne obie akcje, padną trzy strzały o mniejszej celności, ale większej łącznej skuteczności.\n<Bullet/> Używaj ulepszeń zdobytych od wrogów, żeby zwiększyć taktyczną przydatność karabinu szturmowego."
+
+[ArchonM2Staff X2WeaponTemplate]
+FriendlyName="Laska archona"
+FriendlyNamePlural="Pałki archona"
+BriefSummary="XCOM zdobył wiele rodzajów standardowej broni osobistej piechoty. To najpopularniejsza wersja, zbliżona do karabinu używanego dwadzieścia lat temu. Nie dorównuje technologii magnetycznej ADVENT-u, ale można ulepszyć ją, korzystając z elementów zdobycznego uzbrojenia, gdy zostanie już odkryte standardowe podejście techniczne."
+TacticalText="<Bullet/> Oddanie strzału z broni głównej żołnierza zawsze kończy jego turę.\n<Bullet/> Jeżeli żołnierz strzeli, mając dostępne obie akcje, padną trzy strzały o mniejszej celności, ale większej ogólnej skuteczności.\n<Bullet/> Używaj ulepszeń zdobytych od wrogów, żeby zwiększyć taktyczną przydatność karabinu szturmowego."
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;; AdvMecM3 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [AdvMec_M3_LW X2CharacterTemplate]

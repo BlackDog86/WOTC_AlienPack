@@ -322,6 +322,27 @@ strCharacterName="어드밴트 엘리트 로켓티어"
 [AdvRocketeerM1_RocketLauncher X2WeaponTemplate]
 FriendlyName="어드밴트 로켓 발사기"
 
+;;;;;;;;;;;;;;;;;;;;;;;;;; Great Archon ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[StandalonePinionsStage1 X2AbilityTemplate]
+LocFriendlyName="불타는 톱니바퀴"
+LocLongDescription="최고 높이까지 날아올라, 수많은 포탄으로 목표 지점을 포격합니다. 실내에서는 쓸 수 없습니다."
+LocHelpText="수많은 포탄으로 목표 지점을 포격합니다."
+LocFlyOverText="불타는 톱니바퀴"
+
+
+[ArchonM2_Wpn X2WeaponTemplate]
+FriendlyName="아르콘 지팡이"
+FriendlyNamePlural="아르콘 곤봉"
+BriefSummary="XCOM이 여러 가지 일반 병사용 소화기를 회수했습니다. 이건 가장 평범한 종류인데, 20년 전에 사용된 소총과 유사하군요. 일반적인 기술적 접근이 이뤄진다면, 어드밴트의 전자기 기술에는 못 미치겠지만 회수한 다른 무기를 이용해 업그레이드할 수 있습니다."
+TacticalText="<Bullet/> 주요 무기를 발사하면 병사의 턴이 항상 종료됩니다.\n<Bullet/> 만약 병사가 행동력이 2개인 상태에서 무기를 발사하면, 명중률은 떨어지지만 전체 능력이 증가된 공격을 3번 가합니다.\n<Bullet/> 적에게서 획득한 업그레이드를 사용하면 돌격 소총의 전술적 효율성이 증가합니다."
+
+[ArchonM2Staff X2WeaponTemplate]
+FriendlyName="아르콘 지팡이"
+FriendlyNamePlural="아르콘 지팡이"
+BriefSummary="XCOM이 여러 가지 일반 병사용 소화기를 회수했습니다. 이건 가장 평범한 종류인데, 20년 전에 사용된 소총과 유사하군요. 일반적인 기술적 접근이 이뤄진다면, 어드밴트의 전자기 기술에는 못 미치겠지만 회수한 다른 무기를 이용해 업그레이드할 수 있습니다."
+TacticalText="<Bullet/> 주요 무기를 발사하면 병사의 턴이 항상 종료됩니다.\n<Bullet/> 만약 병사가 행동력이 2개인 상태에서 무기를 발사하면, 명중률은 떨어지지만 전체 능력이 증가된 공격을 3번 가합니다.\n<Bullet/> 적에게서 획득한 업그레이드를 사용하면 돌격 소총의 전술적 효율성이 증가합니다."
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;; AdvMecM3 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [AdvMec_M3_LW X2CharacterTemplate]

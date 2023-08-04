@@ -373,6 +373,26 @@ strCharacterName="Cohetero de élite de ADVENT"
 [AdvRocketeerM1_RocketLauncher X2WeaponTemplate]
 FriendlyName="Lanzacohetes de ADVENT"
 
+;;;;;;;;;;;;;;;;;;;;;;;;;; Great Archon ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[StandalonePinionsStage1 X2AbilityTemplate]
+LocFriendlyName="Alas abrasadoras"
+LocLongDescription="Se lanza a la elevación más alta posible y luego bombardea una zona amplia con proyectiles explosivos. No se puede usar en interiores."
+LocHelpText="Bombardea una zona objetivo con una lluvia de proyectiles explosivos."
+LocFlyOverText="Alas abrasadoras"
+
+[ArchonM2_Wpn X2WeaponTemplate]
+FriendlyName="Bastón de Arconte"
+FriendlyNamePlural="Bastones de Arconte"
+BriefSummary="XCOM ha logrado recuperar diversas armas pequeñas de infantería estándar; esta es la variedad más común, similar al fusil utilizado hace veinte años. Aunque claramente inferior a la tecnología magnética de ADVENT, al menos puede mejorarse recuperando más material de armas, una vez descubierto un enfoque técnico estándar."
+TacticalText="<Bullet/> Disparar el arma principal siempre termina el turno del soldado.\n<Bullet/> Si el soldado dispara con las dos acciones disponibles, se harán tres disparos con una precisión menor, pero una mayor eficiencia global.\n<Bullet/> Usa las mejoras saqueadas de los enemigos para mejorar la eficacia táctica del fusil de asalto."
+
+[ArchonM2Staff X2WeaponTemplate]
+FriendlyName="Bastón de Arconte"
+FriendlyNamePlural="Bastones de Arconte"
+BriefSummary="XCOM ha logrado recuperar diversas armas pequeñas de infantería estándar; esta es la variedad más común, similar al fusil utilizado hace veinte años. Aunque claramente inferior a la tecnología magnética de ADVENT, al menos puede mejorarse recuperando más material de armas, una vez descubierto un enfoque técnico estándar."
+TacticalText="<Bullet/> Disparar el arma principal siempre termina el turno del soldado.\n<Bullet/> Si el soldado dispara con las dos acciones disponibles, se harán tres disparos con una precisión menor, pero una mayor eficiencia global.\n<Bullet/> Usa las mejoras saqueadas de los enemigos para mejorar la eficacia táctica del fusil de asalto."
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;; AdvMecM3 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [AdvMec_M3_LW X2CharacterTemplate]
