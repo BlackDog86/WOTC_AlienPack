@@ -123,13 +123,13 @@ Creds to the original authors here.
     <Content Include="ContentForCook\LW_Perk_MutonM3.upk">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ContentForCook\LW_Perk_PCS_DamageControl.upk">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ContentForCook\LW_Perk_Psi_MassMindspin.upk">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ContentForCook\LW_Perk_Psi_MassReanimation.upk">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ContentForCook\LW_Perk_RepairServos.upk">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ContentForCook\NajaRifle.upk">
@@ -340,13 +340,10 @@ Creds to the original authors here.
     <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_RemoveAreaSuppressionEffect.uc">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_RepairServos.uc">
-      <SubType>Content</SubType>
-    </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_SimpleHeal.uc">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_TacticalSense.uc">
+    <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_BD_TacticalSense_LW.uc">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_TraverseFire.uc">
@@ -377,9 +374,6 @@ Creds to the original authors here.
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\XComGameState_Effect_IncomingReactionFire.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\WOTC_AlienPack\Classes\XComGameState_Effect_LastShotDetails.uc">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\XComGameState_Unit_AlienCustomization.uc">

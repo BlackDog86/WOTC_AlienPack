@@ -12,7 +12,7 @@ function GetToHitModifiers(XComGameState_Effect EffectState, XComGameState_Unit 
 	local XComGameState_Item SourceWeapon;
 	local ShotModifierInfo ShotInfo;
 
-	if(AbilityState.GetMyTemplateName() == 'SuppressionShot_LW' || AbilityState.GetMyTemplateName() == 'AreaSuppressionShot_LW')
+	if(AbilityState.GetMyTemplateName() == 'SuppressionShot_LW' || AbilityState.GetMyTemplateName() == 'BD_AreaSuppressionShot_LW')
 	{
 		SourceWeapon = AbilityState.GetSourceWeapon();    
 		if (SourceWeapon != none && Target != none)

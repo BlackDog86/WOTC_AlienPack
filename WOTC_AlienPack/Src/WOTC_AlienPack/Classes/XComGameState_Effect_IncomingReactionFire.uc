@@ -20,7 +20,7 @@ function XComGameState.EventListenerReturn IncomingReactionFireCheck(Object Even
   DefendingUnit = XComGameState_Unit(`XCOMHISTORY.GetGameStateForObjectID(AbilityContext.InputContext.PrimaryTarget.ObjectID));
   if (DefendingUnit != none)
   {
-    if (DefendingUnit.HasSoldierAbility('LightningReflexes_LW_AP'))
+    if (DefendingUnit.HasSoldierAbility('BD_BD_LightningReflexes_LW'))
     {
       AttackingUnit = class'X2TacticalGameRulesetDataStructures'.static.GetAttackingUnitState(GameState);
       if(AttackingUnit != none && AttackingUnit.IsEnemyUnit(DefendingUnit))
@@ -58,7 +58,7 @@ function XComGameState.EventListenerReturn TriggerLRFlyover(Object EventData, Ob
   DefendingUnit = XComGameState_Unit(EventSource);
   if (DefendingUnit != none)
   {
-    if (DefendingUnit.HasSoldierAbility('LightningReflexes_LW_AP'))
+    if (DefendingUnit.HasSoldierAbility('BD_BD_LightningReflexes_LW'))
     {
       if (!FlyoverTriggered)
       {

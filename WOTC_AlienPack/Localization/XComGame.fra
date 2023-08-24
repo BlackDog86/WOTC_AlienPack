@@ -16,28 +16,28 @@ BriefSummary="Ces extraterrestres siègent au sommet de la hiérarchie interne d
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; NEW ABILITIES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-[WarCry X2AbilityTemplate]
+[BD_WarCry_LW X2AbilityTemplate]
 LocFriendlyName="Cri de guerre"
 LocLongDescription="D'importants bonus de visée, de volonté et de mobilité sont octroyés aux autres Goliaths et des bonus moins importants sont accordés aux autres extraterrestres et créatures d'ADVENT. Temps de rechargement: 6 tours."
 LocHelpText="Bonus accordés aux autres Goliaths et certains autres extraterrestres"
 LocFlyOverText="Cri de guerre"
 LocPromotionPopupText="<Bullet/> D'importants bonus de visée, de volonté et de mobilité sont octroyés aux autres Goliaths et des bonus moins importants sont accordés aux autres extraterrestres et créatures d'ADVENT.<br/><Bullet/> Temps de rechargement: 6 tours.<br/>"
 
-[BayonetCharge X2AbilityTemplate]
+[BD_Bayonetcharge_LW X2AbilityTemplate]
 LocFriendlyName="Charge de baïonnette"
 LocLongDescription="Permet une attaque au corps à corps, n'importe où dans la zone de sprint. Temps de rechargement: 4 tours."
 LocHelpText="Permet une attaque au corps à corps, n'importe où dans la zone de sprint."
 LocFlyOverText="Charge de baïonnette"
 LocPromotionPopupText="<Bullet/> Permet une attaque au corps à corps, n'importe où dans la zone de sprint.<br/><Bullet/> Temps de rechargement: 4 tours.<br/>"
 
-[Beastmaster_LW X2AbilityTemplate]
+[BD_Beastmaster_LW X2AbilityTemplate]
 LocFriendlyName="Maître bestial"
 LocLongDescription="Invulnérable aux Berserkers."
 LocHelpText="Invulnérable aux Berserkers."
 LocFlyOverText="Maître bestial"
 LocPromotionPopupText="<Bullet/> Invulnérable aux Berserkers.<br/>"
 
-[MassMindSpin X2AbilityTemplate]
+[BD_MassMindSpin_LW X2AbilityTemplate]
 LocFriendlyName="Vrille mentale de masse"
 LocFlyOverText="Vrille mentale de masse"
 LocLongDescription="Effectuez une vrille mentale sur plusieurs cibles dans un cône de visée."
@@ -45,21 +45,21 @@ LocHelpText="Attaque psionique affaiblissante pouvant entraîner divers effets n
 LocPromotionPopupText="<Bullet/> Attaque psionique affaiblissante pouvant entraîner divers effets négatifs, notamment le contrôle mental de plusieurs cibles."
 LocMissMessage="Résistance à la vrille mentale !"
 
-[LWDroneShock X2AbilityTemplate]
+[BD_DroneShock_LW X2AbilityTemplate]
 LocFriendlyName="Choc de drone"
 LocLongDescription="Destiné à neutraliser les civils, cet effet inflige des dégâts limités et désoriente la cible."
 LocHelpText="Cette arme inflige des dégâts limités et affaiblit la cible."
 LocFlyOverText="Choc de drone"
 LocPromotionPopupText="<Bullet/> Destiné à neutraliser les civils, cet effet inflige des dégâts limités et se contente de désorienter la cible."
 
-[LWDroneRepair X2AbilityTemplate]
+[BD_DroneRepair_LW X2AbilityTemplate]
 LocFriendlyName="Réparer"
 LocFlyOverText="Réparer"
 LocHelpText="Réparez toute unité mécanique à proximité."
 LocLongDescription="Réparez toute unité mécanique à proximité."
 LocPromotionPopupText="<Bullet/> Réparez toute unité mécanique à proximité."
 
-[LWDroneMeleeStun X2AbilityTemplate]
+[BD_DroneMeleeStun_LW X2AbilityTemplate]
 LocFriendlyName="Étourdissement"
 LocFlyOverText="Étourdissement"
 LocHelpText="Tentez d'étourdir un ennemi à portée de corps à corps."
@@ -67,21 +67,21 @@ LocLongDescription="Tentez d'étourdir un ennemi à portée de corps à corps."
 LocPromotionPopupText="<Bullet/> Tentez d'étourdir un ennemi à portée de corps à corps."
 LocMissMessage="Raté!"
 
-[PersonalShield X2AbilityTemplate]
+[BD_Personalshield_LW X2AbilityTemplate]
 LocFriendlyName="Bouclier personnel"
 LocFlyOverText="Bouclier personnel"
 LocHelpText="Octroie 5 points d'armure bonus. Temps de rechargement: 5 tours."
 LocLongDescription="Octroie 5 points d'armure bonus. Temps de rechargement: 5 tours."
 LocPromotionPopupText="<Bullet/> Octroie 5 points d'armure bonus. <br/><Bullet/> Temps de rechargement: 5 tours. <br/><Bullet/> Consomme une action et ne met pas fin au tour.<br/>"
 
-[MassReanimation_LW X2AbilityTemplate]
+[BD_MassReanimation_LW X2AbilityTemplate]
 LocFriendlyName="Réanimation de masse"
 LocFlyOverText="Réanimation de masse"
 LocHelpText="Réanimez tous les cadavres à proximité sous forme de zombies."
 LocLongDescription="Réanimez tous les cadavres à proximité sous forme de zombies."
 LocPromotionPopupText="<Bullet/> Réanimez tous les cadavres à proximité sous forme de zombies."
 
-[ReadyForAnything X2AbilityTemplate]
+[BD_ReadyForAnything_LW X2AbilityTemplate]
 LocFriendlyName="Prêt à tout"
 LocFlyOverText="Vigilance: Prêt à tout"
 ; LWOTC translated
@@ -90,31 +90,17 @@ LocLongDescription="Passez en vigilance après un tir normal à l'arme principal
 LocPromotionPopupText="<Bullet/> Passez en vigilance après un tir normal à l'arme principale ayant mis fin à votre tour."
 ; End translated
 
-[ReadyForAnythingFlyover X2AbilityTemplate]
+[BD_ReadyForAnything_LWFlyover X2AbilityTemplate]
 LocFriendlyName="Prêt à tout"
 LocFlyOverText="Vigilance: Prêt à tout"
 LocHelpText="Passez en vigilance après un tir normal à l'arme principale."
 LocLongDescription="Passez en vigilance après un tir normal à l'arme principale."
 LocPromotionPopupText="<Bullet/> Passez en vigilance après un tir normal à l'arme principale."
 
-[RepairServos X2AbilityTemplate]
-LocFriendlyName="Contrôle des dégâts"
-LocFlyOverText="Contrôle des dégâts"
-LocLongDescription="Après avoir essuyé des dégâts, vous gagnez deux points d'armure jusqu'à la fin du tour suivant."
-LocHelpText="Après avoir essuyé des dégâts, vous gagnez deux points d'armure jusqu'à la fin du tour suivant."
-LocPromotionPopupText="<Bullet/> Votre armure se renforce temporairement après un impact. Après avoir essuyé des dégâts, vous gagnez deux points d'armure jusqu'à la fin du tour suivant. <br/><Bullet/> Si l'unité est blessée plusieurs fois au cours de tours successifs, le bonus se prolonge. <br/>"
-
-[RepairServosPassive X2AbilityTemplate]
-LocFriendlyName="Contrôle des dégâts"
-LocFlyOverText="Contrôle des dégâts"
-LocLongDescription="Après avoir essuyé des dégâts, vous gagnez deux points d'armure jusqu'à la fin du tour suivant."
-LocHelpText="Après avoir essuyé des dégâts, vous gagnez deux points d'armure jusqu'à la fin du tour suivant."
-LocPromotionPopupText="<Bullet/> Après avoir essuyé des dégâts, vous gagnez deux points d'armure jusqu'à la fin du tour suivant. <br/><Bullet/> Si l'unité est blessée plusieurs fois au cours de tours successifs, le bonus se prolonge. <br/>"
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;; MutonM2_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [X2Ability_MutonM2_Abilities]
-strBayonetChargePenalty="Défense du Centurion -<XGParam:IntValue1/> pendant <XGParam:IntValue0/> tour(s)."
+strBD_Bayonetcharge_LWPenalty="Défense du Centurion -<XGParam:IntValue1/> pendant <XGParam:IntValue0/> tour(s)."
 
 [MutonM2_LW X2CharacterTemplate]
 strCharacterName="Centurion Goliath"
@@ -444,7 +430,7 @@ strCharacterName="CEM arc long"
 [ChryssalidSoldier X2CharacterTemplate]
 strCharacterName="Soldat Chrysalis"
 
-[ChryssalidSoldierSlash X2AbilityTemplate]
+[BD_ChryssalidSoldierSlash_LW X2AbilityTemplate]
 LocFriendlyName="Lacération de Soldat Chrysalis"
 LocLongDescription="Votre Lacération inflige de lourds dégâts."
 LocHelpText="Votre Lacération inflige de lourds dégâts."

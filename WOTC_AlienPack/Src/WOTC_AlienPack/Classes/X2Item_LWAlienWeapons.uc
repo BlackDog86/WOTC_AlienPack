@@ -212,8 +212,8 @@ static function array<X2DataTemplate> CreateTemplates()
 	Templates.AddItem(CreateTemplate_LWDrone_WPN('LWDroneM1_WPN'));
 	Templates.AddItem(CreateTemplate_LWDrone_WPN('LWDroneM2_WPN'));
 	
-	Templates.AddItem(CreateTemplate_LWDroneRepair_WPN('LWDroneRepairM1_WPN'));
-	Templates.AddItem(CreateTemplate_LWDroneRepair_WPN('LWDroneRepairM2_WPN'));
+	Templates.AddItem(CreateTemplate_BD_DroneRepair_LW_WPN('BD_DroneRepair_LWM1_WPN'));
+	Templates.AddItem(CreateTemplate_BD_DroneRepair_LW_WPN('BD_DroneRepair_LWM2_WPN'));
 
 	Templates.AddItem(CreateTemplate_AdvElite_WPN('AdvVanguard_WPN'));
 	Templates.AddItem(CreateTemplate_AdvElite_WPN('AdvShockTroop_WPN'));
@@ -305,7 +305,7 @@ static function X2DataTemplate CreateTemplate_MutonM2_LW_MeleeAttack()
 	Template.CanBeBuilt = false;
 
 	Template.Abilities.AddItem('Bayonet');
-	Template.Abilities.AddItem('BayonetCharge');
+	Template.Abilities.AddItem('BD_Bayonetcharge_LW');
 	Template.Abilities.AddItem('CounterattackBayonet');
 
 	return Template;
@@ -380,7 +380,7 @@ static function X2DataTemplate CreateTemplate_MutonM3_LW_WPN()
 	Template.Abilities.AddItem('HotLoadAmmo');
 	Template.Abilities.AddItem('Execute');
 
-	Template.Abilities.AddItem('LightEmUp');
+	Template.Abilities.AddItem('BD_LightEmUp_LW');
 
  	// This all the resources; sounds, animations, models, physics, the works.
 	Template.GameArchetype = "LWMutonM3Rifle.Archetypes.WP_MutonM3Rifle_Base";  // upscaled, recolored beam cannon
@@ -476,11 +476,11 @@ static function X2DataTemplate CreateTemplate_Naja_WPN(name TemplateName)
 
 	if (TemplateName == 'NajaM1_WPN' || TemplateName == 'NajaM2_WPN' || TemplateName == 'NajaM3_WPN')
 	{
-		Template.Abilities.AddItem('DamnGoodGround');
+		Template.Abilities.AddItem('BD_DamnGoodGround_LW');
 	}
 	if (TemplateName == 'NajaM2_WPN' || TemplateName == 'NajaM3_WPN')
 	{
-		Template.Abilities.AddItem('Executioner_AP'); //weapon perk
+		Template.Abilities.AddItem('BD_Executioner_LW'); //weapon perk
 		Template.Abilities.AddItem('LongWatch'); // weapon perk
 	}
 	if (TemplateName == 'NajaM3_WPN')
@@ -609,15 +609,15 @@ static function X2DataTemplate CreateTemplate_AdvGunner_WPN(name TemplateName)
 	Template.Abilities.AddItem('Reload');
 	Template.Abilities.AddItem('HotLoadAmmo');
 	Template.Abilities.AddItem('Suppression');
-	Template.Abilities.AddItem('AreaSuppression');
+	Template.Abilities.AddItem('BD_AreaSuppression_LW');
 
 	if (TemplateName == 'AdvGunnerM2_WPN' || TemplateName == 'AdvGunnerM3_WPN')
 	{
-		Template.Abilities.AddItem('LockedOn');
+		Template.Abilities.AddItem('BD_LockedOn_LW');
 	}
 	if (TemplateName == 'AdvGunnerM3_WPN')
 	{
-		Template.Abilities.AddItem('TraverseFire');
+		Template.Abilities.AddItem('BD_TraverseFire_LW');
 		Template.Abilities.AddItem('CoveringFire');
 	}
 	
@@ -796,7 +796,7 @@ static function X2DataTemplate CreateTemplate_AdvGrenadier_GrenadeLauncher(name 
 	Template.Tier = 1;
 	Template.iIdealRange = default.ADVGRENADIER_IDEALRANGE;
 	
-	Template.Abilities.AddItem('AdventGrenadeLauncher');
+	Template.Abilities.AddItem('BD_AdventGrenadeLauncher_LW');
 
 	Template.GameArchetype = "AdvGrenadeLauncher.WP_AdvGrenadeLauncher";
 
@@ -1297,7 +1297,7 @@ static function X2DataTemplate CreateTemplate_LWDrone_WPN(name TemplateName)
 	Template.InfiniteAmmo = true;
 	
 	Template.InventorySlot = eInvSlot_PrimaryWeapon;
-	Template.Abilities.AddItem('LWDroneShock');
+	Template.Abilities.AddItem('BD_DroneShock_LW');
 
 	// This all the resources; sounds, animations, models, physics, the works.
 	Template.GameArchetype = "LWDroneWeapon.Archetypes.WP_DroneBeam";
@@ -1310,7 +1310,7 @@ static function X2DataTemplate CreateTemplate_LWDrone_WPN(name TemplateName)
 	return Template;
 }
 
-static function X2DataTemplate CreateTemplate_LWDroneRepair_WPN(name TemplateName)
+static function X2DataTemplate CreateTemplate_BD_DroneRepair_LW_WPN(name TemplateName)
 {
 	local X2WeaponTemplate Template;
 
@@ -1323,9 +1323,9 @@ static function X2DataTemplate CreateTemplate_LWDroneRepair_WPN(name TemplateNam
 	Template.strImage = "img:///UILibrary_Common.AlienWeapons.GatekeeperEyeball"; 
 	Template.RemoveTemplateAvailablility(Template.BITFIELD_GAMEAREA_Multiplayer); //invalidates multiplayer availability
 
-	if(TemplateName == 'LWDroneRepairM1_WPN')
+	if(TemplateName == 'BD_DroneRepair_LWM1_WPN')
 		Template.BaseDamage = default.LWDRONEM1_DRONEREPAIRWEAPON_BASEDAMAGE;
-	if(TemplateName == 'LWDroneRepairM2_WPN')
+	if(TemplateName == 'BD_DroneRepair_LWM2_WPN')
 		Template.BaseDamage = default.LWDRONEM2_DRONEREPAIRWEAPON_BASEDAMAGE;
 
 	Template.iRange = default.LWDRONE_DRONEREPAIRWEAPON_RANGE;
@@ -1337,7 +1337,7 @@ static function X2DataTemplate CreateTemplate_LWDroneRepair_WPN(name TemplateNam
 	Template.InfiniteAmmo = true;
 	
 	Template.InventorySlot = eInvSlot_SecondaryWeapon;
-	Template.Abilities.AddItem('LWDroneRepair');
+	Template.Abilities.AddItem('BD_DroneRepair_LW');
 
 	// This all the resources; sounds, animations, models, physics, the works.
 	Template.GameArchetype = "LWDroneWeapon.Archetypes.WP_DroneRepair";
@@ -1429,8 +1429,8 @@ static function X2DataTemplate CreateTemplate_AdvElite_WPN(name TemplateName)
 		case 'AdvVanguard_WPN':
 		Template.BaseDamage = default.AdvVanguard_WPN_BASEDAMAGE; 
 		Template.iIdealRange = default.AdvVanguard_IDEALRANGE;
-		Template.Abilities.AddItem('CloseCombatSpecialist');
-		Template.Abilities.AddItem('CloseAndPersonal');
+		Template.Abilities.AddItem('BD_CloseCombatSpecialist_LW');
+		Template.Abilities.AddItem('BD_CloseandPersonal_LW');
 		break;
 
 		case 'AdvScout_WPN':

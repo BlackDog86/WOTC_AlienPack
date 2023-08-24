@@ -45,9 +45,6 @@ var config int STUNNER_COOLDOWN;
 var config int CHRYSSALID_SOLDIER_SLASH_BONUS_DAMAGE;
 var config int HIVE_QUEEN_SLASH_BONUS_DAMAGE;
 
-var config int REPAIR_SERVOS_BONUS_ARMOR;
-var config int REPAIR_SERVOS_DURATION;
-
 var config int STANDALONE_PINIONS_LOCAL_COOLDOWN;
 var config int STANDALONE_PINIONS_GLOBAL_COOLDOWN;
 var config int STANDALONE_PINIONS_TARGETING_AREA_RADIUS;
@@ -60,10 +57,9 @@ var localized string strBayonetChargePenalty;
 static function array<X2DataTemplate> CreateTemplates()
 {
 	local array<X2DataTemplate> Templates;
-
 	Templates.AddItem(CreateMutonM2_LWAbility_Beastmaster());
-	Templates.AddItem(CreateMutonM2_LWAbility_WarCry());
 	Templates.AddItem(CreateMutonM2_LWAbility_BayonetCharge());
+	Templates.AddItem(CreateMutonM2_LWAbility_WarCry());	
 	Templates.AddItem(CreateDroneShockAbility());
 	Templates.AddItem(CreateDroneRepairAbility());
 	Templates.AddItem(AddDroneMeleeStun());
@@ -74,218 +70,12 @@ static function array<X2DataTemplate> CreateTemplates()
 	Templates.AddItem(CreateReadyForAnythingAbility());
 	Templates.AddItem(ReadyForAnythingFlyover());
 	Templates.AddItem(CreateChryssalidSoldierSlashAbility());
-	Templates.AddItem(CreateHiveQueenSlashAbility());
-	Templates.AddItem(AddRepairServosAbility());
+	Templates.AddItem(AddHitandSlitherAbility());	
 	Templates.AddItem(AddFireOnDeathAbility());
-	Templates.AddItem(AddHitandSlitherAbility());
-	Templates.AddItem(PurePassive('RepairServosPassive', "img:///UILibrary_LWAlienPack.LW_AbilityDamageControl", true, 'eAbilitySource_Perk'));
 	Templates.AddItem(StandalonePinionsAbility());
 	Templates.AddItem(StandalonePinionsStage1Ability());
 	Templates.AddItem(StandalonePinionsStage2Ability());
 	return Templates;
-}
-
-static function X2AbilityTemplate StandalonePinionsAbility()
-{
-	local X2AbilityTemplate         Template;
-	Template = PurePassive('StandalonePinionsAbility', "img:///UILibrary_PerkIcons.UIPerk_archon_blazingpinions");
-
-	Template.AdditionalAbilities.AddItem('StandalonePinionsStage1');	
-	
-	return Template;
-}
-
-static function X2AbilityTemplate StandalonePinionsStage1Ability()
-{
-
-local X2AbilityTemplate Template;
-	local X2AbilityCost_ActionPoints ActionPointCost;
-	local X2AbilityCooldown_LocalAndGlobal Cooldown;
-	local X2AbilityMultiTarget_BlazingPinions BlazingPinionsMultiTarget;
-	local X2AbilityTarget_Cursor CursorTarget;
-	local X2Condition_UnitProperty UnitProperty;
-	local X2Effect_DelayedAbilityActivation BlazingPinionsStage1DelayEffect;
-	local X2Effect_Persistent BlazingPinionsStage1Effect;
-
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'StandalonePinionsStage1');
-	Template.IconImage = "img:///UILibrary_PerkIcons.UIPerk_archon_blazingpinions"; // TODO: Change this icon
-	Template.Hostility = eHostility_Offensive;
-	Template.AbilitySourceName = 'eAbilitySource_Standard';
-	Template.bShowActivation = true;
-	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_AlwaysShow;
-	Template.TwoTurnAttackAbility = 'StandalonePinionsStage2';
-
-	ActionPointCost = new class'X2AbilityCost_ActionPoints';
-	ActionPointCost.iNumPoints = 1;
-	ActionPointCost.bConsumeAllPoints = true;
-	Template.AbilityCosts.AddItem(ActionPointCost);
-
-	Cooldown = new class'X2AbilityCooldown_LocalAndGlobal';
-	Cooldown.iNumTurns = default.STANDALONE_PINIONS_LOCAL_COOLDOWN;
-	Cooldown.NumGlobalTurns = default.STANDALONE_PINIONS_GLOBAL_COOLDOWN;
-	Template.AbilityCooldown = Cooldown;
-
-	UnitProperty = new class'X2Condition_UnitProperty';
-	UnitProperty.ExcludeDead = true;
-	UnitProperty.HasClearanceToMaxZ = true;
-	Template.AbilityShooterConditions.AddItem(UnitProperty);
-
-	Template.AbilityToHitCalc = default.DeadEye;
-	Template.AddShooterEffectExclusions();
-	Template.AbilityTriggers.AddItem(default.PlayerInputTrigger);
- 
-	Template.TargetingMethod = class'X2TargetingMethod_BlazingPinions';
-
-	// The target locations are enemies
-	UnitProperty = new class'X2Condition_UnitProperty';
-	UnitProperty.ExcludeFriendlyToSource = true;
-	UnitProperty.ExcludeCivilian = true;
-	UnitProperty.ExcludeDead = true;
-	UnitProperty.HasClearanceToMaxZ = true;
-	UnitProperty.FailOnNonUnits = true;
-	Template.AbilityMultiTargetConditions.AddItem(UnitProperty);
-
-	BlazingPinionsMultiTarget = new class'X2AbilityMultiTarget_BlazingPinions';
-	BlazingPinionsMultiTarget.fTargetRadius = default.STANDALONE_PINIONS_TARGETING_AREA_RADIUS;
-	BlazingPinionsMultiTarget.NumTargetsRequired = default.STANDALONE_PINIONS_NUM_TARGETS;
-	Template.AbilityMultiTargetStyle = BlazingPinionsMultiTarget;
-
-	CursorTarget = new class'X2AbilityTarget_Cursor';
-	CursorTarget.FixedAbilityRange = default.STANDALONE_PINIONS_SELECTION_RANGE;
-	Template.AbilityTargetStyle = CursorTarget;
-
-	//Delayed Effect to cause the second Blazing Pinions stage to occur
-	BlazingPinionsStage1DelayEffect = new class 'X2Effect_DelayedAbilityActivation';
-	BlazingPinionsStage1DelayEffect.BuildPersistentEffect(1, false, false, , eGameRule_PlayerTurnBegin);
-	BlazingPinionsStage1DelayEffect.EffectName = 'BlazingPinionsStage1Delay';
-	BlazingPinionsStage1DelayEffect.TriggerEventName = class'X2Ability_Archon'.default.BlazingPinionsStage2TriggerName;
-	BlazingPinionsStage1DelayEffect.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true, , Template.AbilitySourceName);
-	Template.AddShooterEffect(BlazingPinionsStage1DelayEffect);
-
-	// An effect to attach Perk FX to
-	BlazingPinionsStage1Effect = new class'X2Effect_Persistent';
-	BlazingPinionsStage1Effect.BuildPersistentEffect(1, true, false, true);
-	BlazingPinionsStage1Effect.EffectName = class'X2Ability_Archon'.default.BlazingPinionsStage1EffectName;
-	Template.AddShooterEffect(BlazingPinionsStage1Effect);
-
-	//  The target FX goes in target array as there will be no single target hit and no side effects of this touching a unit
-	Template.AddShooterEffect(new class'X2Effect_ApplyBlazingPinionsTargetToWorld');
-
-	Template.ModifyNewContextFn = class'X2Ability_Archon'.static.BlazingPinionsStage1_ModifyActivatedAbilityContext;
-	Template.BuildNewGameStateFn = class'X2Ability_Archon'.static.BlazingPinionsStage1_BuildGameState;
-	Template.BuildInterruptGameStateFn = class'X2Ability_Archon'.static.TypicalAbility_BuildInterruptGameState;
-	Template.BuildVisualizationFn = class'X2Ability_Archon'.static.BlazingPinionsStage1_BuildVisualization;
-	Template.BuildAppliedVisualizationSyncFn = class'X2Ability_Archon'.static.BlazingPinionsStage1_BuildVisualizationSync;
-	Template.CinescriptCameraType = "Archon_BlazingPinions_Stage1";
-//BEGIN AUTOGENERATED CODE: Template Overrides 'BlazingPinionsStage1'
-	Template.bFrameEvenWhenUnitIsHidden = true;
-//END AUTOGENERATED CODE: Template Overrides 'BlazingPinionsStage1'
-	
-	return Template;
-
-}
-
-static function X2AbilityTemplate StandalonePinionsStage2Ability()
-
-{
-	local X2AbilityTemplate Template;
-	local X2AbilityTrigger_EventListener DelayedEventListener;
-	local X2Effect_RemoveEffects RemoveEffects;
-	local X2Effect_ApplyWeaponDamage DamageEffect;
-	local X2AbilityMultiTarget_Radius RadMultiTarget;
-
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'StandalonePinionsStage2');
-	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
-
-	Template.bDontDisplayInAbilitySummary = true;
-	Template.AbilityToHitCalc = default.DeadEye;
-	Template.AbilityTargetStyle = default.SelfTarget;
-
-	// This ability fires when the event DelayedExecuteRemoved fires on this unit
-	DelayedEventListener = new class'X2AbilityTrigger_EventListener';
-	DelayedEventListener.ListenerData.Deferral = ELD_OnStateSubmitted;
-	DelayedEventListener.ListenerData.EventID = class'X2Ability_Archon'.default.BlazingPinionsStage2TriggerName;
-	DelayedEventListener.ListenerData.Filter = eFilter_Unit;
-	DelayedEventListener.ListenerData.EventFn = class'XComGameState_Ability'.static.AbilityTriggerEventListener_BlazingPinions;
-	Template.AbilityTriggers.AddItem(DelayedEventListener);
-
-	RemoveEffects = new class'X2Effect_RemoveEffects';
-	RemoveEffects.EffectNamesToRemove.AddItem(class'X2Ability_Archon'.default.BlazingPinionsStage1EffectName);
-	RemoveEffects.EffectNamesToRemove.AddItem(class'X2Effect_ApplyBlazingPinionsTargetToWorld'.default.EffectName);
-	Template.AddShooterEffect(RemoveEffects);
-
-	RadMultiTarget = new class'X2AbilityMultiTarget_Radius';
-	RadMultiTarget.fTargetRadius = default.STANDALONE_PINIONS_IMPACT_RADIUS_METERS;
-
-	Template.AbilityMultiTargetStyle = RadMultiTarget;
-
-	// The MultiTarget Units are dealt this damage
-	DamageEffect = new class'X2Effect_ApplyWeaponDamage';
-	DamageEffect.bApplyWorldEffectsForEachTargetLocation = true;
-	Template.AddMultiTargetEffect(DamageEffect);
-
-	Template.ModifyNewContextFn = class'X2Ability_Archon'.static.BlazingPinionsStage2_ModifyActivatedAbilityContext;
-	Template.BuildNewGameStateFn = class'X2Ability_Archon'.static.BlazingPinionsStage2_BuildGameState;
-	Template.BuildVisualizationFn = class'X2Ability_Archon'.static.BlazingPinionsStage2_BuildVisualization;
-	Template.CinescriptCameraType = "Archon_BlazingPinions_Stage2";
-
-	Template.LostSpawnIncreasePerUse = class'X2AbilityTemplateManager'.default.HeavyWeaponLostSpawnIncreasePerUse;
-	//BEGIN AUTOGENERATED CODE: Template Overrides 'BlazingPinionsStage2'
-	Template.bFrameEvenWhenUnitIsHidden = true;
-	//END AUTOGENERATED CODE: Template Overrides 'BlazingPinionsStage2'
-
-	return Template;
-}
-
-static function X2AbilityTemplate AddRepairServosAbility()
-{
-	local X2AbilityTemplate						Template;
-	local X2AbilityTrigger_EventListener		EventListener;
-	local X2Effect_RepairServos				RepairServosEffect;
-	local X2Condition_UnitEffects ExcludeEffects;
-
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'RepairServos');
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityDamageControl";
-	Template.AbilitySourceName = 'eAbilitySource_Perk';
-	Template.Hostility = eHostility_Neutral;
-	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_NeverShow;
-	Template.AbilityToHitCalc = default.DeadEye;
-	Template.AbilityTargetStyle = default.SelfTarget;
-	Template.bShowActivation = true;
-	Template.bSkipFireAction = true;
-	//Template.bIsPassive = true;
-	Template.bDisplayInUITooltip = true;
-	Template.bDisplayInUITacticalText = true;
-	Template.AbilityShooterConditions.AddItem(default.LivingShooterProperty);
-
-	// Trigger on Damage
-	EventListener = new class'X2AbilityTrigger_EventListener';
-	EventListener.ListenerData.EventID = 'UnitTakeEffectDamage';
-	EventListener.ListenerData.EventFn = class'XComGameState_Ability'.static.AbilityTriggerEventListener_Self;
-	EventListener.ListenerData.Deferral = ELD_OnStateSubmitted;
-	EventListener.ListenerData.Filter = eFilter_Unit;
-	Template.AbilityTriggers.AddItem(EventListener);
-
-	ExcludeEffects = new class'X2Condition_UnitEffects';
-	ExcludeEffects.AddExcludeEffect('RepairServos', 'AA_RepairServosActivated');
-	Template.AbilityShooterConditions.AddItem(ExcludeEffects);
-
-	RepairServosEffect = new class'X2Effect_RepairServos';
-	RepairServosEffect.RepairServosBonusArmor = default.REPAIR_SERVOS_BONUS_ARMOR;
-	RepairServosEffect.BuildPersistentEffect(default.REPAIR_SERVOS_DURATION,false,true,,eGameRule_PlayerTurnBegin);
-	RepairServosEffect.SetDisplayInfo(ePerkBuff_Bonus, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,,Template.AbilitySourceName);
-	RepairServosEffect.DuplicateResponse = eDupe_Refresh;
-	RepairServosEffect.EffectName = 'RepairServos';
-	Template.AddTargetEffect(RepairServosEffect);
-
-	//Template.CustomFireAnim = 'HL_RepairServos';
-	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
-	Template.BuildVisualizationFn = TypicalAbility_BuildVisualization;
-	Template.BuildInterruptGameStateFn = TypicalAbility_BuildInterruptGameState;
-
-	Template.AdditionalAbilities.AddItem('RepairServosPassive');
-
-	return Template;
 }
 
 static function X2AbilityTemplate CreateMutonM2_LWAbility_BeastMaster()
@@ -295,7 +85,7 @@ static function X2AbilityTemplate CreateMutonM2_LWAbility_BeastMaster()
 	local X2AbilityTrigger					Trigger;
 	local X2Effect_BeastMaster				BeastMasterEffect;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'Beastmaster_LW');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_Beastmaster_LW');
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_NeverShow;
 	Template.Hostility = eHostility_Neutral;
@@ -328,7 +118,7 @@ static function X2AbilityTemplate CreateMutonM2_LWAbility_BayonetCharge()
 	local XGParamTag						kTag;
 	local string							strPenalty;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'BayonetCharge');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_Bayonetcharge_LW');
 	Template.AbilitySourceName = 'eAbilitySource_Standard';
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_AlwaysShow;
 	Template.IconImage = "img:///Texture2D'UILibrary_LWAlienPack.LWCenturion_AbilityBayonetCharge64'";
@@ -418,7 +208,7 @@ static function X2AbilityTemplate CreateMutonM2_LWAbility_WarCry()
 	local int								i;
 	local string							AlienName;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'WarCry');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_WarCry_LW');
 	Template.AbilitySourceName = 'eAbilitySource_Standard';
 	Template.IconImage = "img:///Texture2D'UILibrary_LWAlienPack.LWCenturion_AbilityWarCry64'";
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_AlwaysShow;
@@ -553,7 +343,7 @@ static function X2AbilityTemplate CreateDroneShockAbility()
 	local X2AbilityTarget_Single            SingleTarget;
 	local array<name>                       SkipExclusions;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'LWDroneShock');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_DroneShock_LW');
 	Template.IconImage = "img:///UILibrary_PerkIcons.UIPerk_lightningfield";
 	Template.Hostility = eHostility_Offensive;
 	Template.AbilitySourceName = 'eAbilitySource_Standard';
@@ -632,7 +422,7 @@ static function X2DataTemplate CreateDroneRepairAbility()
 	local X2AbilityTarget_Single					SingleTarget;
 	local X2AbilityCooldown							Cooldown;
 
-	`CREATE_X2ABILITY_TEMPLATE (Template, 'LWDroneRepair');
+	`CREATE_X2ABILITY_TEMPLATE (Template, 'BD_DroneRepair_LW');
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityDroneRepair"; //from old EW Repair Servos icon
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.Hostility = eHostility_Neutral;
@@ -699,7 +489,7 @@ static function X2AbilityTemplate AddDroneMeleeStun()
 	local X2Effect_Stunned				    StunnedEffect;
 	local X2Condition_UnitProperty			AdjacencyCondition;
 	local X2AbilityCooldown Cooldown;
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'LWDroneMeleeStun');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_DroneMeleeStun_LW');
 	Template.IconImage = "img:///UILibrary_PerkIcons.UIPerk_stun";
 
 	Template.AbilitySourceName = 'eAbilitySource_Standard';
@@ -759,7 +549,7 @@ static function X2AbilityTemplate CreateAdventGrenadeLauncherAbility()
 	local X2AbilityTemplate					Template;
 	local X2Effect_AdventGrenadeLauncher	AdvGLEffect;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'AdventGrenadeLauncher');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_AdventGrenadeLauncher_LW');
 
 	Template.IconImage = "img:///UILibrary_PerkIcons.UIPerk_grenade_flash";  // shouldn't ever display
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
@@ -783,7 +573,7 @@ static function X2AbilityTemplate AddHitandSlitherAbility()
 	local X2AbilityTemplate					Template;
 	local X2Effect_HitandRun				HitandRunEffect;
 
-	`CREATE_X2ABILITY_TEMPLATE (Template, 'HitandSlither');
+	`CREATE_X2ABILITY_TEMPLATE (Template, 'BD_HitandSlither_LW');
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
 	Template.Hostility = eHostility_Neutral;
@@ -819,7 +609,7 @@ static function X2DataTemplate CreateMassMindspinAbility()
 	local X2AbilityTarget_Cursor					CursorTarget;
 	local X2AbilityToHitCalc_StatCheck_UnitVsUnit	ToHitCalc;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'MassMindspin');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_MassMindSpin_LW');
 	Template.IconImage = "img:///UILibrary_PerkIcons.UIPerk_sectoid_mindspin";
 	Template.AbilitySourceName = 'eAbilitySource_Psionic';
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_AlwaysShow;
@@ -940,7 +730,7 @@ static function X2DataTemplate CreateMassReanimateAbility()
 	local X2Condition_UnitValue				UnitValue;
 	local X2Effect_SpawnPsiZombie			SpawnZombieEffect;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'MassReanimation_LW');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_MassReanimation_LW');
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_AlwaysShow;
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityMassreanimate";
 	Template.AbilitySourceName = 'eAbilitySource_Psionic';
@@ -1114,7 +904,7 @@ static function X2DataTemplate CreatePersonalShieldAbility()
 	local array<name>								SkipExclusions;
 	local X2Effect_EnergyShield						PersonalShieldEffect;
 
-	`CREATE_X2ABILITY_TEMPLATE (Template, 'PersonalShield');
+	`CREATE_X2ABILITY_TEMPLATE (Template, 'BD_Personalshield_LW');
 
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityPersonalShields"; // from old EW icon for Bioelectric skin
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
@@ -1165,7 +955,7 @@ static function X2DataTemplate CreateReadyForAnythingAbility()
 	local X2AbilityTemplate							Template;
 	local X2Effect_ReadyForAnything					ActionPointEffect;
 
-	`CREATE_X2ABILITY_TEMPLATE (Template, 'ReadyForAnything');
+	`CREATE_X2ABILITY_TEMPLATE (Template, 'BD_ReadyForAnything_LW');
 
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityReadyForAnything";
 
@@ -1185,7 +975,7 @@ static function X2DataTemplate CreateReadyForAnythingAbility()
 	ActionPointEffect.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyHelpText(), Template.IconImage,,, Template.AbilitySourceName);
 	Template.AddTargetEffect(ActionPointEffect);
 
-	Template.AdditionalAbilities.AddItem('ReadyForAnythingFlyover');
+	Template.AdditionalAbilities.AddItem('BD_ReadyForAnything_LWFlyover');
 
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
 
@@ -1198,7 +988,7 @@ static function X2DataTemplate ReadyForAnythingFlyover()
 	local X2AbilityTemplate					Template;
 	local X2AbilityTrigger_EventListener	EventListener;
 
-	`CREATE_X2ABILITY_TEMPLATE (Template, 'ReadyForAnythingFlyover');
+	`CREATE_X2ABILITY_TEMPLATE (Template, 'BD_ReadyForAnything_LWFlyover');
 
 	Template.Hostility = eHostility_Neutral;
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_NeverShow;
@@ -1251,7 +1041,7 @@ static function X2AbilityTemplate CreateChryssalidSoldierSlashAbility()
 	local X2AbilityTemplate Template;
 	local X2Effect_HiveQueenSlash	DamageEffect;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'ChryssalidSoldierSlash');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_ChryssalidSoldierSlash_LW');
 	Template.IconImage = "img:///UILibrary_PerkIcons.UIPerk_chryssalid_slash";
 
 	Template.AbilitySourceName = 'eAbilitySource_Standard';
@@ -1273,34 +1063,6 @@ static function X2AbilityTemplate CreateChryssalidSoldierSlashAbility()
 	return Template;
 }
 
-static function X2AbilityTemplate CreateHiveQueenSlashAbility()
-{
-	local X2AbilityTemplate Template;
-	local X2Effect_HiveQueenSlash	DamageEffect;
-
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'HiveQueenSlash');
-	Template.IconImage = "img:///UILibrary_PerkIcons.UIPerk_chryssalid_slash";
-
-	Template.AbilitySourceName = 'eAbilitySource_Standard';
-	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
-	Template.Hostility = eHostility_Neutral;
-	Template.AbilityToHitCalc = default.DeadEye;
-	Template.AbilityTargetStyle = default.SelfTarget;
-	Template.AbilityTriggers.AddItem(default.UnitPostBeginPlayTrigger);
-	Template.bIsPassive = true;
-	DamageEffect = new class'X2Effect_HiveQueenSlash';
-	DamageEffect.BonusDamage = default.HIVE_QUEEN_SLASH_BONUS_DAMAGE;
-	DamageEffect.BuildPersistentEffect(1, true, false, false);
-	DamageEffect.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,, 'eAbilitySource_Perk');
-	Template.AddTargetEffect(DamageEffect);
-	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
-
-	Template.LostSpawnIncreasePerUse = class'X2AbilityTemplateManager'.default.MeleeLostSpawnIncreasePerUse;
-
-	return Template;
-}
-
-
 static function X2AbilityTemplate AddFireOnDeathAbility()
 {
 	local X2AbilityTemplate						Template;
@@ -1308,7 +1070,7 @@ static function X2AbilityTemplate AddFireOnDeathAbility()
 	local X2Effect_Burning						BurningEffect;
 	local X2AbilityTrigger_EventListener		Trigger;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'FireOnDeath');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_FireOnDeath_LW');
 	Template.IconImage = "img:///UILibrary_LW_Overhaul.LW_AbilityIgnition";
 	Template.AbilitySourceName = 'eAbilitySource_Standard';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
@@ -1344,6 +1106,158 @@ static function X2AbilityTemplate AddFireOnDeathAbility()
 
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
 	Template.BuildVisualizationFn = TypicalAbility_BuildVisualization;
+
+	return Template;
+}
+
+static function X2AbilityTemplate StandalonePinionsAbility()
+{
+	local X2AbilityTemplate         Template;
+	Template = PurePassive('StandalonePinionsAbility', "img:///UILibrary_PerkIcons.UIPerk_archon_blazingpinions");
+
+	Template.AdditionalAbilities.AddItem('StandalonePinionsStage1');	
+	
+	return Template;
+}
+
+static function X2AbilityTemplate StandalonePinionsStage1Ability()
+{
+
+local X2AbilityTemplate Template;
+	local X2AbilityCost_ActionPoints ActionPointCost;
+	local X2AbilityCooldown_LocalAndGlobal Cooldown;
+	local X2AbilityMultiTarget_BlazingPinions BlazingPinionsMultiTarget;
+	local X2AbilityTarget_Cursor CursorTarget;
+	local X2Condition_UnitProperty UnitProperty;
+	local X2Effect_DelayedAbilityActivation BlazingPinionsStage1DelayEffect;
+	local X2Effect_Persistent BlazingPinionsStage1Effect;
+
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'StandalonePinionsStage1');
+	Template.IconImage = "img:///UILibrary_PerkIcons.UIPerk_archon_blazingpinions"; // TODO: Change this icon
+	Template.Hostility = eHostility_Offensive;
+	Template.AbilitySourceName = 'eAbilitySource_Standard';
+	Template.bShowActivation = true;
+	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_AlwaysShow;
+	Template.TwoTurnAttackAbility = 'StandalonePinionsStage2';
+
+	ActionPointCost = new class'X2AbilityCost_ActionPoints';
+	ActionPointCost.iNumPoints = 1;
+	ActionPointCost.bConsumeAllPoints = true;
+	Template.AbilityCosts.AddItem(ActionPointCost);
+
+	Cooldown = new class'X2AbilityCooldown_LocalAndGlobal';
+	Cooldown.iNumTurns = default.STANDALONE_PINIONS_LOCAL_COOLDOWN;
+	Cooldown.NumGlobalTurns = default.STANDALONE_PINIONS_GLOBAL_COOLDOWN;
+	Template.AbilityCooldown = Cooldown;
+
+	UnitProperty = new class'X2Condition_UnitProperty';
+	UnitProperty.ExcludeDead = true;
+	UnitProperty.HasClearanceToMaxZ = true;
+	Template.AbilityShooterConditions.AddItem(UnitProperty);
+
+	Template.AbilityToHitCalc = default.DeadEye;
+	Template.AddShooterEffectExclusions();
+	Template.AbilityTriggers.AddItem(default.PlayerInputTrigger);
+ 
+	Template.TargetingMethod = class'X2TargetingMethod_BlazingPinions';
+
+	// The target locations are enemies
+	UnitProperty = new class'X2Condition_UnitProperty';
+	UnitProperty.ExcludeFriendlyToSource = true;
+	UnitProperty.ExcludeCivilian = true;
+	UnitProperty.ExcludeDead = true;
+	UnitProperty.HasClearanceToMaxZ = true;
+	UnitProperty.FailOnNonUnits = true;
+	Template.AbilityMultiTargetConditions.AddItem(UnitProperty);
+
+	BlazingPinionsMultiTarget = new class'X2AbilityMultiTarget_BlazingPinions';
+	BlazingPinionsMultiTarget.fTargetRadius = default.STANDALONE_PINIONS_TARGETING_AREA_RADIUS;
+	BlazingPinionsMultiTarget.NumTargetsRequired = default.STANDALONE_PINIONS_NUM_TARGETS;
+	Template.AbilityMultiTargetStyle = BlazingPinionsMultiTarget;
+
+	CursorTarget = new class'X2AbilityTarget_Cursor';
+	CursorTarget.FixedAbilityRange = default.STANDALONE_PINIONS_SELECTION_RANGE;
+	Template.AbilityTargetStyle = CursorTarget;
+
+	//Delayed Effect to cause the second Blazing Pinions stage to occur
+	BlazingPinionsStage1DelayEffect = new class 'X2Effect_DelayedAbilityActivation';
+	BlazingPinionsStage1DelayEffect.BuildPersistentEffect(1, false, false, , eGameRule_PlayerTurnBegin);
+	BlazingPinionsStage1DelayEffect.EffectName = 'BlazingPinionsStage1Delay';
+	BlazingPinionsStage1DelayEffect.TriggerEventName = class'X2Ability_Archon'.default.BlazingPinionsStage2TriggerName;
+	BlazingPinionsStage1DelayEffect.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true, , Template.AbilitySourceName);
+	Template.AddShooterEffect(BlazingPinionsStage1DelayEffect);
+
+	// An effect to attach Perk FX to
+	BlazingPinionsStage1Effect = new class'X2Effect_Persistent';
+	BlazingPinionsStage1Effect.BuildPersistentEffect(1, true, false, true);
+	BlazingPinionsStage1Effect.EffectName = class'X2Ability_Archon'.default.BlazingPinionsStage1EffectName;
+	Template.AddShooterEffect(BlazingPinionsStage1Effect);
+
+	//  The target FX goes in target array as there will be no single target hit and no side effects of this touching a unit
+	Template.AddShooterEffect(new class'X2Effect_ApplyBlazingPinionsTargetToWorld');
+
+	Template.ModifyNewContextFn = class'X2Ability_Archon'.static.BlazingPinionsStage1_ModifyActivatedAbilityContext;
+	Template.BuildNewGameStateFn = class'X2Ability_Archon'.static.BlazingPinionsStage1_BuildGameState;
+	Template.BuildInterruptGameStateFn = class'X2Ability_Archon'.static.TypicalAbility_BuildInterruptGameState;
+	Template.BuildVisualizationFn = class'X2Ability_Archon'.static.BlazingPinionsStage1_BuildVisualization;
+	Template.BuildAppliedVisualizationSyncFn = class'X2Ability_Archon'.static.BlazingPinionsStage1_BuildVisualizationSync;
+	Template.CinescriptCameraType = "Archon_BlazingPinions_Stage1";
+//BEGIN AUTOGENERATED CODE: Template Overrides 'BlazingPinionsStage1'
+	Template.bFrameEvenWhenUnitIsHidden = true;
+//END AUTOGENERATED CODE: Template Overrides 'BlazingPinionsStage1'
+	
+	return Template;
+
+}
+
+static function X2AbilityTemplate StandalonePinionsStage2Ability()
+
+{
+	local X2AbilityTemplate Template;
+	local X2AbilityTrigger_EventListener DelayedEventListener;
+	local X2Effect_RemoveEffects RemoveEffects;
+	local X2Effect_ApplyWeaponDamage DamageEffect;
+	local X2AbilityMultiTarget_Radius RadMultiTarget;
+
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'StandalonePinionsStage2');
+	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
+
+	Template.bDontDisplayInAbilitySummary = true;
+	Template.AbilityToHitCalc = default.DeadEye;
+	Template.AbilityTargetStyle = default.SelfTarget;
+
+	// This ability fires when the event DelayedExecuteRemoved fires on this unit
+	DelayedEventListener = new class'X2AbilityTrigger_EventListener';
+	DelayedEventListener.ListenerData.Deferral = ELD_OnStateSubmitted;
+	DelayedEventListener.ListenerData.EventID = class'X2Ability_Archon'.default.BlazingPinionsStage2TriggerName;
+	DelayedEventListener.ListenerData.Filter = eFilter_Unit;
+	DelayedEventListener.ListenerData.EventFn = class'XComGameState_Ability'.static.AbilityTriggerEventListener_BlazingPinions;
+	Template.AbilityTriggers.AddItem(DelayedEventListener);
+
+	RemoveEffects = new class'X2Effect_RemoveEffects';
+	RemoveEffects.EffectNamesToRemove.AddItem(class'X2Ability_Archon'.default.BlazingPinionsStage1EffectName);
+	RemoveEffects.EffectNamesToRemove.AddItem(class'X2Effect_ApplyBlazingPinionsTargetToWorld'.default.EffectName);
+	Template.AddShooterEffect(RemoveEffects);
+
+	RadMultiTarget = new class'X2AbilityMultiTarget_Radius';
+	RadMultiTarget.fTargetRadius = default.STANDALONE_PINIONS_IMPACT_RADIUS_METERS;
+
+	Template.AbilityMultiTargetStyle = RadMultiTarget;
+
+	// The MultiTarget Units are dealt this damage
+	DamageEffect = new class'X2Effect_ApplyWeaponDamage';
+	DamageEffect.bApplyWorldEffectsForEachTargetLocation = true;
+	Template.AddMultiTargetEffect(DamageEffect);
+
+	Template.ModifyNewContextFn = class'X2Ability_Archon'.static.BlazingPinionsStage2_ModifyActivatedAbilityContext;
+	Template.BuildNewGameStateFn = class'X2Ability_Archon'.static.BlazingPinionsStage2_BuildGameState;
+	Template.BuildVisualizationFn = class'X2Ability_Archon'.static.BlazingPinionsStage2_BuildVisualization;
+	Template.CinescriptCameraType = "Archon_BlazingPinions_Stage2";
+
+	Template.LostSpawnIncreasePerUse = class'X2AbilityTemplateManager'.default.HeavyWeaponLostSpawnIncreasePerUse;
+	//BEGIN AUTOGENERATED CODE: Template Overrides 'BlazingPinionsStage2'
+	Template.bFrameEvenWhenUnitIsHidden = true;
+	//END AUTOGENERATED CODE: Template Overrides 'BlazingPinionsStage2'
 
 	return Template;
 }

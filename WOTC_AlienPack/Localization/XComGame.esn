@@ -16,28 +16,28 @@ BriefSummary="Estos aliens se sitúan en lo más alto de la jerarquía interna d
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; NEW ABILITIES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-[WarCry X2AbilityTemplate]
+[BD_WarCry_LW X2AbilityTemplate]
 LocFriendlyName="Grito de guerra"
 LocLongDescription="Concede grandes bonificaciones de puntería, voluntad y movilidad a otros Mutones, y bonificaciones menores a otros alienígenas inteligentes y a unidades de ADVENT. Tiempo de enfriamiento de 6 turnos."
 LocHelpText="Concede bonificaciones a otros Mutones y a otros alienígenas."
 LocFlyOverText="Grito de guerra"
 LocPromotionPopupText="<Bullet/> Concede grandes bonificaciones de puntería, voluntad y movilidad a otros Mutones, y bonificaciones menores a otros alienígenas inteligentes y a unidades de ADVENT.<br/><Bullet/> Tiempo de enfriamiento de 6 turnos.<br/>"
 
-[BayonetCharge X2AbilityTemplate]
+[BD_Bayonetcharge_LW X2AbilityTemplate]
 LocFriendlyName="Carga de bayoneta"
 LocLongDescription="Permite realizar un ataque cuerpo a cuerpo en cualquier parte que esté a distancia de carrera. Tiempo de enfriamiento de 4 turnos."
 LocHelpText="Permite realizar un ataque cuerpo a cuerpo en cualquier parte que esté a distancia de carrera."
 LocFlyOverText="Carga de bayoneta"
 LocPromotionPopupText="<Bullet/> Permite realizar un ataque cuerpo a cuerpo en cualquier parte que esté a distancia de carrera.<br/><Bullet/> Tiempo de enfriamiento de 4 turnos.<br/>"
 
-[Beastmaster_LW X2AbilityTemplate]
+[BD_Beastmaster_LW X2AbilityTemplate]
 LocFriendlyName="Señor de las bestias"
 LocLongDescription="Inmune al daño de los Berserker."
 LocHelpText="Inmune al daño de los Berserker."
 LocFlyOverText="Señor de las bestias"
 LocPromotionPopupText="<Bullet/> Inmune al daño de los Berserker.<br/>"
 
-[MassMindSpin X2AbilityTemplate]
+[BD_MassMindSpin_LW X2AbilityTemplate]
 LocFriendlyName="Ataque mental masivo"
 LocFlyOverText="Ataque mental masivo"
 LocLongDescription="Efectúa un ataque mental sobre varios objetivos dentro de un cono."
@@ -45,21 +45,21 @@ LocHelpText="Lanza un ataque psiónico masivo que puede infligir distintos estad
 LocPromotionPopupText="<Bullet/> Lanza un ataque psiónico masivo que puede infligir distintos estados negativos, incluido el control mental."
 LocMissMessage="¡Ataque mental resistido!"
 
-[LWDroneShock X2AbilityTemplate]
+[BD_DroneShock_LW X2AbilityTemplate]
 LocFriendlyName="Descarga de dron"
 LocLongDescription="Diseñado para aplacar a civiles, este efecto causa un daño mínimo y solamente desorienta."
 LocHelpText="Esta arma causa un daño mínimo y afecta al objetivo."
 LocFlyOverText="Descarga de dron"
 LocPromotionPopupText="<Bullet/> Diseñado para aplacar a civiles, este efecto causa un daño mínimo y solamente desorienta al objetivo.<br/>"
 
-[LWDroneRepair X2AbilityTemplate]
+[BD_DroneRepair_LW X2AbilityTemplate]
 LocFriendlyName="Reparar"
 LocFlyOverText="Reparar"
 LocHelpText="Repara cualquier unidad mecánica cercana."
 LocLongDescription="Repara cualquier unidad mecánica cercana."
 LocPromotionPopupText="<Bullet/> Repara cualquier unidad mecánica cercana."
 
-[LWDroneMeleeStun X2AbilityTemplate]
+[BD_DroneMeleeStun_LW X2AbilityTemplate]
 LocFriendlyName="Aturdidor"
 LocFlyOverText="Aturdidor"
 LocHelpText="Intenta aturdir a cualquier enemigo a distancia cuerpo a cuerpo."
@@ -67,52 +67,38 @@ LocLongDescription="Intenta aturdir a cualquier enemigo a distancia cuerpo a cue
 LocPromotionPopupText="<Bullet/> Intenta aturdir a cualquier enemigo a distancia cuerpo a cuerpo."
 LocMissMessage="¡Fallado!"
 
-[PersonalShield X2AbilityTemplate]
+[BD_Personalshield_LW X2AbilityTemplate]
 LocFriendlyName="Escudo personal"
 LocFlyOverText="Escudo personal"
 LocHelpText="Concede 5 puntos de blindaje ablativo. Tiempo de enfriamiento de 5 turnos."
 LocLongDescription="Concede 5 puntos de blindaje ablativo. Tiempo de enfriamiento de 5 turnos."
 LocPromotionPopupText="<Bullet/> Concede 5 puntos de blindaje ablativo.<br/><Bullet/> Tiempo de enfriamiento de 5 turnos.<br/><Bullet/> Usa una acción y no termina el turno.<br/>"
 
-[MassReanimation_LW X2AbilityTemplate]
+[BD_MassReanimation_LW X2AbilityTemplate]
 LocFriendlyName="Reanimación masiva"
 LocFlyOverText="Reanimación masiva"
 LocHelpText="Reanima a todos los seres orgánicos muertos que haya cerca, transformándolos en zombis."
 LocLongDescription="Reanima a todos los seres orgánicos muertos que haya cerca, transformándolos en zombis."
 LocPromotionPopupText="<Bullet/> Reanima a todos los seres orgánicos muertos que haya cerca, transformándolos en zombis."
 
-[ReadyForAnything X2AbilityTemplate]
+[BD_ReadyForAnything_LW X2AbilityTemplate]
 LocFriendlyName="Preparado para todo"
 LocFlyOverText="Guardia: preparado para todo"
 LocHelpText="Entra en guardia después de efectuar un disparo estándar con tu arma principal."
 LocLongDescription="Entra en guardia después de efectuar un disparo estándar con tu arma principal."
 LocPromotionPopupText="<Bullet/> Entra en guardia después de efectuar un disparo estándar con tu arma principal."
 
-[ReadyForAnythingFlyover X2AbilityTemplate]
+[BD_ReadyForAnything_LWFlyover X2AbilityTemplate]
 LocFriendlyName="Preparado para todo"
 LocFlyOverText="Guardia: preparado para todo"
 LocHelpText="Entra en guardia después de efectuar un disparo estándar con tu arma principal."
 LocLongDescription="Entra en guardia después de efectuar un disparo estándar con tu arma principal."
 LocPromotionPopupText="<Bullet/> Entra en guardia después de efectuar un disparo estándar con tu arma principal."
-
-[RepairServos X2AbilityTemplate]
-LocFriendlyName="Control de daños"
-LocFlyOverText="Control de daños"
-LocLongDescription="Después de recibir daño, obtienes 2 de blindaje hasta el final del siguiente turno."
-LocHelpText="Después de recibir daño, obtienes 2 de blindaje hasta el final del siguiente turno."
-LocPromotionPopupText="<Bullet/> Tu blindaje se endurece de forma temporal después de un impacto. Después de recibir daño, obtienes 2 de blindaje hasta el final del siguiente turno.<br/><Bullet/> Recibir varios impactos en turnos sucesivos amplía el tiempo.<br/>"
-
-[RepairServosPassive X2AbilityTemplate]
-LocFriendlyName="Control de daños"
-LocFlyOverText="Control de daños"
-LocLongDescription="Después de recibir daño, obtienes 2 de blindaje hasta el final del siguiente turno."
-LocHelpText="Después de recibir daño, obtienes 2 de blindaje hasta el final del siguiente turno."
-LocPromotionPopupText="<Bullet/> Después de recibir daño, obtienes 2 de blindaje hasta el final del siguiente turno.<br/><Bullet/> Recibir varios impactos en turnos sucesivos amplía el tiempo.<br/>"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; MutonM2_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [X2Ability_MutonM2_Abilities]
-strBayonetChargePenalty="El Centurión sufre <XGParam:IntValue1/> en defensa durante <XGParam:IntValue0/> turnos."
+strBD_Bayonetcharge_LWPenalty="El Centurión sufre <XGParam:IntValue1/> en defensa durante <XGParam:IntValue0/> turnos."
 
 [MutonM2_LW X2CharacterTemplate]
 strCharacterName="Centurión Mutón"
@@ -445,7 +431,7 @@ strCharacterName="CEM Longbow"
 [ChryssalidSoldier X2CharacterTemplate]
 strCharacterName="Soldado crisálida"
 
-[ChryssalidSoldierSlash X2AbilityTemplate]
+[BD_ChryssalidSoldierSlash_LW X2AbilityTemplate]
 LocFriendlyName="Corte de Soldado Crisálida"
 LocLongDescription="Tus ataques de corte hacen mucho daño."
 LocHelpText="Tus ataques de corte hacen mucho daño."

@@ -16,28 +16,28 @@ BriefSummary="이 외계인들은 뮤톤 내부 계급의 상위에 있습니다
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; NEW ABILITIES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-[WarCry X2AbilityTemplate]
+[BD_WarCry_LW X2AbilityTemplate]
 LocFriendlyName="전장의 포효"
 LocLongDescription="다른 뮤톤에게 대량의 조준과 의지, 기동력 보너스를 부여하고, 다른 지능을 가진 외계인과 어드밴트에게 소량의 보너스를 부여합니다. 쿨타임은 6턴입니다."
 LocHelpText="다른 뮤톤과 외계인에게 보너스를 부여합니다."
 LocFlyOverText="전장의 포효"
 LocPromotionPopupText="<Bullet/> 다른 뮤톤에게 대량의 조준과 의지, 기동력 보너스를 부여하고, 다른 지능을 가진 외계인과 어드밴트에게 소량의 보너스를 부여합니다. <br/><Bullet/>쿨타임은 6턴입니다.<br/>"
 
-[BayonetCharge X2AbilityTemplate]
+[BD_Bayonetcharge_LW X2AbilityTemplate]
 LocFriendlyName="총검 돌격"
 LocLongDescription="돌진 범위 내 임의의 타일에서 근접 공격을 가할 수 있습니다. 쿨타임은 4턴입니다."
 LocHelpText="돌진 범위 내 임의의 타일에서 근접 공격을 가할 수 있습니다."
 LocFlyOverText="총검 돌격"
 LocPromotionPopupText="<Bullet/> 돌진 범위 내 임의의 타일에서 근접 공격을 가할 수 있습니다.<br/>><Bullet/> 쿨타임은 4턴입니다.<br/>"
 
-[Beastmaster_LW X2AbilityTemplate]
+[BD_Beastmaster_LW X2AbilityTemplate]
 LocFriendlyName="비스트마스터"
 LocLongDescription="버서커의 공격에 대미지를 입지 않습니다."
 LocHelpText="버서커의 공격에 대미지를 입지 않습니다."
 LocFlyOverText="비스트마스터"
 LocPromotionPopupText="<Bullet/> 버서커의 공격에 대미지를 입지 않습니다.<br/>"
 
-[MassMindSpin X2AbilityTemplate]
+[BD_MassMindSpin_LW X2AbilityTemplate]
 LocFriendlyName="대규모 정신 착란"
 LocFlyOverText="대규모 정신 착란"
 LocLongDescription="원뿔형 범위 안에 있는 다수의 대상에 정신 착란 공격을 가합니다."
@@ -45,21 +45,21 @@ LocHelpText="정신을 약화시키는 사이오닉 공격을 가해, 다수의 
 LocPromotionPopupText="<Bullet/> 정신을 약화시키는 사이오닉 공격을 가해, 다수의 대상이 정신 지배를 포함한 여러가지 이상 상태에 빠지게 합니다."
 LocMissMessage="정신 착란에 저항함!"
 
-[LWDroneShock X2AbilityTemplate]
+[BD_DroneShock_LW X2AbilityTemplate]
 LocFriendlyName="드론 쇼크"
 LocLongDescription="이 능력은 민간인을 진정시키기 위한 목적으로 사용되었으며, 작은 대미지를 주고 대상을 혼란 상태에 빠지게 합니다."
 LocHelpText="이 무기는 대상에게 작은 대미지를 주고 이상 상태에 빠지게 합니다."
 LocFlyOverText="드론 쇼크"
 LocPromotionPopupText="<Bullet/> 이 능력은 민간인을 진정시키기 위한 목적으로 사용되었으며, 작은 대미지를 주고 대상을 혼란 상태에 빠지게 합니다.<br/>"
 
-[LWDroneRepair X2AbilityTemplate]
+[BD_DroneRepair_LW X2AbilityTemplate]
 LocFriendlyName="수리"
 LocFlyOverText="수리"
 LocHelpText="근처의 기계 유닛을 수리합니다."
 LocLongDescription="근처의 기계 유닛을 수리합니다."
 LocPromotionPopupText="<Bullet/> 근처의 기계 유닛을 수리합니다."
 
-[LWDroneMeleeStun X2AbilityTemplate]
+[BD_DroneMeleeStun_LW X2AbilityTemplate]
 LocFriendlyName="스터너"
 LocFlyOverText="스터너"
 LocHelpText="가까운 적을 기절시킵니다."
@@ -67,52 +67,38 @@ LocLongDescription="가까운 적을 기절시킵니다."
 LocPromotionPopupText="<Bullet/> 가까운 적을 기절시킵니다."
 LocMissMessage="빗나감!"
 
-[PersonalShield X2AbilityTemplate]
+[BD_Personalshield_LW X2AbilityTemplate]
 LocFriendlyName="개인 방어막"
 LocFlyOverText="개인 방어막"
 LocHelpText="5의 임시 방어구가 부여됩니다. 5턴 동안 쿨타임을 가집니다."
 LocLongDescription="5의 임시 방어구가 부여됩니다. 5턴 동안 쿨타임을 가집니다."
 LocPromotionPopupText="<Bullet/> 5의 임시 방어구가 부여됩니다.<br/><Bullet/> 5턴 동안 쿨타임을 가집니다.<br/><Bullet/> 1개의 행동력이 사용되며 턴이 종료되지 않습니다.<br/>"
 
-[MassReanimation_LW X2AbilityTemplate]
+[BD_MassReanimation_LW X2AbilityTemplate]
 LocFriendlyName="대규모 좀비화"
 LocFlyOverText="대규모 좀비화"
 LocHelpText="근처의 모든 죽어있는 유기체를 좀비로 소생시킵니다."
 LocLongDescription="근처의 모든 죽어있는 유기체를 좀비로 소생시킵니다."
 LocPromotionPopupText="<Bullet/> 근처의 모든 죽어있는 유기체를 좀비로 소생시킵니다."
 
-[ReadyForAnything X2AbilityTemplate]
+[BD_ReadyForAnything_LW X2AbilityTemplate]
 LocFriendlyName="만반의 준비"
 LocFlyOverText="경계: 만반의 준비"
 LocHelpText="주요 무기로 일반 사격 후 경계를 합니다."
 LocLongDescription="주요 무기로 일반 사격 후 경계를 합니다."
 LocPromotionPopupText="<Bullet/> 주요 무기로 일반 사격 후 경계를 합니다."
 
-[ReadyForAnythingFlyover X2AbilityTemplate]
+[BD_ReadyForAnything_LWFlyover X2AbilityTemplate]
 LocFriendlyName="만반의 준비"
 LocFlyOverText="경계: 만반의 준비"
 LocHelpText="주요 무기로 일반 사격 후 경계를 합니다."
 LocLongDescription="주요 무기로 일반 사격 후 경계를 합니다."
 LocPromotionPopupText="<Bullet/> 주요 무기로 일반 사격 후 경계를 합니다."
-
-[RepairServos X2AbilityTemplate]
-LocFriendlyName="대미지 컨트롤"
-LocFlyOverText="대미지 컨트롤"
-LocLongDescription="대미지를 입은 후, 다음 턴이 종료될 때까지 방어구 포인트가 2 증가합니다."
-LocHelpText="대미지를 입은 후, 다음 턴이 종료될 때까지 방어구 포인트가 2 증가합니다."
-LocPromotionPopupText="<Bullet/> 충돌 시 방어구가 일시적으로 단단해집니다. 피해를 입은 후, 다음 턴이 종료될 때까지 방어력이 2 증가합니다.<br/><Bullet/> 연속으로 공격을 받으면 타이머가 연장됩니다.<br/>"
-
-[RepairServosPassive X2AbilityTemplate]
-LocFriendlyName="대미지 컨트롤"
-LocFlyOverText="대미지 컨트롤"
-LocLongDescription="대미지를 입은 후, 다음 턴이 종료될 때까지 방어구 포인트가 2 증가합니다."
-LocHelpText="대미지를 입은 후, 다음 턴이 종료될 때까지 방어구 포인트가 2 증가합니다."
-LocPromotionPopupText="<Bullet/> 피해를 입은 후, 다음 턴이 종료될 때까지 방어력이 2 증가합니다.<br/><Bullet/> 이후의 턴에 공격을 받으면 타이머가 연장됩니다.<br/>"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; MutonM2_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [X2Ability_MutonM2_Abilities]
-strBayonetChargePenalty="센추리온이 <XGParam:IntValue0/>턴 동안 <XGParam:IntValue1/> 방어 페널티를 받습니다."
+strBD_Bayonetcharge_LWPenalty="센추리온이 <XGParam:IntValue0/>턴 동안 <XGParam:IntValue1/> 방어 페널티를 받습니다."
 
 [MutonM2_LW X2CharacterTemplate]
 strCharacterName="뮤톤 센추리온"
@@ -383,7 +369,7 @@ strCharacterName="MEC 롱보우"
 [ChryssalidSoldier X2CharacterTemplate]
 strCharacterName="크리살리드 병사"
 
-[ChryssalidSoldierSlash X2AbilityTemplate]
+[BD_ChryssalidSoldierSlash_LW X2AbilityTemplate]
 LocFriendlyName="크리살리드 병사 베기"
 LocLongDescription="베기 공격으로 많은 피해를 입힙니다."
 LocHelpText="베기 공격으로 많은 피해를 입힙니다."

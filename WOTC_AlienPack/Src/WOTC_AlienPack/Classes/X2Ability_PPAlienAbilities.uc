@@ -13,7 +13,6 @@ class X2Ability_PPAlienAbilities extends X2Ability config(WOTC_AlienPack);
 //LightEmUp
 //DamnGoodGround
 //Executioner
-//CenterMass
 //HitandRun
 //LockedOn
 //TraverseFire
@@ -33,11 +32,9 @@ static function array<X2DataTemplate> CreateTemplates()
 {
 	local array<X2DataTemplate> Templates;
 
-	Templates.AddItem(AddCenterMassAbility());
 	Templates.AddItem(AddDamnGoodGroundAbility());
 	Templates.AddItem(AddDepthPerceptionAbility());
 	Templates.AddItem(AddExecutionerAbility());
-	Templates.AddItem(AddHitandRunAbility());
 	Templates.AddItem(AddInfighterAbility());
 	Templates.AddItem(AddLightEmUpAbility());
 	Templates.AddItem(AddLightningReflexes_LWAbility());
@@ -71,7 +68,7 @@ static function X2AbilityTemplate AddLoneWolfAbility()
 	local X2AbilityTemplate					Template;
 	local X2Effect_LoneWolf					AimandDefModifiers;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'LoneWolf');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_Lonewolf_LW');
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityLoneWolf";
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
@@ -94,7 +91,7 @@ static function X2AbilityTemplate AddDamageControlAbilityPassive()
 {
 	local X2AbilityTemplate                 Template;	
 
-	Template = PurePassive('DamageControlPassive', "img:///UILibrary_LWAlienPack.LW_AbilityDamageControl", true, 'eAbilitySource_Perk');
+	Template = PurePassive('BD_DamageControl_LWPassive', "img:///UILibrary_LWAlienPack.LW_AbilityDamageControl", true, 'eAbilitySource_Perk');
 	Template.bCrossClassEligible = false;
 	//Template.AdditionalAbilities.AddItem('DamageControlAbilityActivated');
 	return Template;
@@ -106,7 +103,7 @@ static function X2AbilityTemplate AddDamageControlAbility()
 	local X2AbilityTrigger_EventListener		EventListener;
 	local X2Effect_DamageControl 				DamageControlEffect;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'DamageControl');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_DamageControl_LW');
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityDamageControl";
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.Hostility = eHostility_Neutral;
@@ -134,19 +131,17 @@ static function X2AbilityTemplate AddDamageControlAbility()
 	DamageControlEffect.DuplicateResponse = eDupe_Refresh;
 	DamageControlEffect.BonusArmor = default.DAMAGE_CONTROL_BONUS_ARMOR;
 	Template.AddTargetEffect(DamageControlEffect);
-
-
+	
 	Template.AddTargetEffect(DamageControlEffect);
 
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
 	Template.BuildVisualizationFn = TypicalAbility_BuildVisualization;
 	//Template.BuildInterruptGameStateFn = TypicalAbility_BuildInterruptGameState;
 
-	Template.AdditionalAbilities.AddItem('DamageControlPassive');
+	Template.AdditionalAbilities.AddItem('BD_DamageControl_LWPassive');
 
 	return Template;
 }
-
 
 //CAPT 1 Defilade adds x% bonus to cover
 static function X2AbilityTemplate AddDefiladeAbility()
@@ -156,7 +151,7 @@ static function X2AbilityTemplate AddDefiladeAbility()
 	local X2AbilityTrigger_EventListener 	EventListener;
 	local X2Condition_UnitProperty			TargetProperty;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'Defilade');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_Defilade_LW');
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LWOfficers_AbilityHitTheDirt"; 
 	Template.AbilitySourceName = 'eAbilitySource_Perk'; 
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_NeverShow;
@@ -188,7 +183,7 @@ static function X2AbilityTemplate AddDefiladeAbility()
 	DefiladeEffect.SetDisplayInfo(ePerkBuff_Bonus, Template.LocFriendlyName, Template.GetMyHelpText(), Template.IconImage,,, Template.AbilitySourceName);
 	Template.AddTargetEffect(DefiladeEffect);
 
-	Template.AdditionalAbilities.AddItem('DefiladePassive');
+	Template.AdditionalAbilities.AddItem('BD_Defilade_LWPassive');
 
 	Template.bSkipFireAction = true;
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
@@ -199,7 +194,7 @@ static function X2AbilityTemplate AddDefiladeAbility()
 
 static function X2AbilityTemplate DefiladePassive()
 {
-	return PurePassive('DefiladePassive', "img:///UILibrary_LWAlienPack.LWOfficers_AbilityHitTheDirt", , 'eAbilitySource_Perk');
+	return PurePassive('BD_Defilade_LWPassive', "img:///UILibrary_LWAlienPack.LWOfficers_AbilityHitTheDirt", , 'eAbilitySource_Perk');
 }
 
 //COL 1 Fire Discipline 
@@ -210,7 +205,7 @@ static function X2AbilityTemplate AddFireDisciplineAbility()
 	local X2AbilityTrigger_EventListener 	EventListener;
 	local X2Condition_UnitProperty			TargetProperty;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'FireDiscipline');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_FireDiscipline_LW');
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LWOfficers_AbilityFireDiscipline"; 
 	Template.AbilitySourceName = 'eAbilitySource_Perk'; 
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_NeverShow;
@@ -242,7 +237,7 @@ static function X2AbilityTemplate AddFireDisciplineAbility()
 	FireDisciplineEffect.SetDisplayInfo(ePerkBuff_Bonus, Template.LocFriendlyName, Template.GetMyHelpText(), Template.IconImage,,, Template.AbilitySourceName);
 	Template.AddTargetEffect(FireDisciplineEffect);
 
-	Template.AdditionalAbilities.AddItem('FireDisciplinePassive');
+	Template.AdditionalAbilities.AddItem('BD_BD_FireDiscipline_LW_LWPassive');
 
 	Template.bSkipFireAction = true;
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
@@ -253,7 +248,7 @@ static function X2AbilityTemplate AddFireDisciplineAbility()
 
 static function X2AbilityTemplate FireDisciplinePassive()
 {
-	return PurePassive('FireDisciplinePassive', "img:///UILibrary_LWAlienPack.LWOfficers_AbilityFireDiscipline", , 'eAbilitySource_Perk');
+	return PurePassive('BD_FireDiscipline_LWPassive', "img:///UILibrary_LWAlienPack.LWOfficers_AbilityFireDiscipline", , 'eAbilitySource_Perk');
 }
 
 static function EventListenerReturn AuraOnUnitBeginPlay(Object EventData, Object EventSource, XComGameState GameState, Name EventID, Object CallbackData)
@@ -277,7 +272,7 @@ static function X2AbilityTemplate AddBringEmOnAbility()
 	local X2AbilityTemplate						Template;
 	local X2Effect_BringEmOn		            DamageEffect;
 
-	`CREATE_X2ABILITY_TEMPLATE (Template, 'BringEmOn');
+	`CREATE_X2ABILITY_TEMPLATE (Template, 'BD_BringEmOn_LW');
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityBringEmOn";
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
@@ -302,7 +297,7 @@ static function X2AbilityTemplate AddAggressionAbility()
 	local X2AbilityTemplate				Template;
 	local X2Effect_Aggression			MyCritModifier;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'Aggression');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_Aggression_LW');
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityAggression";	
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
@@ -326,7 +321,7 @@ static function X2AbilityTemplate AddCloseandPersonalAbility()
 	local X2AbilityTemplate						Template;
 	local X2Effect_CloseandPersonal				CritModifier;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'CloseandPersonal');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_CloseandPersonal_LW');
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityCloseandPersonal";
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
@@ -351,7 +346,7 @@ static function X2AbilityTemplate AddWilltoSurviveAbility()
 	local X2Effect_WilltoSurvive				ArmorBonus;
 	local X2Effect_PersistentStatChange			WillBonus;
 
-	`CREATE_X2ABILITY_TEMPLATE (Template, 'WilltoSurvive');
+	`CREATE_X2ABILITY_TEMPLATE (Template, 'BD_WilltoSurvive_LW');
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityWilltoSurvive";
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
@@ -381,8 +376,8 @@ static function X2AbilityTemplate AddCloseCombatSpecialistAbility()
 {
 	local X2AbilityTemplate                 Template;
 
-	Template = PurePassive('CloseCombatSpecialist', "img:///UILibrary_LWAlienPack.LW_AbilityCloseCombatSpecialist", false, 'eAbilitySource_Perk');
-	Template.AdditionalAbilities.AddItem('CloseCombatSpecialistAttack');
+	Template = PurePassive('BD_CloseCombatSpecialist_LW', "img:///UILibrary_LWAlienPack.LW_AbilityCloseCombatSpecialist", false, 'eAbilitySource_Perk');
+	Template.AdditionalAbilities.AddItem('BD_CloseCombatSpecialist_LWAttack');
 	return Template;
 }
 
@@ -401,7 +396,7 @@ static function X2AbilityTemplate CloseCombatSpecialistAttack()
 	local X2AbilityTarget_Single_CCS					SingleTarget;
 	//local X2AbilityCooldown							Cooldown;	
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'CloseCombatSpecialistAttack');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_CloseCombatSpecialist_LWAttack');
 
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_NeverShow;
@@ -560,7 +555,7 @@ static function X2AbilityTemplate AddLowProfileAbility()
 	local X2AbilityTemplate					Template;
 	local X2Effect_LowProfile_LW			DefModifier;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'LowProfile');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_LowProfile_LW');
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityLowProfile";
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
@@ -584,7 +579,7 @@ static function X2AbilityTemplate AddEvasiveAbility()
 	local X2AbilityTemplate						Template;	
 	local X2Effect_PersistentStatChange			DodgeBonus;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'Evasive');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_Evasive_LW');
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityEvasive";
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.Hostility = eHostility_Neutral;
@@ -606,7 +601,7 @@ static function X2AbilityTemplate AddEvasiveAbility()
 	DodgeBonus.EffectName='EvasiveEffect';
 	Template.AddTargetEffect(DodgeBonus);
 
-	Template.AdditionalAbilities.AddItem('RemoveEvasive');
+	Template.AdditionalAbilities.AddItem('RemoveBD_Evasive_LW');
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
 	//Template.BuildVisualizationFn = TypicalAbility_BuildVisualization;  
 
@@ -620,7 +615,7 @@ static function X2AbilityTemplate RemoveEvasive()
 	local X2Effect_RemoveEffects				RemoveEffect;
 	local X2Condition_UnitEffects				RequireEffect;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'RemoveEvasive');	
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'RemoveBD_Evasive_LW');	
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityEvasive";
 	Template.Hostility = eHostility_Neutral;
@@ -653,63 +648,12 @@ static function X2AbilityTemplate RemoveEvasive()
 	Return Template;
 }
 
-
-static function X2AbilityTemplate AddCenterMassAbility()
-{
-	local X2AbilityTemplate						Template;
-	local X2Effect_PrimaryHitBonusDamage     DamageEffect;
-
-	`CREATE_X2ABILITY_TEMPLATE (Template, 'CenterMass');
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityCenterMass"; //TODO
-	Template.AbilitySourceName = 'eAbilitySource_Perk';
-	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
-	Template.Hostility = eHostility_Neutral;
-	Template.AbilityToHitCalc = default.DeadEye;
-	Template.AbilityTargetStyle = default.SelfTarget;
-	Template.AbilityTriggers.AddItem(default.UnitPostBeginPlayTrigger);
-	Template.bIsPassive = true;
-	DamageEffect = new class'X2Effect_PrimaryHitBonusDamage';
-	DamageEffect.BonusDmg = 1;
-	DamageEffect.BuildPersistentEffect(1, true, false, false);
-	DamageEffect.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,,Template.AbilitySourceName);
-	Template.AddTargetEffect(DamageEffect);
-	Template.bcrossclasseligible = false;
-	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
-	return Template;
-}
-
-static function X2AbilityTemplate AddHitandRunAbility()
-{
-	local X2AbilityTemplate				Template;
-	local X2Effect_HitandRun			HitandRunEffect;
-
-	`CREATE_X2ABILITY_TEMPLATE (Template, 'HitandRun');
-	Template.AbilitySourceName = 'eAbilitySource_Perk';
-	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
-	Template.Hostility = eHostility_Neutral;
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityHitandRun"; //TODO:
-	Template.AbilityToHitCalc = default.DeadEye;
-	Template.AbilityTargetStyle = default.SelfTarget;
-	Template.AbilityTriggers.AddItem(default.UnitPostBeginPlayTrigger);
-	Template.bIsPassive = true;
-	HitandRunEffect = new class'X2Effect_HitandRun';
-	HitandRunEffect.BuildPersistentEffect(1, true, false, false);
-	HitandRunEffect.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage,,,Template.AbilitySourceName);
-	HitandRunEffect.DuplicateResponse = eDupe_Ignore;
-	Template.AddTargetEffect(HitandRunEffect);
-	Template.bCrossClassEligible = false;
-	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
-	//  NOTE: Visualization handled in X2Effect_HitandRun
-	return Template;
-}
-
-
 static function X2AbilityTemplate AddDamnGoodGroundAbility()
 {
 	local X2AbilityTemplate					Template;
 	local X2Effect_DamnGoodGround		AimandDefModifiers;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'DamnGoodGround');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_DamnGoodGround_LW');
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityDamnGoodGround"; //TODO
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
@@ -732,7 +676,7 @@ static function X2AbilityTemplate AddExecutionerAbility()
 	local X2AbilityTemplate					Template;
 	local X2Effect_Executioner_AP			AimandCritModifiers;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'Executioner_AP');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_Executioner_LW');
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityExecutioner"; //TODO
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
@@ -757,8 +701,8 @@ static function X2AbilityTemplate AddTacticalSenseAbility()
 	local X2AbilityTemplate				Template;
 	local X2Effect_TacticalSense		MyDefModifier;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'TacticalSense');
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityTacticalSense"; //TODO
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_TacticalSense_LW');
+	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityBD_TacticalSense_LW"; //TODO
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
 	Template.Hostility = eHostility_Neutral;
@@ -782,7 +726,7 @@ static function X2AbilityTemplate AddInfighterAbility()
 	local X2AbilityTemplate						Template;
 	local X2Effect_Infighter					DodgeBonus;
 
-	`CREATE_X2ABILITY_TEMPLATE (Template, 'Infighter');
+	`CREATE_X2ABILITY_TEMPLATE (Template, 'BD_Infighter_LW');
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityInfighter"; //TODO
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
@@ -806,7 +750,7 @@ static function X2AbilityTemplate AddDepthPerceptionAbility()
 	local X2AbilityTemplate					Template;
 	local X2Effect_DepthPerception		AttackBonus;
 
-	`CREATE_X2ABILITY_TEMPLATE (Template, 'DepthPerception');
+	`CREATE_X2ABILITY_TEMPLATE (Template, 'BD_DepthPerception_LW');
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityDepthPerception"; //TODO
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
@@ -834,7 +778,7 @@ static function X2AbilityTemplate AddLightEmUpAbility()
 	local X2Condition_Visibility            VisibilityCondition;
 
 	// Macro to do localisation and stuffs
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'LightEmUp');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_LightEmUp_LW');
 
 	// Icon Properties
 	Template.bDontDisplayInAbilitySummary = false;
@@ -921,7 +865,7 @@ static function X2AbilityTemplate AddTraverseFireAbility()
 	local X2AbilityTemplate					Template;
 	local X2Effect_TraverseFire			ActionEffect;
 
-	`CREATE_X2ABILITY_TEMPLATE (Template, 'TraverseFire');
+	`CREATE_X2ABILITY_TEMPLATE (Template, 'BD_TraverseFire_LW');
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityTraverseFire"; //TODO
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
@@ -945,7 +889,7 @@ static function X2AbilityTemplate AddLockedOnAbility()
 	local X2AbilityTemplate         Template;
 	local X2Effect_LockedOn		LockedOnEffect;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'LockedOn');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_LockedOn_LW');
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityLockedOn"; //TODO
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
@@ -970,7 +914,7 @@ static function X2AbilityTemplate AddLightningReflexes_LWAbility()
 	local X2AbilityTemplate                 Template;
 	local X2Effect_LightningReflexes_LW	PersistentEffect;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'LightningReflexes_LW');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_LightningReflexes_LW');
 	Template.IconImage = "img:///UILibrary_PerkIcons.UIPerk_lightningreflexes";
 	Template.Hostility = eHostility_Neutral;
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
@@ -1004,7 +948,7 @@ static function X2AbilityTemplate AddAreaSuppressionAbility()
 	local X2Condition_UnitProperty						ShooterCondition;
 	local X2Condition_UnitEffects						SuppressedCondition;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'AreaSuppression');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_AreaSuppression_LW');
 	Template.IconImage = "img:///UILibrary_LW_PerkPack.LW_AreaSuppression";
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_AlwaysShow;
@@ -1092,7 +1036,7 @@ static function X2AbilityTemplate AddAreaSuppressionAbility()
 	Template.AddMultiTargetEffect(SuppressionEffect);
 	Template.AddMultiTargetEffect(class'X2Ability_GrenadierAbilitySet'.static.HoloTargetEffect());
 	
-	Template.AdditionalAbilities.AddItem('AreaSuppressionShot_LW');
+	Template.AdditionalAbilities.AddItem('BD_AreaSuppressionShot_LW');
 
 	Template.TargetingMethod = class'X2TargetingMethod_AreaSuppression';
 
@@ -1198,7 +1142,7 @@ static function X2AbilityTemplate AreaSuppressionShot_LW()
 	local X2Effect                          ShotEffect;
 	local X2AbilityCost_Ammo				AmmoCost;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'AreaSuppressionShot_LW');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_AreaSuppressionShot_LW');
 
 	Template.bDontDisplayInAbilitySummary = true;
 	ReserveActionPointCost = new class'X2AbilityCost_ReserveActionPoints';

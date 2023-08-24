@@ -16,28 +16,28 @@ BriefSummary="このエイリアンたちは、ミュートンの指揮系統内
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; NEW ABILITIES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-[WarCry X2AbilityTemplate]
+[BD_WarCry_LW X2AbilityTemplate]
 LocFriendlyName="ウォークライ"
 LocLongDescription="他のミュートンの命中率、意志力、機動力を大きく向上させる。また、知性のある他のエイリアンとアドヴェントに多少のボーナスをもたらす。クールダウン：6ターン。"
 LocHelpText="他のミュートンや他のエイリアン数体にボーナスをもたらす。"
 LocFlyOverText="ウォークライ"
 LocPromotionPopupText="<Bullet/>他のミュートンの命中率、意志力、機動力を大きく向上させる。また、知性のある他の多くのエイリアンとアドヴェントに多少のボーナスをもたらす。<br/><Bullet/>クールダウン：6ターン。<br/>"
 
-[BayonetCharge X2AbilityTemplate]
+[BD_Bayonetcharge_LW X2AbilityTemplate]
 LocFriendlyName="銃剣突撃"
 LocLongDescription="ダッシュ距離内であればどこからでも近接攻撃が行える。クールダウン：4ターン。"
 LocHelpText="ダッシュ距離内であればどこからでも近接攻撃が行える。"
 LocFlyOverText="銃剣突撃"
 LocPromotionPopupText="<Bullet/>ダッシュ距離内であればどこからでも近接攻撃が行える。<br/><Bullet/> クールダウン：4ターン。<br/>"
 
-[Beastmaster_LW X2AbilityTemplate]
+[BD_Beastmaster_LW X2AbilityTemplate]
 LocFriendlyName="ビーストマスター"
 LocLongDescription="バーサーカーからの攻撃でダメージを受けない。"
 LocHelpText="バーサーカーからの攻撃でダメージを受けない。"
 LocFlyOverText="ビーストマスター"
 LocPromotionPopupText="<Bullet/>バーサーカーからの攻撃を無効化。<br/>"
 
-[MassMindSpin X2AbilityTemplate]
+[BD_MassMindSpin_LW X2AbilityTemplate]
 LocFriendlyName="マス・マインドスピン"
 LocFlyOverText="マス・マインドスピン"
 LocLongDescription="円錐状の効果範囲内にいる複数ターゲットに対して、マインドスピン攻撃を行う。"
@@ -45,21 +45,21 @@ LocHelpText="サイキック攻撃を複数ターゲットに仕掛け、精神�
 LocPromotionPopupText="<Bullet/>サイキック攻撃を複数ターゲットに仕掛け、精神支配などの状態異常を生じさせる。"
 LocMissMessage="マインドスピンに抵抗！"
 
-[LWDroneShock X2AbilityTemplate]
+[BD_DroneShock_LW X2AbilityTemplate]
 LocFriendlyName="ドローンショック"
 LocLongDescription="民間人制圧用兵器。目標に与えるダメージを最小限に抑え、行動の自由を奪うのみにとどめるよう設計されている。"
 LocHelpText="民間人制圧用兵器。目標に与えるダメージは最小限に抑えられている。"
 LocFlyOverText="ドローンショック"
 LocPromotionPopupText="<Bullet/>民間人制圧用兵器。目標に与えるダメージを最小限に抑え、行動の自由を奪うのみにとどめるよう設計されている。<br/>"
 
-[LWDroneRepair X2AbilityTemplate]
+[BD_DroneRepair_LW X2AbilityTemplate]
 LocFriendlyName="修復"
 LocFlyOverText="修復"
 LocHelpText="近くにいる機械ユニット1体を修復する。"
 LocLongDescription="近くにいる機械ユニット1体を修復する。"
 LocPromotionPopupText="<Bullet/>近くにいる機械ユニット1体を修復する。"
 
-[LWDroneMeleeStun X2AbilityTemplate]
+[BD_DroneMeleeStun_LW X2AbilityTemplate]
 LocFriendlyName="スタナー"
 LocFlyOverText="スタナー"
 LocHelpText="近接攻撃の届く距離にいる敵1体にスタン効果を与える。"
@@ -67,52 +67,38 @@ LocLongDescription="近接攻撃の届く距離にいる敵1体にスタン効�
 LocPromotionPopupText="<Bullet/>近接攻撃の届く距離にいる敵1体にスタン効果を与える。"
 LocMissMessage="外した！"
 
-[PersonalShield X2AbilityTemplate]
+[BD_Personalshield_LW X2AbilityTemplate]
 LocFriendlyName="パーソナルシールド"
 LocFlyOverText="パーソナルシールド"
 LocHelpText="5ポイントの摩耗アーマーが得られる。クールダウン：5ターン。"
 LocLongDescription="5ポイントの摩耗アーマーが得られる。クールダウン：5ターン。"
 LocPromotionPopupText="<Bullet/>5ポイントの摩耗アーマーが得られる。<br/><Bullet/>クールダウン：5ターン。<br/><Bullet/>行動値1を消費。使用してもターン終了にはならない。<br/>"
 
-[MassReanimation_LW X2AbilityTemplate]
+[BD_MassReanimation_LW X2AbilityTemplate]
 LocFriendlyName="マス・リアニメート"
 LocFlyOverText="マス・リアニメート"
 LocHelpText="付近に存在する全ての死体をゾンビとして蘇らせる。"
 LocLongDescription="付近に存在する全ての死体をゾンビとして蘇らせる。"
 LocPromotionPopupText="<Bullet/>付近に存在する全ての死体をゾンビとして蘇らせる。"
 
-[ReadyForAnything X2AbilityTemplate]
+[BD_ReadyForAnything_LW X2AbilityTemplate]
 LocFriendlyName="全状況対応"
 LocFlyOverText="監視：全状況対応"
 LocHelpText="メイン武器による通常射撃を行い、その後監視状態になる。"
 LocLongDescription="メイン武器による通常射撃を行い、その後監視状態になる。"
 LocPromotionPopupText="<Bullet/>メイン武器による通常射撃を行い、その後監視状態になる。"
 
-[ReadyForAnythingFlyover X2AbilityTemplate]
+[BD_ReadyForAnything_LWFlyover X2AbilityTemplate]
 LocFriendlyName="全状況対応"
 LocFlyOverText="監視：全状況対応"
 LocHelpText="メイン武器による通常射撃を行い、その後監視状態になる。"
 LocLongDescription="メイン武器による通常射撃を行い、その後監視状態になる。"
 LocPromotionPopupText="<Bullet/>メイン武器による通常射撃を行い、その後監視状態になる。"
-
-[RepairServos X2AbilityTemplate]
-LocFriendlyName="ダメージコントロール"
-LocFlyOverText="ダメージコントロール"
-LocLongDescription="ダメージを受けると、次のターンが終了するまでアーマー+2となる。"
-LocHelpText="ダメージを受けると、次のターンが終了するまでアーマー+2となる。"
-LocPromotionPopupText="<Bullet/>衝撃を受けたアーマーが一時的に硬化する。ダメージを受けると、次のターンが終了するまでアーマー+2となる。<br/><Bullet/>続くターンに連続して攻撃を受けると、効果が延長される。<br/>"
-
-[RepairServosPassive X2AbilityTemplate]
-LocFriendlyName="ダメージコントロール"
-LocFlyOverText="ダメージコントロール"
-LocLongDescription="ダメージを受けると、次のターンが終了するまでアーマー+2となる。"
-LocHelpText="ダメージを受けると、次のターンが終了するまでアーマー+2となる。"
-LocPromotionPopupText="<Bullet/>ダメージを受けると、次のターンが終了するまでアーマー+2となる。<br/><Bullet/>続くターンに連続して攻撃を受けると、効果が延長される。<br/>"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; MutonM2_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [X2Ability_MutonM2_Abilities]
-strBayonetChargePenalty="センチュリオンは<XGParam:IntValue0/>ターンの間、防御力<XGParam:IntValue1/>。"
+strBD_Bayonetcharge_LWPenalty="センチュリオンは<XGParam:IntValue0/>ターンの間、防御力<XGParam:IntValue1/>。"
 
 [MutonM2_LW X2CharacterTemplate]
 strCharacterName="ミュートン・センチュリオン"
@@ -382,7 +368,7 @@ strCharacterName="MECロングボウ"
 [ChryssalidSoldier X2CharacterTemplate]
 strCharacterName="クリサリド兵"
 
-[ChryssalidSoldierSlash X2AbilityTemplate]
+[BD_ChryssalidSoldierSlash_LW X2AbilityTemplate]
 LocFriendlyName="クリサリド・ソルジャースラッシュ"
 LocLongDescription="敵を切りつけ、大きなダメージを与える。"
 LocHelpText="敵を切りつけ、大きなダメージを与える。"

@@ -16,28 +16,28 @@ BriefSummary="Ci obcy znajdują się na szczycie wewnętrznej hierarchii mutonó
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; NEW ABILITIES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-[WarCry X2AbilityTemplate]
+[BD_WarCry_LW X2AbilityTemplate]
 LocFriendlyName="Okrzyk bojowy"
 LocLongDescription="Zapewnia duże premie do celności, woli i mobilności innym mutonom oraz mniejsze premie inteligentnym obcym i ADVENT-owi. Czas odnawiania wynosi 6 tur."
 LocHelpText="Daje premie innym mutonom i niektórym pozostałym obcym."
 LocFlyOverText="Okrzyk bojowy"
 LocPromotionPopupText="<Bullet/> Zapewnia duże premie do celności, woli i mobilności innym mutonom oraz mniejsze premie inteligentnym obcym i ADVENT-owi.<br/><Bullet/> Czas odnawiania wynosi 6 tur.<br/>"
 
-[BayonetCharge X2AbilityTemplate]
+[BD_Bayonetcharge_LW X2AbilityTemplate]
 LocFriendlyName="Szarża z bagnetem"
 LocLongDescription="Pozwala wykonać atak wręcz w dowolnym miejscu znajdującym się w zasięgu sprintu. Odnawianie trwa 4 tury."
 LocHelpText="Pozwala wykonać atak wręcz w dowolnym miejscu znajdującym się w zasięgu sprintu."
 LocFlyOverText="Szarża z bagnetem"
 LocPromotionPopupText="<Bullet/> Pozwala wykonać atak wręcz wszędzie w zasięgu sprintu.<br/><Bullet/> Odnawianie trwa 4 tury.<br/>"
 
-[Beastmaster_LW X2AbilityTemplate]
+[BD_Beastmaster_LW X2AbilityTemplate]
 LocFriendlyName="Władca zwierząt"
 LocLongDescription="Całkowita odporność na obrażenia zadawane przez berserkerów."
 LocHelpText="Całkowita odporność na obrażenia zadawane przez berserkerów."
 LocFlyOverText="Władca zwierząt"
 LocPromotionPopupText="<Bullet/> Całkowita odporność na obrażenia zadawane przez berserkerów.<br/>"
 
-[MassMindSpin X2AbilityTemplate]
+[BD_MassMindSpin_LW X2AbilityTemplate]
 LocFriendlyName="Masowe otumanienie"
 LocFlyOverText="Masowe otumanienie"
 LocLongDescription="Masowe otumanienie celów na obszarze w kształcie stożka."
@@ -45,21 +45,21 @@ LocHelpText="Przeprowadzenie osłabiającego ataku psionicznego na kilka celów.
 LocPromotionPopupText="<Bullet/> Przeprowadzenie osłabiającego ataku psionicznego na kilka celów. Może on spowodować różne negatywne skutki, w tym kontrolę umysłu."
 LocMissMessage="Otumanienie powstrzymane!"
 
-[LWDroneShock X2AbilityTemplate]
+[BD_DroneShock_LW X2AbilityTemplate]
 LocFriendlyName="Wstrząs drona"
 LocLongDescription="Służy do pacyfikacji cywilów. Zadaje niewielkie obrażenia i tylko wprowadza cel w dezorientację."
 LocHelpText="Ta broń zadaje niewielkie obrażenia i osłabia cel."
 LocFlyOverText="Wstrząs drona"
 LocPromotionPopupText="<Bullet/> Służy do pacyfikacji cywilów. Zadaje niewielkie obrażenia i tylko wprowadza cel w dezorientację.<br/>"
 
-[LWDroneRepair X2AbilityTemplate]
+[BD_DroneRepair_LW X2AbilityTemplate]
 LocFriendlyName="Naprawa"
 LocFlyOverText="Naprawa"
 LocHelpText="Naprawa pobliskiej mechanicznej jednostki."
 LocLongDescription="Naprawa pobliskiej mechanicznej jednostki."
 LocPromotionPopupText="<Bullet/> Naprawa pobliskiej mechanicznej jednostki."
 
-[LWDroneMeleeStun X2AbilityTemplate]
+[BD_DroneMeleeStun_LW X2AbilityTemplate]
 LocFriendlyName="Paralizator"
 LocFlyOverText="Paralizator"
 LocHelpText="Próba ogłuszenia celu w zasięgu walki wręcz."
@@ -67,52 +67,38 @@ LocLongDescription="Próba ogłuszenia celu w zasięgu walki wręcz."
 LocPromotionPopupText="<Bullet/> Próba ogłuszenia celu w zasięgu walki wręcz."
 LocMissMessage="Pudło!"
 
-[PersonalShield X2AbilityTemplate]
+[BD_Personalshield_LW X2AbilityTemplate]
 LocFriendlyName="Tarcza osobista"
 LocFlyOverText="Tarcza osobista"
 LocHelpText="Zapewnia 5 punktów pancerza ablacyjnego. Odnawianie trwa 5 tur."
 LocLongDescription="Zapewnia 5 punktów pancerza ablacyjnego. Odnawianie trwa 5 tur."
 LocPromotionPopupText="<Bullet/> Zapewnia 5 punktów pancerza ablacyjnego.<br/><Bullet/> Odnawianie trwa 5 tur.<br/><Bullet/> Zużywa jedną akcję i nie kończy tury.<br/>"
 
-[MassReanimation_LW X2AbilityTemplate]
+[BD_MassReanimation_LW X2AbilityTemplate]
 LocFriendlyName="Masowe ożywienie"
 LocFlyOverText="Masowe ożywienie"
 LocHelpText="Ożywienie wszystkich pobliskich zwłok i zamiana ich w zombie."
 LocLongDescription="Ożywienie wszystkich pobliskich zwłok i zamiana ich w zombie."
 LocPromotionPopupText="<Bullet/> Ożywienie wszystkich pobliskich zwłok i zamiana ich w zombie."
 
-[ReadyForAnything X2AbilityTemplate]
+[BD_ReadyForAnything_LW X2AbilityTemplate]
 LocFriendlyName="Pełna gotowość"
 LocFlyOverText="Warta: pełna gotowość"
 LocHelpText="Przejście do trybu warty po oddaniu zwykłego strzału z broni głównej."
 LocLongDescription="Przejście do trybu warty po oddaniu zwykłego strzału z broni głównej."
 LocPromotionPopupText="<Bullet/> Przejście do trybu warty po oddaniu zwykłego strzału z broni głównej."
 
-[ReadyForAnythingFlyover X2AbilityTemplate]
+[BD_ReadyForAnything_LWFlyover X2AbilityTemplate]
 LocFriendlyName="Pełna gotowość"
 LocFlyOverText="Warta: pełna gotowość"
 LocHelpText="Przejście do trybu warty po oddaniu zwykłego strzału z broni głównej."
 LocLongDescription="Przejście do trybu warty po oddaniu zwykłego strzału z broni głównej."
 LocPromotionPopupText="<Bullet/> Przejście do trybu warty po oddaniu zwykłego strzału z broni głównej."
-
-[RepairServos X2AbilityTemplate]
-LocFriendlyName="Ograniczenie szkód"
-LocFlyOverText="Ograniczenie szkód"
-LocLongDescription="Po odniesieniu obrażeń otrzymasz dwa punkty pancerza do końca następnej tury."
-LocHelpText="Po odniesieniu obrażeń otrzymasz dwa punkty pancerza do końca następnej tury."
-LocPromotionPopupText="<Bullet/> Twój pancerz zostaje wzmocniony na pewien czas po uderzeniu. Po odniesieniu obrażeń otrzymasz dwa punkty pancerza do końca następnej tury.<br/><Bullet/> Otrzymanie kilku trafień w kolejnych turach wydłuża czas działania zdolności.<br/>"
-
-[RepairServosPassive X2AbilityTemplate]
-LocFriendlyName="Ograniczenie szkód"
-LocFlyOverText="Ograniczenie szkód"
-LocLongDescription="Po odniesieniu obrażeń otrzymasz dwa punkty pancerza do końca następnej tury."
-LocHelpText="Po odniesieniu obrażeń otrzymasz dwa punkty pancerza do końca następnej tury."
-LocPromotionPopupText="<Bullet/> Po odniesieniu obrażeń otrzymasz dwa punkty pancerza do końca następnej tury.<br/><Bullet/> Otrzymanie kilku trafień w kolejnych turach wydłuża czas działania zdolności.<br/>"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; MutonM2_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [X2Ability_MutonM2_Abilities]
-strBayonetChargePenalty="Obrona Centuriona spada do <XGParam:IntValue1/> na następującą liczbę tur: <XGParam:IntValue0/>."
+strBD_Bayonetcharge_LWPenalty="Obrona Centuriona spada do <XGParam:IntValue1/> na następującą liczbę tur: <XGParam:IntValue0/>."
 
 [MutonM2_LW X2CharacterTemplate]
 strCharacterName="Muton centurion"
@@ -382,7 +368,7 @@ strCharacterName="Potężny MEC łucznik"
 [ChryssalidSoldier X2CharacterTemplate]
 strCharacterName="Chryzalid-żołnierz"
 
-[ChryssalidSoldierSlash X2AbilityTemplate]
+[BD_ChryssalidSoldierSlash_LW X2AbilityTemplate]
 LocFriendlyName="Cięcie chryzalida żołnierza"
 LocLongDescription="Twoje ataki tnące zadają duże obrażenia."
 LocHelpText="Twoje ataki tnące zadają duże obrażenia."

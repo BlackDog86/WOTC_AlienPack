@@ -17,7 +17,7 @@ BriefSummary="These aliens sit atop the Muton internal hierarchy. Unlike the Cen
 ;;;;;;;;;;;;;;;;;;;;;;;;;; MutonM2_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [X2Ability_MutonM2_Abilities]
-strBayonetChargePenalty="Centurion suffers <XGParam:IntValue1/> Defense for <XGParam:IntValue0/> turns."
+strBD_Bayonetcharge_LWPenalty="Centurion suffers <XGParam:IntValue1/> Defense for <XGParam:IntValue0/> turns."
 
 [MutonM2_LW X2CharacterTemplate]
 strCharacterName="Muton Centurion"
@@ -389,18 +389,8 @@ AbilityDescName="micromissiles"
 [ChryssalidSoldier X2CharacterTemplate]
 strCharacterName="Chryssalid Soldier"
 
-[ChryssalidSoldierSlash X2AbilityTemplate]
+[BD_ChryssalidSoldierSlash_LW X2AbilityTemplate]
 LocFriendlyName="Chryssalid Soldier Slash"
-LocLongDescription="Your slash attacks do lots of damage."
-LocHelpText="Your slash attacks do lots of damage."
-
-;;;;;;;;;;;;;;;;;;;;;;;;;; Hive Queen ;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-[HiveQueen X2CharacterTemplate]
-strCharacterName="Hive Queen"
-
-[HiveQueenSlash X2AbilityTemplate]
-LocFriendlyName="Greater Chryssalid Slash"
 LocLongDescription="Your slash attacks do lots of damage."
 LocHelpText="Your slash attacks do lots of damage."
 
@@ -480,28 +470,28 @@ AbilityDescName="mag rifle"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; ABILITIES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-[WarCry X2AbilityTemplate]
+[BD_WarCry_LW X2AbilityTemplate]
 LocFriendlyName="War Cry"
 LocLongDescription="Grant major Aim, Will and Mobility bonuses to other Mutons and lesser bonuses to other sapient aliens and ADVENT. 6-turn cooldown."
 LocHelpText="Grant bonuses to other Mutons and some other aliens."
 LocFlyOverText="War Cry"
 LocPromotionPopupText="<Bullet/> Grant major Aim, Will and Mobility bonuses to other Mutons and lesser bonuses to many other sapient aliens and ADVENT.<br/><Bullet/> 6-turn cooldown.<br/>"
 
-[BayonetCharge X2AbilityTemplate]
+[BD_Bayonetcharge_LW X2AbilityTemplate]
 LocFriendlyName="Bayonet Charge"
 LocLongDescription="Allows a melee attack anywhere within sprint distance. Four-turn cooldown."
 LocHelpText="Allows a melee attack anywhere within sprint distance."
 LocFlyOverText="Bayonet Charge"
 LocPromotionPopupText="<Bullet/> Allows a melee attack anywhere within sprint distance.<br/><Bullet/> 4-turn cooldown.<br/>"
 
-[Beastmaster_LW X2AbilityTemplate]
+[BD_Beastmaster_LW X2AbilityTemplate]
 LocFriendlyName="Beastmaster"
 LocLongDescription="Immune to damage from Berserkers."
 LocHelpText="Immune to damage from Berserkers."
 LocFlyOverText="Beastmaster"
 LocPromotionPopupText="<Bullet/> Immune to damage from Berserkers.<br/>"
 
-[MassMindSpin X2AbilityTemplate]
+[BD_MassMindSpin_LW X2AbilityTemplate]
 LocFriendlyName="Mass Mindspin"
 LocFlyOverText="Mass Mindspin"
 LocLongDescription="Perform a Mindspin attack on multiple targets within a cone."
@@ -509,21 +499,21 @@ LocHelpText="Launch a debilitating psionic attack against multiple targets that 
 LocPromotionPopupText="<Bullet/> Launch a debilitating psionic attack against multiple targets target that can inflict different negative conditions, including mental control."
 LocMissMessage="Mindspin resisted!"
 
-[LWDroneShock X2AbilityTemplate]
+[BD_DroneShock_LW X2AbilityTemplate]
 LocFriendlyName="Drone Shock"
 LocLongDescription="Intended to pacify civilians, this effect does minimal damage and only disorients."
 LocHelpText="This weapon does minimal damage and impairs the target."
 LocFlyOverText="Drone Shock"
 LocPromotionPopupText="<Bullet/> Intended to pacify civilians, this effect does minimal damage and only disorients the target.<br/>"
 
-[LWDroneRepair X2AbilityTemplate]
+[BD_DroneRepair_LW X2AbilityTemplate]
 LocFriendlyName="Repair"
 LocFlyOverText="Repair"
 LocHelpText="Repair any nearby mechanical unit."
 LocLongDescription="Repair any nearby mechanical unit."
 LocPromotionPopupText="<Bullet/> Repair any nearby mechanical unit."
 
-[LWDroneMeleeStun X2AbilityTemplate]
+[BD_DroneMeleeStun_LW X2AbilityTemplate]
 LocFriendlyName="Stunner"
 LocFlyOverText="Stunner"
 LocHelpText="Attempt to stun any enemy within melee range."
@@ -531,21 +521,21 @@ LocLongDescription="Attempt to stun any enemy within melee range."
 LocPromotionPopupText="<Bullet/> Attempt to stun any enemy within melee range."
 LocMissMessage="Missed!"
 
-[PersonalShield X2AbilityTemplate]
+[BD_Personalshield_LW X2AbilityTemplate]
 LocFriendlyName="Personal Shield"
 LocFlyOverText="Personal Shield"
 LocHelpText="Grants 5 points of ablative armor. 5-turn cooldown."
 LocLongDescription="Grants 5 points of ablative armor. 5-turn cooldown."
 LocPromotionPopupText="<Bullet/> Grants 5 points of ablative armor.<br/><Bullet/> 5-turn cooldown.<br/><Bullet/> Uses one action; does not end turn.<br/>"
 
-[MassReanimation_LW X2AbilityTemplate]
+[BD_MassReanimation_LW X2AbilityTemplate]
 LocFriendlyName="Mass Reanimate"
 LocFlyOverText="Mass Reanimate"
 LocHelpText="Reanimate all nearby dead organics, turning them into zombies."
 LocLongDescription="Reanimate all nearby dead organics, turning them into zombies."
 LocPromotionPopupText="<Bullet/> Reanimate all nearby dead organics, turning them into zombies."
 
-[ReadyForAnything X2AbilityTemplate]
+[BD_ReadyForAnything_LW X2AbilityTemplate]
 LocFriendlyName="Ready For Anything"
 LocFlyOverText="Overwatch: Ready For Anything"
 ; LWOTC Needs Translation
@@ -554,84 +544,63 @@ LocLongDescription="Enter overwatch after firing a turn-ending standard shot wit
 LocPromotionPopupText="<Bullet/> Enter overwatch after firing a turn-ending standard shot with your primary weapon."
 ; End Translation
 
-[ReadyForAnythingFlyover X2AbilityTemplate]
+[BD_ReadyForAnything_LWFlyover X2AbilityTemplate]
 LocFriendlyName="Ready For Anything"
 LocFlyOverText="Overwatch: Ready For Anything"
 LocHelpText="Enter Overwatch after firing a standard shot with your primary weapon."
 LocLongDescription="Enter Overwatch after firing a standard shot with your primary weapon."
 LocPromotionPopupText="<Bullet/> Enter Overwatch after firing a standard shot with your primary weapon."
 
-[RepairServos X2AbilityTemplate]
-LocFriendlyName="Damage Control"
-LocFlyOverText="Damage Control"
-LocLongDescription="After taking damage, gain two armor through the end of the next turn."
-LocHelpText="After taking damage, gain two armor through the end of the next turn."
-LocPromotionPopupText="<Bullet/> Your armor hardens temporarily after an impact. After taking damage, gain two armor through the end of the next turn.<br/><Bullet/> Taking multiple hits on successive turns extends the timer.<br/>"
-
-[RepairServosPassive X2AbilityTemplate]
-LocFriendlyName="Damage Control"
-LocFlyOverText="Damage Control"
-LocLongDescription="After taking damage, gain two armor through the end of the next turn."
-LocHelpText="After taking damage, gain two armor through the end of the next turn."
-LocPromotionPopupText="<Bullet/> After taking damage, gain two armor through the end of the next turn.<br/><Bullet/> Taking multiple hits on successive turns extends the timer.<br/>"
-
-[LightningReflexes_LW X2AbilityTemplate]
+[BD_LightningReflexes_LW X2AbilityTemplate]
 LocFriendlyName="Lightning Reflexes"
 LocFlyOverText="Lightning Reflexes"
 LocLongDescription="Reaction fire shots against you have a significantly decreased chance to hit. The bonus goes down with each additional reaction shot you face."
 LocHelpText="Reaction fire shots against you have a decreased chance to hit."
 LocPromotionPopupText="<Bullet/> Reaction fire shots against you have a significantly decreased chance to hit.<br/><Bullet/> The first reaction shot against you during a turn is at -100 to hit; the second at -80; the third at -60; the fourth at -40, and the fifth at -20. Further reaction shots at are normal to hit chances.<br/>"
 
-[LockedOn X2AbilityTemplate]
+[BD_LockedOn_LW X2AbilityTemplate]
 LocFriendlyName="Locked On"
 LocFlyOverText="Locked On"
 LocLongDescription="Gain +10 aim for successive shots at the same enemy unit."
 LocHelpText="Gain +10 aim for successive shots at the same enemy unit."
 LocPromotionPopupText="<Bullet/> Gain +10 aim for repeated shots with your primary weapon at the same target. Not cumulative, and only applies to enemy units.<br/><Bullet/> Area-of-Effect-based shots do not grant the bonus."
 
-[TraverseFire X2AbilityTemplate]
+[BD_TraverseFire_LW X2AbilityTemplate]
 LocFriendlyName="Traverse Fire"
 LocFlyOverText="Traverse Fire"
 LocLongDescription="After taking a standard shot with your primary weapon with your first action, you may take an additional non-movement action."
 LocHelpText="After taking a standard shot with your primary weapon with your first action, you may take an additional non-movement action."
 LocPromotionPopupText="<Bullet/> After taking a standard shot your primary weapon with your first action, you may take an additional non-movement action.<br/>"
 
-[LightEmUp X2AbilityTemplate]
+[BD_LightEmUp_LW X2AbilityTemplate]
 LocFriendlyName="Light 'Em Up"
 LocFlyOverText="Light 'Em Up"
 LocLongDescription="Taking a standard shot with your primary weapon as your first action no longer ends your turn."
 LocHelpText="Taking a standard shot with your primary weapon as your first action no longer ends your turn."
 LocPromotionPopupText="<Bullet/> Taking a standard shot with your primary weapon as your first action no longer ends your turn.<br/>"
 
-[Infighter X2AbilityTemplate]
+[BD_Infighter_LW X2AbilityTemplate]
 LocFriendlyName="Infighter"
 LocFlyOverText="Infighter"
 LocLongDescription="Gain 25 dodge against attacks within four tiles."
 LocHelpText="Gain 25 dodge against attacks within four tiles."
 LocPromotionPopupText="<Bullet/> Gain 25 dodge against attacks within four tiles.<br/><Bullet/> Dodge bonus also applies to melee attacks.<br/>"
 
-[DepthPerception X2AbilityTemplate]
-LocFriendlyName="Depth Perception"
-LocFlyOverText="Depth Perception"
-LocLongDescription="Gain 5 aim and reduce enemies' dodge by 25 when at a higher elevation than your target."
-LocHelpText="Gain 5 aim and reduce enemies' dodge by 25 when at a higher elevation than your target."
-LocPromotionPopupText="<Bullet/> Gain 5 aim and reduce enemies' dodge by 25 when at a higher elevation than your target.<br/>"
-
-[TacticalSense X2AbilityTemplate]
+[BD_TacticalSense_LW X2AbilityTemplate]
 LocFriendlyName="Tactical Sense"
 LocFlyOverText="Tactical Sense"
 LocLongDescription="Gain 5 defense for each enemy you can see, up to a maximum of 20 defense."
 LocHelpText="Gain 5 defense for each enemy you can see, up to a maximum of 20 defense."
 LocPromotionPopupText="<Bullet/> Gain 5 defense for each living enemy you can see, up to a maximum of 20 defense.<br/><Bullet/> Units visible at squadsight ranges do not confer bonus.<br/>"
 
-[DamnGoodGround X2AbilityTemplate]
+[BD_DamnGoodGround_LW X2AbilityTemplate]
 LocFriendlyName="Damn Good Ground"
 LocFlyOverText="Damn Good Ground"
 LocLongDescription="Confers +10 aim and +10 defense against targets at a lower elevation."
 LocHelpText="Confers +10 aim and +10 defense against targets at a lower elevation."
 LocPromotionPopupText="<Bullet/> Confers +10 aim and +10 defense against targets at a lower elevation.<br/>"
 
-[Executioner_AP X2AbilityTemplate]
+[BD_Executioner_LW X2AbilityTemplate]
 LocFriendlyName="Executioner"
 LocFlyOverText="Executioner"
 LocLongDescription="Confers +10 aim and +10 critical chance against targets at half or less of their original hit points."
@@ -645,14 +614,8 @@ LocLongDescription="Once per turn, gain an additional move action after taking a
 LocHelpText="Once per turn, gain an additional move action after taking a standard shot at a flanked or exposed target with your primary weapon."
 LocPromotionPopupText="<Bullet/> Once per turn, gain an additional move action after taking a standard shot at a flanked or exposed target with your primary weapon.<br/><Bullet/> Hit and Run cannot be used after Run and Gun is activated.<br/><Bullet/> Bonus full actions from Serial and Death from Above will be awarded first."
 
-[CenterMass X2AbilityTemplate]
-LocFriendlyName="Center Mass"
-LocFlyOverText="Center Mass"
-LocLongDescription="You do one additional point of base damage with your primary weapon."
-LocHelpText="You do one additional point of base damage with your primary weapon."
-LocPromotionPopupText="<Bullet/> You do one additional point of base damage with your primary weapon."
 
-[AreaSuppression X2AbilityTemplate]
+[BD_AreaSuppression_LW X2AbilityTemplate]
 LocFriendlyName="Area Suppression"
 LocFlyOverText="Area Suppression"
 LocLongDescription="Fire a barrage that pins down multiple targets within a 3-tile radius, granting reaction fire against the first one that moves, and imposing a <Ability:SUPPRESSIONPENALTY/> penalty all targets' aim until suppression is removed."
@@ -661,7 +624,7 @@ LocPromotionPopupText="<Bullet/> The first unit that attempts to move will face 
 
 ; NEW STUFF ADDED BY BD
 
-[Aggression X2AbilityTemplate]
+[BD_Aggression_LW X2AbilityTemplate]
 LocFriendlyName="Aggression"
 LocFlyOverText="Aggression"
 LocLongDescription="Gain +5 critical chance for each enemy you can see, up to a maximum of 30."
@@ -675,14 +638,14 @@ LocLongDescription="Gain 5 dodge per enemy you can see, up to a maximum of +30."
 LocHelpText="Gain 5 dodge per enemy you can see, up to a maximum of +30."
 LocPromotionPopupText="<Bullet/> Gain 5 dodge per enemy you can see, up to a maximum of +30.<br/><Bullet/> Units visible at squadsight ranges do not confer bonus.<br/><Bullet/> This ability does not provide defensive bonuses if the unit is disoriented, stunned, panicking, on fire or otherwise impaired."
 
-[HitandSlither X2AbilityTemplate]
+[BD_HitandSlither_LW X2AbilityTemplate]
 LocFriendlyName="Hit and Slither"
 LocFlyOverText="Hit and Slither"
 LocLongDescription="Once per turn, gain an additional move action after taking a standard shot at a flanked or exposed target with your primary weapon. "
 LocHelpText="Once per turn, gain an additional move action after taking a standard shot at a flanked or exposed target with your primary weapon."
 LocPromotionPopupText="<Bullet/> Once per turn, gain an additional move action after taking a standard shot at a flanked or exposed target with your primary weapon.<br/>
 
-[BringEmOn X2AbilityTemplate]
+[BD_BringEmOn_LW X2AbilityTemplate]
 LocFriendlyName="Bring 'Em On"
 LocFlyOverText="Bring 'Em On"
 ; LWOTC Needs Translation
@@ -691,14 +654,14 @@ LocHelpText="Gain +1 damage on critical hits for every two enemies you can see, 
 LocPromotionPopupText="<Bullet/> Gain +1 damage on critical hits for every two enemies you can see, up to a maximum of +8.<br/><Bullet/> Units visible at squadsight ranges do confer bonus.<br/><Bullet/> Applies to damage from the soldier's <Ability:BOUND_WEAPON_NAME/> and, if the soldier has Biggest Booms, explosives (damaging grenades, rockets, etc.).<br/>"
 ; End Translation
 
-[CloseandPersonal X2AbilityTemplate]
+[BD_CloseandPersonal_LW X2AbilityTemplate]
 LocFriendlyName="Close and Personal"
 LocFlyOverText="Close and Personal"
 LocLongDescription="Confers +30 critical chance against adjacent targets. The bonus declines with distance from the target."
 LocHelpText="Confers +30 critical chance against adjacent targets. The bonus declines with distance from the target."
 LocPromotionPopupText="<Bullet/> Confers +30 critical chance against adjacent targets.<br/><Bullet/> Bonus reduced by 5% for each additional tile of distance from the target, down to 0% at 7 or more tiles.<br/>"
 
-[CloseCombatSpecialist X2AbilityTemplate]
+[BD_CloseCombatSpecialist_LW X2AbilityTemplate]
 LocFriendlyName="Close Combat Specialist"
 LocFlyOverText="Close Combat Specialist"
 ; LWOTC Needs Translation (3)
@@ -707,7 +670,7 @@ LocHelpText="Fire a free reaction shot at any visible enemy within four tiles wh
 ; End Translation (3)
 LocPromotionPopupText="<Bullet/> Will not trigger if soldier is concealed.<br/><Bullet/> You may shoot at each enemy with this ability once per turn.<br/><Bullet/> Each shot requires 2 ammo.<br/>""
 
-[CloseCombatSpecialistAttack X2AbilityTemplate]
+[BD_CloseCombatSpecialist_LWAttack X2AbilityTemplate]
 LocFriendlyName="Close Combat Specialist"
 LocFlyOverText="Close Combat Specialist"
 ; LWOTC Needs Translation (2)
@@ -716,14 +679,14 @@ LocLongDescription="During enemy turns, fire a free reaction shot with your <Abi
 LocHelpText="During enemy turns, Fire a free reaction shot at any visible enemy within four tiles who moves or fires."
 LocPromotionPopupText="<Bullet/> Will not trigger if soldier is concealed.<br/><Bullet/> You may shoot at each enemy with this ability once per turn.<br/><Bullet/> Each shot requires 2 ammo.<br/>""
 
-[DamageControl X2AbilityTemplate]
+[BD_DamageControl_LW X2AbilityTemplate]
 LocFriendlyName="Damage Control"
 LocFlyOverText="Damage Control"
 LocLongDescription="After taking damage, gain 2 armor through the end of the turn."
 LocHelpText="After taking damage, gain 2 armor through the end of the turn."
 LocPromotionPopupText="<Bullet/> Your armor hardens temporarily after an impact. After taking damage, gain 2 armor through the end of the next turn.
 
-[Defilade X2AbilityTemplate]
+[BD_Defilade_LW X2AbilityTemplate]
 LocFriendlyName="Defilade"
 ; LWOTC Needs Translation
 LocLongDescription="Soldiers within Command Range of the Officer receive +<ABILITY:DEFILADE_DEFENSE_BONUS/> bonus to defense value provided by cover."
@@ -733,7 +696,7 @@ LocFlyOverText="Defilade"
 LocPromotionPopupText="<Bullet/> Soldiers within Command Range of the Officer receive +<ABILITY:DEFILADE_DEFENSE_BONUS/> bonus to defense value provided by cover.<br/><Bullet/> Command Range increases with each new Officer level.<br/><Bullet/> This ability does not provide bonuses for the Officer themself.<br/><Bullet/> This ability does not provide bonuses for stunned or panicked allies.<br/><Bullet/> This ability does not provide bonuses for robotic allies and civilians."
 
 ;Displayed on officer in tactical container
-[DefiladePassive X2AbilityTemplate]
+[BD_Defilade_LWPassive X2AbilityTemplate]
 LocFriendlyName="Defilade"
 LocLongDescription="Soldiers within Command Range of the Officer receive +<ABILITY:DEFILADE_DEFENSE_BONUS/> bonus to defense value provided by cover."
 LocHelpText="Bonus defense from cover for soldiers near Officer."
@@ -741,42 +704,42 @@ LocFlyOverText="Defilade"
 LocPromotionPopupText="<Bullet/> Soldiers within Command Range of the Officer receive +<ABILITY:DEFILADE_DEFENSE_BONUS/> bonus to defense value provided by cover.<br/><Bullet/> Command Range increases with each new Officer level.<br/><Bullet/> This ability does not provide bonuses for the Officer themself.<br/><Bullet/> This ability does not provide bonuses if either the Officer or the soldier are disoriented, stunned, panicking, posioned, on fire or otherwise impaired.<br/><Bullet/> This ability does not provide bonuses for robotic allies and civilians."
 ; End Translation
 
-[DepthPerception X2AbilityTemplate]
+[BD_DepthPerception_LW X2AbilityTemplate]
 LocFriendlyName="Depth Perception"
 LocFlyOverText="Depth Perception"
 LocLongDescription="Gain 5 aim and reduce enemies' dodge by 25 when at a higher elevation than your target."
 LocHelpText="Gain 5 aim and reduce enemies' dodge by 25 when at a higher elevation than your target."
 LocPromotionPopupText="<Bullet/> Gain 5 aim and reduce enemies' dodge by 25 when at a higher elevation than your target.<br/>"
 
-[LoneWolf X2AbilityTemplate]
+[BD_Lonewolf_LW X2AbilityTemplate]
 LocFriendlyName="Lone Wolf"
 LocFlyOverText="Lone Wolf"
 LocLongDescription="Gain bonus Aim and Defense when at least <Ability:LONEWOLF_MIN_BONUS_TILES/> tiles distant from any ally, with a maximum of +<Ability:LONEWOLF_AIM_BONUS/>/+<Ability:LONEWOLF_DEF_BONUS/> at <Ability:LONEWOLF_MIN_DIST_TILES/>+ tiles."
 LocHelpText="Gain bonus Aim and Defense when at least <Ability:LONEWOLF_MIN_BONUS_TILES/> tiles distant from any ally, with a maximum of +<Ability:LONEWOLF_AIM_BONUS/>/+<Ability:LONEWOLF_DEF_BONUS/> at <Ability:LONEWOLF_MIN_DIST_TILES/>+ tiles."
 LocPromotionPopupText="<Bullet/> Gain +<Ability:LONEWOLF_AIM_PER_TILE/> Aim and +<Ability:LONEWOLF_DEF_PER_TILE/> Defense for each tile of distance between this soldier and the nearest ally, starting at <Ability:LONEWOLF_MIN_BONUS_TILES/> tiles distant.<br/><Bullet/> Bonuses cap at +<Ability:LONEWOLF_AIM_BONUS/> Aim, +<Ability:LONEWOLF_DEF_BONUS/> Defense when <Ability:LONEWOLF_MIN_DIST_TILES/> or more tiles from the nearest ally.<br/><Bullet/> This ability does not provide defensive bonuses if the unit is disoriented, stunned, panicking, on fire or otherwise impaired."
 
-[LowProfile X2AbilityTemplate]
+[BD_LowProfile_LW X2AbilityTemplate]
 LocFriendlyName="Low Profile"
 LocFlyOverText="Low Profile"
 LocLongDescription="Makes partial cover count as full."
 LocHelpText="Makes partial cover count as full."
 LocPromotionPopupText="<Bullet/> Makes partial cover count as full.<br/>"
 
-[WilltoSurvive X2AbilityTemplate]
+[BD_WilltoSurvive_LW X2AbilityTemplate]
 LocFriendlyName="Will to Survive"
 LocFlyOverText="Will to Survive"
 LocLongDescription="Enemy damage is reduced by 1 when in cover and attacked through that cover. Also grants 5 will."
 LocHelpText="Enemy damage is reduced by 1 when in cover and attacked through that cover."
 LocPromotionPopupText="<Bullet/> Enemy damage is reduced by 1 when in cover and attacked through that cover.<br/><Bullet/> Cover against explosives and other indirect attacks is calculated from the point of the explosion.<br/><Bullet/> Armor piercing effects do not eliminate this bonus.<br/><Bullet/> This unit also permanently gains 5 will.<br/><Bullet/> This ability does not provide defensive bonuses if the unit is disoriented, stunned, panicking, on fire or otherwise impaired."
 
-[Evasive X2AbilityTemplate]
+[BD_Evasive_LW X2AbilityTemplate]
 LocFriendlyName="Evasive"
 LocFlyOverText="Evasive: +100 Dodge"
 LocLongDescription="Start each mission with 100 bonus dodge. The bonus is removed after you take damage for the first time."
 LocHelpText="Gain 100 dodge until you take damage."
 LocPromotionPopupText="<Bullet/> This ability will typically turn the first hit on a soldier into a graze, but being hit with undodgeable attacks will remove it without any bonus being applied."
 
-[RemoveEvasive X2AbilityTemplate]
+[RemoveBD_Evasive_LW X2AbilityTemplate]
 LocFriendlyName="Evasive bonus lost"
 LocFlyOverText="Evasive bonus lost"
 LocLongDescription="Start each mission with 100 bonus dodge. The bonus is removed after you take damage for the first time."
@@ -784,7 +747,7 @@ LocHelpText="Gain 100 dodge until you take damage."
 LocPromotionPopupText="<Bullet/> This ability will typically turn the first hit on a soldier into a graze, but being hit with undodgeable attacks will remove it without any bonus being applied."
 
 ;displayed on other soldier that receive the effect
-[FireDiscipline X2AbilityTemplate]
+[BD_FireDiscipline_LW X2AbilityTemplate]
 LocFriendlyName="Fire Discipline"
 ; LWOTC Needs Translation
 LocLongDescription="All allies within Command Range of the Officer gain +<ABILITY:FIREDISCIPLINE_REACTIONFIRE_BONUS/>% to hit on reaction fire."
@@ -794,7 +757,7 @@ LocFlyOverText="Fire Discipline"
 LocPromotionPopupText="<Bullet/> All allies within Command Range of the Officer gain +<ABILITY:FIREDISCIPLINE_REACTIONFIRE_BONUS/>% to hit on reaction fire.<br/><Bullet/> Command Range increases with each new Officer level.<br/><Bullet/> This ability does not provide bonuses for the Officer themself.<br/><Bullet/> This ability does not provide bonuses if either the Officer or the soldier are disoriented, stunned, panicking, posioned, on fire or otherwise impaired.<br/><Bullet/> This ability does not provide bonuses for robotic allies and civilians."
 
 ;Displayed on officer in tactical container
-[FireDisciplinePassive X2AbilityTemplate]
+[BD_FireDiscipline_LWPassive X2AbilityTemplate]
 LocFriendlyName="Fire Discipline"
 LocLongDescription="All allies within Command Range of the Officer gain +<ABILITY:FIREDISCIPLINE_REACTIONFIRE_BONUS/>% to hit on reaction fire."
 LocHelpText="All allies near Officer gain reaction fire bonus."

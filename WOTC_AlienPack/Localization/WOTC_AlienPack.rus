@@ -1,7 +1,7 @@
 
 [X2Ability_LWAlienAbilities]
-strBayonetChargePenalty="Центурион получает <XGParam:IntValue1/> к защите (количество ходов: <XGParam:IntValue0/>)."
+strBD_Bayonetcharge_LWPenalty="Центурион получает <XGParam:IntValue1/> к защите (количество ходов: <XGParam:IntValue0/>)."
 
-[X2Effect_WarCry]
-strWarCryFriendlyDesc="Повышены меткость, мобильность и сила воли."
+[X2Effect_BD_WarCry_LW]
+strBD_WarCry_LWFriendlyDesc="Повышены меткость, мобильность и сила воли."
 

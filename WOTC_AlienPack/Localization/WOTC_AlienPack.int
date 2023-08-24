@@ -1,7 +1,7 @@
 
 [X2Ability_LWAlienAbilities]
-strBayonetChargePenalty="Centurion suffers <XGParam:IntValue1/> Defense for <XGParam:IntValue0/> turns."
+strBD_Bayonetcharge_LWPenalty="Centurion suffers <XGParam:IntValue1/> Defense for <XGParam:IntValue0/> turns."
 
-[X2Effect_WarCry]
-strWarCryFriendlyDesc=Receiving boost to Aim, Mobility and Will.
+[X2Effect_BD_WarCry_LW]
+strBD_WarCry_LWFriendlyDesc=Receiving boost to Aim, Mobility and Will.
 

@@ -16,28 +16,28 @@ BriefSummary="這些外星人處於異變者內部等級的頂端。不同於百
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; NEW ABILITIES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-[WarCry X2AbilityTemplate]
+[BD_WarCry_LW X2AbilityTemplate]
 LocFriendlyName="戰爭咆哮"
 LocLongDescription="為其他異變者提供大量命中，意志力，移動力加成；其他智慧外星人和變種人獲得少量加成。6回合冷卻。"
 LocHelpText="給其他異變者和外星人加成。"
 LocFlyOverText="戰爭咆哮"
 LocPromotionPopupText="<Bullet/>為其他異變者提供大量命中，意志力，移動力加成；其他智慧外星人和變種人獲得少量加成。<br/><Bullet/>6回合冷卻。<br/>"
 
-[BayonetCharge X2AbilityTemplate]
+[BD_Bayonetcharge_LW X2AbilityTemplate]
 LocFriendlyName="刺刀衝鋒"
 LocLongDescription="在衝刺距離內可以在任何地方發動近戰攻擊。4回合冷卻時間。"
 LocHelpText="在衝刺距離內可以在任何地方發動近戰攻擊。"
 LocFlyOverText="刺刀衝鋒"
 LocPromotionPopupText="<Bullet/>在衝刺距離內可以在任何地方發動近戰攻擊。<br/><Bullet/>4回合冷卻時間。<br/>"
 
-[Beastmaster_LW X2AbilityTemplate]
+[BD_Beastmaster_LW X2AbilityTemplate]
 LocFriendlyName="馴獸師"
 LocLongDescription="免疫狂戰士的傷害。"
 LocHelpText="免疫狂戰士的傷害。"
 LocFlyOverText="馴獸師"
 LocPromotionPopupText="<Bullet/>免疫狂戰士的傷害。<br/>"
 
-[MassMindSpin X2AbilityTemplate]
+[BD_MassMindSpin_LW X2AbilityTemplate]
 LocFriendlyName="群體心靈扭曲"
 LocFlyOverText="群體心靈扭曲"
 LocLongDescription="對錐形區域內的多個目標進行一次心靈扭曲。"
@@ -45,21 +45,21 @@ LocHelpText="對多個目標使出一記使人衰弱的靈能攻擊，造成不�
 LocPromotionPopupText="<Bullet/>對多個目標使出一記使人衰弱的靈能攻擊，造成不同的負面效果，包括心靈控制。"
 LocMissMessage="心靈扭曲已抵抗！"
 
-[LWDroneShock X2AbilityTemplate]
+[BD_DroneShock_LW X2AbilityTemplate]
 LocFriendlyName="無人機震擊"
 LocLongDescription="為鎮壓平民而設計，此武器只會造成最小的傷害並使目標混亂。"
 LocHelpText="武器造成最小傷害並使目標受損。"
 LocFlyOverText="無人機電擊"
 LocPromotionPopupText="<Bullet/>為鎮壓平民而設計，此武器只會造成最小的傷害並使目標混亂。<br/>"
 
-[LWDroneRepair X2AbilityTemplate]
+[BD_DroneRepair_LW X2AbilityTemplate]
 LocFriendlyName="修理"
 LocFlyOverText="修理"
 LocHelpText="修理任何附近的機械單位。"
 LocLongDescription="修理任何附近的機械單位。"
 LocPromotionPopupText="<Bullet/>修理任何附近的機械單位。"
 
-[LWDroneMeleeStun X2AbilityTemplate]
+[BD_DroneMeleeStun_LW X2AbilityTemplate]
 LocFriendlyName="眩暈"
 LocFlyOverText="眩暈"
 LocHelpText="嘗試眩暈近戰範圍內的任何敵人。"
@@ -67,52 +67,38 @@ LocLongDescription="嘗試眩暈近戰範圍內的任何敵人。"
 LocPromotionPopupText="<Bullet/>嘗試眩暈近戰範圍內的任何敵人。"
 LocMissMessage="未命中！"
 
-[PersonalShield X2AbilityTemplate]
+[BD_Personalshield_LW X2AbilityTemplate]
 LocFriendlyName="專屬護盾"
 LocFlyOverText="專屬護盾"
 LocHelpText="提供5點額外護盾。5回合冷卻。"
 LocLongDescription="提供5點額外護盾。5回合冷卻。"
 LocPromotionPopupText="<Bullet/>提供5點額外護盾。<br/><Bullet/>5回合冷卻。<br/><Bullet/>使用一個行動點；不會結束回合<br/>"
 
-[MassReanimation_LW X2AbilityTemplate]
+[BD_MassReanimation_LW X2AbilityTemplate]
 LocFriendlyName="群體復生"
 LocFlyOverText="群體復生"
 LocHelpText="復活所有周圍死去的有機體，將它們轉化為殭屍。"
 LocLongDescription="復活所有周圍死去的有機體，將它們轉化為殭屍。"
 LocPromotionPopupText="<Bullet/>復活所有周圍死去的有機體，將它們轉化為殭屍。"
 
-[ReadyForAnything X2AbilityTemplate]
+[BD_ReadyForAnything_LW X2AbilityTemplate]
 LocFriendlyName="一切就緒"
 LocFlyOverText="監視：一切就緒"
 LocHelpText="使用主武器進行結束回合的標準射擊後進入監視狀態。"
 LocLongDescription="使用主武器進行結束回合的標準射擊後進入監視狀態。"
 LocPromotionPopupText="<Bullet/>使用主武器進行結束回合的標準射擊後進入監視狀態。"
 
-[ReadyForAnythingFlyover X2AbilityTemplate]
+[BD_ReadyForAnything_LWFlyover X2AbilityTemplate]
 LocFriendlyName="一切就緒"
 LocFlyOverText="監視：一切就緒"
 LocHelpText="使用主武器進行標準射擊後進入監視狀態。"
 LocLongDescription="使用主武器進行標準射擊後進入監視狀態。"
 LocPromotionPopupText="<Bullet/>使用主武器進行標準射擊後進入監視狀態。"
 
-[RepairServos X2AbilityTemplate]
-LocFriendlyName="傷害控制"
-LocFlyOverText="傷害控制"
-LocLongDescription="在受到傷害後，到下回合結束前獲得2點護甲。"
-LocHelpText="在受到傷害後，到下回合結束前獲得2點護甲。"
-LocPromotionPopupText="<Bullet/>在受到衝擊後你的護甲暫時強化。在受到傷害後，到下回合結束前獲得2點護甲。<br/><Bullet/>在接下來的回合中受到多次命中會延長有效時間。<br/>"
-
-[RepairServosPassive X2AbilityTemplate]
-LocFriendlyName="傷害控制"
-LocFlyOverText="傷害控制"
-LocLongDescription="在受到傷害後，到下回合結束前獲得2點護甲。"
-LocHelpText="在受到傷害後，到下回合結束前獲得2點護甲。"
-LocPromotionPopupText="<Bullet/>在受到傷害後，到下回合結束前獲得2點護甲。<br/><Bullet/>在接下來的回合中受到多次命中會延長有效時間。<br/>"
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;; MutonM2_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [X2Ability_MutonM2_Abilities]
-strBayonetChargePenalty="百夫長防禦<XGParam:IntValue1/>，持續<XGParam:IntValue0/>回合。"
+strBD_Bayonetcharge_LWPenalty="百夫長防禦<XGParam:IntValue1/>，持續<XGParam:IntValue0/>回合。"
 
 [MutonM2_LW X2CharacterTemplate]
 strCharacterName="異變者百夫長"
@@ -401,7 +387,7 @@ strCharacterName="MEC長弓"
 [ChryssalidSoldier X2CharacterTemplate]
 strCharacterName="寄生獸兵蟲"
 
-[ChryssalidSoldierSlash X2AbilityTemplate]
+[BD_ChryssalidSoldierSlash_LW X2AbilityTemplate]
 LocFriendlyName="寄生獸兵蟲斬擊"
 LocLongDescription="你的斬擊攻擊造成大量傷害。"
 LocHelpText="你的斬擊攻擊造成大量傷害。"

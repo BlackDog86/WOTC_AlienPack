@@ -16,28 +16,28 @@ BriefSummary="这些外星人处于异变者内部等级的顶端。不同于百
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; NEW ABILITIES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-[WarCry X2AbilityTemplate]
+[BD_WarCry_LW X2AbilityTemplate]
 LocFriendlyName="战争咆哮"
 LocLongDescription="为其他异变者提供大量命中，意志力，移动力加成；其他智慧外星人和变种人获得少量加成。6回合冷却。"
 LocHelpText="给其他异变者和外星人加成。"
 LocFlyOverText="战争咆哮"
 LocPromotionPopupText="<Bullet/> 为其他异变者提供大量命中，意志力，移动力加成；其他智慧外星人和变种人获得少量加成。<br/><Bullet/> 6回合冷却。<br/>"
 
-[BayonetCharge X2AbilityTemplate]
+[BD_Bayonetcharge_LW X2AbilityTemplate]
 LocFriendlyName="刺刀冲锋"
 LocLongDescription="在冲刺距离内可以在任何地方发动近战攻击。4回合冷却时间。"
 LocHelpText="在冲刺距离内可以在任何地方发动近战攻击。"
 LocFlyOverText="刺刀冲锋"
 LocPromotionPopupText="<Bullet/> 在冲刺距离内可以在任何地方发动近战攻击。<br/><Bullet/> 4回合冷却时间。<br/>"
 
-[Beastmaster_LW X2AbilityTemplate]
+[BD_Beastmaster_LW X2AbilityTemplate]
 LocFriendlyName="驯兽师"
 LocLongDescription="免疫狂战士的伤害。"
 LocHelpText="免疫狂战士的伤害。"
 LocFlyOverText="驯兽师"
 LocPromotionPopupText="<Bullet/> 免疫狂战士的伤害。<br/>"
 
-[MassMindSpin X2AbilityTemplate]
+[BD_MassMindSpin_LW X2AbilityTemplate]
 LocFriendlyName="群体心灵扭曲"
 LocFlyOverText="群体心灵扭曲"
 LocLongDescription="对锥形区域内的多个目标进行一次心灵扭曲。"
@@ -45,21 +45,21 @@ LocHelpText="对多个目标使出一记使人衰弱的灵能攻击，造成不�
 LocPromotionPopupText="<Bullet/> 对多个目标使出一记使人衰弱的灵能攻击，造成不同的负面效果，包括心灵控制。"
 LocMissMessage="心灵扭曲已抵抗！"
 
-[LWDroneShock X2AbilityTemplate]
+[BD_DroneShock_LW X2AbilityTemplate]
 LocFriendlyName="无人机震击"
 LocLongDescription="为镇压平民而设计，此武器只会造成最小的伤害并使目标混乱。"
 LocHelpText="武器造成最小伤害并使目标受损。"
 LocFlyOverText="无人机电击"
 LocPromotionPopupText="<Bullet/> 为镇压平民而设计，此武器只会造成最小的伤害并使目标混乱。<br/>"
 
-[LWDroneRepair X2AbilityTemplate]
+[BD_DroneRepair_LW X2AbilityTemplate]
 LocFriendlyName="修理"
 LocFlyOverText="修理"
 LocHelpText="修理任何附近的机械单位。"
 LocLongDescription="修理任何附近的机械单位。"
 LocPromotionPopupText="<Bullet/> 修理任何附近的机械单位。"
 
-[LWDroneMeleeStun X2AbilityTemplate]
+[BD_DroneMeleeStun_LW X2AbilityTemplate]
 LocFriendlyName="眩晕"
 LocFlyOverText="眩晕"
 LocHelpText="尝试眩晕近战范围内的任何敌人。"
@@ -67,52 +67,38 @@ LocLongDescription="尝试眩晕近战范围内的任何敌人。"
 LocPromotionPopupText="<Bullet/> 尝试眩晕近战范围内的任何敌人。"
 LocMissMessage="未命中！"
 
-[PersonalShield X2AbilityTemplate]
+[BD_Personalshield_LW X2AbilityTemplate]
 LocFriendlyName="专属护盾"
 LocFlyOverText="专属护盾"
 LocHelpText="提供5点额外护盾。5回合冷却。"
 LocLongDescription="提供5点额外护盾。5回合冷却。"
 LocPromotionPopupText="<Bullet/> 提供5点额外护盾。<br/><Bullet/> 5回合冷却。<br/><Bullet/> 使用一个行动点；不会结束回合<br/>"
 
-[MassReanimation_LW X2AbilityTemplate]
+[BD_MassReanimation_LW X2AbilityTemplate]
 LocFriendlyName="群体复生"
 LocFlyOverText="群体复生"
 LocHelpText="复活所有周围死去的有机体，将它们转化为僵尸。"
 LocLongDescription="复活所有周围死去的有机体，将它们转化为僵尸。"
 LocPromotionPopupText="<Bullet/> 复活所有周围死去的有机体，将它们转化为僵尸。"
 
-[ReadyForAnything X2AbilityTemplate]
+[BD_ReadyForAnything_LW X2AbilityTemplate]
 LocFriendlyName="一切就绪"
 LocFlyOverText="监视：一切就绪"
 LocHelpText="使用主武器进行结束回合的标准射击后进入监视状态。"
 LocLongDescription="使用主武器进行结束回合的标准射击后进入监视状态。"
 LocPromotionPopupText="<Bullet/> 使用主武器进行结束回合的标准射击后进入监视状态。"
 
-[ReadyForAnythingFlyover X2AbilityTemplate]
+[BD_ReadyForAnything_LWFlyover X2AbilityTemplate]
 LocFriendlyName="一切就绪"
 LocFlyOverText="监视：一切就绪"
 LocHelpText="使用主武器进行标准射击后进入监视状态。"
 LocLongDescription="使用主武器进行标准射击后进入监视状态。"
 LocPromotionPopupText="<Bullet/> 使用主武器进行标准射击后进入监视状态。"
 
-[RepairServos X2AbilityTemplate]
-LocFriendlyName="伤害控制"
-LocFlyOverText="伤害控制"
-LocLongDescription="在受到伤害后，到下回合结束前获得2点护甲。"
-LocHelpText="在受到伤害后，到下回合结束前获得2点护甲。"
-LocPromotionPopupText="<Bullet/> 在受到冲击后你的护甲暂时强化。在受到伤害后，到下回合结束前获得2点护甲。<br/><Bullet/> 在接下来的回合中受到多次命中会延长有效时间。<br/>"
-
-[RepairServosPassive X2AbilityTemplate]
-LocFriendlyName="伤害控制"
-LocFlyOverText="伤害控制"
-LocLongDescription="在受到伤害后，到下回合结束前获得2点护甲。"
-LocHelpText="在受到伤害后，到下回合结束前获得2点护甲。"
-LocPromotionPopupText="<Bullet/> 在受到伤害后，到下回合结束前获得2点护甲。<br/><Bullet/> 在接下来的回合中受到多次命中会延长有效时间。<br/>"
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;; MutonM2_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [X2Ability_MutonM2_Abilities]
-strBayonetChargePenalty="百夫长防御<XGParam:IntValue1/>，持续<XGParam:IntValue0/>回合。"
+strBD_Bayonetcharge_LWPenalty="百夫长防御<XGParam:IntValue1/>，持续<XGParam:IntValue0/>回合。"
 
 [MutonM2_LW X2CharacterTemplate]
 strCharacterName="异变者百夫长"
@@ -399,7 +385,7 @@ strCharacterName="MEC长弓"
 [ChryssalidSoldier X2CharacterTemplate]
 strCharacterName="寄生兽兵虫"
 
-[ChryssalidSoldierSlash X2AbilityTemplate]
+[BD_ChryssalidSoldierSlash_LW X2AbilityTemplate]
 LocFriendlyName="寄生兽兵虫斩击"
 LocLongDescription="你的斩击攻击造成大量伤害。"
 LocHelpText="你的斩击攻击造成大量伤害。"

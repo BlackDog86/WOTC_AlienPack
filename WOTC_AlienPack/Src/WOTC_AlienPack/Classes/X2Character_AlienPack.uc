@@ -135,8 +135,8 @@ static function X2CharacterTemplate CreateTemplate_MutonM2_LW()
 
 	CharTemplate.Abilities.AddItem('CounterattackPreparation');
 	CharTemplate.Abilities.AddItem('CounterattackDescription');
-	CharTemplate.Abilities.AddItem('WarCry');
-	CharTemplate.Abilities.AddItem('Beastmaster_LW');
+	CharTemplate.Abilities.AddItem('BD_WarCry_LW');
+	CharTemplate.Abilities.AddItem('BD_Beastmaster_LW');
 	// WOTC abilities
 	CharTemplate.Abilities.AddItem('DarkEventAbility_Barrier');
 
@@ -210,11 +210,11 @@ static function X2CharacterTemplate CreateTemplate_MutonM3_LW()
 
 	CharTemplate.Abilities.AddItem('CounterattackPreparation');
 	CharTemplate.Abilities.AddItem('CounterattackDescription');
-	CharTemplate.Abilities.AddItem('WarCry');
-	CharTemplate.Abilities.AddItem('Beastmaster_LW');
+	CharTemplate.Abilities.AddItem('BD_WarCry_LW');
+	CharTemplate.Abilities.AddItem('BD_Beastmaster_LW');
 
-	CharTemplate.Abilities.AddItem('TacticalSense');
-	CharTemplate.Abilities.AddItem('PersonalShield');
+	CharTemplate.Abilities.AddItem('BD_TacticalSense_LW');
+	CharTemplate.Abilities.AddItem('BD_Personalshield_LW');
 	// WOTC abilities
 	CharTemplate.Abilities.AddItem('DarkEventAbility_Barrier');
 	// LightEmUp: Weapon Template
@@ -326,7 +326,7 @@ static function X2CharacterTemplate CreateTemplate_Naja(name TemplateName)
 	}
 	if (TemplateName == 'NajaM3')
 	{
-		CharTemplate.Abilities.AddItem('DepthPerception'); //character perk
+		CharTemplate.Abilities.AddItem('BD_DepthPerception_LW'); //character perk
 	}
 
 	CharTemplate.AddTemplateAvailablility(CharTemplate.BITFIELD_GAMEAREA_Multiplayer); // Allow in MP!
@@ -442,9 +442,9 @@ static function X2CharacterTemplate CreateTemplate_Sidewinder(name TemplateName)
 	switch(TemplateName)
 	{
 		case 'SidewinderM3':
-			CharTemplate.Abilities.AddItem('Infighter');
+			CharTemplate.Abilities.AddItem('BD_Infighter_LW');
 		case 'SidewinderM2':
-			CharTemplate.Abilities.AddItem('HitandSlither');
+			CharTemplate.Abilities.AddItem('BD_HitandSlither_LW');
 		case 'SidewinderM1':
 			CharTemplate.Abilities.AddItem('Shadowstep');
 		default:
@@ -534,7 +534,7 @@ static function X2CharacterTemplate CreateTemplate_ArchonM2_LW()
 	
 	CharTemplate.Abilities.AddItem('FrenzyDamageListener');	
 	CharTemplate.Abilities.AddItem('StandalonePinionsAbility');
-	CharTemplate.Abilities.AddItem('LightningReflexes_LW');
+	CharTemplate.Abilities.AddItem('BD_LightningReflexes_LW');
 
 	// WOTC abilities
 	CharTemplate.Abilities.AddItem('DarkEventAbility_Barrier');
@@ -606,8 +606,8 @@ static function X2CharacterTemplate CreateTemplate_SectoidM2_LW()  // I have big
 	CharTemplate.Abilities.AddItem('KillSiredZombies');
 	//CharTemplate.Abilities.AddItem('SectoidDeathOverride');  // A: Not sure what this does, but it sounds cool
 
-	CharTemplate.Abilities.AddItem('MassMindspin');
-	CharTemplate.Abilities.AddItem('MassReanimation_LW');
+	CharTemplate.Abilities.AddItem('BD_MassMindSpin_LW');
+	CharTemplate.Abilities.AddItem('BD_MassReanimation_LW');
 	// WOTC abilities
 	CharTemplate.Abilities.AddItem('DarkEventAbility_Barrier');
 
@@ -704,7 +704,7 @@ static function X2CharacterTemplate CreateTemplate_Viper_LW(name TemplateName)
 	CharTemplate.Abilities.AddItem('DarkEventAbility_Barrier');
 	if (TemplateName == 'ViperM3_LW')
 	{
-		CharTemplate.Abilities.AddItem('LightningReflexes_LW');
+		CharTemplate.Abilities.AddItem('BD_LightningReflexes_LW');
 	}
 
 	CharTemplate.AddTemplateAvailablility(CharTemplate.BITFIELD_GAMEAREA_Multiplayer); // Allow in MP!
@@ -902,7 +902,7 @@ static function X2CharacterTemplate CreateTemplate_AdvSentry(name TemplateName)
 	
 	CharTemplate.bAllowSpawnFromATT = true;
 
-	CharTemplate.Abilities.AddItem('ReadyForAnything');
+	CharTemplate.Abilities.AddItem('BD_ReadyForAnything_LW');
 	// WOTC abilities
 	CharTemplate.Abilities.AddItem('DarkEventAbility_SealedArmor');
 	CharTemplate.Abilities.AddItem('DarkEventAbility_UndyingLoyalty');
@@ -910,7 +910,7 @@ static function X2CharacterTemplate CreateTemplate_AdvSentry(name TemplateName)
 	CharTemplate.Abilities.AddItem('DarkEventAbility_Counterattack');
 
 	if (TemplateName == 'AdvSentryM3')
-		CharTemplate.Abilities.AddItem('TacticalSense');
+		CharTemplate.Abilities.AddItem('BD_TacticalSense_LW');
 
 	CharTemplate.SightedNarrativeMoments.AddItem(XComNarrativeMoment'X2NarrativeMoments.TACTICAL.AlienSitings.T_Central_AlienSightings_AdvTrooperM1');
 
@@ -1197,7 +1197,7 @@ static function X2CharacterTemplate CreateTemplate_AdvMec_M3()
 	CharTemplate.strScamperBT = "ScamperRoot_Overwatch";
 
 	CharTemplate.Abilities.AddItem('RobotImmunities');
-	CharTemplate.Abilities.AddItem('DamageControl');
+	CharTemplate.Abilities.AddItem('BD_DamageControl_LW');
 	// WOTC abilities
 	CharTemplate.Abilities.AddItem('DarkEventAbility_Barrier');
 
@@ -1360,11 +1360,11 @@ static function X2CharacterTemplate CreateTemplate_Drone(name TemplateName)
 	CharTemplate.bAllowSpawnFromATT = false;  // If true, this unit can be spawned from an Advent Troop Transport
 	CharTemplate.bWeakAgainstTechLikeRobot = true;
 
-	CharTemplate.Abilities.AddItem('LWDroneMeleeStun');
+	CharTemplate.Abilities.AddItem('BD_DroneMeleeStun_LW');
 	CharTemplate.Abilities.AddItem('RobotImmunities');
 	// WOTC abilities
 	CharTemplate.Abilities.AddItem('DarkEventAbility_Barrier');
-	//CharTemplate.Abilities.AddItem('FireOnDeath');
+	//CharTemplate.Abilities.AddItem('BD_FireOnDeath_LW');
 
 	CharTemplate.AddTemplateAvailablility(CharTemplate.BITFIELD_GAMEAREA_Multiplayer); // Allow in MP!
 	CharTemplate.MPPointValue = CharTemplate.XpKillscore * 10;
@@ -1440,8 +1440,8 @@ static function X2CharacterTemplate CreateTemplate_ChryssalidSoldier()
 	CharTemplate.Abilities.AddItem('ChryssalidSlash');
 	CharTemplate.Abilities.AddItem('ChyssalidPoison');
 	CharTemplate.Abilities.AddItem('ChryssalidImmunities');
-	CharTemplate.Abilities.AddItem('ChryssalidSoldierSlash');
-	CharTemplate.Abilities.AddItem('LightningReflexes_LW');
+	CharTemplate.Abilities.AddItem('BD_ChryssalidSoldierSlash_LW');
+	CharTemplate.Abilities.AddItem('BD_LightningReflexes_LW');
 	// WOTC abilities
 	CharTemplate.Abilities.AddItem('DarkEventAbility_Barrier');
 
@@ -1491,7 +1491,7 @@ static function X2CharacterTemplate CreateTemplate_AdvGeneric(name TemplateName)
 			LootBase.LootTableName='AdvTrooperM2_BaseLoot';
 			LootTimed.LootTableName='AdvTrooperM2_TimedLoot';
 			LootVulture.LootTableName='AdvTrooperM2_VultureLoot';
-			CharTemplate.Abilities.AddItem('TacticalSense');
+			CharTemplate.Abilities.AddItem('BD_TacticalSense_LW');
 			break;
 
 		case 'AdvSergeantM2':
@@ -1499,8 +1499,8 @@ static function X2CharacterTemplate CreateTemplate_AdvGeneric(name TemplateName)
 			LootBase.LootTableName='AdvTrooperM3_BaseLoot';
 			LootTimed.LootTableName='AdvTrooperM3_TimedLoot';
 			LootVulture.LootTableName='AdvTrooperM3_VultureLoot';
-			CharTemplate.Abilities.AddItem('TacticalSense');
-			CharTemplate.Abilities.AddItem('LockedOn');				// Weapon?
+			CharTemplate.Abilities.AddItem('BD_TacticalSense_LW');
+			CharTemplate.Abilities.AddItem('BD_LockedOn_LW');				// Weapon?
 			break;
 
 		case 'AdvGeneralM1_LW':
@@ -1510,10 +1510,10 @@ static function X2CharacterTemplate CreateTemplate_AdvGeneric(name TemplateName)
 			LootTimed.LootTableName='AdvCaptainM3_TimedLoot';
 			LootVulture.LootTableName='AdvCaptainM3_VultureLoot';
 			CharTemplate.Abilities.AddItem('MarkTarget');
-			CharTemplate.Abilities.AddItem('TacticalSense');
-			CharTemplate.Abilities.AddItem('ReadyForAnything');
-			CharTemplate.Abilities.AddItem('Defilade');
-			CharTemplate.Abilities.AddItem('FireDiscipline');
+			CharTemplate.Abilities.AddItem('BD_TacticalSense_LW');
+			CharTemplate.Abilities.AddItem('BD_ReadyForAnything_LW');
+			CharTemplate.Abilities.AddItem('BD_Defilade_LW');
+			CharTemplate.Abilities.AddItem('BD_FireDiscipline_LW');
 			CharTemplate.RevealMatineePrefix = "CIN_Advent_Captain";
 			CharTemplate.SightedNarrativeMoments.length = 0;
 			CharTemplate.SightedNarrativeMoments.AddItem(XComNarrativeMoment'X2NarrativeMoments.TACTICAL.AlienSitings.T_Central_AlienSightings_AdvCaptainM1');
@@ -1526,10 +1526,10 @@ static function X2CharacterTemplate CreateTemplate_AdvGeneric(name TemplateName)
 			LootTimed.LootTableName='AdvCaptainM3_TimedLoot';
 			LootVulture.LootTableName='AdvCaptainM3_VultureLoot';
 			CharTemplate.Abilities.AddItem('MarkTarget');
-			CharTemplate.Abilities.AddItem('TacticalSense');
-			CharTemplate.Abilities.AddItem('ReadyForAnything');
-			CharTemplate.Abilities.AddItem('Defilade');
-			CharTemplate.Abilities.AddItem('FireDiscipline');
+			CharTemplate.Abilities.AddItem('BD_TacticalSense_LW');
+			CharTemplate.Abilities.AddItem('BD_ReadyForAnything_LW');
+			CharTemplate.Abilities.AddItem('BD_Defilade_LW');
+			CharTemplate.Abilities.AddItem('BD_FireDiscipline_LW');
 			CharTemplate.RevealMatineePrefix = "CIN_Advent_Captain";
 			CharTemplate.SightedNarrativeMoments.length = 0;
 			CharTemplate.SightedNarrativeMoments.AddItem(XComNarrativeMoment'X2NarrativeMoments.TACTICAL.AlienSitings.T_Central_AlienSightings_AdvCaptainM1');
@@ -1541,7 +1541,7 @@ static function X2CharacterTemplate CreateTemplate_AdvGeneric(name TemplateName)
 			LootTimed.LootTableName='AdvTrooperM1_TimedLoot';
 			LootVulture.LootTableName='AdvTrooperM1_VultureLoot';
 			CharTemplate.Abilities.AddItem('Shadowstep');
-			CharTemplate.Abilities.AddItem('LoneWolf');
+			CharTemplate.Abilities.AddItem('BD_Lonewolf_LW');
 			break;
 
 		case 'AdvVanguard':
@@ -1549,7 +1549,7 @@ static function X2CharacterTemplate CreateTemplate_AdvGeneric(name TemplateName)
 			LootBase.LootTableName='AdvTrooperM2_BaseLoot';
 			LootTimed.LootTableName='AdvTrooperM2_TimedLoot';
 			LootVulture.LootTableName='AdvTrooperM2_VultureLoot';
-			CharTemplate.Abilities.AddItem('WillToSurvive');
+			CharTemplate.Abilities.AddItem('BD_WilltoSurvive_LW');
 			// Run and Gun, SUppression
 			break;
 
@@ -1559,10 +1559,10 @@ static function X2CharacterTemplate CreateTemplate_AdvGeneric(name TemplateName)
 			LootTimed.LootTableName='AdvTrooperM3_TimedLoot';
 			LootVulture.LootTableName='AdvTrooperM3_VultureLoot';
 			CharTemplate.Abilities.AddItem('Shadowstep');
-			CharTemplate.Abilities.AddItem('Evasive');
-			CharTemplate.Abilities.AddItem('LowProfile');
+			CharTemplate.Abilities.AddItem('BD_Evasive_LW');
+			CharTemplate.Abilities.AddItem('BD_LowProfile_LW');
 			CharTemplate.Abilities.AddItem('HardTarget');
-			CharTemplate.Abilities.AddItem('LoneWolf');
+			CharTemplate.Abilities.AddItem('BD_Lonewolf_LW');
 			break;
 
 		case 'AdvShockTroop':
@@ -1570,9 +1570,9 @@ static function X2CharacterTemplate CreateTemplate_AdvGeneric(name TemplateName)
 			LootBase.LootTableName='AdvTrooperM2_BaseLoot';
 			LootTimed.LootTableName='AdvTrooperM2_TimedLoot';
 			LootVulture.LootTableName='AdvTrooperM2_VultureLoot';
-			CharTemplate.Abilities.AddItem('Aggression');
-			CharTemplate.Abilities.AddItem('BringEmOn');
-			CharTemplate.Abilities.AddItem('Executioner_AP');
+			CharTemplate.Abilities.AddItem('BD_Aggression_LW');
+			CharTemplate.Abilities.AddItem('BD_BringEmOn_LW');
+			CharTemplate.Abilities.AddItem('BD_Executioner_LW');
 			break;
 
 		default:
