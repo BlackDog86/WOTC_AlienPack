@@ -84,7 +84,7 @@ static function X2AbilityTemplate AddLoneWolfAbility()
 	AimandDefModifiers.BuildPersistentEffect (1, true, false);
 	AimandDefModifiers.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,,Template.AbilitySourceName);
 	Template.AddTargetEffect (AimandDefModifiers);
-	Template.bCrossClassEligible = true;
+	Template.bcrossclasseligible = false;
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;	
 	//no visualization
 	return Template;		
@@ -290,7 +290,7 @@ static function X2AbilityTemplate AddBringEmOnAbility()
 	DamageEffect.BuildPersistentEffect(1, true, false, false);
 	DamageEffect.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,,Template.AbilitySourceName);
 	Template.AddTargetEffect(DamageEffect);
-	Template.bCrossClassEligible = true;
+	Template.bcrossclasseligible = false;
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
 	//  No visualization
 	return Template;
@@ -315,7 +315,7 @@ static function X2AbilityTemplate AddAggressionAbility()
 	MyCritModifier.BuildPersistentEffect (1, true, false);
 	MyCritModifier.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,,Template.AbilitySourceName);
 	Template.AddTargetEffect (MyCritModifier);
-	Template.bCrossClassEligible = true;
+	Template.bcrossclasseligible = false;
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
 
 	return Template;	
@@ -371,7 +371,7 @@ static function X2AbilityTemplate AddWilltoSurviveAbility()
 	Template.AddTargetEffect(WillBonus);
 	Template.SetUIStatMarkup(class'XLocalizedData'.default.WillLabel, eStat_Will, default.WILLTOSURVIVE_WILLBONUS);
 
-	Template.bCrossClassEligible = true;
+	Template.bcrossclasseligible = false;
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
 	//  No visualization
 	return Template;
@@ -548,7 +548,7 @@ static function X2AbilityTemplate AddHardTargetAbility()
 	DodgeBonus.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,,Template.AbilitySourceName);
 	DodgeBonus.BuildPersistentEffect(1, true, false);
 	Template.AddTargetEffect(DodgeBonus);
-	Template.bCrossClassEligible = true;
+	Template.bcrossclasseligible = false;
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
 	//  No visualization
 
@@ -573,7 +573,7 @@ static function X2AbilityTemplate AddLowProfileAbility()
 	DefModifier.BuildPersistentEffect (1, true, false);
 	DefModifier.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,,Template.AbilitySourceName);
 	Template.AddTargetEffect (DefModifier);
-	Template.bCrossClassEligible = true;
+	Template.bcrossclasseligible = false;
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;	
 	//no visualization
 	return Template;
@@ -593,7 +593,7 @@ static function X2AbilityTemplate AddEvasiveAbility()
     Template.AbilityTargetStyle = default.SelfTarget;
 	Template.bDisplayInUITooltip = true;
 	Template.bDisplayInUITacticalText = true;
-	Template.bCrossClassEligible = true;
+	Template.bcrossclasseligible = false;
 	Template.AbilityShooterConditions.AddItem(default.LivingShooterProperty);
 	Template.AbilityTriggers.AddItem(default.UnitPostBeginPlayTrigger);
 	Template.bShowActivation = true;
@@ -673,7 +673,7 @@ static function X2AbilityTemplate AddCenterMassAbility()
 	DamageEffect.BuildPersistentEffect(1, true, false, false);
 	DamageEffect.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,,Template.AbilitySourceName);
 	Template.AddTargetEffect(DamageEffect);
-	Template.bCrossClassEligible = true;
+	Template.bcrossclasseligible = false;
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
 	return Template;
 }
@@ -722,7 +722,7 @@ static function X2AbilityTemplate AddDamnGoodGroundAbility()
 	AimandDefModifiers.BuildPersistentEffect (1, true, true);
 	AimandDefModifiers.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,,Template.AbilitySourceName);
 	Template.AddTargetEffect (AimandDefModifiers);
-	Template.bCrossClassEligible = true;
+	Template.bcrossclasseligible = false;
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
 	return Template;
 }
@@ -745,7 +745,7 @@ static function X2AbilityTemplate AddExecutionerAbility()
 	AimandCritModifiers.BuildPersistentEffect (1, true, true);
 	AimandCritModifiers.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,,Template.AbilitySourceName);
 	Template.AddTargetEffect (AimandCritModifiers);
-	Template.bCrossClassEligible = true;
+	Template.bcrossclasseligible = false;
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
 
 	return Template;
@@ -770,7 +770,7 @@ static function X2AbilityTemplate AddTacticalSenseAbility()
 	MyDefModifier.BuildPersistentEffect (1, true, true);
 	MyDefModifier.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,,Template.AbilitySourceName);
 	Template.AddTargetEffect (MyDefModifier);
-	Template.bCrossClassEligible = true;
+	Template.bcrossclasseligible = false;
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
 
 	return Template;
@@ -795,7 +795,7 @@ static function X2AbilityTemplate AddInfighterAbility()
 	DodgeBonus.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,,Template.AbilitySourceName);
 	DodgeBonus.BuildPersistentEffect(1, true);
 	Template.AddTargetEffect(DodgeBonus);
-	Template.bCrossClassEligible = true;
+	Template.bcrossclasseligible = false;
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
 	//  No visualization
 	return Template;
@@ -954,7 +954,7 @@ static function X2AbilityTemplate AddLockedOnAbility()
 	Template.AbilityTargetStyle = default.SelfTarget;
 	Template.AbilityTriggers.AddItem(default.UnitPostBeginPlayTrigger);
 	Template.bIsPassive = true;
-	Template.bCrossClassEligible = true;
+	Template.bcrossclasseligible = false;
 	LockedOnEffect = new class'X2Effect_LockedOn';
 	LockedOnEffect.BuildPersistentEffect(1, true, true,, eGameRule_TacticalGameStart);
 	LockedOnEffect.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,,Template.AbilitySourceName);
@@ -985,7 +985,7 @@ static function X2AbilityTemplate AddLightningReflexes_LWAbility()
 	PersistentEffect.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,, Template.AbilitySourceName);
 	Template.AddTargetEffect(PersistentEffect);
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
-	Template.bCrossClassEligible = true;
+	Template.bcrossclasseligible = false;
 	return Template;
 }
 
