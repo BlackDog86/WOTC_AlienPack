@@ -373,16 +373,6 @@ LocFriendlyName="Cięcie chryzalida żołnierza"
 LocLongDescription="Twoje ataki tnące zadają duże obrażenia."
 LocHelpText="Twoje ataki tnące zadają duże obrażenia."
 
-;;;;;;;;;;;;;;;;;;;;;;;;;; Hive Queen ;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-[HiveQueen X2CharacterTemplate]
-strCharacterName="Królowa roju"
-
-[HiveQueenSlash X2AbilityTemplate]
-LocFriendlyName="Lepsze cięcie chryzalida"
-LocLongDescription="Twoje ataki tnące zadają mnóstwo obrażeń."
-LocHelpText="Twoje ataki tnące zadają mnóstwo obrażeń."
-
 ;;;;;;;;;;;;;;;;;;;;;;;;; Additional ADVENT Trooper types ;;;;;;;;;;;;;;;;;;;;;;;;
 
 [AdvSergeantM1 X2CharacterTemplate]

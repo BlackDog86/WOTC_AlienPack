@@ -95,6 +95,13 @@ LocHelpText="Активирует режим \"наблюдения\" после
 LocLongDescription="Активирует режим \"наблюдения\" после стандартного выстрела из основного оружия."
 LocPromotionPopupText="<Bullet/> Активирует режим \"наблюдения\" после стандартного выстрела из основного оружия."
 
+[BD_LostBladestorm_LW X2AbilityTemplate]
+LocFriendlyName="Хватка"
+LocLongDescription="Свободные рукопашные атаки по движущемуся рядом или атакующему в упор противнику во время его хода."
+LocHelpText="Свободные рукопашные атаки по движущемуся рядом или атакующему в упор противнику во время его хода."
+LocFlyOverText="Хватка"
+LocPromotionPopupText="<Bullet/> Активируется, если враг начинает ход рядом и попытается атаковать.<br/><Bullet/> Если враг начинает ход не рядом, способность активируется, как только он займет соседнюю клетку.<br/>"
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;; MutonM2_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [X2Ability_MutonM2_Abilities]
@@ -373,16 +380,6 @@ LocFriendlyName="Удар криссалида-солдата"
 LocLongDescription="Атаки в ближнем бою наносят огромный урон."
 LocHelpText="Атаки в ближнем бою наносят огромный урон."
 
-;;;;;;;;;;;;;;;;;;;;;;;;;; Hive Queen ;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-[HiveQueen X2CharacterTemplate]
-strCharacterName="Королева роя"
-
-[HiveQueenSlash X2AbilityTemplate]
-LocFriendlyName="Мощный удар криссалида"
-LocLongDescription="Атаки в ближнем бою наносят огромный урон."
-LocHelpText="Атаки в ближнем бою наносят огромный урон."
-
 ;;;;;;;;;;;;;;;;;;;;;;;;; Additional ADVENT Trooper types ;;;;;;;;;;;;;;;;;;;;;;;;
 
 [AdvSergeantM1 X2CharacterTemplate]
@@ -448,3 +445,38 @@ AbilityDescName="Магнитная винтовка"
 [AdvGeneralM2_LW_WPN X2WeaponTemplate]
 FriendlyName="Магнитная винтовка \"Адвента\""
 AbilityDescName="Магнитная винтовка"
+
+;;;;;;;;;;;;;;;;;;;;;;;;; Lost ;;;;;;;;;;;;;;;;;;;;;;;;
+
+[TheLostGrapplerHP2_LW X2CharacterTemplate]
+strCharacterName="Странник-боец"
+
+[TheLostGrapplerHP3_LW X2CharacterTemplate]
+strCharacterName="Странник-боец"
+
+[TheLostGrapplerHP4_LW X2CharacterTemplate]
+strCharacterName="Странник-боец"
+
+[TheLostGrapplerHP5_LW X2CharacterTemplate]
+strCharacterName="Странник-боец"
+
+[TheLostGrapplerHP6_LW X2CharacterTemplate]
+strCharacterName="Странник-боец"
+
+[TheLostGrapplerHP7_LW X2CharacterTemplate]
+strCharacterName="Странник-боец"
+
+[TheLostGrapplerHP8_LW X2CharacterTemplate]
+strCharacterName="Странник-боец"
+
+[TheLostGrapplerHP9_LW X2CharacterTemplate]
+strCharacterName="Странник-боец"
+
+[TheLostGrapplerHP10_LW X2CharacterTemplate]
+strCharacterName="Странник-боец"
+
+[TheLostGrapplerHP11_LW X2CharacterTemplate]
+strCharacterName="Странник-боец"
+
+[TheLostGrapplerHP12_LW X2CharacterTemplate]
+strCharacterName="Странник-боец"

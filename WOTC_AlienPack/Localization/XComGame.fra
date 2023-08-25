@@ -97,6 +97,14 @@ LocHelpText="Passez en vigilance après un tir normal à l'arme principale."
 LocLongDescription="Passez en vigilance après un tir normal à l'arme principale."
 LocPromotionPopupText="<Bullet/> Passez en vigilance après un tir normal à l'arme principale."
 
+[BD_LostBladestorm_LW X2AbilityTemplate]
+LocFriendlyName="Lutte"
+LocLongDescription="Attaques de mêlée gratuites contre tous les ennemis qui s'approchent, s'éloignent ou attaquent au corps à corps. Cette capacité ne se déclenche que pendant les tours de l'adversaire."
+LocHelpText="Attaques de mêlée gratuites contre tous les ennemis qui s'approchent, s'éloignent ou attaquent au corps à corps. Cette capacité ne se déclenche que pendant les tours de l'adversaire."
+LocFlyOverText="Lutte"
+; LWOTC translated (2)
+LocPromotionPopupText="<Bullet/> Cette capacité se déclenche si un ennemi commence son tour sur une case adjacente et tente d'attaquer le <Ability:ClassName/>.<br/><Bullet/> Si l'ennemi ne commence pas son tour sur une case adjacente, cette capacité se déclenche quand il entre dans la zone de corps à corps.<br/><Bullet/> Cette capacité ne se déclenche pas pendant votre tour.<br/>"
+; End translated (2)
 ;;;;;;;;;;;;;;;;;;;;;;;;;; MutonM2_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [X2Ability_MutonM2_Abilities]
@@ -435,16 +443,6 @@ LocFriendlyName="Lacération de Soldat Chrysalis"
 LocLongDescription="Votre Lacération inflige de lourds dégâts."
 LocHelpText="Votre Lacération inflige de lourds dégâts."
 
-;;;;;;;;;;;;;;;;;;;;;;;;;; Hive Queen ;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-[HiveQueen X2CharacterTemplate]
-strCharacterName="Reine de la ruche"
-
-[HiveQueenSlash X2AbilityTemplate]
-LocFriendlyName="Grande lacération de Chrysalis"
-LocLongDescription="Vos lacérations infligent beaucoup de dégâts."
-LocHelpText="Vos lacérations infligent beaucoup de dégâts."
-
 ;;;;;;;;;;;;;;;;;;;;;;;;; Additional ADVENT Trooper types ;;;;;;;;;;;;;;;;;;;;;;;;
 
 [AdvSergeantM1 X2CharacterTemplate]
@@ -518,3 +516,38 @@ FriendlyName="Fusil magnétique d'ADVENT"
 ; LWOTC translated
 AbilityDescName="fusil magnétique"
 ; End translated
+
+;;;;;;;;;;;;;;;;;; Lost ;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[TheLostGrapplerHP2_LW X2CharacterTemplate]
+strCharacterName="Ombre avide"
+
+[TheLostGrapplerHP3_LW X2CharacterTemplate]
+strCharacterName="Ombre avide"
+
+[TheLostGrapplerHP4_LW X2CharacterTemplate]
+strCharacterName="Ombre avide"
+
+[TheLostGrapplerHP5_LW X2CharacterTemplate]
+strCharacterName="Ombre avide"
+
+[TheLostGrapplerHP6_LW X2CharacterTemplate]
+strCharacterName="Ombre avide"
+
+[TheLostGrapplerHP7_LW X2CharacterTemplate]
+strCharacterName="Ombre avide"
+
+[TheLostGrapplerHP8_LW X2CharacterTemplate]
+strCharacterName="Ombre avide"
+
+[TheLostGrapplerHP9_LW X2CharacterTemplate]
+strCharacterName="Ombre avide"
+
+[TheLostGrapplerHP10_LW X2CharacterTemplate]
+strCharacterName="Ombre avide"
+
+[TheLostGrapplerHP11_LW X2CharacterTemplate]
+strCharacterName="Ombre avide"
+
+[TheLostGrapplerHP12_LW X2CharacterTemplate]
+strCharacterName="Ombre avide"

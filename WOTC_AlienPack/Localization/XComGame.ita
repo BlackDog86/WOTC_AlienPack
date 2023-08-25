@@ -373,16 +373,6 @@ LocFriendlyName="Fendente soldato Crisalide"
 LocLongDescription="I tuoi attacchi Fendente infliggono molti danni."
 LocHelpText="I tuoi attacchi Fendente infliggono molti danni."
 
-;;;;;;;;;;;;;;;;;;;;;;;;;; Hive Queen ;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-[HiveQueen X2CharacterTemplate]
-strCharacterName="Regina dell'alveare"
-
-[HiveQueenSlash X2AbilityTemplate]
-LocFriendlyName="Fendente potente Crisalide"
-LocLongDescription="I tuoi attacchi Fendente infliggono molti danni."
-LocHelpText="I tuoi attacchi Fendente infliggono molti danni."
-
 ;;;;;;;;;;;;;;;;;;;;;;;;; Additional ADVENT Trooper types ;;;;;;;;;;;;;;;;;;;;;;;;
 
 [AdvSergeantM1 X2CharacterTemplate]

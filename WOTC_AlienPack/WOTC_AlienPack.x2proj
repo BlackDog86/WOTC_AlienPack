@@ -63,10 +63,10 @@ Creds to the original authors here.
     <Content Include="Config\XComWOTC_AlienPackVariations.ini">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="ContentForCook\AdvDroneMatinee.upk">
+    <Content Include="ContentForCook\LWAdvDroneMatinee.upk">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="ContentForCook\AdvGrenadeLauncher.upk">
+    <Content Include="ContentForCook\LWAdvGrenadeLauncher.upk">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ContentForCook\LWAdvGrenadier.upk">
@@ -132,25 +132,22 @@ Creds to the original authors here.
     <Content Include="ContentForCook\LW_Perk_Psi_MassReanimation.upk">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="ContentForCook\NajaRifle.upk">
+    <Content Include="ContentForCook\LWNajaRifle.upk">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ContentForCook\UILibrary_LWAlienPack.upk">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="ContentForCook\XAdventTrooper.upk">
-      <SubType>Content</SubType>
-    </Content>
     <Content Include="ContentOptions.json">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Content\CIN_Drone.umap">
+    <Content Include="Content\LW_CIN_Drone.umap">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Content\DroneRevealMatinee_ModShaderCache.upk">
+    <Content Include="Content\LWDroneRevealMatinee_ModShaderCache.upk">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Content\WOTC_AlienPack_ModShaderCache.upk">
+    <Content Include="Content\LWOTC_AlienPack_ModShaderCache.upk">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Localization\WOTC_AlienPack.chn">
@@ -262,6 +259,9 @@ Creds to the original authors here.
     <Content Include="Src\WOTC_AlienPack\Classes\X2Character_AlienPack.uc">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Src\WOTC_AlienPack\Classes\X2Condition_NotItsOwnTurn.uc">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2DownloadableContentInfo_WOTCAlienPack.uc">
       <SubType>Content</SubType>
     </Content>
@@ -343,7 +343,7 @@ Creds to the original authors here.
     <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_SimpleHeal.uc">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_BD_TacticalSense_LW.uc">
+    <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_TacticalSense.uc">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_TraverseFire.uc">

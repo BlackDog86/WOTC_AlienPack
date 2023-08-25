@@ -95,6 +95,15 @@ LocHelpText="使用主武器進行標準射擊後進入監視狀態。"
 LocLongDescription="使用主武器進行標準射擊後進入監視狀態。"
 LocPromotionPopupText="<Bullet/>使用主武器進行標準射擊後進入監視狀態。"
 
+[BD_LostBladestorm_LW X2AbilityTemplate]
+LocFriendlyName="抓擊"
+LocLongDescription="對所有進入或從近戰攻擊範圍內發起攻擊的敵人進行攻擊。"
+LocHelpText="對所有進入或從近戰攻擊範圍內發起攻擊的敵人進行攻擊。"
+LocFlyOverText="抓擊"
+; LWOTC Needs Translation (2)
+LocPromotionPopupText="<Bullet/> 如果一名敵人在相鄰格開始他們的回合，該敵人試圖攻擊<Ability:ClassName/>將觸發抓擊 。<br/><Bullet/> 如果一名敵人沒有在相鄰格中開始他們的回合，那麼當該敵人進入近戰範圍時將觸發。<br/>"
+; End Translation (2)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;; MutonM2_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [X2Ability_MutonM2_Abilities]
@@ -392,16 +401,6 @@ LocFriendlyName="寄生獸兵蟲斬擊"
 LocLongDescription="你的斬擊攻擊造成大量傷害。"
 LocHelpText="你的斬擊攻擊造成大量傷害。"
 
-;;;;;;;;;;;;;;;;;;;;;;;;;; Hive Queen ;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-[HiveQueen X2CharacterTemplate]
-strCharacterName="寄生獸蟲後"
-
-[HiveQueenSlash X2AbilityTemplate]
-LocFriendlyName="寄生獸蟲後斬擊"
-LocLongDescription="你的斬擊攻擊造成大量的傷害。"
-LocHelpText="你的斬擊攻擊造成大量的傷害。"
-
 ;;;;;;;;;;;;;;;;;;;;;;;;; Additional ADVENT Trooper types ;;;;;;;;;;;;;;;;;;;;;;;;
 
 [AdvSergeantM1 X2CharacterTemplate]
@@ -459,3 +458,38 @@ strCharacterName="變種人將軍"
 [AdvGeneralM2_LW_WPN X2WeaponTemplate]
 FriendlyName="變種人磁力步槍"
 AbilityDescName="磁力步槍"
+
+;;;;;;;;;;;;;;;;;;;; Lost ;;;;;;;;;;;;;;;;;;;;;;;
+
+[TheLostGrapplerHP2_LW X2CharacterTemplate]
+strCharacterName="利爪失魂者"
+
+[TheLostGrapplerHP3_LW X2CharacterTemplate]
+strCharacterName="利爪失魂者"
+
+[TheLostGrapplerHP4_LW X2CharacterTemplate]
+strCharacterName="利爪失魂者"
+
+[TheLostGrapplerHP5_LW X2CharacterTemplate]
+strCharacterName="利爪失魂者"
+
+[TheLostGrapplerHP6_LW X2CharacterTemplate]
+strCharacterName="利爪失魂者"
+
+[TheLostGrapplerHP7_LW X2CharacterTemplate]
+strCharacterName="利爪失魂者"
+
+[TheLostGrapplerHP8_LW X2CharacterTemplate]
+strCharacterName="利爪失魂者"
+
+[TheLostGrapplerHP9_LW X2CharacterTemplate]
+strCharacterName="利爪失魂者"
+
+[TheLostGrapplerHP10_LW X2CharacterTemplate]
+strCharacterName="利爪失魂者"
+
+[TheLostGrapplerHP11_LW X2CharacterTemplate]
+strCharacterName="利爪失魂者"
+
+[TheLostGrapplerHP12_LW X2CharacterTemplate]
+strCharacterName="利爪失魂者"

@@ -373,16 +373,6 @@ LocFriendlyName="クリサリド・ソルジャースラッシュ"
 LocLongDescription="敵を切りつけ、大きなダメージを与える。"
 LocHelpText="敵を切りつけ、大きなダメージを与える。"
 
-;;;;;;;;;;;;;;;;;;;;;;;;;; Hive Queen ;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-[HiveQueen X2CharacterTemplate]
-strCharacterName="クリサリド・クイーン"
-
-[HiveQueenSlash X2AbilityTemplate]
-LocFriendlyName="グレーター・クリサリドスラッシュ"
-LocLongDescription="敵を切りつけ、大きなダメージを与える。"
-LocHelpText="敵を切りつけ、大きなダメージを与える。"
-
 ;;;;;;;;;;;;;;;;;;;;;;;;; Additional ADVENT Trooper types ;;;;;;;;;;;;;;;;;;;;;;;;
 
 [AdvSergeantM1 X2CharacterTemplate]

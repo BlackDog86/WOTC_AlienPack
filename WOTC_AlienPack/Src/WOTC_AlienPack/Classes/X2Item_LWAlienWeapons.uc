@@ -139,6 +139,11 @@ var config int AdvMECArcher_Micromissiles_Range;
 var config WeaponDamageValue ADVMECM3_WPN_BASEDAMAGE;
 var config int ADVMEC_M3_IDEALRANGE;
 
+var config WeaponDamageValue THELOST_GRAPPLER_TIER1_MELEEATTACK_BASEDAMAGE;
+var config WeaponDamageValue THELOST_GRAPPLER_TIER2_MELEEATTACK_BASEDAMAGE;
+var config WeaponDamageValue THELOST_GRAPPLER_TIER3_MELEEATTACK_BASEDAMAGE;
+var config WeaponDamageValue THELOST_GRAPPLER_TIER4_MELEEATTACK_BASEDAMAGE;
+
 // ***** Range Modifier Tables *****
 var config array<int> MIDSHORT_CONVENTIONAL_RANGE;
 var config array<int> MIDSHORT_MAGNETIC_RANGE;
@@ -224,6 +229,11 @@ static function array<X2DataTemplate> CreateTemplates()
 	Templates.AddItem(CreateTemplate_AdvElite_WPN('AdvGeneralM1_LW_WPN'));
 	Templates.AddItem(CreateTemplate_AdvElite_WPN('AdvGeneralM2_LW_WPN'));
 	
+	Templates.AddItem(CreateTemplate_TheLostGrappler_MeleeAttack('TheLostGrapplerTier1_MeleeAttack', default.THELOST_GRAPPLER_TIER1_MELEEATTACK_BASEDAMAGE));
+	Templates.AddItem(CreateTemplate_TheLostGrappler_MeleeAttack('TheLostGrapplerTier2_MeleeAttack', default.THELOST_GRAPPLER_TIER2_MELEEATTACK_BASEDAMAGE));
+	Templates.AddItem(CreateTemplate_TheLostGrappler_MeleeAttack('TheLostGrapplerTier3_MeleeAttack', default.THELOST_GRAPPLER_TIER3_MELEEATTACK_BASEDAMAGE));
+	Templates.AddItem(CreateTemplate_TheLostGrappler_MeleeAttack('TheLostGrapplerTier4_MeleeAttack', default.THELOST_GRAPPLER_TIER4_MELEEATTACK_BASEDAMAGE));
+
 	return Templates;
 }
 
@@ -489,14 +499,14 @@ static function X2DataTemplate CreateTemplate_Naja_WPN(name TemplateName)
 	}
 
 	// This all the resources; sounds, animations, models, physics, the works.
-	Template.GameArchetype = "NajaRifle.WP_NajaRifle"; 
+	Template.GameArchetype = "LWNajaRifle.WP_NajaRifle"; 
 
 	//Template.AddDefaultAttachment('Optic', "BeamSniper.Meshes.SM_BeamSniper_OpticA", , "img:///UILibrary_Common.UI_BeamSniper.BeamSniper_OpticA");
-	Template.AddDefaultAttachment('Mag', "NajaRifle.Meshes.SM_BeamSniper_MagB", , "img:///UILibrary_Common.UI_BeamSniper.BeamSniper_MagB");
+	Template.AddDefaultAttachment('Mag', "LWNajaRifle.Meshes.SM_BeamSniper_MagB", , "img:///UILibrary_Common.UI_BeamSniper.BeamSniper_MagB");
 	//Template.AddDefaultAttachment('Suppressor', "BeamSniper.Meshes.SM_BeamSniper_SuppressorA", , "img:///UILibrary_Common.UI_BeamSniper.BeamSniper_SupressorA");
-	Template.AddDefaultAttachment('Core', "NajaRifle.Meshes.SM_NajaRifle_CoreB", , "img:///UILibrary_Common.UI_BeamSniper.BeamSniper_CoreB");
-	Template.AddDefaultAttachment('HeatSink', "NajaRifle.Meshes.SM_BeamSniper_HeatSinkA", , "img:///UILibrary_Common.UI_BeamSniper.BeamSniper_HeatsinkA");
-	Template.AddDefaultAttachment('Autoloader', "NajaRifle.Meshes.SM_BeamSniper_MagC", , "img:///UILibrary_Common.UI_BeamSniper.BeamSniper_AutoLoader");
+	Template.AddDefaultAttachment('Core', "LWNajaRifle.Meshes.SM_NajaRifle_CoreB", , "img:///UILibrary_Common.UI_BeamSniper.BeamSniper_CoreB");
+	Template.AddDefaultAttachment('HeatSink', "LWNajaRifle.Meshes.SM_BeamSniper_HeatSinkA", , "img:///UILibrary_Common.UI_BeamSniper.BeamSniper_HeatsinkA");
+	Template.AddDefaultAttachment('Autoloader', "LWNajaRifle.Meshes.SM_BeamSniper_MagC", , "img:///UILibrary_Common.UI_BeamSniper.BeamSniper_AutoLoader");
 
 	Template.iPhysicsImpulse = 5;
 
@@ -798,7 +808,7 @@ static function X2DataTemplate CreateTemplate_AdvGrenadier_GrenadeLauncher(name 
 	
 	Template.Abilities.AddItem('BD_AdventGrenadeLauncher_LW');
 
-	Template.GameArchetype = "AdvGrenadeLauncher.WP_AdvGrenadeLauncher";
+	Template.GameArchetype = "LWAdvGrenadeLauncher.WP_AdvGrenadeLauncher";
 
 	Template.CanBeBuilt = false;
 
@@ -1466,4 +1476,53 @@ static function X2DataTemplate CreateTemplate_AdvElite_WPN(name TemplateName)
 	Template.DamageTypeTemplateName = 'Projectile_MagAdvent';
 
 	return Template;
+}
+
+static function X2DataTemplate CreateTemplate_TheLost_MeleeAttack(name WeaponTemplateName, WeaponDamageValue WeaponBaseDamage)
+{
+	local X2WeaponTemplate Template;
+
+	`CREATE_X2TEMPLATE(class'X2WeaponTemplate', Template, WeaponTemplateName);
+
+	Template.ItemCat = 'weapon';
+	Template.WeaponCat = 'melee';
+	Template.WeaponTech = 'alien';
+	Template.strImage = "img:///UILibrary_PerkIcons.UIPerk_muton_punch";
+	Template.InventorySlot = eInvSlot_PrimaryWeapon;
+	Template.StowedLocation = eSlot_RightHand;
+	// This all the resources; sounds, animations, models, physics, the works.
+	Template.GameArchetype = "WP_Zombiefist.WP_Zombiefist";
+	Template.RemoveTemplateAvailablility(Template.BITFIELD_GAMEAREA_Multiplayer); //invalidates multiplayer availability
+
+	Template.iRange = 2;
+	Template.iRadius = 1;
+	Template.NumUpgradeSlots = 2;
+	Template.InfiniteAmmo = true;
+	Template.iPhysicsImpulse = 5;
+	Template.iIdealRange = 1;
+
+	Template.BaseDamage = WeaponBaseDamage;
+	Template.BaseDamage.DamageType = 'Melee';
+	Template.iSoundRange = 2;
+	Template.iEnvironmentDamage = 10;
+
+	//Build Data
+	Template.StartingItem = false;
+	Template.CanBeBuilt = false;
+
+	Template.bDisplayWeaponAndAmmo = false;
+
+	Template.Abilities.AddItem('LostAttack');
+
+	return Template;
+}
+
+static function X2DataTemplate CreateTemplate_TheLostGrappler_MeleeAttack(name WeaponTemplateName, WeaponDamageValue WeaponBaseDamage)
+{
+    local X2WeaponTemplate Template;
+
+    Template = X2WeaponTemplate(CreateTemplate_TheLost_MeleeAttack(WeaponTemplateName, WeaponBaseDamage));
+    Template.Abilities.AddItem('BD_LostBladestorm_LW');
+
+    return Template;
 }

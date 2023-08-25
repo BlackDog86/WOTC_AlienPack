@@ -764,3 +764,47 @@ LocHelpText="All allies near Officer gain reaction fire bonus."
 LocFlyOverText="Fire Discipline"
 LocPromotionPopupText="<Bullet/> All allies within Command Range of the Officer gain +<ABILITY:FIREDISCIPLINE_REACTIONFIRE_BONUS/>% to hit on reaction fire.<br/><Bullet/> Command Range increases with each new Officer level."
 ; End Translation
+
+[BD_LostBladestorm_LW X2AbilityTemplate]
+LocFriendlyName="Grapple"
+LocLongDescription="Free melee attacks on any enemies that enter, exit or attack from melee range on enemy turns."
+LocHelpText="Free melee attacks on any enemies that enter, exit or attack from melee range on enemy turns."
+LocFlyOverText="Grapple"
+; LWOTC Needs Translation (2)
+LocPromotionPopupText="<Bullet/> If an enemy begins their turn in an adjacent tile, Grapple will trigger if that enemy tries to attack the <Ability:ClassName/>.<br/><Bullet/> If an enemy does not begin their turn in an adjacent tile, then Grapple will trigger when that enemy moves into melee range.<br/>"
+; End Translation (2)
+
+;;;;;;;;;;;;;;;;;;;; Lost ;;;;;;;;;;;;;;;;;;;;;;;;
+
+[TheLostGrapplerHP2_LW X2CharacterTemplate]
+strCharacterName="Lost Grappler"
+
+[TheLostGrapplerHP3_LW X2CharacterTemplate]
+strCharacterName="Lost Grappler"
+
+[TheLostGrapplerHP4_LW X2CharacterTemplate]
+strCharacterName="Lost Grappler"
+
+[TheLostGrapplerHP5_LW X2CharacterTemplate]
+strCharacterName="Lost Grappler"
+
+[TheLostGrapplerHP6_LW X2CharacterTemplate]
+strCharacterName="Lost Grappler"
+
+[TheLostGrapplerHP7_LW X2CharacterTemplate]
+strCharacterName="Lost Grappler"
+
+[TheLostGrapplerHP8_LW X2CharacterTemplate]
+strCharacterName="Lost Grappler"
+
+[TheLostGrapplerHP9_LW X2CharacterTemplate]
+strCharacterName="Lost Grappler"
+
+[TheLostGrapplerHP10_LW X2CharacterTemplate]
+strCharacterName="Lost Grappler"
+
+[TheLostGrapplerHP11_LW X2CharacterTemplate]
+strCharacterName="Lost Grappler"
+
+[TheLostGrapplerHP12_LW X2CharacterTemplate]
+strCharacterName="Lost Grappler"

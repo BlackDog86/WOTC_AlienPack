@@ -374,16 +374,6 @@ LocFriendlyName="크리살리드 병사 베기"
 LocLongDescription="베기 공격으로 많은 피해를 입힙니다."
 LocHelpText="베기 공격으로 많은 피해를 입힙니다."
 
-;;;;;;;;;;;;;;;;;;;;;;;;;; Hive Queen ;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-[HiveQueen X2CharacterTemplate]
-strCharacterName="하이브 퀸"
-
-[HiveQueenSlash X2AbilityTemplate]
-LocFriendlyName="치명적인 크리살리드 찍기"
-LocLongDescription="베기 공격은 대량의 대미지를 입힙니다."
-LocHelpText="베기 공격은 대량의 대미지를 입힙니다."
-
 ;;;;;;;;;;;;;;;;;;;;;;;;; Additional ADVENT Trooper types ;;;;;;;;;;;;;;;;;;;;;;;;
 
 [AdvSergeantM1 X2CharacterTemplate]

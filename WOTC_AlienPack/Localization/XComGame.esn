@@ -95,6 +95,15 @@ LocHelpText="Entra en guardia después de efectuar un disparo estándar con tu a
 LocLongDescription="Entra en guardia después de efectuar un disparo estándar con tu arma principal."
 LocPromotionPopupText="<Bullet/> Entra en guardia después de efectuar un disparo estándar con tu arma principal."
 
+[BD_LostBladestorm_LW X2AbilityTemplate]
+LocFriendlyName="Agarre"
+LocLongDescription="Ataques cuerpo a cuerpo gratuitos sobre cualquier enemigo que entre, salga o ataque desde el alcance cuerpo a cuerpo en los turnos enemigos."
+LocHelpText="Ataques cuerpo a cuerpo gratuitos sobre cualquier enemigo que entre, salga o ataque desde el alcance cuerpo a cuerpo en los turnos enemigos"
+LocFlyOverText="Agarre"
+; LWOTC translated
+LocPromotionPopupText="<Bullet/> Si un enemigo comienza su turno en una casilla adyacente Agarre se disparará si intenta usar la <Ability:ClassName/>.<br/><Bullet/> Si dicha unidad no comienza en una casilla cercana Agarre se ejecutará cuando se acerque al alcance cuerpo a cuerpo.<br/>"
+; End translated
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;; MutonM2_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [X2Ability_MutonM2_Abilities]
@@ -436,16 +445,6 @@ LocFriendlyName="Corte de Soldado Crisálida"
 LocLongDescription="Tus ataques de corte hacen mucho daño."
 LocHelpText="Tus ataques de corte hacen mucho daño."
 
-;;;;;;;;;;;;;;;;;;;;;;;;;; Hive Queen ;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-[HiveQueen X2CharacterTemplate]
-strCharacterName="Reina de la colmena"
-
-[HiveQueenSlash X2AbilityTemplate]
-LocFriendlyName="Corte de Gran Crisálida"
-LocLongDescription="Tus ataques de corte hacen mucho daño."
-LocHelpText="Tus ataques de corte hacen mucho daño."
-
 ;;;;;;;;;;;;;;;;;;;;;;;;; Additional ADVENT Trooper types ;;;;;;;;;;;;;;;;;;;;;;;;
 
 [AdvSergeantM1 X2CharacterTemplate]
@@ -519,3 +518,38 @@ FriendlyName="Fusil magnético de ADVENT"
 ; LWOTC translated
 AbilityDescName="rifle magnético"
 ; End translated
+
+;;;;;;;;;;;;;;;;;;;;;;;;; Lost ;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[TheLostGrapplerHP2_LW X2CharacterTemplate]
+strCharacterName="Perdido destructor"
+
+[TheLostGrapplerHP3_LW X2CharacterTemplate]
+strCharacterName="Perdido destructor"
+
+[TheLostGrapplerHP4_LW X2CharacterTemplate]
+strCharacterName="Perdido destructor"
+
+[TheLostGrapplerHP5_LW X2CharacterTemplate]
+strCharacterName="Perdido destructor"
+
+[TheLostGrapplerHP6_LW X2CharacterTemplate]
+strCharacterName="Perdido destructor"
+
+[TheLostGrapplerHP7_LW X2CharacterTemplate]
+strCharacterName="Perdido destructor"
+
+[TheLostGrapplerHP8_LW X2CharacterTemplate]
+strCharacterName="Perdido destructor"
+
+[TheLostGrapplerHP9_LW X2CharacterTemplate]
+strCharacterName="Perdido destructor"
+
+[TheLostGrapplerHP10_LW X2CharacterTemplate]
+strCharacterName="Perdido destructor"
+
+[TheLostGrapplerHP11_LW X2CharacterTemplate]
+strCharacterName="Perdido destructor"
+
+[TheLostGrapplerHP12_LW X2CharacterTemplate]
+strCharacterName="Perdido destructor"

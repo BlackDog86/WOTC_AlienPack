@@ -62,6 +62,18 @@ static function array<X2DataTemplate> CreateTemplates()
 	Templates.AddItem(CreateTemplate_AdvGeneric('AdvScout'));
 	Templates.AddItem(CreateTemplate_AdvGeneric('AdvVanguard'));
 
+	Templates.AddItem(CreateTemplate_TheLostGrappler('TheLostGrapplerHP2_LW', 'TheLostGrapplerTier1_Loadout'));
+	Templates.AddItem(CreateTemplate_TheLostGrappler('TheLostGrapplerHP3_LW', 'TheLostGrapplerTier1_Loadout'));
+	Templates.AddItem(CreateTemplate_TheLostGrappler('TheLostGrapplerHP4_LW', 'TheLostGrapplerTier2_Loadout'));
+	Templates.AddItem(CreateTemplate_TheLostGrappler('TheLostGrapplerHP5_LW', 'TheLostGrapplerTier2_Loadout'));
+	Templates.AddItem(CreateTemplate_TheLostGrappler('TheLostGrapplerHP6_LW', 'TheLostGrapplerTier2_Loadout'));
+	Templates.AddItem(CreateTemplate_TheLostGrappler('TheLostGrapplerHP7_LW', 'TheLostGrapplerTier3_Loadout'));
+	Templates.AddItem(CreateTemplate_TheLostGrappler('TheLostGrapplerHP8_LW', 'TheLostGrapplerTier3_Loadout'));
+	Templates.AddItem(CreateTemplate_TheLostGrappler('TheLostGrapplerHP9_LW', 'TheLostGrapplerTier3_Loadout'));
+	Templates.AddItem(CreateTemplate_TheLostGrappler('TheLostGrapplerHP10_LW', 'TheLostGrapplerTier4_Loadout'));
+	Templates.AddItem(CreateTemplate_TheLostGrappler('TheLostGrapplerHP11_LW', 'TheLostGrapplerTier4_Loadout'));
+	Templates.AddItem(CreateTemplate_TheLostGrappler('TheLostGrapplerHP12_LW', 'TheLostGrapplerTier4_Loadout'));
+
 	return Templates;
 }
 
@@ -734,8 +746,8 @@ static function X2CharacterTemplate CreateTemplate_AdvGunner(name TemplateName)
 	CharTemplate.BehaviorClass=class'XGAIBehavior';
 	//CharTemplate.strPawnArchetypes.AddItem("LWAdvGunner.Archetypes.ARC_GameUnit_AdvGunnerM1_M"); 
 	//CharTemplate.strPawnArchetypes.AddItem("LWAdvGunner.Archetypes.ARC_GameUnit_AdvGunnerM1_F"); 
-	//CharTemplate.strPawnArchetypes.AddItem("XAdventTrooper.Archetypes.GameUnit_AdvSoldier_F"); 
-	CharTemplate.strPawnArchetypes.AddItem("XAdventTrooper.Archetypes.GameUnit_AdvSoldier_M"); 
+	//CharTemplate.strPawnArchetypes.AddItem("LWXAdventTrooper.Archetypes.GameUnit_AdvSoldier_F"); 
+	CharTemplate.strPawnArchetypes.AddItem("LWXAdventTrooper.Archetypes.GameUnit_AdvSoldier_M"); 
 
 	Loot.ForceLevel=0;
 	if (TemplateName == 'AdvGunnerM1')
@@ -834,7 +846,7 @@ static function X2CharacterTemplate CreateTemplate_AdvSentry(name TemplateName)
 	CharTemplate.BehaviorClass=class'XGAIBehavior';
 	//CharTemplate.strPawnArchetypes.AddItem("LWAdvSentry.Archetypes.ARC_GameUnit_AdvSentryM1_M");
 	//CharTemplate.strPawnArchetypes.AddItem("LWAdvSentry.Archetypes.ARC_GameUnit_AdvSentryM1_F");
-	CharTemplate.strPawnArchetypes.AddItem("XAdventTrooper.Archetypes.GameUnit_AdvSoldier_M"); 
+	CharTemplate.strPawnArchetypes.AddItem("LWXAdventTrooper.Archetypes.GameUnit_AdvSoldier_M"); 
 	Loot.ForceLevel=0;
 
 	if (TemplateName == 'AdvSentryM1')
@@ -941,7 +953,7 @@ static function X2CharacterTemplate CreateTemplate_AdvGrenadier(name TemplateNam
 		CharTemplate.DefaultLoadout='AdvGrenadierM3_Loadout';
 
 	CharTemplate.BehaviorClass=class'XGAIBehavior';
-	CharTemplate.strPawnArchetypes.AddItem("XAdventTrooper.Archetypes.GameUnit_AdvSoldier_M"); 
+	CharTemplate.strPawnArchetypes.AddItem("LWXAdventTrooper.Archetypes.GameUnit_AdvSoldier_M"); 
 
 	Loot.ForceLevel=0;
 	if (TemplateName == 'AdvGrenadierM1')
@@ -1049,7 +1061,7 @@ static function X2CharacterTemplate CreateTemplate_AdvRocketeer(name TemplateNam
 		CharTemplate.DefaultLoadout='AdvRocketeerM3_Loadout';
 	CharTemplate.BehaviorClass=class'XGAIBehavior';
 
-	CharTemplate.strPawnArchetypes.AddItem("XAdventTrooper.Archetypes.GameUnit_AdvSoldier_M"); 
+	CharTemplate.strPawnArchetypes.AddItem("LWXAdventTrooper.Archetypes.GameUnit_AdvSoldier_M"); 
 	Loot.ForceLevel=0;
 	if (TemplateName == 'AdvRocketeerM1')
 		Loot.LootTableName='AdvTrooperM1_BaseLoot';
@@ -1322,7 +1334,7 @@ static function X2CharacterTemplate CreateTemplate_Drone(name TemplateName)
 		Loot.LootTableName = 'LWDroneM2_VultureLoot';  
 	CharTemplate.VultureLoot.LootReferences.AddItem(Loot);
 
-	CharTemplate.strMatineePackages.AddItem("CIN_Drone");
+	CharTemplate.strMatineePackages.AddItem("LW_CIN_Drone");
 	//NEW CINEMATIC?
 
 	CharTemplate.UnitSize = 1;
@@ -1461,7 +1473,7 @@ static function X2CharacterTemplate CreateTemplate_AdvGeneric(name TemplateName)
 
 	`CREATE_X2CHARACTER_TEMPLATE(CharTemplate, TemplateName);
 	
-	CharTemplate.strPawnArchetypes.AddItem("XAdventTrooper.Archetypes.GameUnit_AdvSoldier_M"); 
+	CharTemplate.strPawnArchetypes.AddItem("LWXAdventTrooper.Archetypes.GameUnit_AdvSoldier_M"); 
 
 	// Some of these may be overidden on case-by-case basis
 	CharTemplate.CharacterGroupName = 'AdventTrooper'; 
@@ -1615,6 +1627,19 @@ static function X2CharacterTemplate CreateTemplate_AdvGeneric(name TemplateName)
 
 	CharTemplate.strHackIconImage = "UILibrary_Common.TargetIcons.Hack_captain_icon";
 	CharTemplate.strTargetIconImage = class'UIUtilities_Image'.const.TargetIcon_Advent;
+
+	return CharTemplate;
+}
+
+static function X2CharacterTemplate CreateTemplate_TheLostGrappler(name LostName, name LoadoutName)
+{
+	local X2CharacterTemplate CharTemplate;
+
+	CharTemplate = class'X2Character_DefaultCharacters'.static.CreateTemplate_TheLost(LostName, LoadoutName);
+	CharTemplate.CharacterGroupName = 'TheLost';
+	CharTemplate.strPawnArchetypes.Length = 0;
+	CharTemplate.strPawnArchetypes.AddItem("GameUnit_TheLost.ARC_GameUnit_TheLost_Howler");
+	CharTemplate.AIOrderPriority = 100;
 
 	return CharTemplate;
 }

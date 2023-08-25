@@ -1,7 +1,7 @@
 {
     "sfStandalone": [
-        "AdvDroneMatinee",
-		"AdvGrenadeLauncher",
+        "LWAdvDroneMatinee",
+		"LWAdvGrenadeLauncher",
         "LW_Perk_MutonM3",
 		"LW_Perk_Psi_MassMindspin",
 		"LW_Perk_Psi_MassReanimation",
@@ -24,8 +24,8 @@
 		"LWSectoidM2",
 		"LWSidewinder",
 		"LWSidewinderSMG",
-		"NajaRifle",
+		"LWNajaRifle",
 		"UILibrary_LWAlienPack",
-		"XAdventTrooper"
+		"LWXAdventTrooper"
 	]
 }
