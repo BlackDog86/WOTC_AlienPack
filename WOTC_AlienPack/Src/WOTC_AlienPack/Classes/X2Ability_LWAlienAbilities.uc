@@ -579,7 +579,7 @@ static function X2AbilityTemplate AddHitandSlitherAbility()
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
 	Template.Hostility = eHostility_Neutral;
-	Template.IconImage = "img:///UILibrary_LW_PerkPack.LW_AbilityHitandRun";
+	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityHitandRun";
 	Template.AbilityToHitCalc = default.DeadEye;
 	Template.AbilityTargetStyle = default.SelfTarget;
 	Template.AbilityTriggers.AddItem(default.UnitPostBeginPlayTrigger);
@@ -1264,12 +1264,11 @@ static function X2AbilityTemplate StandalonePinionsStage2Ability()
 	return Template;
 }
 
-
 static function X2AbilityTemplate CreateLostBladestorm()
 {
 	local X2AbilityTemplate Template;
 	Template = PurePassive('BD_LostBladestorm_LW', "img:///UILibrary_PerkIcons.UIPerk_bladestorm", false, 'eAbilitySource_Perk');
-	Template.AdditionalAbilities.AddItem('LostBladestormAttack');
+	Template.AdditionalAbilities.AddItem('BD_LostBladestormAttack_LW');
 	return Template;
 }
 
@@ -1278,7 +1277,7 @@ static function X2DataTemplate CreateLostBladestormAttack()
 	local X2AbilityTemplate Template;
 	local X2Condition_NotItsOwnTurn NotItsOwnTurnCondition;
 	local X2Condition_Unitproperty RangeCondition;
-	Template = class'X2Ability_RangerAbilitySet'.static.BladestormAttack('LostBladestormAttack');
+	Template = class'X2Ability_RangerAbilitySet'.static.BladestormAttack('BD_LostBladestormAttack_LW');
 
 	// necessary to limit range to 1 tile because of weapon range configuration
 	RangeCondition = new class'X2Condition_Unitproperty';
@@ -1288,7 +1287,7 @@ static function X2DataTemplate CreateLostBladestormAttack()
 	Template.AbilityTargetConditions.AddItem(RangeCondition);
 
 	/* values from Lost melee attack */
-	Template.IconImage = "img:///UILibrary_PerkIcons.UIPerk_escape";
+	Template.IconImage = "img:///UILibrary_PerkIcons.UIPerk_muton_punch";
 	Template.Hostility = eHostility_Offensive;
 //	Template.AbilitySourceName = 'eAbilitySource_Standard';
 	Template.BuildVisualizationFn = TypicalAbility_BuildVisualization;

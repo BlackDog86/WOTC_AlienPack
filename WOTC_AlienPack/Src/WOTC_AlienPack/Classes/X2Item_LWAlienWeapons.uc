@@ -136,6 +136,18 @@ var config int AdvMECArcher_MicroMissiles_Clipsize;
 var config int AdvMECArcher_MicroMissiles_EnvironmentDamage;
 var config int AdvMECArcher_Micromissiles_Range;
 
+var config int PoisonSpitGlobLWViper_Range;
+var config int PoisonSpitGlobLWViper_Radius;
+var config WeaponDamageValue PoisonSpitGlobLWViper_BaseDamage;
+
+var config int PoisonSpitGlobLWNaja_Range;
+var config int PoisonSpitGlobLWNaja_Radius;
+var config WeaponDamageValue PoisonSpitGlobLWNaja_BaseDamage;
+
+var config int PoisonSpitGlobLWSidewinder_Range;
+var config int PoisonSpitGlobLWSidewinder_Radius;
+var config WeaponDamageValue PoisonSpitGlobLWSidewinder_BaseDamage;
+
 var config WeaponDamageValue ADVMECM3_WPN_BASEDAMAGE;
 var config int ADVMEC_M3_IDEALRANGE;
 
@@ -171,6 +183,10 @@ static function array<X2DataTemplate> CreateTemplates()
 	Templates.AddItem(CreateTemplate_ViperMX_WPN('ViperM2_WPN'));
 	Templates.AddItem(CreateTemplate_ViperMX_WPN('ViperM3_WPN'));
 	
+	Templates.AddItem(CreateTemplate_LWViper_PoisonSpitGlob());
+	Templates.AddItem(CreateTemplate_LWSidewinder_PoisonSpitGlob());
+	Templates.AddItem(CreateTemplate_LWNaja_PoisonSpitGlob());
+		
 	Templates.AddItem(CreateTemplate_SectoidM2_WPN());
 	Templates.AddItem(CreateTemplate_ArchonM2_WPN());
 	Templates.AddItem(CreateTemplate_ArchonM2_MeleeAttack());
@@ -219,6 +235,8 @@ static function array<X2DataTemplate> CreateTemplates()
 	
 	Templates.AddItem(CreateTemplate_BD_DroneRepair_LW_WPN('BD_DroneRepair_LWM1_WPN'));
 	Templates.AddItem(CreateTemplate_BD_DroneRepair_LW_WPN('BD_DroneRepair_LWM2_WPN'));
+
+
 
 	Templates.AddItem(CreateTemplate_AdvElite_WPN('AdvVanguard_WPN'));
 	Templates.AddItem(CreateTemplate_AdvElite_WPN('AdvShockTroop_WPN'));
@@ -1067,7 +1085,7 @@ static function X2DataTemplate CreateTemplate_AdvMECArcher_Shoulder_WPN(name Tem
 	Template.Abilities.AddItem('MicroMissileFuse');
 	
 	// This all the resources; sounds, animations, models, physics, the works.
-	Template.GameArchetype = "LWAdvMecArcher.Archetypes.WP_AdvMecBigLauncher"; 
+	Template.GameArchetype = "LWAdvMecArcher.Archetypes.WP_AdvMecBigLauncher";
 
 	Template.iPhysicsImpulse = 5;
 
@@ -1525,4 +1543,115 @@ static function X2DataTemplate CreateTemplate_TheLostGrappler_MeleeAttack(name W
     Template.Abilities.AddItem('BD_LostBladestorm_LW');
 
     return Template;
+}
+
+static function X2DataTemplate CreateTemplate_LWViper_PoisonSpitGlob()
+{
+	local X2WeaponTemplate Template;
+
+	`CREATE_X2TEMPLATE(class'X2WeaponTemplate', Template, 'PoisonSpitGlobLWViper');
+
+	Template.ItemCat = 'weapon';
+	Template.WeaponCat = 'grenade';
+	Template.strImage = "img:///UILibrary_StrategyImages.InventoryIcons.Inv_SmokeGrenade";
+	Template.EquipSound = "StrategyUI_Grenade_Equip";
+	//Template.GameArchetype = "WP_Grenade_Frag.WP_Grenade_Frag";
+	Template.GameArchetype = "WP_Viper_PoisonSpit.WP_Viper_PoisonSpit";
+	Template.CanBeBuilt = false;	
+
+	Template.iRange = default.PoisonSpitGlobLWViper_Range;
+	Template.iRadius = default.PoisonSpitGlobLWViper_Radius;
+	Template.iClipSize = 1;
+	Template.InfiniteAmmo = true;
+
+	Template.iSoundRange = 6;
+	Template.bSoundOriginatesFromOwnerLocation = true;
+
+	Template.BaseDamage.DamageType = 'Poison';
+	Template.BaseDamage = default.PoisonSpitGlobLWViper_BaseDamage;
+
+	Template.InventorySlot = eInvSlot_Utility;
+	Template.StowedLocation = eSlot_None;
+	Template.Abilities.AddItem('PoisonSpit');
+
+	// This controls how much arc this projectile may have and how many times it may bounce
+	Template.WeaponPrecomputedPathData.InitialPathTime = 0.5;
+	Template.WeaponPrecomputedPathData.MaxPathTime = 1.0;
+	Template.WeaponPrecomputedPathData.MaxNumberOfBounces = 0;
+
+	return Template;
+}
+
+static function X2DataTemplate CreateTemplate_LWNaja_PoisonSpitGlob()
+{
+	local X2WeaponTemplate Template;
+
+	`CREATE_X2TEMPLATE(class'X2WeaponTemplate', Template, 'PoisonSpitGlobLWNaja');
+
+	Template.ItemCat = 'weapon';
+	Template.WeaponCat = 'grenade';
+	Template.strImage = "img:///UILibrary_StrategyImages.InventoryIcons.Inv_SmokeGrenade";
+	Template.EquipSound = "StrategyUI_Grenade_Equip";
+	//Template.GameArchetype = "WP_Grenade_Frag.WP_Grenade_Frag";
+	Template.GameArchetype = "WP_Viper_PoisonSpit.WP_Viper_PoisonSpit";
+	Template.CanBeBuilt = false;	
+
+	Template.iRange = default.PoisonSpitGlobLWNaja_Range;
+	Template.iRadius = default.PoisonSpitGlobLWNaja_Radius;
+	Template.iClipSize = 1;
+	Template.InfiniteAmmo = true;
+
+	Template.iSoundRange = 6;
+	Template.bSoundOriginatesFromOwnerLocation = true;
+
+	Template.BaseDamage.DamageType = 'Poison';
+	Template.BaseDamage = default.PoisonSpitGlobLWNaja_BaseDamage;
+
+	Template.InventorySlot = eInvSlot_Utility;
+	Template.StowedLocation = eSlot_None;
+	Template.Abilities.AddItem('PoisonSpit');
+
+	// This controls how much arc this projectile may have and how many times it may bounce
+	Template.WeaponPrecomputedPathData.InitialPathTime = 0.5;
+	Template.WeaponPrecomputedPathData.MaxPathTime = 1.0;
+	Template.WeaponPrecomputedPathData.MaxNumberOfBounces = 0;
+
+	return Template;
+}
+
+static function X2DataTemplate CreateTemplate_LWSidewinder_PoisonSpitGlob()
+{
+	local X2WeaponTemplate Template;
+
+	`CREATE_X2TEMPLATE(class'X2WeaponTemplate', Template, 'PoisonSpitGlobLWSidewinder');
+
+	Template.ItemCat = 'weapon';
+	Template.WeaponCat = 'grenade';
+	Template.strImage = "img:///UILibrary_StrategyImages.InventoryIcons.Inv_SmokeGrenade";
+	Template.EquipSound = "StrategyUI_Grenade_Equip";
+	//Template.GameArchetype = "WP_Grenade_Frag.WP_Grenade_Frag";
+	Template.GameArchetype = "WP_Viper_PoisonSpit.WP_Viper_PoisonSpit";
+	Template.CanBeBuilt = false;	
+
+	Template.iRange = default.PoisonSpitGlobLWSidewinder_Range;
+	Template.iRadius = default.PoisonSpitGlobLWSidewinder_Radius;
+	Template.iClipSize = 1;
+	Template.InfiniteAmmo = true;
+
+	Template.iSoundRange = 6;
+	Template.bSoundOriginatesFromOwnerLocation = true;
+
+	Template.BaseDamage.DamageType = 'Poison';
+	Template.BaseDamage = default.PoisonSpitGlobLWSidewinder_BaseDamage;
+
+	Template.InventorySlot = eInvSlot_Utility;
+	Template.StowedLocation = eSlot_None;
+	Template.Abilities.AddItem('PoisonSpit');
+
+	// This controls how much arc this projectile may have and how many times it may bounce
+	Template.WeaponPrecomputedPathData.InitialPathTime = 0.5;
+	Template.WeaponPrecomputedPathData.MaxPathTime = 1.0;
+	Template.WeaponPrecomputedPathData.MaxNumberOfBounces = 0;
+
+	return Template;
 }

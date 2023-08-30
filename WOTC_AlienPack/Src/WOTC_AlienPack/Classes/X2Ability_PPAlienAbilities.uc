@@ -22,7 +22,7 @@ var config int AREA_SUPPRESSION_MAX_SHOTS;
 var config int AREA_SUPPRESSION_SHOT_AMMO_COST;
 var config float AREA_SUPPRESSION_RADIUS;
 var config int WILLTOSURVIVE_WILLBONUS;
-var config int DAMAGE_CONTROL_DURATION; 
+//var config int DAMAGE_CONTROL_DURATION; Fix the duration to suppress multiple flyovers
 var config int DAMAGE_CONTROL_BONUS_ARMOR;
 var config int CCS_AMMO_PER_SHOT;
 var config int AREA_SUPPRESSION_LW_SHOT_AIM_BONUS;
@@ -93,7 +93,6 @@ static function X2AbilityTemplate AddDamageControlAbilityPassive()
 
 	Template = PurePassive('BD_DamageControl_LWPassive', "img:///UILibrary_LWAlienPack.LW_AbilityDamageControl", true, 'eAbilitySource_Perk');
 	Template.bCrossClassEligible = false;
-	//Template.AdditionalAbilities.AddItem('DamageControlAbilityActivated');
 	return Template;
 }
 
@@ -102,6 +101,7 @@ static function X2AbilityTemplate AddDamageControlAbility()
 	local X2AbilityTemplate						Template;	
 	local X2AbilityTrigger_EventListener		EventListener;
 	local X2Effect_DamageControl 				DamageControlEffect;
+	local X2AbilityCooldown						Cooldown;
 
 	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_DamageControl_LW');
 	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityDamageControl";
@@ -117,6 +117,10 @@ static function X2AbilityTemplate AddDamageControlAbility()
 	Template.bDisplayInUITacticalText = true;
 	Template.AbilityShooterConditions.AddItem(default.LivingShooterProperty);
 
+	Cooldown = new class'X2AbilityCooldown';
+	Cooldown.iNumTurns = 1;
+    Template.AbilityCooldown = Cooldown;
+
 	// Trigger on Damage
 	EventListener = new class'X2AbilityTrigger_EventListener';
 	EventListener.ListenerData.EventID = 'UnitTakeEffectDamage';
@@ -126,14 +130,12 @@ static function X2AbilityTemplate AddDamageControlAbility()
 	Template.AbilityTriggers.AddItem(EventListener);
 
 	DamageControlEffect = new class'X2Effect_DamageControl';
-	DamageControlEffect.BuildPersistentEffect(default.DAMAGE_CONTROL_DURATION,false,true,,eGameRule_PlayerTurnBegin);
+	DamageControlEffect.BuildPersistentEffect(1,false,true,,eGameRule_PlayerTurnBegin);
 	DamageControlEffect.SetDisplayInfo(ePerkBuff_Bonus, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,,Template.AbilitySourceName);
-	DamageControlEffect.DuplicateResponse = eDupe_Refresh;
+	DamageControlEffect.DuplicateResponse = eDupe_Ignore;
 	DamageControlEffect.BonusArmor = default.DAMAGE_CONTROL_BONUS_ARMOR;
 	Template.AddTargetEffect(DamageControlEffect);
 	
-	Template.AddTargetEffect(DamageControlEffect);
-
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
 	Template.BuildVisualizationFn = TypicalAbility_BuildVisualization;
 	//Template.BuildInterruptGameStateFn = TypicalAbility_BuildInterruptGameState;
@@ -237,7 +239,7 @@ static function X2AbilityTemplate AddFireDisciplineAbility()
 	FireDisciplineEffect.SetDisplayInfo(ePerkBuff_Bonus, Template.LocFriendlyName, Template.GetMyHelpText(), Template.IconImage,,, Template.AbilitySourceName);
 	Template.AddTargetEffect(FireDisciplineEffect);
 
-	Template.AdditionalAbilities.AddItem('BD_BD_FireDiscipline_LW_LWPassive');
+	Template.AdditionalAbilities.AddItem('BD_FireDiscipline_LWPassive');
 
 	Template.bSkipFireAction = true;
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
@@ -695,14 +697,13 @@ static function X2AbilityTemplate AddExecutionerAbility()
 	return Template;
 }
 
-
 static function X2AbilityTemplate AddTacticalSenseAbility()
 {
 	local X2AbilityTemplate				Template;
 	local X2Effect_TacticalSense		MyDefModifier;
 
 	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_TacticalSense_LW');
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityBD_TacticalSense_LW"; //TODO
+	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityTacticalSense";
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
 	Template.Hostility = eHostility_Neutral;
@@ -719,7 +720,6 @@ static function X2AbilityTemplate AddTacticalSenseAbility()
 
 	return Template;
 }
-
 
 static function X2AbilityTemplate AddInfighterAbility()
 {
@@ -949,7 +949,7 @@ static function X2AbilityTemplate AddAreaSuppressionAbility()
 	local X2Condition_UnitEffects						SuppressedCondition;
 
 	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_AreaSuppression_LW');
-	Template.IconImage = "img:///UILibrary_LW_PerkPack.LW_AreaSuppression";
+	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityAreaSuppression";
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_AlwaysShow;
 	Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_LIEUTENANT_PRIORITY;
