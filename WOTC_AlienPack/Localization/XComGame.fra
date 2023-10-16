@@ -519,6 +519,9 @@ AbilityDescName="fusil magnétique"
 
 ;;;;;;;;;;;;;;;;;; Lost ;;;;;;;;;;;;;;;;;;;;;;;;;
 
+[TheLostGrappler X2CharacterTemplate]
+strCharacterName="Ombre avide"
+
 [TheLostGrapplerHP2_LW X2CharacterTemplate]
 strCharacterName="Ombre avide"
 

@@ -448,6 +448,9 @@ AbilityDescName="Магнитная винтовка"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;; Lost ;;;;;;;;;;;;;;;;;;;;;;;;
 
+[TheLostGrappler X2CharacterTemplate]
+strCharacterName="Странник-боец"
+
 [TheLostGrapplerHP2_LW X2CharacterTemplate]
 strCharacterName="Странник-боец"
 

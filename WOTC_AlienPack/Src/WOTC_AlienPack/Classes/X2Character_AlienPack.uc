@@ -62,6 +62,7 @@ static function array<X2DataTemplate> CreateTemplates()
 	Templates.AddItem(CreateTemplate_AdvGeneric('AdvScout'));
 	Templates.AddItem(CreateTemplate_AdvGeneric('AdvVanguard'));
 
+	Templates.AddItem(CreateTemplate_TheLostGrappler('TheLostGrappler', 'TheLostGrapplerTier1_Loadout'));
 	Templates.AddItem(CreateTemplate_TheLostGrappler('TheLostGrapplerHP2_LW', 'TheLostGrapplerTier1_Loadout'));
 	Templates.AddItem(CreateTemplate_TheLostGrappler('TheLostGrapplerHP3_LW', 'TheLostGrapplerTier1_Loadout'));
 	Templates.AddItem(CreateTemplate_TheLostGrappler('TheLostGrapplerHP4_LW', 'TheLostGrapplerTier2_Loadout'));
@@ -1466,6 +1467,20 @@ static function X2CharacterTemplate CreateTemplate_ChryssalidSoldier()
 	return CharTemplate;
 }
 
+static function X2CharacterTemplate CreateTemplate_TheLostGrappler(name LostName, name LoadoutName)
+{
+	local X2CharacterTemplate CharTemplate;
+
+	CharTemplate = class'X2Character_DefaultCharacters'.static.CreateTemplate_TheLost(LostName, LoadoutName);
+	CharTemplate.CharacterGroupName = 'TheLost';
+	CharTemplate.strPawnArchetypes.Length = 0;
+	CharTemplate.strPawnArchetypes.AddItem("GameUnit_TheLost.ARC_GameUnit_TheLost_Howler");
+	CharTemplate.AIOrderPriority = 100;	
+	CharTemplate.Abilities.AddItem('ShadowStep');
+
+	return CharTemplate;
+}
+
 static function X2CharacterTemplate CreateTemplate_AdvGeneric(name TemplateName)
 {
 	local X2CharacterTemplate CharTemplate;
@@ -1631,15 +1646,3 @@ static function X2CharacterTemplate CreateTemplate_AdvGeneric(name TemplateName)
 	return CharTemplate;
 }
 
-static function X2CharacterTemplate CreateTemplate_TheLostGrappler(name LostName, name LoadoutName)
-{
-	local X2CharacterTemplate CharTemplate;
-
-	CharTemplate = class'X2Character_DefaultCharacters'.static.CreateTemplate_TheLost(LostName, LoadoutName);
-	CharTemplate.CharacterGroupName = 'TheLost';
-	CharTemplate.strPawnArchetypes.Length = 0;
-	CharTemplate.strPawnArchetypes.AddItem("GameUnit_TheLost.ARC_GameUnit_TheLost_Howler");
-	CharTemplate.AIOrderPriority = 100;
-
-	return CharTemplate;
-}

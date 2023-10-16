@@ -776,6 +776,9 @@ LocPromotionPopupText="<Bullet/> If an enemy begins their turn in an adjacent ti
 
 ;;;;;;;;;;;;;;;;;;;; Lost ;;;;;;;;;;;;;;;;;;;;;;;;
 
+[TheLostGrappler X2CharacterTemplate]
+strCharacterName="Lost Grappler"
+
 [TheLostGrapplerHP2_LW X2CharacterTemplate]
 strCharacterName="Lost Grappler"
 

@@ -459,6 +459,9 @@ AbilityDescName="磁力步枪"
 
 ;;;;;;;;;;;;;;;;;;;; Lost ;;;;;;;;;;;;;;;;;;;;;
 
+[TheLostGrappler X2CharacterTemplate]
+strCharacterName="利爪失魂者"
+
 [TheLostGrapplerHP2_LW X2CharacterTemplate]
 strCharacterName="利爪失魂者"
 

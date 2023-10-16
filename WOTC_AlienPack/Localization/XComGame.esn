@@ -521,6 +521,9 @@ AbilityDescName="rifle magnético"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;; Lost ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+[TheLostGrappler X2CharacterTemplate]
+strCharacterName="Perdido destructor"
+
 [TheLostGrapplerHP2_LW X2CharacterTemplate]
 strCharacterName="Perdido destructor"
 
