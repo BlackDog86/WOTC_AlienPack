@@ -15,7 +15,7 @@ static function X2DataTemplate CreateDroneCorpse()
 
 	`CREATE_X2TEMPLATE(class'X2ItemTemplate', Template, 'CorpseDrone');
 
-	Template.strImage = "img:///UILibrary_LWAlienPack.LW_Corpse_Drone";
+	Template.strImage = "img:///UILibrary_BD_LWAlienPack.LW_Corpse_Drone";
 	Template.ItemCat = 'resource';
 	Template.TradingPostValue = 2;
 	Template.MaxQuantity = 1;
@@ -30,7 +30,7 @@ static function X2DataTemplate CreateBlutonCorpse()
 
 	`CREATE_X2TEMPLATE(class'X2ItemTemplate', Template, 'CorpseMutonElite');
 
-	Template.strImage = "img:///UILibrary_LWAlienPack.LW_Corpse_Bluton";
+	Template.strImage = "img:///UILibrary_BD_LWAlienPack.LW_Corpse_Bluton";
 	Template.ItemCat = 'resource';
 	Template.TradingPostValue = 6;
 	Template.MaxQuantity = 1;

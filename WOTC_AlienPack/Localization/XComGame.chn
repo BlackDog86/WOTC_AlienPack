@@ -332,6 +332,10 @@ strCharacterName="变种人精英火箭兵"
 [AdvRocketeerM1_RocketLauncher X2WeaponTemplate]
 FriendlyName="变种人火箭发射器"
 
+[BD_RocketLauncher X2AbilityTemplate]
+LocFriendlyName="火箭发射器"
+LocHelpText="向目标区域发射一枚火箭。"
+
 [StandalonePinionsStage1 X2AbilityTemplate]
 LocFriendlyName="燃烧羽翼"
 LocLongDescription="上升到最高可能高度，然后用爆炸弹密集轰炸大片区域。不能在室内施放。"

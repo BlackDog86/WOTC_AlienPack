@@ -308,6 +308,10 @@ strCharacterName="Artigliere d'élite ADVENT"
 [AdvRocketeerM1_RocketLauncher X2WeaponTemplate]
 FriendlyName="Lanciarazzi ADVENT"
 
+[BD_RocketLauncher X2AbilityTemplate]
+LocFriendlyName="Lanciarazzi"
+LocHelpText="Spara un razzo nell'area bersaglio."
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;; Great Archon;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [StandalonePinionsStage1 X2AbilityTemplate]

@@ -368,6 +368,12 @@ strCharacterName="Cohetero de élite de ADVENT"
 [AdvRocketeerM1_RocketLauncher X2WeaponTemplate]
 FriendlyName="Lanzacohetes de ADVENT"
 
+[BD_RocketLauncher X2WeaponTemplate]
+FriendlyName="Lanzacohetes"
+FriendlyNamePlural="Lanzacohetes"
+BriefSummary="La tecnología de micromisiles nos ha permitido miniaturizar un lanzacohetes y montarlo en nuestros sistemas de blindaje pesado. Su munición es limitada, pero tiene un alcance y una fuerza explosiva excelentes."
+TacticalText="<Bullet/> El lanzacohetes requiere las dos acciones para disparar y solo se puede usar una vez por misión.\n<Bullet/> La nueva forma del lanzacohetes puede manejarla cualquiera, siempre que lleve blindaje pesado."
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;; Great Archon ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [StandalonePinionsStage1 X2AbilityTemplate]

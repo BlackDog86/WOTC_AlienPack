@@ -22,6 +22,12 @@ Creds to the original authors here.
     <ProjectGuid>{3f350978-33e7-493a-993b-92c1b54bf591}</ProjectGuid>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="Config\XComNarrative.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComStrategyTuning.ini">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Config\XComAI.ini">
       <SubType>Content</SubType>
     </Content>
@@ -96,6 +102,9 @@ Creds to the original authors here.
     <Content Include="ContentForCook\LWHiveQueen.upk">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ContentForCook\LWMutonEliteAutopsy.upk">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ContentForCook\LWMutonM2.upk">
       <SubType>Content</SubType>
     </Content>
@@ -135,10 +144,16 @@ Creds to the original authors here.
     <Content Include="ContentForCook\LWNajaRifle.upk">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="ContentForCook\UILibrary_LWAlienPack.upk">
+    <Content Include="ContentForCook\UILibrary_BD_LWAlienPack.upk">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ContentOptions.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\CIN_Autopsy_MutonM3_LW.webm">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\LWNarrativeMoments_Bink.upk">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Content\LW_CIN_Drone.umap">
@@ -362,6 +377,9 @@ Creds to the original authors here.
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2Item_Resources_AlienPack.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\WOTC_AlienPack\Classes\X2StrategyElement_NewTechs_BD.uc">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2TargetingMethod_AreaSuppression.uc">

@@ -77,6 +77,7 @@ static function array<X2DataTemplate> CreateTemplates()
 	Templates.AddItem(StandalonePinionsStage2Ability());
 	Templates.AddItem(CreateLostBladestormAttack());
 	Templates.AddItem(CreateLostBladestorm());
+	Templates.AddItem(BD_RocketLauncherAbility());
 	return Templates;
 }
 
@@ -91,7 +92,7 @@ static function X2AbilityTemplate CreateMutonM2_LWAbility_BeastMaster()
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_NeverShow;
 	Template.Hostility = eHostility_Neutral;
-	Template.IconImage = "img:///Texture2D'UILibrary_LWAlienPack.LWCenturion_AbilityBeastmaster64'";
+	Template.IconImage = "img:///Texture2D'UILibrary_BD_LWAlienPack.LWCenturion_AbilityBeastmaster64'";
 	Template.AbilityToHitCalc = default.DeadEye;
 	TargetStyle = new class 'X2AbilityTarget_Self';
 	Template.AbilityTargetStyle = TargetStyle;
@@ -123,7 +124,7 @@ static function X2AbilityTemplate CreateMutonM2_LWAbility_BayonetCharge()
 	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_Bayonetcharge_LW');
 	Template.AbilitySourceName = 'eAbilitySource_Standard';
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_AlwaysShow;
-	Template.IconImage = "img:///Texture2D'UILibrary_LWAlienPack.LWCenturion_AbilityBayonetCharge64'";
+	Template.IconImage = "img:///Texture2D'UILibrary_BD_LWAlienPack.LWCenturion_AbilityBayonetCharge64'";
 
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
 	Template.BuildVisualizationFn = TypicalAbility_BuildVisualization;
@@ -212,7 +213,7 @@ static function X2AbilityTemplate CreateMutonM2_LWAbility_WarCry()
 
 	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_WarCry_LW');
 	Template.AbilitySourceName = 'eAbilitySource_Standard';
-	Template.IconImage = "img:///Texture2D'UILibrary_LWAlienPack.LWCenturion_AbilityWarCry64'";
+	Template.IconImage = "img:///Texture2D'UILibrary_BD_LWAlienPack.LWCenturion_AbilityWarCry64'";
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_AlwaysShow;
 	Template.Hostility = eHostility_Neutral;
 
@@ -425,7 +426,7 @@ static function X2DataTemplate CreateDroneRepairAbility()
 	local X2AbilityCooldown							Cooldown;
 
 	`CREATE_X2ABILITY_TEMPLATE (Template, 'BD_DroneRepair_LW');
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityDroneRepair"; //from old EW Repair Servos icon
+	Template.IconImage = "img:///UILibrary_BD_LWAlienPack.LW_AbilityDroneRepair"; //from old EW Repair Servos icon
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.Hostility = eHostility_Neutral;
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_AlwaysShow;
@@ -579,7 +580,7 @@ static function X2AbilityTemplate AddHitandSlitherAbility()
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
 	Template.Hostility = eHostility_Neutral;
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityHitandRun";
+	Template.IconImage = "img:///UILibrary_BD_LWAlienPack.LW_AbilityHitandRun";
 	Template.AbilityToHitCalc = default.DeadEye;
 	Template.AbilityTargetStyle = default.SelfTarget;
 	Template.AbilityTriggers.AddItem(default.UnitPostBeginPlayTrigger);
@@ -734,7 +735,7 @@ static function X2DataTemplate CreateMassReanimateAbility()
 
 	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_MassReanimation_LW');
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_AlwaysShow;
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityMassreanimate";
+	Template.IconImage = "img:///UILibrary_BD_LWAlienPack.LW_AbilityMassreanimate";
 	Template.AbilitySourceName = 'eAbilitySource_Psionic';
 	Template.Hostility = eHostility_Neutral;
 
@@ -908,7 +909,7 @@ static function X2DataTemplate CreatePersonalShieldAbility()
 
 	`CREATE_X2ABILITY_TEMPLATE (Template, 'BD_Personalshield_LW');
 
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityPersonalShields"; // from old EW icon for Bioelectric skin
+	Template.IconImage = "img:///UILibrary_BD_LWAlienPack.LW_AbilityPersonalShields"; // from old EW icon for Bioelectric skin
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.Hostility = eHostility_Neutral;
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_AlwaysShow;
@@ -959,7 +960,7 @@ static function X2DataTemplate CreateReadyForAnythingAbility()
 
 	`CREATE_X2ABILITY_TEMPLATE (Template, 'BD_ReadyForAnything_LW');
 
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityReadyForAnything";
+	Template.IconImage = "img:///UILibrary_BD_LWAlienPack.LW_AbilityReadyForAnything";
 
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.Hostility = eHostility_Neutral;
@@ -1073,7 +1074,7 @@ static function X2AbilityTemplate AddFireOnDeathAbility()
 	local X2AbilityTrigger_EventListener		Trigger;
 
 	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_FireOnDeath_LW');
-	Template.IconImage = "img:///UILibrary_LW_Overhaul.LW_AbilityIgnition";
+	Template.IconImage = "img:///UILibrary_BD_LW_Overhaul.LW_AbilityIgnition";
 	Template.AbilitySourceName = 'eAbilitySource_Standard';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
 	Template.Hostility = eHostility_Neutral;
@@ -1120,6 +1121,71 @@ static function X2AbilityTemplate StandalonePinionsAbility()
 	Template.AdditionalAbilities.AddItem('StandalonePinionsStage1');	
 	
 	return Template;
+}
+
+
+static function X2AbilityTemplate BD_RocketLauncherAbility()
+{
+	local X2AbilityTemplate                 Template;	
+	local X2AbilityCost_Ammo                AmmoCost;
+	local X2AbilityCost_ActionPoints        ActionPointCost;
+	local X2Effect_ApplyWeaponDamage        WeaponDamageEffect;
+	local X2AbilityTarget_Cursor            CursorTarget;
+	local X2AbilityMultiTarget_Radius       RadiusMultiTarget;
+	local X2Condition_UnitProperty          UnitPropertyCondition;
+	local X2AbilityToHitCalc_StandardAim    StandardAim;
+
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_RocketLauncher');
+	
+	AmmoCost = new class'X2AbilityCost_Ammo';	
+	AmmoCost.iAmmo = 1;
+	Template.AbilityCosts.AddItem(AmmoCost);
+	
+	ActionPointCost = new class'X2AbilityCost_HeavyWeaponActionPoints';
+	Template.AbilityCosts.AddItem(ActionPointCost);
+	
+	StandardAim = new class'X2AbilityToHitCalc_StandardAim';
+	StandardAim.bGuaranteedHit = true;
+	Template.AbilityToHitCalc = StandardAim;
+	
+	WeaponDamageEffect = new class'X2Effect_ApplyWeaponDamage';
+	WeaponDamageEffect.bExplosiveDamage = true;
+	Template.AddMultiTargetEffect(WeaponDamageEffect);
+	
+	CursorTarget = new class'X2AbilityTarget_Cursor';
+	CursorTarget.bRestrictToWeaponRange = true;
+	Template.AbilityTargetStyle = CursorTarget;
+
+	RadiusMultiTarget = new class'X2AbilityMultiTarget_Radius';
+	RadiusMultiTarget.bUseWeaponRadius = true;
+	Template.AbilityMultiTargetStyle = RadiusMultiTarget;
+
+	UnitPropertyCondition = new class'X2Condition_UnitProperty';
+	UnitPropertyCondition.ExcludeDead = true;
+	Template.AbilityShooterConditions.AddItem(UnitPropertyCondition);
+
+	Template.AddShooterEffectExclusions();
+
+	Template.AbilityTriggers.AddItem(default.PlayerInputTrigger);
+	
+	Template.AbilitySourceName = 'eAbilitySource_Standard';
+	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_HideSpecificErrors;
+	Template.HideErrors.AddItem('AA_WrongSoldierClass');
+	Template.IconImage = "img:///UILibrary_PerkIcons.UIPerk_firerocket";
+	Template.bUseAmmoAsChargesForHUD = true;
+	Template.TargetingMethod = class'X2TargetingMethod_RocketLauncher';
+
+	Template.ActivationSpeech = 'RocketLauncher';
+	Template.CinescriptCameraType = "Grenadier_GrenadeLauncher";
+
+	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
+	Template.BuildVisualizationFn = TypicalAbility_BuildVisualization;
+
+	Template.SuperConcealmentLoss = class'X2AbilityTemplateManager'.default.SuperConcealmentStandardShotLoss;
+	Template.ChosenActivationIncreasePerUse = class'X2AbilityTemplateManager'.default.StandardShotChosenActivationIncreasePerUse;
+	Template.LostSpawnIncreasePerUse = class'X2AbilityTemplateManager'.default.HeavyWeaponLostSpawnIncreasePerUse;
+
+	return Template;	
 }
 
 static function X2AbilityTemplate StandalonePinionsStage1Ability()

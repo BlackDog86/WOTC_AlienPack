@@ -29,45 +29,48 @@ function bool PostAbilityCostPaid(XComGameState_Effect EffectState, XComGameStat
 	local XComGameState_Ability					AbilityState;
 	local GameRulesCache_VisibilityInfo			VisInfo;
 
+	`log("PostAbilityCostPaid for HitAndRun Activated");
+	`log("HNR_ABILITYNAMES LENGTH:" @default.HNR_ABILITYNAMES.length);
+	`log("Activating ability is:" @ kAbility.GetMyTemplateName());
+
 	//  if under the effect of Serial, let that handle restoring the full action cost - will this work?
 	if (SourceUnit.IsUnitAffectedByEffectName(class'X2Effect_Serial'.default.EffectName))
 		return false;
 
-	// Ditto for Death From Above
-	if (SourceUnit.IsUnitAffectedByEffectName(class'X2Effect_DeathfromAbove'.default.EffectName))
-		return false;
-
 	if (PreCostActionPoints.Find('RunAndGun') != -1)
 		return false;
+	
+	if (kAbility == none)
+		return false;
 
-	//  match the weapon associated with Hit and Run to the attacking weapon
-	if (kAbility.SourceWeapon == EffectState.ApplyEffectParameters.ItemStateObjectRef)
-	{
-		History = `XCOMHISTORY;
-		TargetUnit = XComGameState_Unit(NewGameState.GetGameStateForObjectID(AbilityContext.InputContext.PrimaryTarget.ObjectID));
-		if (!AbilityState.IsMeleeAbility() && TargetUnit != none)
-		{
-			if(X2TacticalGameRuleset(XComGameInfo(class'Engine'.static.GetCurrentWorldInfo().Game).GameRuleset).VisibilityMgr.GetVisibilityInfo(SourceUnit.ObjectID, TargetUnit.ObjectID, VisInfo))
+	if (kAbility.SourceWeapon != EffectState.ApplyEffectParameters.ItemStateObjectRef)
+		return false;
+
+	TargetUnit = XComGameState_Unit(NewGameState.GetGameStateForObjectID(AbilityContext.InputContext.PrimaryTarget.ObjectID));
+
+	if (TargetUnit == none)
+		return false;
+
+	AbilityState = XComGameState_Ability(`XCOMHISTORY.GetGameStateForObjectID(EffectState.ApplyEffectParameters.AbilityStateObjectRef.ObjectID));
+
+	if (AbilityState == None || AbilityState.IsMeleeAbility())
+		return false;
+		
+	if(X2TacticalGameRuleset(XComGameInfo(class'Engine'.static.GetCurrentWorldInfo().Game).GameRuleset).VisibilityMgr.GetVisibilityInfo(SourceUnit.ObjectID, TargetUnit.ObjectID, VisInfo))
 			{
-				if (TargetUnit.IsEnemyUnit(SourceUnit) && SourceUnit.CanFlank() && TargetUnit.CanTakeCover() && VisInfo.TargetCover == CT_None)
+				if (TargetUnit.IsEnemyUnit(SourceUnit) && SourceUnit.CanFlank() && TargetUnit.GetMyTemplate().bCanTakeCover && VisInfo.TargetCover == CT_None)
 				{
 					if (default.HNR_ABILITYNAMES.Find(kAbility.GetMyTemplateName()) != -1)
 					{
 						if (SourceUnit.NumActionPoints() < 2 && PreCostActionPoints.Length > 0)
 						{
-							AbilityState = XComGameState_Ability(History.GetGameStateForObjectID(EffectState.ApplyEffectParameters.AbilityStateObjectRef.ObjectID));
-							if (AbilityState != none)
-							{
-								SourceUnit.ActionPoints.AddItem(class'X2CharacterTemplateManager'.default.MoveActionPoint);
-								EventMgr = `XEVENTMGR;
-								EventMgr.TriggerEvent('HitandRun', AbilityState, SourceUnit, NewGameState);
-								return true;
-							}
+							SourceUnit.ActionPoints.AddItem(class'X2CharacterTemplateManager'.default.MoveActionPoint);							
+							`XEVENTMGR.TriggerEvent('HitandRun', AbilityState, SourceUnit, NewGameState);	
+							return true;						
 						}
 					}
 				}
 			}
-		}
-	}
+
 	return false;
 }

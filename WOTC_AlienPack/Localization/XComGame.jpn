@@ -308,6 +308,9 @@ strCharacterName="アドヴェント・エリートロケット兵"
 [AdvRocketeerM1_RocketLauncher X2WeaponTemplate]
 FriendlyName="アドヴェント・ロケットランチャー"
 
+[BD_RocketLauncher X2AbilityTemplate]
+LocFriendlyName="ロケットランチャー"
+LocHelpText="ターゲットエリアにロケットを発射する。"
 ;;;;;;;;;;;;;;;;;;;;;;;;;; Great Archon ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [StandalonePinionsStage1 X2AbilityTemplate]

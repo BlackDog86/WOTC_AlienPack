@@ -289,8 +289,7 @@ static function X2CharacterTemplate CreateTemplate_Naja(name TemplateName)
 		Loot.LootTableName = 'GenericLateAlienVultureLoot_LW';
 		CharTemplate.VultureLoot.LootReferences.AddItem(Loot);
 	}
-
-
+	
 	CharTemplate.strMatineePackages.AddItem("CIN_Viper");
 	CharTemplate.strMatineePackages.AddItem("CIN_AdventMEC");
 	//CharTemplate.strTargetingMatineePrefix = "CIN_AdventMEC_FF_StartPos";
@@ -331,8 +330,8 @@ static function X2CharacterTemplate CreateTemplate_Naja(name TemplateName)
 		
 	// WOTC abilities
 	CharTemplate.Abilities.AddItem('DarkEventAbility_Barrier');
-
 	CharTemplate.Abilities.AddItem('Squadsight'); //character perk
+
 	if (TemplateName == 'NajaM2' || TemplateName == 'NajaM3')
 	{
 		//reserved for future use
@@ -439,30 +438,15 @@ static function X2CharacterTemplate CreateTemplate_Sidewinder(name TemplateName)
 
 	CharTemplate.bAllowSpawnFromATT = false;
 
-	switch(TemplateName)
-	{
-		case 'SidewinderM1':
-			CharTemplate.strBehaviorTree = "LWSidewinder::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
-			break;
-		case 'SidewinderM2':
-			CharTemplate.strBehaviorTree = "LWSidewinderHitAndRun::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
-			break;
-		case 'SidewinderM3':
-			CharTemplate.strBehaviorTree = "LWSidewinderHitAndRun::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
-		default:
-	}
+	CharTemplate.strBehaviorTree = "LWSidewinderHitAndRun::CharacterRoot"; // new config behavior tree parsing means we could use the group instead
+	
+	CharTemplate.Abilities.AddItem('Shadowstep'); //character perk
 
-	switch(TemplateName)
+	if (TemplateName == 'SideWinderM3')
 	{
-		case 'SidewinderM3':
-			CharTemplate.Abilities.AddItem('BD_Infighter_LW');
-		case 'SidewinderM2':
-			CharTemplate.Abilities.AddItem('BD_HitandSlither_LW');
-		case 'SidewinderM1':
-			CharTemplate.Abilities.AddItem('Shadowstep');
-		default:
-		break;
+		CharTemplate.Abilities.AddItem('BD_Infighter_LW');
 	}
+	
 	// WOTC abilities
 	CharTemplate.Abilities.AddItem('DarkEventAbility_Barrier');
 
@@ -1526,8 +1510,6 @@ static function X2CharacterTemplate CreateTemplate_AdvGeneric(name TemplateName)
 			LootBase.LootTableName='AdvTrooperM3_BaseLoot';
 			LootTimed.LootTableName='AdvTrooperM3_TimedLoot';
 			LootVulture.LootTableName='AdvTrooperM3_VultureLoot';
-			CharTemplate.Abilities.AddItem('BD_TacticalSense_LW');
-			CharTemplate.Abilities.AddItem('BD_LockedOn_LW');				// Weapon?
 			break;
 
 		case 'AdvGeneralM1_LW':
@@ -1538,7 +1520,6 @@ static function X2CharacterTemplate CreateTemplate_AdvGeneric(name TemplateName)
 			LootVulture.LootTableName='AdvCaptainM3_VultureLoot';
 			CharTemplate.Abilities.AddItem('MarkTarget');
 			CharTemplate.Abilities.AddItem('BD_TacticalSense_LW');
-			CharTemplate.Abilities.AddItem('BD_ReadyForAnything_LW');
 			CharTemplate.Abilities.AddItem('BD_Defilade_LW');
 			CharTemplate.Abilities.AddItem('BD_FireDiscipline_LW');
 			CharTemplate.RevealMatineePrefix = "CIN_Advent_Captain";
@@ -1554,7 +1535,6 @@ static function X2CharacterTemplate CreateTemplate_AdvGeneric(name TemplateName)
 			LootVulture.LootTableName='AdvCaptainM3_VultureLoot';
 			CharTemplate.Abilities.AddItem('MarkTarget');
 			CharTemplate.Abilities.AddItem('BD_TacticalSense_LW');
-			CharTemplate.Abilities.AddItem('BD_ReadyForAnything_LW');
 			CharTemplate.Abilities.AddItem('BD_Defilade_LW');
 			CharTemplate.Abilities.AddItem('BD_FireDiscipline_LW');
 			CharTemplate.RevealMatineePrefix = "CIN_Advent_Captain";
@@ -1598,7 +1578,7 @@ static function X2CharacterTemplate CreateTemplate_AdvGeneric(name TemplateName)
 			LootTimed.LootTableName='AdvTrooperM2_TimedLoot';
 			LootVulture.LootTableName='AdvTrooperM2_VultureLoot';
 			CharTemplate.Abilities.AddItem('BD_Aggression_LW');
-			CharTemplate.Abilities.AddItem('BD_BringEmOn_LW');
+
 			CharTemplate.Abilities.AddItem('BD_Executioner_LW');
 			break;
 

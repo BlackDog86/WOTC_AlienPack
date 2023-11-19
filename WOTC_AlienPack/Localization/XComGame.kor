@@ -308,6 +308,9 @@ strCharacterName="어드밴트 엘리트 로켓티어"
 [AdvRocketeerM1_RocketLauncher X2WeaponTemplate]
 FriendlyName="어드밴트 로켓 발사기"
 
+[BD_RocketLauncher X2AbilityTemplate]
+LocFriendlyName="로켓 발사기"
+LocHelpText="목표 지점에 로켓을 발사합니다."
 ;;;;;;;;;;;;;;;;;;;;;;;;;; Great Archon ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [StandalonePinionsStage1 X2AbilityTemplate]

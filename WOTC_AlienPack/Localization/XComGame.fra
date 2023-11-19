@@ -366,6 +366,10 @@ strCharacterName="Artilleur d'élite d'ADVENT"
 [AdvRocketeerM1_RocketLauncher X2WeaponTemplate]
 FriendlyName="Lance-roquettes d'ADVENT"
 
+[BD_RocketLauncher X2AbilityTemplate]
+LocFriendlyName="Lance-roquettes"
+LocHelpText="Tir de roquette sur la zone ciblée."
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;; Great Archon;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [StandalonePinionsStage1 X2AbilityTemplate]

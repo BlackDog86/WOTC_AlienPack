@@ -315,6 +315,10 @@ strCharacterName="Элитный ракетчик \"Адвента\""
 [AdvRocketeerM1_RocketLauncher X2WeaponTemplate]
 FriendlyName="Ракетомет \"Адвента\""
 
+[BD_RocketLauncher X2AbilityTemplate]
+LocFriendlyName="Ракетомет"
+LocHelpText="Выстрелите ракетой в указанную зону."
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;; Great Archon ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [StandalonePinionsStage1 X2AbilityTemplate]

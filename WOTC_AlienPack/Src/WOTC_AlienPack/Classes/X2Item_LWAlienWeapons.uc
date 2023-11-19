@@ -236,8 +236,6 @@ static function array<X2DataTemplate> CreateTemplates()
 	Templates.AddItem(CreateTemplate_BD_DroneRepair_LW_WPN('BD_DroneRepair_LWM1_WPN'));
 	Templates.AddItem(CreateTemplate_BD_DroneRepair_LW_WPN('BD_DroneRepair_LWM2_WPN'));
 
-
-
 	Templates.AddItem(CreateTemplate_AdvElite_WPN('AdvVanguard_WPN'));
 	Templates.AddItem(CreateTemplate_AdvElite_WPN('AdvShockTroop_WPN'));
 	Templates.AddItem(CreateTemplate_AdvElite_WPN('AdvSergeantM1_WPN'));
@@ -252,9 +250,10 @@ static function array<X2DataTemplate> CreateTemplates()
 	Templates.AddItem(CreateTemplate_TheLostGrappler_MeleeAttack('TheLostGrapplerTier3_MeleeAttack', default.THELOST_GRAPPLER_TIER3_MELEEATTACK_BASEDAMAGE));
 	Templates.AddItem(CreateTemplate_TheLostGrappler_MeleeAttack('TheLostGrapplerTier4_MeleeAttack', default.THELOST_GRAPPLER_TIER4_MELEEATTACK_BASEDAMAGE));
 
+	Templates.AddItem(PersonalShield_Xcom());
+
 	return Templates;
 }
-
 
 static function X2DataTemplate CreateTemplate_MutonM2_LW_WPN()
 {
@@ -338,7 +337,6 @@ static function X2DataTemplate CreateTemplate_MutonM2_LW_MeleeAttack()
 
 	return Template;
 }
-
 
 static function X2DataTemplate CreateMutonM2_LWGrenade()
 {
@@ -462,6 +460,41 @@ static function X2DataTemplate CreateMutonM3_LWGrenade()
 	return Template;
 }
 
+static function X2DataTemplate PersonalShield_Xcom()
+{
+	local X2EquipmentTemplate Template;
+	local ArtifactCost Resources;
+	local ArtifactCost Artifacts;
+
+	`CREATE_X2TEMPLATE(class'X2EquipmentTemplate', Template, 'PersonalShield_Xcom');
+	Template.ItemCat = 'defense';
+	Template.InventorySlot = eInvSlot_Utility;
+	Template.strImage = "img:///LWMutonEliteAutopsy.Inv_Personal_Shield";	
+	Template.EquipSound = "StrategyUI_Vest_Equip";
+	Template.Abilities.AddItem('PersonalShield_Xcom');
+	Template.Abilities.AddItem('ShieldPassive_Xcom');
+	
+	Template.CanBeBuilt = true;
+	Template.TradingPostValue = 12;
+	Template.PointsToComplete = 0;
+	Template.Tier = 2;
+
+	Template.SetUIStatMarkup(class'XLocalizedData'.default.HealthLabel, eStat_HP, 2);
+
+	// Requirements
+	Template.Requirements.RequiredTechs.AddItem('AutopsyMutonElite');
+
+	// Cost
+	Resources.ItemTemplateName = 'Supplies';
+	Resources.Quantity = 125;
+	Template.Cost.ResourceCosts.AddItem(Resources);
+
+	Artifacts.ItemTemplateName = 'CorpseMutonElite';
+	Artifacts.Quantity = 2;
+	Template.Cost.ArtifactCosts.AddItem(Artifacts);
+	
+	return Template;
+}
 
 static function X2DataTemplate CreateTemplate_Naja_WPN(name TemplateName)
 {
@@ -576,7 +609,7 @@ static function X2DataTemplate CreateTemplate_Sidewinder_WPN(name TemplateName)
 	}
 	if (TemplateName == 'SidewinderM2_WPN' || TemplateName == 'SidewinderM3_WPN')
 	{	
-		//future use
+		Template.Abilities.AddItem('BD_HitAndSlither_LW');
 	}
 	if (TemplateName == 'SidewinderM3_WPN')
 	{
@@ -698,6 +731,7 @@ static function X2DataTemplate CreateTemplate_AdvSentry_WPN(name TemplateName)
 	Template.Abilities.AddItem('OverwatchShot');
 	Template.Abilities.AddItem('Reload');
 	Template.Abilities.AddItem('HotLoadAmmo');
+	Template.Abilities.AddItem('BD_ReadyForAnything_LW');
 		
 	if (TemplateName == 'AdvSentryM2_WPN')
 	{
@@ -972,7 +1006,7 @@ static function X2DataTemplate CreateTemplate_AdvRocketeer_RocketLauncher(name T
 	Template.bMergeAmmo = true;
 	Template.DamageTypeTemplateName = 'Explosion';
 
-	Template.Abilities.AddItem('RocketLauncher');
+	Template.Abilities.AddItem('BD_RocketLauncher');
 	Template.Abilities.AddItem('RocketFuse');
 
 	Template.CanBeBuilt = false;
@@ -1307,7 +1341,7 @@ static function X2DataTemplate CreateTemplate_LWDrone_WPN(name TemplateName)
 	Template.ItemCat = 'weapon';
 	Template.WeaponCat = 'rifle';
 	Template.WeaponTech = 'magnetic';
-	Template.strImage = "img:///UILibrary_LWAlienPack.LWAdventDrone_ArcWeapon";
+	Template.strImage = "img:///UILibrary_BD_LWAlienPack.LWAdventDrone_ArcWeapon";
 	Template.RemoveTemplateAvailablility(Template.BITFIELD_GAMEAREA_Multiplayer); //invalidates multiplayer availability
 
 	if(TemplateName == 'LWDroneM1_WPN')
@@ -1442,11 +1476,13 @@ static function X2DataTemplate CreateTemplate_AdvElite_WPN(name TemplateName)
 		case 'AdvSergeantM2_WPN':
 		Template.BaseDamage = default.AdvSergeantM2_WPN_BASEDAMAGE;
 		Template.iIdealRange = default.AdvSergeantM2_IDEALRANGE;
+		Template.Abilities.Additem('BD_LockedOn_LW');
 		break;
 		
 		case 'AdvShockTroop_WPN':
 		Template.BaseDamage = default.AdvShockTroop_WPN_BASEDAMAGE; 
 		Template.iIdealRange = default.AdvShockTroop_IDEALRANGE;
+		Template.Abilities.AddItem('BD_BringEmOn_LW');
 		break;
 		
 		case 'AdvCommando_WPN':
@@ -1469,11 +1505,13 @@ static function X2DataTemplate CreateTemplate_AdvElite_WPN(name TemplateName)
 		case 'AdvGeneralM1_LW_WPN':
 		Template.BaseDamage = default.AdvGeneralM1_LW_WPN_BASEDAMAGE;
 		Template.iIdealRange = default.AdvGeneralM1_IDEALRANGE;
+		Template.Abilities.AddItem('ReadyForAnything');
 		break;
 
 		case 'AdvGeneralM2_LW_WPN':
 		Template.BaseDamage = default.AdvGeneralM2_LW_WPN_BASEDAMAGE;
 		Template.iIdealRange = default.AdvGeneralM2_IDEALRANGE;
+		Template.Abilities.AddItem('ReadyForAnything');
 		break;
 
 		default: break;

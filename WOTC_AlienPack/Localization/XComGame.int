@@ -321,6 +321,10 @@ FriendlyName="ADVENT Mag Rifle"
 [AdvRocketeer_RocketLauncher X2WeaponTemplate]
 FriendlyName="ADVENT Rocket Launcher"
 
+[BD_RocketLauncher X2AbilityTemplate]
+LocFriendlyName="Rocket Launcher"
+LocHelpText="Fire a rocket at target area."
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;; AdvMecM3 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [AdvMec_M3_LW X2CharacterTemplate]
@@ -773,6 +777,34 @@ LocFlyOverText="Grapple"
 ; LWOTC Needs Translation (2)
 LocPromotionPopupText="<Bullet/> If an enemy begins their turn in an adjacent tile, Grapple will trigger if that enemy tries to attack the <Ability:ClassName/>.<br/><Bullet/> If an enemy does not begin their turn in an adjacent tile, then Grapple will trigger when that enemy moves into melee range.<br/>"
 ; End Translation (2)
+
+;Personal Shield Stuff
+[PersonalShield_Xcom X2AbilityTemplate]
+LocFriendlyName="Personal Shield"
+LocFlyOverText="Personal Shield Generator"
+LocHelpText="Grants 3 points of ablative armor."
+LocLongDescription="Grants 3 points of ablative armor."
+LocPromotionPopupText="<Bullet/> Grants 3 points of ablative armor.<br/><Bullet/> It is a free action.<br/><Bullet/> Only last 1 turn.<br/><Bullet/> Start with 2 charges.<br/>"
+
+[PersonalShield_Xcom X2EquipmentTemplate]
+FriendlyName="Personal Shield Vest"
+FriendlyNamePlural="Personal Shield Vest"
+BriefSummary="By reinforcing the nanoscale vest with muton elite materials, soldiers gain an additional health boost and the ability to gain a bonus of ablative armor for one turn."
+TacticalText="<Bullet/> A vest that grants the a personal shield ability.<br/>"
+
+[AutopsyMutonElite X2TechTemplate]
+DisplayName="Muton Elite Autopsy"
+Summary="This behemoth is different enough from other Mutons that it merits a specific investigation."
+CodeName="Bluton"
+LongDescription="Central Officer Bradford has indicated that X-COM had intelligence reports of an elite form of muton that served as a guardian to the Elders. This creature appears to be that form. The genetic enhancements extend into the creature's brain, suggesting it is more able to recognize complex patterns and process information quickly in combat situations. R. Tygan."
+AlertString="Muton"
+
+[DisassembleDrones_BD X2TechTemplate]
+DisplayName="Dismantle Drones"
+Summary="Some of these partially destroyed combat drones may still contain salvageable data from their protected on-board data stores - disassembling them may provide us with some additional information on Advent troop compositions and localized Advent movements in the area."
+LongDescription="The Advent Drones are a very commonplace but surprisingly high-tech piece of combat surveillance equipment. Typically employed in urban centres to ensure compliance with Advent regulations and to warn suitable troops of pockets of dissent, they are equipped with a highly developed 'Mag-Lev' style technology which allows them to hover and turn with ease. They also have an unusual battery, whose capacity far exceeds typical human-made equivalents. Unfortunately, since drones tend to receive highly inconsistent damage profiles and possess some rudimentary wipe-on-shutdown protocols, it is very difficult to extract useful data from just a single specimen. However, when we have several units in our lab at once, it gives us a unique opportunity to patch together a more coherent picture of the drones internal systems prior to their expiry. After salvaging & decompiling all the information we could from this batch from the drones' interal data stores, we luckily managed to recover a small amount of alien Intel which will hopefully prove useful to the resistance."
+Codename="Patchwork"
+UnlockedDescription="Recovered: <XGParam:StrValue0/!Quantity/> Intel"
 
 ;;;;;;;;;;;;;;;;;;;; Lost ;;;;;;;;;;;;;;;;;;;;;;;;
 

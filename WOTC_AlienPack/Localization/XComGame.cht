@@ -332,6 +332,9 @@ strCharacterName="變種人精英火箭兵"
 [AdvRocketeerM1_RocketLauncher X2WeaponTemplate]
 FriendlyName="變種人火箭發射器"
 
+[BD_RocketLauncher X2AbilityTemplate]
+LocFriendlyName="火箭發射器"
+LocHelpText="向目標區域發射一枚火箭。"
 ;;;;;;;;;;;;;;;;;;;;;;;;;; Great Archon ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [ArchonM2_Wpn X2WeaponTemplate]

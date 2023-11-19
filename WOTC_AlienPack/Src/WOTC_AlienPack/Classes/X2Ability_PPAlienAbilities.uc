@@ -27,6 +27,8 @@ var config int DAMAGE_CONTROL_BONUS_ARMOR;
 var config int CCS_AMMO_PER_SHOT;
 var config int AREA_SUPPRESSION_LW_SHOT_AIM_BONUS;
 var config int DANGER_ZONE_BONUS_RADIUS;
+var config int PERSONAL_SHIELD_XCOM_DURATION;
+var config int PERSONAL_SHIELD_XCOM_HP;
 
 static function array<X2DataTemplate> CreateTemplates()
 {
@@ -60,6 +62,8 @@ static function array<X2DataTemplate> CreateTemplates()
 	Templates.AddItem(AddDamageControlAbility());
 	Templates.AddItem(AddDamageControlAbilityPassive()); //Additional Ability
 	Templates.AddItem(AddLoneWolfAbility());
+	Templates.AddItem(CreateMutonElite_PersonalShield_XcomAbility());
+	Templates.AddItem(CreateMutonElite_ShieldPassive_Xcom());
 	return Templates;
 }
 
@@ -69,7 +73,7 @@ static function X2AbilityTemplate AddLoneWolfAbility()
 	local X2Effect_LoneWolf					AimandDefModifiers;
 
 	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_Lonewolf_LW');
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityLoneWolf";
+	Template.IconImage = "img:///UILibrary_BD_LWAlienPack.LW_AbilityLoneWolf";
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
 	Template.Hostility = eHostility_Neutral;
@@ -91,7 +95,7 @@ static function X2AbilityTemplate AddDamageControlAbilityPassive()
 {
 	local X2AbilityTemplate                 Template;	
 
-	Template = PurePassive('BD_DamageControl_LWPassive', "img:///UILibrary_LWAlienPack.LW_AbilityDamageControl", true, 'eAbilitySource_Perk');
+	Template = PurePassive('BD_DamageControl_LWPassive', "img:///UILibrary_BD_LWAlienPack.LW_AbilityDamageControl", true, 'eAbilitySource_Perk');
 	Template.bCrossClassEligible = false;
 	return Template;
 }
@@ -104,7 +108,7 @@ static function X2AbilityTemplate AddDamageControlAbility()
 	local X2AbilityCooldown						Cooldown;
 
 	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_DamageControl_LW');
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityDamageControl";
+	Template.IconImage = "img:///UILibrary_BD_LWAlienPack.LW_AbilityDamageControl";
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.Hostility = eHostility_Neutral;
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_NeverShow;
@@ -154,7 +158,7 @@ static function X2AbilityTemplate AddDefiladeAbility()
 	local X2Condition_UnitProperty			TargetProperty;
 
 	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_Defilade_LW');
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LWOfficers_AbilityHitTheDirt"; 
+	Template.IconImage = "img:///UILibrary_BD_LWAlienPack.LWOfficers_AbilityHitTheDirt"; 
 	Template.AbilitySourceName = 'eAbilitySource_Perk'; 
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_NeverShow;
 	Template.Hostility = eHostility_Neutral;
@@ -196,7 +200,7 @@ static function X2AbilityTemplate AddDefiladeAbility()
 
 static function X2AbilityTemplate DefiladePassive()
 {
-	return PurePassive('BD_Defilade_LWPassive', "img:///UILibrary_LWAlienPack.LWOfficers_AbilityHitTheDirt", , 'eAbilitySource_Perk');
+	return PurePassive('BD_Defilade_LWPassive', "img:///UILibrary_BD_LWAlienPack.LWOfficers_AbilityHitTheDirt", , 'eAbilitySource_Perk');
 }
 
 //COL 1 Fire Discipline 
@@ -208,7 +212,7 @@ static function X2AbilityTemplate AddFireDisciplineAbility()
 	local X2Condition_UnitProperty			TargetProperty;
 
 	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_FireDiscipline_LW');
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LWOfficers_AbilityFireDiscipline"; 
+	Template.IconImage = "img:///UILibrary_BD_LWAlienPack.LWOfficers_AbilityFireDiscipline"; 
 	Template.AbilitySourceName = 'eAbilitySource_Perk'; 
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_NeverShow;
 	Template.Hostility = eHostility_Neutral;
@@ -250,7 +254,7 @@ static function X2AbilityTemplate AddFireDisciplineAbility()
 
 static function X2AbilityTemplate FireDisciplinePassive()
 {
-	return PurePassive('BD_FireDiscipline_LWPassive', "img:///UILibrary_LWAlienPack.LWOfficers_AbilityFireDiscipline", , 'eAbilitySource_Perk');
+	return PurePassive('BD_FireDiscipline_LWPassive', "img:///UILibrary_BD_LWAlienPack.LWOfficers_AbilityFireDiscipline", , 'eAbilitySource_Perk');
 }
 
 static function EventListenerReturn AuraOnUnitBeginPlay(Object EventData, Object EventSource, XComGameState GameState, Name EventID, Object CallbackData)
@@ -275,7 +279,7 @@ static function X2AbilityTemplate AddBringEmOnAbility()
 	local X2Effect_BringEmOn		            DamageEffect;
 
 	`CREATE_X2ABILITY_TEMPLATE (Template, 'BD_BringEmOn_LW');
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityBringEmOn";
+	Template.IconImage = "img:///UILibrary_BD_LWAlienPack.LW_AbilityBringEmOn";
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
 	Template.Hostility = eHostility_Neutral;
@@ -300,7 +304,7 @@ static function X2AbilityTemplate AddAggressionAbility()
 	local X2Effect_Aggression			MyCritModifier;
 
 	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_Aggression_LW');
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityAggression";	
+	Template.IconImage = "img:///UILibrary_BD_LWAlienPack.LW_AbilityAggression";	
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
 	Template.Hostility = eHostility_Neutral;
@@ -324,7 +328,7 @@ static function X2AbilityTemplate AddCloseandPersonalAbility()
 	local X2Effect_CloseandPersonal				CritModifier;
 
 	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_CloseandPersonal_LW');
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityCloseandPersonal";
+	Template.IconImage = "img:///UILibrary_BD_LWAlienPack.LW_AbilityCloseandPersonal";
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
 	Template.Hostility = eHostility_Neutral;
@@ -349,7 +353,7 @@ static function X2AbilityTemplate AddWilltoSurviveAbility()
 	local X2Effect_PersistentStatChange			WillBonus;
 
 	`CREATE_X2ABILITY_TEMPLATE (Template, 'BD_WilltoSurvive_LW');
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityWilltoSurvive";
+	Template.IconImage = "img:///UILibrary_BD_LWAlienPack.LW_AbilityWilltoSurvive";
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
 	Template.Hostility = eHostility_Neutral;
@@ -378,7 +382,7 @@ static function X2AbilityTemplate AddCloseCombatSpecialistAbility()
 {
 	local X2AbilityTemplate                 Template;
 
-	Template = PurePassive('BD_CloseCombatSpecialist_LW', "img:///UILibrary_LWAlienPack.LW_AbilityCloseCombatSpecialist", false, 'eAbilitySource_Perk');
+	Template = PurePassive('BD_CloseCombatSpecialist_LW', "img:///UILibrary_BD_LWAlienPack.LW_AbilityCloseCombatSpecialist", false, 'eAbilitySource_Perk');
 	Template.AdditionalAbilities.AddItem('BD_CloseCombatSpecialist_LWAttack');
 	return Template;
 }
@@ -402,7 +406,7 @@ static function X2AbilityTemplate CloseCombatSpecialistAttack()
 
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_NeverShow;
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityCloseCombatSpecialist";
+	Template.IconImage = "img:///UILibrary_BD_LWAlienPack.LW_AbilityCloseCombatSpecialist";
 	Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_CAPTAIN_PRIORITY;
 	Template.Hostility = eHostility_Defensive;
 	Template.bCrossClassEligible = false;
@@ -533,7 +537,7 @@ static function X2AbilityTemplate AddHardTargetAbility()
 	local X2Effect_HardTarget					DodgeBonus;
 		
 	`CREATE_X2ABILITY_TEMPLATE (Template, 'HardTarget');
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityHardTarget";
+	Template.IconImage = "img:///UILibrary_BD_LWAlienPack.LW_AbilityHardTarget";
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
 	Template.Hostility = eHostility_Neutral;
@@ -558,7 +562,7 @@ static function X2AbilityTemplate AddLowProfileAbility()
 	local X2Effect_LowProfile_LW			DefModifier;
 
 	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_LowProfile_LW');
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityLowProfile";
+	Template.IconImage = "img:///UILibrary_BD_LWAlienPack.LW_AbilityLowProfile";
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
 	Template.Hostility = eHostility_Neutral;
@@ -582,7 +586,7 @@ static function X2AbilityTemplate AddEvasiveAbility()
 	local X2Effect_PersistentStatChange			DodgeBonus;
 
 	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_Evasive_LW');
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityEvasive";
+	Template.IconImage = "img:///UILibrary_BD_LWAlienPack.LW_AbilityEvasive";
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.Hostility = eHostility_Neutral;
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_NeverShow;
@@ -619,7 +623,7 @@ static function X2AbilityTemplate RemoveEvasive()
 
 	`CREATE_X2ABILITY_TEMPLATE(Template, 'RemoveBD_Evasive_LW');	
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityEvasive";
+	Template.IconImage = "img:///UILibrary_BD_LWAlienPack.LW_AbilityEvasive";
 	Template.Hostility = eHostility_Neutral;
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_NeverShow;
 	Template.AbilityToHitCalc = default.DeadEye;
@@ -656,7 +660,7 @@ static function X2AbilityTemplate AddDamnGoodGroundAbility()
 	local X2Effect_DamnGoodGround		AimandDefModifiers;
 
 	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_DamnGoodGround_LW');
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityDamnGoodGround"; //TODO
+	Template.IconImage = "img:///UILibrary_BD_LWAlienPack.LW_AbilityDamnGoodGround"; //TODO
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
 	Template.Hostility = eHostility_Neutral;
@@ -679,7 +683,7 @@ static function X2AbilityTemplate AddExecutionerAbility()
 	local X2Effect_Executioner_AP			AimandCritModifiers;
 
 	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_Executioner_LW');
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityExecutioner"; //TODO
+	Template.IconImage = "img:///UILibrary_BD_LWAlienPack.LW_AbilityExecutioner"; //TODO
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
 	Template.Hostility = eHostility_Neutral;
@@ -703,7 +707,7 @@ static function X2AbilityTemplate AddTacticalSenseAbility()
 	local X2Effect_TacticalSense		MyDefModifier;
 
 	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_TacticalSense_LW');
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityTacticalSense";
+	Template.IconImage = "img:///UILibrary_BD_LWAlienPack.LW_AbilityTacticalSense";
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
 	Template.Hostility = eHostility_Neutral;
@@ -727,7 +731,7 @@ static function X2AbilityTemplate AddInfighterAbility()
 	local X2Effect_Infighter					DodgeBonus;
 
 	`CREATE_X2ABILITY_TEMPLATE (Template, 'BD_Infighter_LW');
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityInfighter"; //TODO
+	Template.IconImage = "img:///UILibrary_BD_LWAlienPack.LW_AbilityInfighter"; //TODO
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
 	Template.Hostility = eHostility_Neutral;
@@ -751,7 +755,7 @@ static function X2AbilityTemplate AddDepthPerceptionAbility()
 	local X2Effect_DepthPerception		AttackBonus;
 
 	`CREATE_X2ABILITY_TEMPLATE (Template, 'BD_DepthPerception_LW');
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityDepthPerception"; //TODO
+	Template.IconImage = "img:///UILibrary_BD_LWAlienPack.LW_AbilityDepthPerception"; //TODO
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
 	Template.Hostility = eHostility_Neutral;
@@ -782,7 +786,7 @@ static function X2AbilityTemplate AddLightEmUpAbility()
 
 	// Icon Properties
 	Template.bDontDisplayInAbilitySummary = false;
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityLightEmUp"; //TODO
+	Template.IconImage = "img:///UILibrary_BD_LWAlienPack.LW_AbilityLightEmUp"; //TODO
 	Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.STANDARD_SHOT_PRIORITY;
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_AlwaysShow;
 	Template.DisplayTargetHitChance = true;
@@ -866,7 +870,7 @@ static function X2AbilityTemplate AddTraverseFireAbility()
 	local X2Effect_TraverseFire			ActionEffect;
 
 	`CREATE_X2ABILITY_TEMPLATE (Template, 'BD_TraverseFire_LW');
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityTraverseFire"; //TODO
+	Template.IconImage = "img:///UILibrary_BD_LWAlienPack.LW_AbilityTraverseFire"; //TODO
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
 	Template.Hostility = eHostility_Neutral;
@@ -890,7 +894,7 @@ static function X2AbilityTemplate AddLockedOnAbility()
 	local X2Effect_LockedOn		LockedOnEffect;
 
 	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_LockedOn_LW');
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityLockedOn"; //TODO
+	Template.IconImage = "img:///UILibrary_BD_LWAlienPack.LW_AbilityLockedOn"; //TODO
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
 	Template.Hostility = eHostility_Neutral;
@@ -949,7 +953,7 @@ static function X2AbilityTemplate AddAreaSuppressionAbility()
 	local X2Condition_UnitEffects						SuppressedCondition;
 
 	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_AreaSuppression_LW');
-	Template.IconImage = "img:///UILibrary_LWAlienPack.LW_AbilityAreaSuppression";
+	Template.IconImage = "img:///UILibrary_BD_LWAlienPack.LW_AbilityAreaSuppression";
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_AlwaysShow;
 	Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_LIEUTENANT_PRIORITY;
@@ -1219,3 +1223,116 @@ static function X2AbilityTemplate AreaSuppressionShot_LW()
 
 	return Template;	
 }
+
+static function X2AbilityTemplate CreateMutonElite_ShieldPassive_Xcom()
+{
+	local X2AbilityTemplate						Template;
+	local X2Effect_PersistentStatChange         PersistentStatChangeEffect;
+
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'ShieldPassive_Xcom');
+
+	Template.AbilitySourceName = 'eAbilitySource_Item';
+	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
+	Template.Hostility = eHostility_Neutral;
+	Template.bDisplayInUITacticalText = false;
+	Template.IconImage = "img:///UILibrary_PerkIcons.UIPerk_adventshieldbearer_energyshield"; 
+
+	Template.AbilityToHitCalc = default.DeadEye;
+	Template.AbilityTargetStyle = default.SelfTarget;
+	Template.AbilityTriggers.AddItem(default.UnitPostBeginPlayTrigger);
+
+	PersistentStatChangeEffect = new class'X2Effect_PersistentStatChange';
+	PersistentStatChangeEffect.BuildPersistentEffect(1, true, false, false);
+	PersistentStatChangeEffect.AddPersistentStatChange(eStat_HP, 2);
+	Template.AddTargetEffect(PersistentStatChangeEffect);
+	
+
+	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
+	//  NOTE: No visualization on purpose!
+
+	return Template;
+}
+
+static function X2DataTemplate CreateMutonElite_PersonalShield_XcomAbility()
+{
+	local X2AbilityTemplate							Template;
+	local array<name>								SkipExclusions;
+	local X2Effect_EnergyShield						PersonalShieldEffect;
+	local X2AbilityCharges							Charges;
+	local X2AbilityCost_Charges						ChargeCost;
+
+	`CREATE_X2ABILITY_TEMPLATE (Template, 'PersonalShield_Xcom');
+
+	Template.IconImage = "img:///UILibrary_PerkIcons.UIPerk_adventshieldbearer_energyshield"; 
+
+	Template.AbilitySourceName = 'eAbilitySource_Perk';
+	Template.Hostility = eHostility_Defensive;
+	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_AlwaysShow;
+
+	Template.AbilityToHitCalc = default.DeadEye;
+    Template.AbilityTargetStyle = default.SelfTarget;
+	Template.AbilityTriggers.AddItem(default.PlayerInputTrigger);
+	Template.bCrossClassEligible = false;
+	Template.bDisplayInUITooltip = true;
+	Template.bDisplayInUITacticalText = true;
+	Template.bShowActivation = true;
+	Template.DisplayTargetHitChance = false;
+
+	Template.AbilityShooterConditions.AddItem(default.LivingShooterProperty);
+	SkipExclusions.AddItem(class'X2AbilityTemplateManager'.default.DisorientedName); //okay when disoriented
+	Template.AddShooterEffectExclusions(SkipExclusions);
+
+	Template.AbilityCosts.AddItem(default.FreeActionCost);
+	
+	Charges = new class 'X2AbilityCharges';
+	Charges.InitialCharges = 2;
+	Template.AbilityCharges = Charges;
+
+	ChargeCost = new class'X2AbilityCost_Charges';
+	ChargeCost.NumCharges = 1;
+	Template.AbilityCosts.AddItem(ChargeCost);
+
+	PersonalShieldEffect = new class'X2Effect_EnergyShield';
+	PersonalShieldEffect.BuildPersistentEffect(default.PERSONAL_SHIELD_XCOM_DURATION, false, true, false, eGameRule_PlayerTurnBegin);
+	//eGameRule_PlayerTurnBegin
+	PersonalShieldEffect.SetDisplayInfo (ePerkBuff_Bonus, Template.LocFriendlyName, Template.GetMyHelpText(), Template.IconImage,,, Template.AbilitySourceName);
+	
+	PersonalShieldEffect.AddPersistentStatChange(eStat_ShieldHP, default.PERSONAL_SHIELD_XCOM_HP);
+	PersonalShieldEffect.EffectName='PersonalShield';
+	Template.AddTargetEffect(PersonalShieldEffect);
+
+	Template.CustomFireAnim = 'HL_SignalPositive';
+	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
+	Template.BuildVisualizationFn = PersonalShield_BuildVisualization;
+	//Template.BuildVisualizationFn = TypicalAbility_BuildVisualization;
+
+	Template.CinescriptCameraType = "AdvShieldBearer_EnergyShieldArmor"; //??
+
+	return Template;
+}
+
+simulated function PersonalShield_BuildVisualization(XComGameState VisualizeGameState)
+{
+	local XComGameStateHistory History;
+	local XComGameStateContext_Ability  Context;
+	local StateObjectReference InteractingUnitRef;
+	local VisualizationActionMetadata EmptyTrack;
+	local VisualizationActionMetadata ActionMetadata;
+	local X2Action_PlayAnimation PlayAnimationAction;
+
+	History = `XCOMHISTORY;
+
+	Context = XComGameStateContext_Ability(VisualizeGameState.GetContext());
+	InteractingUnitRef = Context.InputContext.SourceObject;
+
+	//Configure the visualization track for the shooter
+	//****************************************************************************************
+	ActionMetadata = EmptyTrack;
+	ActionMetadata.StateObject_OldState = History.GetGameStateForObjectID(InteractingUnitRef.ObjectID, eReturnType_Reference, VisualizeGameState.HistoryIndex - 1);
+	ActionMetadata.StateObject_NewState = VisualizeGameState.GetGameStateForObjectID(InteractingUnitRef.ObjectID);
+	ActionMetadata.VisualizeActor = History.GetVisualizer(InteractingUnitRef.ObjectID);
+
+	PlayAnimationAction = X2Action_PlayAnimation(class'X2Action_PlayAnimation'.static.AddToVisualizationTree(ActionMetadata, Context, false, ActionMetadata.LastActionAdded));
+	PlayAnimationAction.Params.AnimName = 'HL_SignalHalt';
+
+	}
