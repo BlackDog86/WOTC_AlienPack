@@ -193,6 +193,32 @@ FriendlyName="Fucile energetico"
 [ViperM3_WPN X2WeaponTemplate]
 FriendlyName="Fucile energetico"
 
+;;;;;;;;;;;;;;;;;;;;;;;;;; Spits ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[BD_PoisonSpit X2AbilityTemplate]
+LocFriendlyName="Sputo velenoso"
+LocLongDescription="Una Vipera può proiettare un colpo velenoso a lunga distanza, che esplode in una nube tossica."
+LocHelpText="Sputa del veleno letale in un'area."
+LocFlyOverText="Sputo velenoso"
+
+[PoisonSpitGlobLWSidewinder X2GrenadeTemplate]
+FriendlyName="Sputo velenoso"
+FriendlyNamePlural="Sputo velenoso"
+BriefSummary="Una Vipera può proiettare un colpo velenoso a lunga distanza, che esplode in una nube tossica."
+TacticalText="<Bullet/> Sputa del veleno letale in un'area."
+
+[PoisonSpitGlobLWNaja X2GrenadeTemplate]
+FriendlyName="Sputo velenoso"
+FriendlyNamePlural="Sputo velenoso"
+BriefSummary="Una Vipera può proiettare un colpo velenoso a lunga distanza, che esplode in una nube tossica."
+TacticalText="<Bullet/> Sputa del veleno letale in un'area."
+
+[PoisonSpitGlobLWViper X2GrenadeTemplate]
+FriendlyName="Sputo velenoso"
+FriendlyNamePlural="Sputo velenoso"
+BriefSummary="Una Vipera può proiettare un colpo velenoso a lunga distanza, che esplode in una nube tossica."
+TacticalText="<Bullet/> Sputa del veleno letale in un'area."
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;; ArchonM2_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [ArchonM2_LW X2CharacterTemplate]

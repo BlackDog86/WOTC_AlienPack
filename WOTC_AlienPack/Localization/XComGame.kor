@@ -159,6 +159,32 @@ FriendlyName="코브라 저격총"
 [NajaM3_WPN X2WeaponTemplate]
 FriendlyName="코브라 저격총"
 
+;;;;;;;;;;;;;;;;;;;;;;;;;; Spits ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[BD_PoisonSpit X2AbilityTemplate]
+LocFriendlyName="독침"
+LocLongDescription="바이퍼는 맹독 구름으로 폭발하는 맹독액을 원거리에서 발사합니다."
+LocHelpText="범위 내에 치명적인 독을 내뱉습니다."
+LocFlyOverText="독침"
+
+[PoisonSpitGlobLWSidewinder X2GrenadeTemplate]
+FriendlyName="독침"
+FriendlyNamePlural="독침"
+BriefSummary="바이퍼는 원거리에서 맹독을 발사하며, 맹독 폭발 시 유독성 구름이 생성됩니다."
+TacticalText="<Bullet/> 일정 지역에 치명적인 독을 뱉습니다."
+
+[PoisonSpitGlobLWNaja X2GrenadeTemplate]
+FriendlyName="독침"
+FriendlyNamePlural="독침"
+BriefSummary="바이퍼는 원거리에서 맹독을 발사하며, 맹독 폭발 시 유독성 구름이 생성됩니다."
+TacticalText="<Bullet/> 일정 지역에 치명적인 독을 뱉습니다."
+
+[PoisonSpitGlobLWViper X2GrenadeTemplate]
+FriendlyName="독침"
+FriendlyNamePlural="독침"
+BriefSummary="바이퍼는 원거리에서 맹독을 발사하며, 맹독 폭발 시 유독성 구름이 생성됩니다."
+TacticalText="<Bullet/> 일정 지역에 치명적인 독을 뱉습니다."
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;; Sidewinder ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [SidewinderM1 X2CharacterTemplate]

@@ -89,6 +89,7 @@ struct LWUnitVariation
     var array<SoldierClassStatType> StatUpgrades;
     var TAppearance BodyPartContent;
     var array<string> GenericBodyPartArchetypes;
+
 };
 
 var config array<LWUnitVariation> UnitVariations;
@@ -111,7 +112,7 @@ static function CHEventListenerTemplate CreateCustomisationListeners()
     
     // Don't know how important the priority is. Just be aware that reducing it may affect
     // summoned units and reinforcements in terms of their rendering.
-	Template.AddCHEvent('OnUnitBeginPlay', OnUnitBeginPlay, ELD_OnStateSubmitted, 55);
+	Template.AddCHEvent('OnUnitBeginPlay', OnUnitBeginPlay, ELD_OnStateSubmitted, 100);
 
 	Template.RegisterInTactical = true;
 
@@ -171,31 +172,39 @@ static function EventListenerReturn OnUnitBeginPlay(
 				if (UnitVariation.CharacterNames.Find(UnitState.GetMyTemplateName()) != -1) 
 				{
 					`APTRACE("AlienCustomization: Valid template found :" @ UnitVariation.CharacterNames[0]);
-
-					//valid unit type without random variation, so roll the dice
-					if (`SYNC_FRAND_STATIC() < UnitVariation.Probability || UnitVariation.Automatic)
-					{
-						`APTRACE("AlienCustomization: Template passed, applying :" @ UnitVariation.CharacterNames[0]);
-
-						NewGameState = class'XComGameStateContext_ChangeContainer'.static.CreateChangeState("Creating Alien Customization Component");
-						UpdatedUnitState = XComGameState_Unit(NewGameState.ModifyStateObject(class'XComGameState_Unit', UnitState.ObjectID));
-
-						AlienCustomization = class'XComGameState_Unit_AlienCustomization'.static.CreateCustomizationComponent(UpdatedUnitState, NewGameState);
-						AlienCustomization.GenerateCustomization(UnitVariation, UpdatedUnitState, NewGameState);
-
-						ChangeContainer = XComGameStateContext_ChangeContainer(NewGameState.GetContext());
-						ChangeContainer.BuildVisualizationFn = CustomizeAliens_BuildVisualization;
-						ChangeContainer.SetAssociatedPlayTiming(SPT_AfterSequential);
-						ChangeContainer.SetDesiredVisualizationBlockIndex(GameState.HistoryIndex);
-						`GAMERULES.SubmitGameState(NewGameState);
-						AlienCustomization.ApplyCustomization();
-						CustomizationObject = AlienCustomization;
-						EventManager.RegisterForEvent(CustomizationObject, 'OnCreateCinematicPawn', AlienCustomization.OnCinematicPawnCreation, ELD_Immediate, 55, UnitState);  // trigger when unit cinematic pawn is created
-
-						if (!AlienCustomization.bAutomatic)
-							return ELR_NoInterrupt;		
 					
-					}
+					`APTRACE("AlienCustomization: UnitState Gender:"@UnitState.kAppearance.iGender);
+					`APTRACE("AlienCustomization: UnitVariation Gender:"@UnitVariation.BodyPartContent.iGender);
+
+					if (UnitState.kAppearance.iGender == UnitVariation.BodyPartContent.iGender)
+					{
+						`APTRACE("AlienCustomization: Unit variation gender matches gender of active unit state, applying changes");
+
+						//valid unit type without random variation, so roll the dice
+						if (`SYNC_FRAND_STATIC() < UnitVariation.Probability || UnitVariation.Automatic)
+						{
+							`APTRACE("AlienCustomization: Template passed, applying :" @ UnitVariation.CharacterNames[0]);
+
+							NewGameState = class'XComGameStateContext_ChangeContainer'.static.CreateChangeState("Creating Alien Customization Component");
+							UpdatedUnitState = XComGameState_Unit(NewGameState.ModifyStateObject(class'XComGameState_Unit', UnitState.ObjectID));
+
+							AlienCustomization = class'XComGameState_Unit_AlienCustomization'.static.CreateCustomizationComponent(UpdatedUnitState, NewGameState);
+							AlienCustomization.GenerateCustomization(UnitVariation, UpdatedUnitState, NewGameState);
+
+							ChangeContainer = XComGameStateContext_ChangeContainer(NewGameState.GetContext());
+							ChangeContainer.BuildVisualizationFn = CustomizeAliens_BuildVisualization;
+							ChangeContainer.SetAssociatedPlayTiming(SPT_AfterSequential);
+							ChangeContainer.SetDesiredVisualizationBlockIndex(GameState.HistoryIndex);
+							`GAMERULES.SubmitGameState(NewGameState);
+							AlienCustomization.ApplyCustomization();
+							CustomizationObject = AlienCustomization;
+							EventManager.RegisterForEvent(CustomizationObject, 'OnCreateCinematicPawn', AlienCustomization.OnCinematicPawnCreation, ELD_Immediate, 100, UnitState);  // trigger when unit cinematic pawn is created
+
+							if (!AlienCustomization.bAutomatic)
+								return ELR_NoInterrupt;		
+					
+						}
+				  }
 				}
 			}
 		}

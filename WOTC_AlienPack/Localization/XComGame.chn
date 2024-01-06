@@ -196,7 +196,7 @@ AbilityDescName="斯卡拉姆枪"
 FriendlyName="响尾蛇斯卡拉姆枪"
 AbilityDescName="斯卡拉姆枪"
 
-;;;;;;;;;;;;;;;;;;;;;;;;;; Viper ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;; Viper M2 M3 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [ViperM2_LW X2CharacterTemplate]
 strCharacterName="巨蛇座毒蛇怪"
@@ -211,6 +211,32 @@ AbilityDescName="等离子步枪"
 [ViperM3_WPN X2WeaponTemplate]
 FriendlyName="光束步枪"
 AbilityDescName="等离子步枪"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;; Viper Spits ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[BD_PoisonSpit X2AbilityTemplate]
+LocFriendlyName="猛毒喷射"
+LocLongDescription="毒蛇怪可以从远处发射毒液，然后爆炸成一团有毒气体。"
+LocHelpText="向一个区域内喷射毒液。"
+LocFlyOverText="猛毒喷射"
+
+[PoisonSpitGlobLWSidewinder X2GrenadeTemplate]
+FriendlyName="猛毒喷射"
+FriendlyNamePlural="猛毒喷射"
+BriefSummary="毒蛇怪可以从远处发射毒液，然后爆炸成一团有毒气体。"
+TacticalText="<Bullet/>朝一片区域喷射致死毒液。"
+
+[PoisonSpitGlobLWNaja X2GrenadeTemplate]
+FriendlyName="猛毒喷射"
+FriendlyNamePlural="猛毒喷射"
+BriefSummary="毒蛇怪可以从远处发射毒液，然后爆炸成一团有毒气体。"
+TacticalText="<Bullet/>朝一片区域喷射致死毒液。"
+
+[PoisonSpitGlobLWViper X2GrenadeTemplate]
+FriendlyName="猛毒喷射"
+FriendlyNamePlural="猛毒喷射"
+BriefSummary="毒蛇怪可以从远处发射毒液，然后爆炸成一团有毒气体。"
+TacticalText="<Bullet/>朝一片区域喷射致死毒液。"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; ArchonM2_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

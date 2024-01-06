@@ -193,6 +193,32 @@ FriendlyName="ビームライフル"
 [ViperM3_WPN X2WeaponTemplate]
 FriendlyName="ビームライフル"
 
+;;;;;;;;;;;;;;;;;;;;;;;;;; Spits ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[BD_PoisonSpit X2AbilityTemplate]
+LocFriendlyName="毒射"
+LocLongDescription="ヴァイパーは離れた場所から毒の塊を吐き出す。塊は着弾すると毒ガスとなって周辺に広がる。"
+LocHelpText="一帯に毒を吐き出す"
+LocFlyOverText="毒射"
+
+[PoisonSpitGlobLWSidewinder X2GrenadeTemplate]
+FriendlyName="毒射"
+FriendlyNamePlural="毒射"
+BriefSummary="ヴァイパーは離れた場所から毒の塊を吐き出す。塊は着弾すると毒ガスとなって周辺に広がる。"
+TacticalText="<Bullet/>エリア内に猛毒を吐き出す。"
+
+[PoisonSpitGlobLWNaja X2GrenadeTemplate]
+FriendlyName="毒射"
+FriendlyNamePlural="毒射"
+BriefSummary="ヴァイパーは離れた場所から毒の塊を吐き出す。塊は着弾すると毒ガスとなって周辺に広がる。"
+TacticalText="<Bullet/>エリア内に猛毒を吐き出す。"
+
+[PoisonSpitGlobLWViper X2GrenadeTemplate]
+FriendlyName="毒射"
+FriendlyNamePlural="毒射"
+BriefSummary="ヴァイパーは離れた場所から毒の塊を吐き出す。塊は着弾すると毒ガスとなって周辺に広がる。"
+TacticalText="<Bullet/>エリア内に猛毒を吐き出す。"
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;; ArchonM2_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [ArchonM2_LW X2CharacterTemplate]

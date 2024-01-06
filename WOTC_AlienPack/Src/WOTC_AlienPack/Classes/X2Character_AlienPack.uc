@@ -659,6 +659,8 @@ static function X2CharacterTemplate CreateTemplate_Viper_LW(name TemplateName)
 	}
 
 
+	CharTemplate.strBehaviorTree = "LWViperM2M3::CharacterRoot"; // Needs actual AI now since spit abilities are different
+
 	CharTemplate.strMatineePackages.AddItem("CIN_Viper");
 	CharTemplate.strMatineePackages.AddItem("CIN_AdventMEC");
 	CharTemplate.strTargetingMatineePrefix = "CIN_AdventMEC_FF_StartPos";
@@ -899,7 +901,6 @@ static function X2CharacterTemplate CreateTemplate_AdvSentry(name TemplateName)
 	
 	CharTemplate.bAllowSpawnFromATT = true;
 
-	CharTemplate.Abilities.AddItem('BD_ReadyForAnything_LW');
 	// WOTC abilities
 	CharTemplate.Abilities.AddItem('DarkEventAbility_SealedArmor');
 	CharTemplate.Abilities.AddItem('DarkEventAbility_UndyingLoyalty');

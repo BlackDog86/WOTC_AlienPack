@@ -383,7 +383,6 @@ simulated function RequestFullPawnContent()
 		PawnContentRequests.AddItem(kRequest);
 	}
 
-	//head content is just for eyebrows, head morphs -- not needed for ADVENT/aliens
 	//if (m_kAppearance.nmHead != '')
 	//{
 		//kRequest.ContentCategory = 'Head';

@@ -212,6 +212,32 @@ AbilityDescName="等離子步槍"
 FriendlyName="光束步槍"
 AbilityDescName="等離子步槍"
 
+;;;;;;;;;;;;;;;;;;;;;;;;;; Spits ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[BD_PoisonSpit X2AbilityTemplate]
+LocFriendlyName="猛毒噴射"
+LocLongDescription="毒蛇怪可以從遠處濺射毒液，然後爆炸成一團有毒氣體。"
+LocHelpText="向一個區域內噴射毒液。"
+LocFlyOverText="猛毒噴射"
+
+[PoisonSpitGlobLWSidewinder X2GrenadeTemplate]
+FriendlyName="猛毒噴射"
+FriendlyNamePlural="猛毒噴射"
+BriefSummary="毒蛇怪可以從遠處發射毒液，然後爆炸成一團有毒氣體。"
+TacticalText="<Bullet/>朝一片區域噴射致死毒液。"
+
+[PoisonSpitGlobLWNaja X2GrenadeTemplate]
+FriendlyName="猛毒噴射"
+FriendlyNamePlural="猛毒噴射"
+BriefSummary="毒蛇怪可以從遠處發射毒液，然後爆炸成一團有毒氣體。"
+TacticalText="<Bullet/>朝一片區域噴射致死毒液。"
+
+[PoisonSpitGlobLWViper X2GrenadeTemplate]
+FriendlyName="猛毒噴射"
+FriendlyNamePlural="猛毒噴射"
+BriefSummary="毒蛇怪可以從遠處發射毒液，然後爆炸成一團有毒氣體。"
+TacticalText="<Bullet/>朝一片區域噴射致死毒液。"
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;; ArchonM2_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [ArchonM2_LW X2CharacterTemplate]

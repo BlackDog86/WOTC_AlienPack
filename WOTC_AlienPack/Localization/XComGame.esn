@@ -234,6 +234,32 @@ FriendlyName="Fusil de rayo"
 AbilityDescName="rifle de plasma"
 ; End translated
 
+;;;;;;;;;;;;;;;;;;;;;;;;;; Spits ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[BD_PoisonSpit X2AbilityTemplate]
+LocFriendlyName="Escupir veneno"
+LocLongDescription="Una Víbora puede lanzar un chorro de veneno a gran distancia que explota y forma una nube tóxica."
+LocHelpText="Escupe veneno letal en una zona."
+LocFlyOverText="Escupir veneno"
+
+[PoisonSpitGlobLWSidewinder X2GrenadeTemplate]
+FriendlyName="Escupir veneno"
+FriendlyNamePlural="Escupir veneno"
+BriefSummary="Una Víbora puede lanzar un chorro de veneno a gran distancia que explota y forma una nube tóxica."
+TacticalText="<Bullet/> Escupe veneno letal en una zona."
+
+[PoisonSpitGlobLWNaja X2GrenadeTemplate]
+FriendlyName="Escupir veneno"
+FriendlyNamePlural="Escupir veneno"
+BriefSummary="Una Víbora puede lanzar un chorro de veneno a gran distancia que explota y forma una nube tóxica."
+TacticalText="<Bullet/> Escupe veneno letal en una zona."
+
+[PoisonSpitGlobLWViper X2GrenadeTemplate]
+FriendlyName="Escupir veneno"
+FriendlyNamePlural="Escupir veneno"
+BriefSummary="Una Víbora puede lanzar un chorro de veneno a gran distancia que explota y forma una nube tóxica."
+TacticalText="<Bullet/> Escupe veneno letal en una zona."
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;; ArchonM2_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [ArchonM2_LW X2CharacterTemplate]

@@ -200,6 +200,32 @@ FriendlyName="Лучевая винтовка"
 [ViperM3_WPN X2WeaponTemplate]
 FriendlyName="Лучевая винтовка"
 
+;;;;;;;;;;;;;;;;;;;;;;;;;; Spits ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[BD_PoisonSpit X2AbilityTemplate]
+LocFriendlyName="Ядовитая слюна"
+LocLongDescription="Вайпер может выпускать заряд яда на большие расстояния, который при взрыве образует токсичное облако."
+LocHelpText="Плевок смертоносным ядом в указанную область."
+LocFlyOverText="Ядовитая слюна"
+
+[PoisonSpitGlobLWSidewinder X2GrenadeTemplate]
+FriendlyName="Ядовитая слюна"
+FriendlyNamePlural="Ядовитая слюна"
+BriefSummary="Вайпер способен плеваться ядом на большие расстояния. При попадании заряд образует токсичное облако."
+TacticalText="<Bullet/> Плевок смертоносным ядом в указанную область."
+
+[PoisonSpitGlobLWNaja X2GrenadeTemplate]
+FriendlyName="Ядовитая слюна"
+FriendlyNamePlural="Ядовитая слюна"
+BriefSummary="Вайпер способен плеваться ядом на большие расстояния. При попадании заряд образует токсичное облако."
+TacticalText="<Bullet/> Плевок смертоносным ядом в указанную область."
+
+[PoisonSpitGlobLWViper X2GrenadeTemplate]
+FriendlyName="Ядовитая слюна"
+FriendlyNamePlural="Ядовитая слюна"
+BriefSummary="Вайпер способен плеваться ядом на большие расстояния. При попадании заряд образует токсичное облако."
+TacticalText="<Bullet/> Плевок смертоносным ядом в указанную область."
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;; ArchonM2_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [ArchonM2_LW X2CharacterTemplate]

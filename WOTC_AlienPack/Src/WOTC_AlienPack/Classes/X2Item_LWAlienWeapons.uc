@@ -1505,13 +1505,13 @@ static function X2DataTemplate CreateTemplate_AdvElite_WPN(name TemplateName)
 		case 'AdvGeneralM1_LW_WPN':
 		Template.BaseDamage = default.AdvGeneralM1_LW_WPN_BASEDAMAGE;
 		Template.iIdealRange = default.AdvGeneralM1_IDEALRANGE;
-		Template.Abilities.AddItem('ReadyForAnything');
+		Template.Abilities.AddItem('BD_ReadyForAnything_LW');
 		break;
 
 		case 'AdvGeneralM2_LW_WPN':
 		Template.BaseDamage = default.AdvGeneralM2_LW_WPN_BASEDAMAGE;
 		Template.iIdealRange = default.AdvGeneralM2_IDEALRANGE;
-		Template.Abilities.AddItem('ReadyForAnything');
+		Template.Abilities.AddItem('BD_ReadyForAnything_LW');
 		break;
 
 		default: break;
@@ -1610,7 +1610,7 @@ static function X2DataTemplate CreateTemplate_LWViper_PoisonSpitGlob()
 
 	Template.InventorySlot = eInvSlot_Utility;
 	Template.StowedLocation = eSlot_None;
-	Template.Abilities.AddItem('PoisonSpit');
+	Template.Abilities.AddItem('BD_PoisonSpit');
 
 	// This controls how much arc this projectile may have and how many times it may bounce
 	Template.WeaponPrecomputedPathData.InitialPathTime = 0.5;
@@ -1647,7 +1647,7 @@ static function X2DataTemplate CreateTemplate_LWNaja_PoisonSpitGlob()
 
 	Template.InventorySlot = eInvSlot_Utility;
 	Template.StowedLocation = eSlot_None;
-	Template.Abilities.AddItem('PoisonSpit');
+	Template.Abilities.AddItem('BD_PoisonSpit');
 
 	// This controls how much arc this projectile may have and how many times it may bounce
 	Template.WeaponPrecomputedPathData.InitialPathTime = 0.5;
@@ -1684,7 +1684,7 @@ static function X2DataTemplate CreateTemplate_LWSidewinder_PoisonSpitGlob()
 
 	Template.InventorySlot = eInvSlot_Utility;
 	Template.StowedLocation = eSlot_None;
-	Template.Abilities.AddItem('PoisonSpit');
+	Template.Abilities.AddItem('BD_PoisonSpit');
 
 	// This controls how much arc this projectile may have and how many times it may bounce
 	Template.WeaponPrecomputedPathData.InitialPathTime = 0.5;

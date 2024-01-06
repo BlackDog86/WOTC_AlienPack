@@ -233,6 +233,32 @@ FriendlyName="Fusil à rayons"
 AbilityDescName="fusil plasmique"
 ; End translated
 
+;;;;;;;;;;;;;;;;;;;;;;;;;; Spits ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[BD_PoisonSpit X2AbilityTemplate]
+LocFriendlyName="Venin"
+LocLongDescription="Une Vipère peut cracher une boule de poison à longue portée qui explose pour former un nuage toxique."
+LocHelpText="Crache du poison dans une zone."
+LocFlyOverText="Venin"
+
+[PoisonSpitGlobLWSidewinder X2GrenadeTemplate]
+FriendlyName="Venin"
+FriendlyNamePlural="Venin"
+BriefSummary="Une Vipère peut cracher un jet de venin à longue portée qui forme un nuage toxique."
+TacticalText="<Bullet/> Crache un poison mortel sur une zone."
+
+[PoisonSpitGlobLWNaja X2GrenadeTemplate]
+FriendlyName="Venin"
+FriendlyNamePlural="Venin"
+BriefSummary="Une Vipère peut cracher un jet de venin à longue portée qui forme un nuage toxique."
+TacticalText="<Bullet/> Crache un poison mortel sur une zone."
+
+[PoisonSpitGlobLWViper X2GrenadeTemplate]
+FriendlyName="Venin"
+FriendlyNamePlural="Venin"
+BriefSummary="Une Vipère peut cracher un jet de venin à longue portée qui forme un nuage toxique."
+TacticalText="<Bullet/> Crache un poison mortel sur une zone."
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;; ArchonM2_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [ArchonM2_LW X2CharacterTemplate]

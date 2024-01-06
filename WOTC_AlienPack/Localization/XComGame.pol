@@ -193,6 +193,32 @@ FriendlyName="Karabin wiązkowy"
 [ViperM3_WPN X2WeaponTemplate]
 FriendlyName="Karabin wiązkowy"
 
+;;;;;;;;;;;;;;;;;;;;;;;;;; Spits ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[BD_PoisonSpit X2AbilityTemplate]
+LocFriendlyName="Plucie trucizną"
+LocLongDescription="Żmija może wystrzelić na dużą odległość ładunek jadu, który wybucha i zmienia się w trujący obłok."
+LocHelpText="Wyplucie zabójczej trucizny we wskazane miejsce."
+LocFlyOverText="Plucie trucizną"
+
+[PoisonSpitGlobLWSidewinder X2GrenadeTemplate]
+FriendlyName="Plucie trucizną"
+FriendlyNamePlural="Plucie trucizną"
+BriefSummary="Żmija może wystrzelić na dużą odległość ładunek jadu, który wybucha i zmienia się w trujący obłok."
+TacticalText="<Bullet/> Wyplucie zabójczej trucizny we wskazane miejsce."
+
+[PoisonSpitGlobLWNaja X2GrenadeTemplate]
+FriendlyName="Plucie trucizną"
+FriendlyNamePlural="Plucie trucizną"
+BriefSummary="Żmija może wystrzelić na dużą odległość ładunek jadu, który wybucha i zmienia się w trujący obłok."
+TacticalText="<Bullet/> Wyplucie zabójczej trucizny we wskazane miejsce."
+
+[PoisonSpitGlobLWViper X2GrenadeTemplate]
+FriendlyName="Plucie trucizną"
+FriendlyNamePlural="Plucie trucizną"
+BriefSummary="Żmija może wystrzelić na dużą odległość ładunek jadu, który wybucha i zmienia się w trujący obłok."
+TacticalText="<Bullet/> Wyplucie zabójczej trucizny we wskazane miejsce."
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;; ArchonM2_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [ArchonM2_LW X2CharacterTemplate]

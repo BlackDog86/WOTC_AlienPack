@@ -142,6 +142,32 @@ FriendlyName="Beam Rifle"
 AbilityDescName="plasma rifle"
 ; End translation
 
+;;;;;;;;;;;;;;;;;;;;;;;;;; Spits ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[BD_PoisonSpit X2AbilityTemplate]
+LocFriendlyName="Poison Spit"
+LocLongDescription="A Viper can project a blast of venom at long range that explodes into a toxic cloud."
+LocHelpText="Spit deadly poison at an area."
+LocFlyOverText="Poison Spit"
+
+[PoisonSpitGlobLWSidewinder X2GrenadeTemplate]
+FriendlyName="Poison Spit"
+FriendlyNamePlural="Poison Spit"
+BriefSummary="A Viper can project a blast of venom at long range that explodes into a toxic cloud."
+TacticalText="<Bullet/> Spit deadly poison at an area."
+
+[PoisonSpitGlobLWNaja X2GrenadeTemplate]
+FriendlyName="Poison Spit"
+FriendlyNamePlural="Poison Spit"
+BriefSummary="A Viper can project a blast of venom at long range that explodes into a toxic cloud."
+TacticalText="<Bullet/> Spit deadly poison at an area."
+
+[PoisonSpitGlobLWViper X2GrenadeTemplate]
+FriendlyName="Poison Spit"
+FriendlyNamePlural="Poison Spit"
+BriefSummary="A Viper can project a blast of venom at long range that explodes into a toxic cloud."
+TacticalText="<Bullet/> Spit deadly poison at an area."
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;; ArchonM2_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [ArchonM2_LW X2CharacterTemplate]
