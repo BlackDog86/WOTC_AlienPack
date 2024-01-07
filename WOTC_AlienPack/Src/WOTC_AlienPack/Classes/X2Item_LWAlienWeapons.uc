@@ -504,7 +504,7 @@ static function X2DataTemplate CreateTemplate_Naja_WPN(name TemplateName)
 	
 	Template.WeaponPanelImage = "_ConventionalRifle";                  
 	Template.ItemCat = 'weapon';
-	Template.WeaponCat = 'sniper_rifle';
+	Template.WeaponCat = 'naja_sniper_rifle';
 	Template.WeaponTech = 'beam';
 	Template.strImage = "img:///UILibrary_Common.UI_BeamSniper.BeamSniper_Base";
 	Template.RemoveTemplateAvailablility(Template.BITFIELD_GAMEAREA_Multiplayer); //invalidates multiplayer availability

@@ -260,8 +260,8 @@ static function X2CharacterTemplate CreateTemplate_Naja(name TemplateName)
 		CharTemplate.DefaultLoadout='NajaM3_Loadout';
 
 	CharTemplate.BehaviorClass=class'XGAIBehavior';
-	CharTemplate.strPawnArchetypes.AddItem("LWNaja.Archetypes.ARC_GameUnit_Naja_F"); 
 	CharTemplate.strPawnArchetypes.AddItem("LWNaja.Archetypes.ARC_GameUnit_Naja_M"); 
+	CharTemplate.strPawnArchetypes.AddItem("LWNaja.Archetypes.ARC_GameUnit_Naja_F"); 
 	Loot.ForceLevel=0;
 	Loot.LootTableName='Viper_BaseLoot';
 	CharTemplate.Loot.LootReferences.AddItem(Loot);
@@ -731,10 +731,8 @@ static function X2CharacterTemplate CreateTemplate_AdvGunner(name TemplateName)
 	if (TemplateName == 'AdvGunnerM3')
 		CharTemplate.DefaultLoadout='AdvGunnerM3_Loadout';
 	CharTemplate.BehaviorClass=class'XGAIBehavior';
-	//CharTemplate.strPawnArchetypes.AddItem("LWAdvGunner.Archetypes.ARC_GameUnit_AdvGunnerM1_M"); 
-	//CharTemplate.strPawnArchetypes.AddItem("LWAdvGunner.Archetypes.ARC_GameUnit_AdvGunnerM1_F"); 
-	//CharTemplate.strPawnArchetypes.AddItem("LWXAdventTrooper.Archetypes.GameUnit_AdvSoldier_F"); 
 	CharTemplate.strPawnArchetypes.AddItem("LWXAdventTrooper.Archetypes.GameUnit_AdvSoldier_M"); 
+	CharTemplate.strPawnArchetypes.AddItem("LWXAdventTrooper.Archetypes.GameUnit_AdvSoldier_F"); 
 
 	Loot.ForceLevel=0;
 	if (TemplateName == 'AdvGunnerM1')
@@ -831,9 +829,8 @@ static function X2CharacterTemplate CreateTemplate_AdvSentry(name TemplateName)
 		CharTemplate.DefaultLoadout='AdvSentryM3_Loadout';
 
 	CharTemplate.BehaviorClass=class'XGAIBehavior';
-	//CharTemplate.strPawnArchetypes.AddItem("LWAdvSentry.Archetypes.ARC_GameUnit_AdvSentryM1_M");
-	//CharTemplate.strPawnArchetypes.AddItem("LWAdvSentry.Archetypes.ARC_GameUnit_AdvSentryM1_F");
 	CharTemplate.strPawnArchetypes.AddItem("LWXAdventTrooper.Archetypes.GameUnit_AdvSoldier_M"); 
+	CharTemplate.strPawnArchetypes.AddItem("LWXAdventTrooper.Archetypes.GameUnit_AdvSoldier_F");
 	Loot.ForceLevel=0;
 
 	if (TemplateName == 'AdvSentryM1')
@@ -940,6 +937,7 @@ static function X2CharacterTemplate CreateTemplate_AdvGrenadier(name TemplateNam
 
 	CharTemplate.BehaviorClass=class'XGAIBehavior';
 	CharTemplate.strPawnArchetypes.AddItem("LWXAdventTrooper.Archetypes.GameUnit_AdvSoldier_M"); 
+	CharTemplate.strPawnArchetypes.AddItem("LWXAdventTrooper.Archetypes.GameUnit_AdvSoldier_F");
 
 	Loot.ForceLevel=0;
 	if (TemplateName == 'AdvGrenadierM1')
@@ -1048,6 +1046,8 @@ static function X2CharacterTemplate CreateTemplate_AdvRocketeer(name TemplateNam
 	CharTemplate.BehaviorClass=class'XGAIBehavior';
 
 	CharTemplate.strPawnArchetypes.AddItem("LWXAdventTrooper.Archetypes.GameUnit_AdvSoldier_M"); 
+	CharTemplate.strPawnArchetypes.AddItem("LWXAdventTrooper.Archetypes.GameUnit_AdvSoldier_F");
+
 	Loot.ForceLevel=0;
 	if (TemplateName == 'AdvRocketeerM1')
 		Loot.LootTableName='AdvTrooperM1_BaseLoot';
@@ -1474,6 +1474,7 @@ static function X2CharacterTemplate CreateTemplate_AdvGeneric(name TemplateName)
 	`CREATE_X2CHARACTER_TEMPLATE(CharTemplate, TemplateName);
 	
 	CharTemplate.strPawnArchetypes.AddItem("LWXAdventTrooper.Archetypes.GameUnit_AdvSoldier_M"); 
+	CharTemplate.strPawnArchetypes.AddItem("LWXAdventTrooper.Archetypes.GameUnit_AdvSoldier_F");
 
 	// Some of these may be overidden on case-by-case basis
 	CharTemplate.CharacterGroupName = 'AdventTrooper'; 

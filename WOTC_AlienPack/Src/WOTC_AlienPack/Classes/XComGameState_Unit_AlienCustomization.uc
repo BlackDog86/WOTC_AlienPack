@@ -118,7 +118,7 @@ simulated function bool ApplyCustomization(optional XComUnitPawn PawnToUpdate, o
 	//primary weapon appearance
 	if(!ApplyItemMaterialCustomization(Unit.GetPrimaryWeapon(), PrimaryWeaponAppearance))
 		bSuccess = false;
-
+		
 	//secondary weapon appearance
 	if(!ApplyItemMaterialCustomization(Unit.GetSecondaryWeapon(), SecondaryWeaponAppearance))
 		bSuccess = false;
@@ -140,28 +140,42 @@ function EventListenerReturn OnCinematicPawnCreation(Object EventData, Object Ev
 	UnitState = XComGameState_Unit(EventSource);
 	CinematicPawn = XComUnitPawn(EventData);
 
+	`APTRACE("Cinematic Pawn Created Listener Fired");
 	if(UnitState == none || CinematicPawn == none)
+		{
+		`APTRACE("No unit state or no pawn");
 		return ELR_NoInterrupt;
-		
+		}
+	
 	if(UnitState.ObjectID != OwningObjectId)
 	{
 		`REDSCREEN("AlienCustomization : OnCinematicPawnCreation called with mismatching Unit");
 		return ELR_NoInterrupt;
 	}
 
+	`APTRACE("Applying customization");
 	ApplyCustomization(CinematicPawn, false); // update the supplied cinematic pawn instead of the default visualizer, and don't update default items
-
-	PawnMgr = `HQPRES.GetUIPawnMgr();
+	
+	/*PawnMgr = `PRESBASE.GetUIPawnMgr();
+	
 	if(PawnMgr == none)
+	{
+	`APTRACE("No pawn mangager");
 		return ELR_NoInterrupt;
+	}
 
 	PawnInfoIndex = PawnMgr.Pawns.Find('PawnRef', UnitState.ObjectID);
-	if (PawnInfoIndex != -1)
-		PawnStore = PawnMgr.Pawns;
+	`APTRACE("PawnInfoIndex:"@PawnInfoIndex);
+	if (PawnInfoIndex != INDEX_NONE)
+	{
+	PawnStore = PawnMgr.Pawns;
+	}
 	else
-		PawnInfoIndex = PawnMgr.CinematicPawns.Find('PawnRef', UnitState.ObjectID);
-
-	if (PawnInfoIndex == -1)
+	{
+	PawnInfoIndex = PawnMgr.CinematicPawns.Find('PawnRef', UnitState.ObjectID);
+	}
+	
+	if (PawnInfoIndex == INDEX_NONE)
 	{
 		`REDSCREEN("AlienCustomization : OnCinematicPawnCreation called with no Cinematic pawn found in UIPawnMgr");
 		return ELR_NoInterrupt;
@@ -170,22 +184,31 @@ function EventListenerReturn OnCinematicPawnCreation(Object EventData, Object Ev
 	{
 		PawnStore = PawnMgr.CinematicPawns;
 	}
-
+	
 	PrimaryWeapon = UnitState.GetPrimaryWeapon();
+		
+	`APTRACE("Customization: Primary Weapon:"@PrimaryWeapon.GetMyTemplateName());
 	if(PrimaryWeapon != none)
 	{
+	
 		PrimaryWeaponPawn = XComWeapon(PawnStore[PawnInfoIndex].Weapons[eInvSlot_PrimaryWeapon]);
+		`APTRACE("Getting primary weapon from pawn:"@PrimaryWeaponPawn.Name);
 		if(PrimaryWeaponPawn != none)
-			ApplyItemMaterialCustomization(PrimaryWeapon, PrimaryWeaponAppearance, PrimaryWeaponPawn);
+		{
+		ApplyItemMaterialCustomization(PrimaryWeapon, PrimaryWeaponAppearance, PrimaryWeaponPawn);
+		}
 	}
+	
 	SecondaryWeapon = UnitState.GetSecondaryWeapon();
+	`APTRACE("Customization: Primary Weapon:"@SecondaryWeapon.GetMyTemplateName());
 	if(SecondaryWeapon != none)
 	{
 		SecondaryWeaponPawn = XComWeapon(PawnStore[PawnInfoIndex].Weapons[eInvSlot_SecondaryWeapon]);
 		if(SecondaryWeaponPawn != none)
-			ApplyItemMaterialCustomization(SecondaryWeapon, SecondaryWeaponAppearance, SecondaryWeaponPawn);
-	}
-
+		{
+		ApplyItemMaterialCustomization(SecondaryWeapon, SecondaryWeaponAppearance, SecondaryWeaponPawn);
+		}
+	}*/
 	
 	return ELR_NoInterrupt;
 }
@@ -256,16 +279,27 @@ function bool ApplyItemMaterialCustomization(XComGameState_Item ItemState, LWObj
 	if(WeaponPawn == none)
 	{
 		if (ItemState == none)
-			return false;
+		{
+		`APTRACE("No itemstate found");
+		return false;
+		}
 		Visualizer = XGWeapon(ItemState.GetVisualizer());
 		if(Visualizer == none)
-			return false;
+		{
+		`APTRACE("No visualiser found");
+		return false;
+		}
 		WeaponPawn = XComWeapon(Visualizer.m_kEntity);
 		if(WeaponPawn == none)
-			return false;
+		{
+		`APTRACE("No WeaponPawn found");
+		return false;
+		}
 	}
 
+	`APTRACE("Weapon Pawn:"@WeaponPawn.ObjectArchetype);
 	MeshComp = WeaponPawn.Mesh;
+	`APTRACE("Weapon Pawn:"@WeaponPawn.ObjectArchetype);
 	UpdateMaterials(MeshComp, Appearance);
 	
 	for(i = 0; i < SkeletalMeshComponent(MeshComp).Attachments.Length; ++i)
@@ -273,6 +307,7 @@ function bool ApplyItemMaterialCustomization(XComGameState_Item ItemState, LWObj
 		AttachedComponent = MeshComponent(SkeletalMeshComponent(MeshComp).Attachments[i].Component);
 		if(AttachedComponent != none)
 		{
+			`APTRACE("Updating materials for attached components");
 			UpdateMaterials(AttachedComponent, Appearance);
 		}
 	}
@@ -334,7 +369,7 @@ simulated function UpdateIndividualMaterial(MeshComponent MeshComp, MaterialInst
 				break;
 		}
 		ParentName = ParentMat.Name;
-
+		`APTRACE("Alien Customization: ParentName:"@ParentName);
 		switch (ParentName)
 		{
 			case 'Props_SD_FX_Chunks':
@@ -344,10 +379,13 @@ simulated function UpdateIndividualMaterial(MeshComponent MeshComp, MaterialInst
 				foreach Appearance.ColorParameters(ColorParameter)
 				{
 					`APTRACE("Alien Customization: Setting Vector Parameter.");
+					`APTRACE("Alien Customization: ColorParameter:"@ColorParameter.ParameterName);
 					MIC.SetVectorParameterValue(ColorParameter.ParameterName, ColorParameter.ColorValue);
 				}
 				foreach Appearance.ScalarParameters(ScalarParameter)
 				{
+					`APTRACE("Alien Customization: Setting scalar Parameter.");
+					`APTRACE("Alien Customization: ColorParameter:"@ScalarParameter.ParameterName);
 					MIC.SetScalarParameterValue(ScalarParameter.ParameterName, ScalarParameter.ScalarValue);
 				}
 				break;
@@ -365,7 +403,6 @@ simulated function UpdateIndividualMaterial(MeshComponent MeshComp, MaterialInst
 		}
 	}
 }
-
 
 //body part loading -- mostly copied from XComHumanPawn
 simulated function RequestFullPawnContent()
@@ -385,10 +422,10 @@ simulated function RequestFullPawnContent()
 
 	//if (m_kAppearance.nmHead != '')
 	//{
-		//kRequest.ContentCategory = 'Head';
-		//kRequest.TemplateName = m_kAppearance.nmHead;
-		//kRequest.BodyPartLoadedFn = OnHeadLoaded;
-		//PawnContentRequests.AddItem(kRequest);
+	//	kRequest.ContentCategory = 'Head';
+	//	kRequest.TemplateName = m_kAppearance.nmHead;
+	//	kRequest.BodyPartLoadedFn = OnHeadLoaded;
+	//	PawnContentRequests.AddItem(kRequest);
 	//}
 
 	if(m_kAppearance.nmHelmet != '') 

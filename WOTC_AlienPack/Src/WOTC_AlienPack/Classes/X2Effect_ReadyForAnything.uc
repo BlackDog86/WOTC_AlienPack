@@ -19,6 +19,9 @@ function bool PostAbilityCostPaid(XComGameState_Effect EffectState, XComGameStat
 	if (SourceUnit.AffectedByEffectNames.Find(class'X2AbilityTemplateManager'.default.DisorientedName) != -1)
 		return false;
 
+	if (SourceUnit.AffectedByEffectNames.Find(class'X2StatusEffects'.default.BurningName) != -1)
+		return false;
+
 	if (SourceUnit.IsPanicked())
 		return false;
 
