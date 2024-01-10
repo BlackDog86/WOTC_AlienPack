@@ -130,16 +130,11 @@ simulated function bool ApplyCustomization(optional XComUnitPawn PawnToUpdate, o
 function EventListenerReturn OnCinematicPawnCreation(Object EventData, Object EventSource, XComGameState GameState, Name EventID, Object CallbackData)
 {
 	local XComGameState_Unit UnitState;
-	local UIPawnMgr PawnMgr;
 	local XComUnitPawn CinematicPawn;
-	local int PawnInfoIndex;
-	local XComGameState_Item PrimaryWeapon, SecondaryWeapon;
-	local XComWeapon PrimaryWeaponPawn, SecondaryWeaponPawn;
-	local array<PawnInfo> PawnStore;
-
+	
 	UnitState = XComGameState_Unit(EventSource);
-	CinematicPawn = XComUnitPawn(EventData);
-
+	CinematicPawn = XComUnitPawn(EventData);	
+	
 	`APTRACE("Cinematic Pawn Created Listener Fired");
 	if(UnitState == none || CinematicPawn == none)
 		{
@@ -152,63 +147,12 @@ function EventListenerReturn OnCinematicPawnCreation(Object EventData, Object Ev
 		`REDSCREEN("AlienCustomization : OnCinematicPawnCreation called with mismatching Unit");
 		return ELR_NoInterrupt;
 	}
-
-	`APTRACE("Applying customization");
+	
 	ApplyCustomization(CinematicPawn, false); // update the supplied cinematic pawn instead of the default visualizer, and don't update default items
 	
-	/*PawnMgr = `PRESBASE.GetUIPawnMgr();
-	
-	if(PawnMgr == none)
-	{
-	`APTRACE("No pawn mangager");
-		return ELR_NoInterrupt;
-	}
-
-	PawnInfoIndex = PawnMgr.Pawns.Find('PawnRef', UnitState.ObjectID);
-	`APTRACE("PawnInfoIndex:"@PawnInfoIndex);
-	if (PawnInfoIndex != INDEX_NONE)
-	{
-	PawnStore = PawnMgr.Pawns;
-	}
-	else
-	{
-	PawnInfoIndex = PawnMgr.CinematicPawns.Find('PawnRef', UnitState.ObjectID);
-	}
-	
-	if (PawnInfoIndex == INDEX_NONE)
-	{
-		`REDSCREEN("AlienCustomization : OnCinematicPawnCreation called with no Cinematic pawn found in UIPawnMgr");
-		return ELR_NoInterrupt;
-	}
-	else
-	{
-		PawnStore = PawnMgr.CinematicPawns;
-	}
-	
-	PrimaryWeapon = UnitState.GetPrimaryWeapon();
-		
-	`APTRACE("Customization: Primary Weapon:"@PrimaryWeapon.GetMyTemplateName());
-	if(PrimaryWeapon != none)
-	{
-	
-		PrimaryWeaponPawn = XComWeapon(PawnStore[PawnInfoIndex].Weapons[eInvSlot_PrimaryWeapon]);
-		`APTRACE("Getting primary weapon from pawn:"@PrimaryWeaponPawn.Name);
-		if(PrimaryWeaponPawn != none)
-		{
-		ApplyItemMaterialCustomization(PrimaryWeapon, PrimaryWeaponAppearance, PrimaryWeaponPawn);
-		}
-	}
-	
-	SecondaryWeapon = UnitState.GetSecondaryWeapon();
-	`APTRACE("Customization: Primary Weapon:"@SecondaryWeapon.GetMyTemplateName());
-	if(SecondaryWeapon != none)
-	{
-		SecondaryWeaponPawn = XComWeapon(PawnStore[PawnInfoIndex].Weapons[eInvSlot_SecondaryWeapon]);
-		if(SecondaryWeaponPawn != none)
-		{
-		ApplyItemMaterialCustomization(SecondaryWeapon, SecondaryWeaponAppearance, SecondaryWeaponPawn);
-		}
-	}*/
+	// Unable to find a good way to update cinematic pawn weapons from script - as a result, I've resorted to changing the default materials on the unit archetypes
+	// This means that in cinematics, if users decide to forcibly change the appearence of the MECs using the customization / config manager 
+	// The MECs will display with the wrong coloured launchers in matinees - perhaps there is a way in script but it's beyond my ability set.
 	
 	return ELR_NoInterrupt;
 }
@@ -299,7 +243,6 @@ function bool ApplyItemMaterialCustomization(XComGameState_Item ItemState, LWObj
 
 	`APTRACE("Weapon Pawn:"@WeaponPawn.ObjectArchetype);
 	MeshComp = WeaponPawn.Mesh;
-	`APTRACE("Weapon Pawn:"@WeaponPawn.ObjectArchetype);
 	UpdateMaterials(MeshComp, Appearance);
 	
 	for(i = 0; i < SkeletalMeshComponent(MeshComp).Attachments.Length; ++i)
@@ -322,14 +265,15 @@ simulated function UpdateMaterials(MeshComponent MeshComp, LWObjectAppearance Ap
 
 	if (MeshComp != none)
 	{
+	
 		for (i = 0; i < MeshComp.GetNumElements(); ++i)
 		{
 			Mat = MeshComp.GetMaterial(i);
 			MIC = MaterialInstanceConstant(Mat);
-
+			
 			// It is possible for there to be MITVs in these slots, so check
 			if (MIC != none)
-			{
+			{				
 				// If this is not a child MIC, make it one. This is done so that the material updates below don't stomp
 				// on each other between units.
 				if (InStr(MIC.Name, "MaterialInstanceConstant") == INDEX_NONE)
@@ -339,9 +283,9 @@ simulated function UpdateMaterials(MeshComponent MeshComp, LWObjectAppearance Ap
 					MeshComp.SetMaterial(i, NewMIC);
 					MIC = NewMIC;
 				}
-
+				`APTRACE("Updating materials");
 				UpdateIndividualMaterial(MeshComp, MIC, Appearance);
-			}
+			}			
 		}
 	}
 }
@@ -378,14 +322,12 @@ simulated function UpdateIndividualMaterial(MeshComponent MeshComp, MaterialInst
 			case 'M_Master_PwrdWep_TC':
 				foreach Appearance.ColorParameters(ColorParameter)
 				{
-					`APTRACE("Alien Customization: Setting Vector Parameter.");
-					`APTRACE("Alien Customization: ColorParameter:"@ColorParameter.ParameterName);
+					`APTRACE("Alien Customization: VectorColorParameter:"@ColorParameter.ParameterName);
 					MIC.SetVectorParameterValue(ColorParameter.ParameterName, ColorParameter.ColorValue);
 				}
 				foreach Appearance.ScalarParameters(ScalarParameter)
 				{
-					`APTRACE("Alien Customization: Setting scalar Parameter.");
-					`APTRACE("Alien Customization: ColorParameter:"@ScalarParameter.ParameterName);
+					`APTRACE("Alien Customization: ScalarColorParameter:"@ScalarParameter.ParameterName);
 					MIC.SetScalarParameterValue(ScalarParameter.ParameterName, ScalarParameter.ScalarValue);
 				}
 				break;

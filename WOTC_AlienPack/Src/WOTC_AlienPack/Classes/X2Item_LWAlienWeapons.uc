@@ -129,6 +129,11 @@ var config WeaponDamageValue AdvMECArcherM1_MicroMissiles_BaseDamage;
 var config WeaponDamageValue AdvMECArcherM2_Wpn_BaseDamage;
 var config WeaponDamageValue AdvMECArcherM2_MicroMissiles_BaseDamage;
 
+var config WeaponDamageValue ADVMECM3_WPN_BASEDAMAGE;
+var config WeaponDamageValue AdvMECM3_MicroMissiles_BaseDamage;
+var config int ADVMEC_M3_IDEALRANGE;
+
+
 var config int AdvMECArcher_IdealRange;
 var config int AdvMECArcher_Wpn_Clipsize;
 var config int AdvMECArcher_Wpn_EnvironmentDamage;
@@ -147,9 +152,6 @@ var config WeaponDamageValue PoisonSpitGlobLWNaja_BaseDamage;
 var config int PoisonSpitGlobLWSidewinder_Range;
 var config int PoisonSpitGlobLWSidewinder_Radius;
 var config WeaponDamageValue PoisonSpitGlobLWSidewinder_BaseDamage;
-
-var config WeaponDamageValue ADVMECM3_WPN_BASEDAMAGE;
-var config int ADVMEC_M3_IDEALRANGE;
 
 var config WeaponDamageValue THELOST_GRAPPLER_TIER1_MELEEATTACK_BASEDAMAGE;
 var config WeaponDamageValue THELOST_GRAPPLER_TIER2_MELEEATTACK_BASEDAMAGE;
@@ -227,6 +229,7 @@ static function array<X2DataTemplate> CreateTemplates()
 
 	Templates.AddItem(CreateTemplate_AdvMECArcher_Shoulder_WPN('AdvMECArcherM1_Shoulder_WPN'));
 	Templates.AddItem(CreateTemplate_AdvMECArcher_Shoulder_WPN('AdvMECArcherM2_Shoulder_WPN'));
+	Templates.AddItem(CreateTemplate_AdvMECArcher_Shoulder_WPN('AdvMECM3_Shoulder_WPN'));
 
 	Templates.AddItem(CreateTemplate_AdvMECM3_WPN());
 	
@@ -1105,9 +1108,20 @@ static function X2DataTemplate CreateTemplate_AdvMECArcher_Shoulder_WPN(name Tem
 	Template.RangeAccuracy = class'X2Item_DefaultWeapons'.default.FLAT_CONVENTIONAL_RANGE;
 	
 	if (TemplateName == 'AdvMecArcherM1_Shoulder_WPN')
+		{
 		Template.BaseDamage = default.AdvMECArcherM1_MicroMissiles_BaseDamage;
+		Template.GameArchetype = "LWAdvMecArcher.Archetypes.WP_AdvMecBigLauncher";
+		}
 	if (TemplateName == 'AdvMecArcherM2_Shoulder_WPN')
+		{
 		Template.BaseDamage = default.AdvMECArcherM2_MicroMissiles_BaseDamage;
+		Template.GameArchetype = "LWAdvMecArcher.Archetypes.WP_AdvMecBigLauncherM2";
+		}
+	if (TemplateName == 'AdvMecM3_Shoulder_WPN')
+		{
+		Template.BaseDamage = default.AdvMECM3_MicroMissiles_BaseDamage;
+		Template.GameArchetype = "LWAdvMecArcher.Archetypes.WP_AdvMecBigLauncherM3";
+		}
 
 	Template.iClipSize = default.AdvMECArcher_MicroMissiles_Clipsize;
 	Template.iSoundRange = class'X2Item_DefaultWeapons'.default.ASSAULTRIFLE_MAGNETIC_ISOUNDRANGE;
@@ -1118,16 +1132,12 @@ static function X2DataTemplate CreateTemplate_AdvMECArcher_Shoulder_WPN(name Tem
 	Template.Abilities.AddItem('MicroMissiles');
 	Template.Abilities.AddItem('MicroMissileFuse');
 	
-	// This all the resources; sounds, animations, models, physics, the works.
-	Template.GameArchetype = "LWAdvMecArcher.Archetypes.WP_AdvMecBigLauncher";
-
 	Template.iPhysicsImpulse = 5;
 
 	Template.CanBeBuilt = false;
 	Template.TradingPostValue = 30;
 	Template.iRange = default.AdvMECArcher_Micromissiles_Range;
-
-
+	
 	// This controls how much arc this projectile may have and how many times it may bounce
 	Template.WeaponPrecomputedPathData.InitialPathTime = 1.5;
 	Template.WeaponPrecomputedPathData.MaxPathTime = 2.5;

@@ -25,6 +25,9 @@ Creds to the original authors here.
     <Content Include="Config\XComNarrative.ini">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Config\XComNoInspiration.ini">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Config\XComStrategyTuning.ini">
       <SubType>Content</SubType>
     </Content>
@@ -81,9 +84,6 @@ Creds to the original authors here.
     <Content Include="ContentForCook\LWAdvGunner.upk">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="ContentForCook\LWAdvMec.upk">
-      <SubType>Content</SubType>
-    </Content>
     <Content Include="ContentForCook\LWAdvMecArcher.upk">
       <SubType>Content</SubType>
     </Content>
@@ -127,6 +127,9 @@ Creds to the original authors here.
       <SubType>Content</SubType>
     </Content>
     <Content Include="ContentForCook\LW_Perk_Blazing_Pinions.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ContentForCook\LW_Perk_CloseCombatSpecialist.upk">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ContentForCook\LW_Perk_MutonM3.upk">
@@ -371,6 +374,9 @@ Creds to the original authors here.
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2EventListener_AlienCustomization.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\WOTC_AlienPack\Classes\X2EventListener_NoInspiration.uc">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2Item_LWAlienWeapons.uc">

@@ -1144,7 +1144,8 @@ static function X2CharacterTemplate CreateTemplate_AdvMec_M3()
 	CharTemplate.CharacterGroupName = 'AdventMEC';
 	CharTemplate.DefaultLoadout='AdvMECM3_Loadout';
 	CharTemplate.BehaviorClass=class'XGAIBehavior';
-	CharTemplate.strPawnArchetypes.AddItem("XComAlienPawn'LWAdvMec.Archetypes.GameUnit_AdvMEC_M3'");
+	CharTemplate.strPawnArchetypes.AddItem("LWAdvMecArcher.Archetypes.ARC_GameUnit_AdvMECM3");
+
 	Loot.ForceLevel=0;
 	Loot.LootTableName='AdvMEC_M2_BaseLoot';
 	CharTemplate.Loot.LootReferences.AddItem(Loot);
@@ -1214,12 +1215,17 @@ static function X2CharacterTemplate CreateTemplate_AdvMECArcher(name TemplateNam
 	CharTemplate.CharacterGroupName = 'AdventMEC';
 	
 	if (TemplateName == 'AdvMECArcherM1')
+		{
 		CharTemplate.DefaultLoadout='AdvMECArcherM1_Loadout';
+		CharTemplate.strPawnArchetypes.AddItem("LWAdvMecArcher.Archetypes.ARC_GameUnit_AdvMECArcher");
+		}
 	if (TemplateName == 'AdvMECArcherM2')
+		{
 		CharTemplate.DefaultLoadout='AdvMECArcherM2_Loadout';
+		CharTemplate.strPawnArchetypes.AddItem("LWAdvMecArcher.Archetypes.ARC_GameUnit_AdvMECArcherM2");
+		}
 
-	CharTemplate.BehaviorClass=class'XGAIBehavior';
-	CharTemplate.strPawnArchetypes.AddItem("LWAdvMecArcher.Archetypes.ARC_GameUnit_AdvMECArcher");
+	CharTemplate.BehaviorClass=class'XGAIBehavior';	
 	Loot.ForceLevel=0;
 	Loot.LootTableName='AdvMEC_M2_BaseLoot';  
 	CharTemplate.Loot.LootReferences.AddItem(Loot);
