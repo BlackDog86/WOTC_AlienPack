@@ -1,4 +1,4 @@
-class X2Effect_LockedOn extends X2Effect_Persistent config (LW_SoldierSkills);
+class X2Effect_LockedOn extends X2Effect_Persistent config (WOTC_AlienPack);
 
 var config int LOCKEDON_AIM_BONUS;
 var config int LOCKEDON_CRIT_BONUS;

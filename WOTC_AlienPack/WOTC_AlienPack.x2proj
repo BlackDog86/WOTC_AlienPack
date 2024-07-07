@@ -262,9 +262,6 @@ Creds to the original authors here.
     <Content Include="Src\WOTC_AlienPack\Classes\UIScreenListener_TacticalHUD_DroneMatinee.uc">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Src\WOTC_AlienPack\Classes\X2AbilityTarget_Single_CCS.uc">
-      <SubType>Content</SubType>
-    </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2Ability_LWAlienAbilities.uc">
       <SubType>Content</SubType>
     </Content>
@@ -317,6 +314,9 @@ Creds to the original authors here.
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_FireDiscipline.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_Guardian_BD.uc">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\X2Effect_HardTarget.uc">

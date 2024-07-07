@@ -58,6 +58,7 @@ function GetToHitModifiers(XComGameState_Effect EffectState, XComGameState_Unit 
 	local int NearestAllyTiles, AimBonus;
 
 	NearestAllyTiles = NearestAllyBeyondRange(Attacker);
+						
 	AimBonus = Max(default.LONEWOLF_AIM_BONUS - (default.LONEWOLF_MIN_DIST_TILES + 1 - NearestAllyTiles) * default.LONEWOLF_AIM_PER_TILE, 0);
 	if (AimBonus > 0)
 	{

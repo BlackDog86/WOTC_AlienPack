@@ -22,13 +22,17 @@ var config int AREA_SUPPRESSION_MAX_SHOTS;
 var config int AREA_SUPPRESSION_SHOT_AMMO_COST;
 var config float AREA_SUPPRESSION_RADIUS;
 var config int WILLTOSURVIVE_WILLBONUS;
-//var config int DAMAGE_CONTROL_DURATION; Fix the duration to suppress multiple flyovers
 var config int DAMAGE_CONTROL_BONUS_ARMOR;
-var config int CCS_AMMO_PER_SHOT;
 var config int AREA_SUPPRESSION_LW_SHOT_AIM_BONUS;
 var config int DANGER_ZONE_BONUS_RADIUS;
 var config int PERSONAL_SHIELD_XCOM_DURATION;
 var config int PERSONAL_SHIELD_XCOM_HP;
+var config int GUARDIAN_PROC_CHANCE;
+var config int SENTINEL_PROC_CHANCE;
+var config int CCS_AMMO_PER_SHOT;
+var config int CCS_RANGE;
+var config bool CCS_PROC_ON_OWN_TURN;
+var config int EVASIVE_DODGE_BONUS;
 
 static function array<X2DataTemplate> CreateTemplates()
 {
@@ -64,7 +68,69 @@ static function array<X2DataTemplate> CreateTemplates()
 	Templates.AddItem(AddLoneWolfAbility());
 	Templates.AddItem(CreateMutonElite_PersonalShield_XcomAbility());
 	Templates.AddItem(CreateMutonElite_ShieldPassive_Xcom());
+	Templates.AddItem(AddGuardianAbility());
+	Templates.AddItem(AddSentinelAbility());
 	return Templates;
+}
+
+static function X2AbilityTemplate AddGuardianAbility()
+{
+	local X2AbilityTemplate             Template;
+	local X2Effect_Guardian_BD          PersistentEffect;
+
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_Guardian');
+	Template.IconImage = "img:///UILibrary_PerkIcons.UIPerk_sentinel";
+	Template.AbilitySourceName = 'eAbilitySource_Perk';
+	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_NeverShow;
+	Template.Hostility = eHostility_Neutral;
+	Template.bIsPassive = true;
+
+	Template.AbilityToHitCalc = default.DeadEye;
+	Template.AbilityTargetStyle = default.SelfTarget;
+	Template.AbilityTriggers.AddItem(default.UnitPostBeginPlayTrigger);
+
+	PersistentEffect = new class'X2Effect_Guardian_BD';
+	PersistentEffect.BuildPersistentEffect(1, true, false);
+	PersistentEffect.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,, Template.AbilitySourceName);
+	PersistentEffect.ProcChance = default.GUARDIAN_PROC_CHANCE;
+	Template.AddTargetEffect(PersistentEffect);
+
+	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
+	// Note: no visualization on purpose!
+
+	Template.bCrossClassEligible = true;
+
+	return Template;
+}
+
+static function X2AbilityTemplate AddSentinelAbility()
+{
+	local X2AbilityTemplate             Template;
+	local X2Effect_Guardian_BD          PersistentEffect;
+
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_Sentinel');
+	Template.IconImage = "img:///UILibrary_PerkIcons.UIPerk_sentinel";
+	Template.AbilitySourceName = 'eAbilitySource_Perk';
+	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_NeverShow;
+	Template.Hostility = eHostility_Neutral;
+	Template.bIsPassive = true;
+
+	Template.AbilityToHitCalc = default.DeadEye;
+	Template.AbilityTargetStyle = default.SelfTarget;
+	Template.AbilityTriggers.AddItem(default.UnitPostBeginPlayTrigger);
+
+	PersistentEffect = new class'X2Effect_Guardian_BD';
+	PersistentEffect.BuildPersistentEffect(1, true, false);
+	PersistentEffect.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,, Template.AbilitySourceName);
+	PersistentEffect.ProcChance = default.SENTINEL_PROC_CHANCE;
+	Template.AddTargetEffect(PersistentEffect);
+
+	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
+	// Note: no visualization on purpose!
+
+	Template.bCrossClassEligible = true;
+
+	return Template;
 }
 
 static function X2AbilityTemplate AddLoneWolfAbility()
@@ -391,52 +457,48 @@ static function X2AbilityTemplate CloseCombatSpecialistAttack()
 {
 	local X2AbilityTemplate								Template;
 	local X2AbilityToHitCalc_StandardAim				ToHitCalc;
-	local X2AbilityTrigger_Event						Trigger;
 	local X2Effect_Persistent							CloseCombatSpecialistTargetEffect;
 	local X2Condition_UnitEffectsWithAbilitySource		CloseCombatSpecialistTargetCondition;
-	local X2AbilityTrigger_EventListener				EventListener;
-	local X2Condition_UnitProperty						SourceNotConcealedCondition;
+	local X2AbilityTrigger_EventListener				EventListener, Trigger;
+	local X2Condition_UnitProperty						SourceNotConcealedCondition, RangeCondition;
 	local X2Condition_UnitEffects						SuppressedCondition;
 	local X2Condition_Visibility						TargetVisibilityCondition;
 	local X2AbilityCost_Ammo							AmmoCost;
-	local X2AbilityTarget_Single_CCS					SingleTarget;
-	//local X2AbilityCooldown							Cooldown;	
+	local X2Condition_NotItsOwnTurn						OwnTurnCondition;
 
 	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_CloseCombatSpecialist_LWAttack');
 
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_NeverShow;
-	Template.IconImage = "img:///UILibrary_BD_LWAlienPack.LW_AbilityCloseCombatSpecialist";
+	Template.IconImage = "img:///UILibrary_LW_PerkPack.LW_AbilityCloseCombatSpecialist";
 	Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_CAPTAIN_PRIORITY;
-	Template.Hostility = eHostility_Defensive;
+	Template.Hostility = eHostility_Offensive;
 	Template.bCrossClassEligible = false;
 
 	ToHitCalc = new class'X2AbilityToHitCalc_StandardAim';
 	ToHitCalc.bReactionFire = true;
 	Template.AbilityToHitCalc = ToHitCalc;
-	 
-	//Cooldown = new class'X2AbilityCooldown';
-	//Cooldown.iNumTurns = 1;
-    //Template.AbilityCooldown = Cooldown;
 
 	AmmoCost = new class 'X2AbilityCost_Ammo';
 	AmmoCost.iAmmo = default.CCS_AMMO_PER_SHOT;
 	Template.AbilityCosts.AddItem(AmmoCost);
 	
 	//  trigger on movement
-	Trigger = new class'X2AbilityTrigger_Event';
-	Trigger.EventObserverClass = class'X2TacticalGameRuleset_MovementObserver';
-	Trigger.MethodName = 'InterruptGameState';
+	Trigger = new class'X2AbilityTrigger_EventListener';
+	Trigger.ListenerData.EventID = 'ObjectMoved';
+	Trigger.ListenerData.Deferral = ELD_OnStateSubmitted;
+	Trigger.ListenerData.Filter = eFilter_None;
+	Trigger.ListenerData.Priority = 85;
+	Trigger.ListenerData.EventFn = class'XComGameState_Ability'.static.TypicalOverwatchListener;
 	Template.AbilityTriggers.AddItem(Trigger);
-	Trigger = new class'X2AbilityTrigger_Event';
-	Trigger.EventObserverClass = class'X2TacticalGameRuleset_MovementObserver';
-	Trigger.MethodName = 'PostBuildGameState';
-	Template.AbilityTriggers.AddItem(Trigger);
-	//  trigger on an attack
-	Trigger = new class'X2AbilityTrigger_Event';
-	Trigger.EventObserverClass = class'X2TacticalGameRuleset_AttackObserver';
-	Trigger.MethodName = 'InterruptGameState';
-	Template.AbilityTriggers.AddItem(Trigger);
+	
+	EventListener = new class'X2AbilityTrigger_EventListener';
+	EventListener.ListenerData.EventID = 'AbilityActivated';
+	EventListener.ListenerData.Deferral = ELD_OnStateSubmitted;
+	EventListener.ListenerData.Filter = eFilter_None;
+	EventListener.ListenerData.Priority = 85;
+	EventListener.ListenerData.EventFn = class'XComGameState_Ability'.static.TypicalAttackListener;
+	Template.AbilityTriggers.AddItem(EventListener);
 
 	//  it may be the case that enemy movement caused a concealment break, which made Bladestorm applicable - attempt to trigger afterwards
 	EventListener = new class'X2AbilityTrigger_EventListener';
@@ -447,14 +509,29 @@ static function X2AbilityTemplate CloseCombatSpecialistAttack()
 	EventListener.ListenerData.Priority = 55;
 	Template.AbilityTriggers.AddItem(EventListener);
 	
-	Template.AbilityTargetConditions.AddItem(default.LivingHostileUnitDisallowMindControlProperty);
+	// Target Conditions:
 	TargetVisibilityCondition = new class'X2Condition_Visibility';
 	TargetVisibilityCondition.bRequireGameplayVisible = true;
 	TargetVisibilityCondition.bRequireBasicVisibility = true;
 	TargetVisibilityCondition.bDisablePeeksOnMovement = true; //Don't use peek tiles for over watch shots	
 	Template.AbilityTargetConditions.AddItem(TargetVisibilityCondition);
+
+	Template.AbilityTargetConditions.AddItem(default.LivingHostileUnitDisallowMindControlProperty);
 	Template.AbilityTargetConditions.AddItem(class'X2Ability_DefaultAbilitySet'.static.OverwatchTargetEffectsCondition());
 
+	RangeCondition = new class'X2Condition_UnitProperty';	
+	RangeCondition.RequireWithinRange = true;
+	RangeCondition.ExcludeCivilian = true;
+	RangeCondition.WithinRange = default.CCS_RANGE * 96.0; // multiplier for tiles to unreal units.
+	Template.AbilityTargetConditions.AddItem(RangeCondition);
+
+	CloseCombatSpecialistTargetCondition = new class'X2Condition_UnitEffectsWithAbilitySource';
+	CloseCombatSpecialistTargetCondition.AddExcludeEffect('CloseCombatSpecialistTarget', 'AA_DuplicateEffectIgnored');
+	Template.AbilityTargetConditions.AddItem(CloseCombatSpecialistTargetCondition);
+
+	Template.AbilityTargetStyle = default.simpleSingleTarget;
+
+	// Shooter Conditions:
 	Template.AbilityShooterConditions.AddItem(default.LivingShooterProperty);	
 	Template.AddShooterEffectExclusions();
 
@@ -468,10 +545,13 @@ static function X2AbilityTemplate CloseCombatSpecialistAttack()
 	SuppressedCondition.AddExcludeEffect(class'X2Effect_AreaSuppression'.default.EffectName, 'AA_UnitIsSuppressed');
 	Template.AbilityShooterConditions.AddItem(SuppressedCondition);
 
-	SingleTarget = new class 'X2AbilityTarget_Single_CCS';
-	//SingleTarget.OnlyIncludeTargetsInsideWeaponRange = true;
-	Template.AbilityTargetStyle = SingleTarget;
-
+	if(!default.CCS_PROC_ON_OWN_TURN)
+	{
+		OwnTurnCondition = new class'X2Condition_NotItsOwnTurn';
+		Template.AbilityShooterConditions.AddItem(OwnTurnCondition);
+	}
+		
+	// Effects:
 	Template.bAllowBonusWeaponEffects = true;
 	Template.AddTargetEffect(class 'X2Ability_GrenadierAbilitySet'.static.ShredderDamageEffect());
 
@@ -483,10 +563,6 @@ static function X2AbilityTemplate CloseCombatSpecialistAttack()
 	CloseCombatSpecialistTargetEffect.bApplyOnMiss = true; //Only one chance, even if you miss (prevents crazy flailing counter-attack chains with a Muton, for example)
 	Template.AddTargetEffect(CloseCombatSpecialistTargetEffect);
 	
-	CloseCombatSpecialistTargetCondition = new class'X2Condition_UnitEffectsWithAbilitySource';
-	CloseCombatSpecialistTargetCondition.AddExcludeEffect('CloseCombatSpecialistTarget', 'AA_DuplicateEffectIgnored');
-	Template.AbilityTargetConditions.AddItem(CloseCombatSpecialistTargetCondition);
-
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
 	Template.BuildVisualizationFn = TypicalAbility_BuildVisualization;
 	Template.bShowActivation = true;
@@ -497,10 +573,9 @@ static function X2AbilityTemplate CloseCombatSpecialistAttack()
 
 	return Template;
 }
-
 //Must be static, because it will be called with a different object (an XComGameState_Ability)
 //Used to trigger Bladestorm when the source's concealment is broken by a unit in melee range (the regular movement triggers get called too soon)
-static function EventListenerReturn CloseCombatSpecialistConcealmentListener(Object EventData, Object EventSource, XComGameState GameState, Name EventID, Object CallbackData)
+static final function EventListenerReturn CloseCombatSpecialistConcealmentListener(Object EventData, Object EventSource, XComGameState GameState, Name EventID, Object CallbackData)
 {
 	local XComGameStateContext_Ability AbilityContext;
 	local XComGameState_Unit ConcealmentBrokenUnit;
@@ -603,7 +678,7 @@ static function X2AbilityTemplate AddEvasiveAbility()
 	DodgeBonus = new class'X2Effect_PersistentStatChange';
 	DodgeBonus.BuildPersistentEffect(1,true,true,false);
 	DodgeBonus.SetDisplayInfo (ePerkBuff_Passive,Template.LocFriendlyName, Template.GetMyHelpText(), Template.IconImage,,, Template.AbilitySourceName); 
-	DodgeBonus.AddPersistentStatChange (eStat_Dodge, float (100));
+	DodgeBonus.AddPersistentStatChange (eStat_Dodge, float (default.EVASIVE_DODGE_BONUS));
 	DodgeBonus.EffectName='EvasiveEffect';
 	Template.AddTargetEffect(DodgeBonus);
 
@@ -854,6 +929,7 @@ static function X2AbilityTemplate AddLightEmUpAbility()
 	Template.bDisplayInUITacticalText = true;
 
 	KnockbackEffect = new class'X2Effect_Knockback';
+	KnockbackEffect.OnlyOnDeath = false;
 	KnockbackEffect.KnockbackDistance = 2;
 	Template.AddTargetEffect(KnockbackEffect);
 
@@ -1335,4 +1411,4 @@ simulated function PersonalShield_BuildVisualization(XComGameState VisualizeGame
 	PlayAnimationAction = X2Action_PlayAnimation(class'X2Action_PlayAnimation'.static.AddToVisualizationTree(ActionMetadata, Context, false, ActionMetadata.LastActionAdded));
 	PlayAnimationAction.Params.AnimName = 'HL_SignalHalt';
 
-	}
+}

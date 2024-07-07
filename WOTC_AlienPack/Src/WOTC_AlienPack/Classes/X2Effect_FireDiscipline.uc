@@ -4,7 +4,7 @@
 //  PURPOSE: Adds effect for FireDiscipline ability
 //--------------------------------------------------------------------------------------- 
 class X2Effect_FireDiscipline extends X2Effect_LWOfficerCommandAura
-	config (LW_OfficerPack);
+	config (WOTC_AlienPack);
 
 var config int FIREDISCIPLINE_REACTIONFIRE_BONUS;
 

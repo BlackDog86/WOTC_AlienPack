@@ -144,26 +144,286 @@ static function bool AbilityTagExpandHandler_CH(string InString, out string OutS
 				return true;
 			}
 			OutString = AbilityTemplate.LocDefaultPrimaryWeapon;
-			return true;        
-		case 'DEFILADE_DEFENSE_BONUS':
-			OutString = string(class'X2Effect_Defilade'.default.DEFILADE_DEFENSE_BONUS);
-			return true;	
-		case 'FIREDISCIPLINE_REACTIONFIRE_BONUS':
-			OutString = string(class'X2Effect_FireDiscipline'.default.FIREDISCIPLINE_REACTIONFIRE_BONUS);
-			return true;	
-		case 'LONEWOLF_MIN_BONUS_TILES':
-			OutString = string(class'X2Effect_LoneWolf'.default.LONEWOLF_MIN_DIST_TILES - 
-					(class'X2Effect_LoneWolf'.default.LONEWOLF_AIM_BONUS / class'X2Effect_LoneWolf'.default.LONEWOLF_AIM_PER_TILE) + 1);
-			return true;
-		case 'LONEWOLF_AIM_BONUS':
-			OutString = string(class'X2Effect_LoneWolf'.default.LONEWOLF_AIM_BONUS);
-			return true;
-		case 'LONEWOLF_DEF_BONUS':
-			OutString = string(class'X2Effect_LoneWolf'.default.LONEWOLF_DEF_BONUS);
-			return true;
-		case 'LONEWOLF_MIN_DIST_TILES':
-			OutString = string(class'X2Effect_LoneWolf'.default.LONEWOLF_MIN_DIST_TILES);				
-			return true;
+			return true;     
+			   
+	// ABILITY EXPAND HERE:
+
+	case 'WARCRY_RADIUS_METERS':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.WARCRY_RADIUS_METERS);
+		return true;
+	case 'WARCRY_DURATION':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.WARCRY_DURATION);
+		return true;
+	case 'WARCRY_COOLDOWN':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.WARCRY_COOLDOWN);
+		return true;
+	case 'WARCRY_ACTIONCOST':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.WARCRY_ACTIONCOST);
+		return true;
+	case 'WARCRY_MUTON_OFFENSE_BONUS':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.WARCRY_MUTON_OFFENSE_BONUS);
+		return true;
+	case 'WARCRY_MUTON_WILL_BONUS':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.WARCRY_MUTON_WILL_BONUS);
+		return true;
+	case 'WARCRY_MUTON_MOBILITY_BONUS':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.WARCRY_MUTON_MOBILITY_BONUS);
+		return true;
+	case 'WARCRY_OTHER_OFFENSE_BONUS':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.WARCRY_OTHER_OFFENSE_BONUS);
+		return true;
+	case 'WARCRY_OTHER_WILL_BONUS':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.WARCRY_OTHER_WILL_BONUS);
+		return true;
+	case 'WARCRY_OTHER_MOBILITY_BONUS':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.WARCRY_OTHER_MOBILITY_BONUS);
+		return true;
+	case 'BAYONETCHARGE_COOLDOWN':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.BAYONETCHARGE_COOLDOWN);
+		return true;
+	case 'BAYONETCHARGE_PENALTY_DURATION':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.BAYONETCHARGE_PENALTY_DURATION);
+		return true;
+	case 'BAYONETCHARGE_DEFENSE_PENALTY':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.BAYONETCHARGE_DEFENSE_PENALTY);
+		return true;
+	case 'PERSONAL_SHIELD_ACTION_COST':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.PERSONAL_SHIELD_ACTION_COST);
+		return true;
+	case 'PERSONAL_SHIELD_COOLDOWN':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.PERSONAL_SHIELD_COOLDOWN);
+		return true;
+	case 'PERSONAL_SHIELD_DURATION':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.PERSONAL_SHIELD_DURATION);
+		return true;
+	case 'PERSONAL_SHIELD_HP':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.PERSONAL_SHIELD_HP);
+		return true;
+	case 'MASS_MINDSPIN_LW_CONE_END_DIAMETER':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.MASS_MINDSPIN_LW_CONE_END_DIAMETER);
+		return true;
+	case 'MASS_MINDSPIN_LW_CONE_LENGTH':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.MASS_MINDSPIN_LW_CONE_LENGTH);
+		return true;
+	case 'MASS_MINDSPIN_TILES_RADIUS':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.MASS_MINDSPIN_TILES_RADIUS);
+		return true;
+	case 'MASS_REANIMATION_LW_MIN_ACTION_COST':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.MASS_REANIMATION_LW_MIN_ACTION_COST);
+		return true;
+	case 'MASS_REANIMATION_LW_LOCAL_COOLDOWN':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.MASS_REANIMATION_LW_LOCAL_COOLDOWN);
+		return true;
+	case 'MASS_REANIMATION_LW_GLOBAL_COOLDOWN':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.MASS_REANIMATION_LW_GLOBAL_COOLDOWN);
+		return true;
+	case 'MASS_REANIMATION_LW_RADIUS_METERS':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.MASS_REANIMATION_LW_RADIUS_METERS);
+		return true;
+	case 'MASS_REANIMATION_LW_RANGE_METERS':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.MASS_REANIMATION_LW_RANGE_METERS);
+		return true;
+	case 'DRONE_REPAIR_ACTION_COST':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.DRONE_REPAIR_ACTION_COST);
+		return true;
+	case 'DRONE_STUN_HIT_MODIFIER':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.DRONE_STUN_HIT_MODIFIER);
+		return true;
+	case 'DRONE_STUN_ACTION_POINT_DAMAGE':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.DRONE_STUN_ACTION_POINT_DAMAGE);
+		return true;
+	case 'STUNNER_COOLDOWN':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.STUNNER_COOLDOWN);
+		return true;
+	case 'STANDALONE_PINIONS_LOCAL_COOLDOWN':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.STANDALONE_PINIONS_LOCAL_COOLDOWN);
+		return true;
+	case 'STANDALONE_PINIONS_GLOBAL_COOLDOWN':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.STANDALONE_PINIONS_GLOBAL_COOLDOWN);
+		return true;
+	case 'STANDALONE_PINIONS_TARGETING_AREA_RADIUS':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.STANDALONE_PINIONS_TARGETING_AREA_RADIUS);
+		return true;
+	case 'STANDALONE_PINIONS_NUM_TARGETS':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.STANDALONE_PINIONS_NUM_TARGETS);
+		return true;
+	case 'STANDALONE_PINIONS_SELECTION_RANGE':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.STANDALONE_PINIONS_SELECTION_RANGE);
+		return true;
+	case 'STANDALONE_PINIONS_IMPACT_RADIUS_METERS':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.STANDALONE_PINIONS_IMPACT_RADIUS_METERS);
+		return true;
+	case 'CHRYSSALID_SOLDIER_SLASH_BONUS_DAMAGE':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.CHRYSSALID_SOLDIER_SLASH_BONUS_DAMAGE);
+		return true;
+	case 'VIPERM2M3_ADDITIONAL_POISON_DAMAGE':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.VIPERM2M3_ADDITIONAL_POISON_DAMAGE);
+		return true;
+	case 'SIDEWINDER_ADDITIONAL_POISON_DAMAGE':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.SIDEWINDER_ADDITIONAL_POISON_DAMAGE);
+		return true;
+	case 'NAJA_ADDITIONAL_POISON_DAMAGE':
+		OutString = string(class'X2Ability_LWAlienAbilities'.default.NAJA_ADDITIONAL_POISON_DAMAGE);
+		return true;
+	case 'AREA_SUPPRESSION_AMMO_COS':
+		OutString = string(class'X2Ability_PPAlienAbilities'.default.AREA_SUPPRESSION_AMMO_COST);
+		return true;
+	case 'AREA_SUPPRESSION_MAX_SHOTS':
+		OutString = string(class'X2Ability_PPAlienAbilities'.default.AREA_SUPPRESSION_MAX_SHOTS);
+		return true;
+	case 'AREA_SUPPRESSION_SHOT_AMMO_COST':
+		OutString = string(class'X2Ability_PPAlienAbilities'.default.AREA_SUPPRESSION_SHOT_AMMO_COST);
+		return true;
+	case 'AREA_SUPPRESSION_RADIUS':
+		OutString = string(class'X2Ability_PPAlienAbilities'.default.AREA_SUPPRESSION_RADIUS);
+		return true;
+	case 'WILLTOSURVIVE_WILLBONUS':
+		OutString = string(class'X2Ability_PPAlienAbilities'.default.WILLTOSURVIVE_WILLBONUS);
+		return true;
+	case 'DAMAGE_CONTROL_BONUS_ARMOR':
+		OutString = string(class'X2Ability_PPAlienAbilities'.default.DAMAGE_CONTROL_BONUS_ARMOR);
+		return true;
+	case 'AREA_SUPPRESSION_LW_SHOT_AIM_BONUS':
+		OutString = string(class'X2Ability_PPAlienAbilities'.default.AREA_SUPPRESSION_LW_SHOT_AIM_BONUS);
+		return true;
+	case 'DANGER_ZONE_BONUS_RADIUS':
+		OutString = string(class'X2Ability_PPAlienAbilities'.default.DANGER_ZONE_BONUS_RADIUS);
+		return true;
+	case 'PERSONAL_SHIELD_XCOM_DURATION':
+		OutString = string(class'X2Ability_PPAlienAbilities'.default.PERSONAL_SHIELD_XCOM_DURATION);
+		return true;
+	case 'PERSONAL_SHIELD_XCOM_HP':
+		OutString = string(class'X2Ability_PPAlienAbilities'.default.PERSONAL_SHIELD_XCOM_HP);
+		return true;
+	case 'GUARDIAN_PROC_CHANCE':
+		OutString = string(class'X2Ability_PPAlienAbilities'.default.GUARDIAN_PROC_CHANCE);
+		return true;
+	case 'SENTINEL_PROC_CHANCE':
+		OutString = string(class'X2Ability_PPAlienAbilities'.default.SENTINEL_PROC_CHANCE);
+		return true;
+	case 'CCS_AMMO_PER_SHOT':
+		OutString = string(class'X2Ability_PPAlienAbilities'.default.CCS_AMMO_PER_SHOT);
+		return true;
+	case 'CCS_RANGE':
+		OutString = string(class'X2Ability_PPAlienAbilities'.default.CCS_RANGE);
+		return true;
+	case 'CCS_PROC_ON_OWN_TURN':
+		OutString = string(class'X2Ability_PPAlienAbilities'.default.CCS_PROC_ON_OWN_TURN);
+		return true;
+	case 'AGGRESSION_CRIT_BONUS_PER_ENEMY':
+		OutString = string(class'X2Effect_Aggression'.default.AGGRESSION_CRIT_BONUS_PER_ENEMY);
+		return true;
+	case 'AGGRESSION_MAX_CRIT_BONUS':
+		OutString = string(class'X2Effect_Aggression'.default.AGGRESSION_MAX_CRIT_BONUS);
+		return true;
+	case 'AGG_SQUADSIGHT_ENEMIES_APPLY':
+		OutString = string(class'X2Effect_Aggression'.default.AGG_SQUADSIGHT_ENEMIES_APPLY);
+		return true;
+	case 'BEO_BONUS_CRIT_DAMAGE_PER_ENEMY':
+		OutString = string(class'X2Effect_BringEmOn'.default.BEO_BONUS_CRIT_DAMAGE_PER_ENEMY);
+		return true;
+	case 'BEO_MAX_BONUS_CRIT_DAMAGE':
+		OutString = string(class'X2Effect_BringEmOn'.default.BEO_MAX_BONUS_CRIT_DAMAGE);
+		return true;
+	case 'BEO_SQUADSIGHT_ENEMIES_APPLY':
+		OutString = string(class'X2Effect_BringEmOn'.default.BEO_SQUADSIGHT_ENEMIES_APPLY);
+		return true;
+	case 'APPLIES_TO_EXPLOSIVES':
+		OutString = string(class'X2Effect_BringEmOn'.default.APPLIES_TO_EXPLOSIVES);
+		return true;
+	case 'CRITBOOST':
+		OutString = string(class'X2Effect_CloseandPersonal'.default.CRITBOOST[0]);
+		return true;
+	case 'DEFILADE_DEFENSE_BONUS':
+		OutString = string(class'X2Effect_Defilade'.default.DEFILADE_DEFENSE_BONUS);
+		return true;
+	case 'HT_DODGE_BONUS_PER_ENEMY':
+		OutString = string(class'X2Effect_HardTarget'.default.HT_DODGE_BONUS_PER_ENEMY);
+		return true;
+	case 'HT_MAX_DODGE_BONUS':
+		OutString = string(class'X2Effect_HardTarget'.default.HT_MAX_DODGE_BONUS);
+		return true;
+	case 'HT_SQUADSIGHT_ENEMIES_APPLY':
+		OutString = string(class'X2Effect_HardTarget'.default.HT_SQUADSIGHT_ENEMIES_APPLY);
+		return true;
+	case 'AREA_SUPPRESSION_SHOT_AMMO_COST':
+		OutString = string(class'X2Ability_PPAlienAbilities'.default.AREA_SUPPRESSION_SHOT_AMMO_COST);
+		return true;
+	case 'DGG_AIM_BONUS':
+		OutString = string(class'X2Effect_DamnGoodGround'.default.DGG_AIM_BONUS);
+		return true;
+	case 'DGG_DEF_BONUS':
+		OutString = string(class'X2Effect_DamnGoodGround'.default.DGG_DEF_BONUS);
+		return true;
+	case 'DP_AIM_BONUS':
+		OutString = string(class'X2Effect_DepthPerception'.default.DP_AIM_BONUS);
+		return true;
+	case 'DP_ANTIDODGE_BONUS':
+		OutString = string(class'X2Effect_DepthPerception'.default.DP_ANTIDODGE_BONUS);
+		return true;
+	case 'EXECUTIONER_AIM_BONUS':
+		OutString = string(class'X2Effect_Executioner_AP'.default.EXECUTIONER_AIM_BONUS);
+		return true;
+	case 'EXECUTIONER_CRIT_BONUS':
+		OutString = string(class'X2Effect_Executioner_AP'.default.EXECUTIONER_CRIT_BONUS);
+		return true;
+	case 'INFIGHTER_DODGE_BONUS':
+		OutString = string(class'X2Effect_Infighter'.default.INFIGHTER_DODGE_BONUS);
+		return true;
+	case 'INFIGHTER_MAX_TILES':
+		OutString = string(class'X2Effect_Infighter'.default.INFIGHTER_MAX_TILES);
+		return true;
+	case 'LR_LW_FIRST_SHOT_PENALTY':
+		OutString = string(class'X2Effect_LightningReflexes_LW'.default.LR_LW_FIRST_SHOT_PENALTY);
+		return true;
+	case 'LR_LW_PENALTY_REDUCTION_PER_SHOT':
+		OutString = string(class'X2Effect_LightningReflexes_LW'.default.LR_LW_PENALTY_REDUCTION_PER_SHOT);
+		return true;
+	case 'LOCKEDON_AIM_BONUS':
+		OutString = string(class'X2Effect_LockedOn'.default.LOCKEDON_AIM_BONUS);
+		return true;
+	case 'LOCKEDON_CRIT_BONUS':
+		OutString = string(class'X2Effect_LockedOn'.default.LOCKEDON_CRIT_BONUS);
+		return true;
+	case 'TACTICAL_SENSE_DEF_BONUS_PER_ENEMY':
+		OutString = string(class'X2Effect_TacticalSense'.default.TACTICAL_SENSE_DEF_BONUS_PER_ENEMY);
+		return true;
+	case 'TACTICAL_SENSE_MAX_DEF_BONUS':
+		OutString = string(class'X2Effect_TacticalSense'.default.TACTICAL_SENSE_MAX_DEF_BONUS);
+		return true;
+	case 'TF_USES_PER_TURN':
+		OutString = string(class'X2Effect_TraverseFire'.default.TF_USES_PER_TURN);
+		return true;
+	case 'LONEWOLF_AIM_PER_TILE':
+		OutString = string(class'X2Effect_LoneWolf'.default.LONEWOLF_AIM_PER_TILE);
+		return true;
+	case 'LONEWOLF_DEF_PER_TILE':
+		OutString = string(class'X2Effect_LoneWolf'.default.LONEWOLF_DEF_PER_TILE);
+		return true;
+	case 'LONEWOLF_AIM_BONUS':
+		OutString = string(class'X2Effect_LoneWolf'.default.LONEWOLF_AIM_BONUS);
+		return true;
+	case 'LONEWOLF_DEF_BONUS':
+		OutString = string(class'X2Effect_LoneWolf'.default.LONEWOLF_DEF_BONUS);
+		return true;
+	case 'LONEWOLF_CRIT_BONUS':
+		OutString = string(class'X2Effect_LoneWolf'.default.LONEWOLF_CRIT_BONUS);
+		return true;
+	case 'LONEWOLF_MIN_DIST_TILES':
+		OutString = string(class'X2Effect_LoneWolf'.default.LONEWOLF_MIN_DIST_TILES);
+		return true;
+	case 'W2S_HIGH_COVER_ARMOR_BONUS':
+		OutString = string(class'X2Effect_WilltoSurvive'.default.W2S_HIGH_COVER_ARMOR_BONUS);
+		return true;
+	case 'W2S_LOW_COVER_ARMOR_BONUS':
+		OutString = string(class'X2Effect_WilltoSurvive'.default.W2S_LOW_COVER_ARMOR_BONUS);
+		return true;
+	case 'FIREDISCIPLINE_REACTIONFIRE_BONUS':
+		OutString = string(class'X2Effect_FireDiscipline'.default.FIREDISCIPLINE_REACTIONFIRE_BONUS);
+		return true;
+	case 'EVASIVE_DODGE_BONUS':
+		OutString = string(class'X2Ability_PPAlienAbilities'.default.EVASIVE_DODGE_BONUS);
+		return true;
 		default:
             return false;
     }

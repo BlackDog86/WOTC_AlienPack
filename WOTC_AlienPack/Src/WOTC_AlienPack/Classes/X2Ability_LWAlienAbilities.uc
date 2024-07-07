@@ -16,9 +16,9 @@ var config int WARCRY_MUTON_MOBILITY_BONUS;
 var config int WARCRY_OTHER_OFFENSE_BONUS;
 var config int WARCRY_OTHER_WILL_BONUS;
 var config int WARCRY_OTHER_MOBILITY_BONUS;
-var config int BAYONET_COOLDOWN;
 var config int BAYONETCHARGE_PENALTY_DURATION;
 var config int BAYONETCHARGE_DEFENSE_PENALTY;
+var config int BAYONETCHARGE_COOLDOWN;
 var config array <string> WARCRY_MUTON_BONUS;
 var config array <string> WARCRY_OTHER_BONUS;
 var config float MASS_MINDSPIN_TILES_RADIUS;
@@ -55,6 +55,9 @@ var config int STANDALONE_PINIONS_IMPACT_RADIUS_METERS;
 var config int VIPERM2M3_ADDITIONAL_POISON_DAMAGE;
 var config int SIDEWINDER_ADDITIONAL_POISON_DAMAGE;
 var config int NAJA_ADDITIONAL_POISON_DAMAGE;
+
+var config int SENTRYM2_UNDER_PRESSURE_BONUS;
+var config int SENTRYM3_UNDER_PRESSURE_BONUS;
 
 var localized string strBayonetChargePenalty;
 
@@ -120,7 +123,7 @@ static function X2AbilityTemplate CreateMutonM2_LWAbility_BayonetCharge()
 	local X2AbilityCost_ActionPoints		ActionPointCost;
 	local X2AbilityToHitCalc_StandardMelee	StandardMelee;
 	local X2Effect_ApplyWeaponDamage		WeaponDamageEffect;
-	
+	local X2AbilityCooldown					Cooldown;
 	local X2Effect_ImmediateAbilityActivation ImpairingAbilityEffect;
 	local X2Effect_PersistentStatChange		StatEffect;
 	local XGParamTag						kTag;
@@ -130,6 +133,10 @@ static function X2AbilityTemplate CreateMutonM2_LWAbility_BayonetCharge()
 	Template.AbilitySourceName = 'eAbilitySource_Standard';
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_AlwaysShow;
 	Template.IconImage = "img:///Texture2D'UILibrary_BD_LWAlienPack.LWCenturion_AbilityBayonetCharge64'";
+	
+	Cooldown = new class'X2AbilityCooldown';
+	Cooldown.iNumTurns = default.BAYONETCHARGE_COOLDOWN;
+	Template.AbilityCooldown = Cooldown;
 
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
 	Template.BuildVisualizationFn = TypicalAbility_BuildVisualization;
@@ -1146,10 +1153,12 @@ static function X2AbilityTemplate BD_RocketLauncherAbility()
 	local X2AbilityCost_Ammo                AmmoCost;
 	local X2AbilityCost_ActionPoints        ActionPointCost;
 	local X2Effect_ApplyWeaponDamage        WeaponDamageEffect;
+	local X2Effect_Knockback				KnockBackEffect;
 	local X2AbilityTarget_Cursor            CursorTarget;
 	local X2AbilityMultiTarget_Radius       RadiusMultiTarget;
 	local X2Condition_UnitProperty          UnitPropertyCondition;
 	local X2AbilityToHitCalc_StandardAim    StandardAim;
+
 
 	`CREATE_X2ABILITY_TEMPLATE(Template, 'BD_RocketLauncher');
 	
@@ -1168,6 +1177,11 @@ static function X2AbilityTemplate BD_RocketLauncherAbility()
 	WeaponDamageEffect.bExplosiveDamage = true;
 	Template.AddMultiTargetEffect(WeaponDamageEffect);
 	
+	KnockbackEffect = new class'X2Effect_Knockback';
+    KnockbackEffect.KnockbackDistance = 2;
+    KnockbackEffect.OnlyOnDeath = false;
+	Template.AddMultiTargetEffect(KnockbackEffect);
+
 	CursorTarget = new class'X2AbilityTarget_Cursor';
 	CursorTarget.bRestrictToWeaponRange = true;
 	Template.AbilityTargetStyle = CursorTarget;
@@ -1463,6 +1477,75 @@ static function X2DataTemplate CreateLostBladestormAttack()
 
 	NotItsOwnTurnCondition = new class'X2Condition_NotItsOwnTurn';
 	Template.AbilityShooterConditions.AddItem(NotItsOwnTurnCondition);
+
+	return Template;
+}
+
+
+static function X2AbilityTemplate CoolUnderABitOfPressure()
+{
+	local X2AbilityTemplate						Template;
+	local X2AbilityTargetStyle                  TargetStyle;
+	local X2AbilityTrigger						Trigger;
+	local X2Effect_ModifyReactionFire           ReactionFire;
+
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'CoolUnderABitOfPressure');
+	Template.IconImage = "img:///UILibrary_PerkIcons.UIPerk_coolpressure";
+
+	Template.AbilitySourceName = 'eAbilitySource_Perk';
+	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
+	Template.Hostility = eHostility_Neutral;
+
+	Template.AbilityToHitCalc = default.DeadEye;
+
+	TargetStyle = new class'X2AbilityTarget_Self';
+	Template.AbilityTargetStyle = TargetStyle;
+
+	Trigger = new class'X2AbilityTrigger_UnitPostBeginPlay';
+	Template.AbilityTriggers.AddItem(Trigger);
+
+	ReactionFire = new class'X2Effect_ModifyReactionFire';
+	ReactionFire.ReactionModifier = default.SENTRYM2_UNDER_PRESSURE_BONUS;
+	ReactionFire.BuildPersistentEffect(1, true, true, true);
+	ReactionFire.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage,,,Template.AbilitySourceName);
+	Template.AddTargetEffect(ReactionFire);
+
+	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
+	//  NOTE: No visualization on purpose!
+
+	return Template;
+}
+
+static function X2AbilityTemplate CoolUnderSomePressure()
+{
+	local X2AbilityTemplate						Template;
+	local X2AbilityTargetStyle                  TargetStyle;
+	local X2AbilityTrigger						Trigger;
+	local X2Effect_ModifyReactionFire           ReactionFire;
+
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'CoolUnderSomePressure');
+	Template.IconImage = "img:///UILibrary_PerkIcons.UIPerk_coolpressure";
+
+	Template.AbilitySourceName = 'eAbilitySource_Perk';
+	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
+	Template.Hostility = eHostility_Neutral;
+
+	Template.AbilityToHitCalc = default.DeadEye;
+
+	TargetStyle = new class'X2AbilityTarget_Self';
+	Template.AbilityTargetStyle = TargetStyle;
+
+	Trigger = new class'X2AbilityTrigger_UnitPostBeginPlay';
+	Template.AbilityTriggers.AddItem(Trigger);
+
+	ReactionFire = new class'X2Effect_ModifyReactionFire';
+	ReactionFire.ReactionModifier = default.SENTRYM3_UNDER_PRESSURE_BONUS;
+	ReactionFire.BuildPersistentEffect(1, true, true, true);
+	ReactionFire.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage,,,Template.AbilitySourceName);
+	Template.AddTargetEffect(ReactionFire);
+
+	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
+	//  NOTE: No visualization on purpose!
 
 	return Template;
 }

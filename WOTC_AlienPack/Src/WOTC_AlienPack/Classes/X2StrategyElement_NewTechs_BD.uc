@@ -1,10 +1,12 @@
 class X2StrategyElement_NewTechs_BD extends X2StrategyElement config(GameData);
 
-var config int MIN_DISASSEMBLY_INTEL;
-var config int VARIABLE_DISASSEMBLY_INTEL;
+var config int DISASSEMBLY_INTEL_MIN;
+var config int DISASSEMBLY_INTEL_VARIABLE;
+var config int DISASSEMBLY_NUMBER_OF_DRONES;
 
-//var config int MIN_DISASSEMBLY_SUPPLIES;
-//var config int VARIABLE_SUPPLIES_AMOUNT;
+// Variables for granting supplies - see code for why these are commented out
+//var config int DISASSEMBLY_SUPPLIES_VARIABLE;
+//var config int DISASSEMBLY_SUPPLIES_MIN;
 
 
 static function array<X2DataTemplate> CreateTemplates()
@@ -65,7 +67,7 @@ static function X2DataTemplate DisAssembleDrones()
 
 	// Cost
 	Artifacts.ItemTemplateName = 'CorpseDrone';
-	Artifacts.Quantity = 3;
+	Artifacts.Quantity = default.DISASSEMBLY_NUMBER_OF_DRONES;
 	Template.Cost.ArtifactCosts.AddItem(Artifacts);
 		
 	return Template;
@@ -95,8 +97,9 @@ static function DisAssembleDroneTechCompleted(XComGameState NewGameState, XComGa
 	`log("Still no XCOMHQ found, why?");
 	}
 
-	IntelAmount = Max(1,`SYNC_RAND_STATIC(default.VARIABLE_DISASSEMBLY_INTEL) + default.MIN_DISASSEMBLY_INTEL);
-	//SuppliesAmount = Max(1, `SYNC_RAND_STATIC(default.VARIABLE_SUPPLIES_AMOUNT) + default.MIN_DISASSEMBLY_SUPPLIES);
+	IntelAmount = Max(1,`SYNC_RAND_STATIC(default.DISASSEMBLY_INTEL_VARIABLE) + default.DISASSEMBLY_INTEL_MIN);
+	// This was intended to grant supplies as well as intel but a UI issue prevented the granted supplies being shown - could probably be fixed later if asked for
+	//SuppliesAmount = Max(1, `SYNC_RAND_STATIC(default.DISASSEMBLY_SUPPLIES_VARIABLE) + default.DISASSEMBLY_SUPPLIES_MIN);
 	
 	TechID = TechState.ObjectID;
 	TechState = XComGameState_Tech(NewGameState.GetGameStateForObjectID(TechID));

@@ -20,7 +20,7 @@ BriefSummary="These aliens sit atop the Muton internal hierarchy. Unlike the Cen
 strBD_Bayonetcharge_LWPenalty="Centurion suffers <XGParam:IntValue1/> Defense for <XGParam:IntValue0/> turns."
 
 [MutonM2_LW X2CharacterTemplate]
-strCharacterName="Muton Centurion"
+strCharacterName="Advanced Muton"
 
 [MutonM2_LW_Wpn X2WeaponTemplate]
 FriendlyName="Centurion Rifle"
@@ -46,7 +46,7 @@ FriendlyName="Bayonet"
 ;;;;;;;;;;;;;;;;;;;;;;;;;; MutonM3_LW ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [MutonM3_LW X2CharacterTemplate]
-strCharacterName="Muton Elite"
+strCharacterName="Elite Muton"
 
 [MutonM3_LW_Wpn X2WeaponTemplate]
 FriendlyName="Elite Plasma Cannon"
@@ -218,7 +218,7 @@ AbilityDescName="cannon"
 ; End translation
 
 [AdvGunnerM2 X2CharacterTemplate]
-strCharacterName="ADVENT Heavy Gunner"
+strCharacterName="ADVENT Advanced Gunner"
 
 [AdvGunnerM2_WPN X2WeaponTemplate]
 FriendlyName="AutoMag"
@@ -248,7 +248,7 @@ AbilityDescName="mag rifle"
 ; End translation
 
 [AdvSentryM2 X2CharacterTemplate]
-strCharacterName="ADVENT Guardian"
+strCharacterName="ADVENT Advanced Sentry"
 
 [AdvSentryM2_WPN X2WeaponTemplate]
 FriendlyName="ADVENT Mag Rifle"
@@ -257,7 +257,7 @@ AbilityDescName="mag rifle"
 ; End translation
 
 [AdvSentryM3 X2CharacterTemplate]
-strCharacterName="ADVENT Sentinel"
+strCharacterName="ADVENT Elite Sentry"
 
 [AdvSentryM3_WPN X2WeaponTemplate]
 FriendlyName="ADVENT Mag Rifle"
@@ -268,7 +268,7 @@ AbilityDescName="mag rifle"
 ;;;;;;;;;;;;;;;;;;;;;;;;;; AdvGrenadierM1-3 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [AdvGrenadierM1 X2CharacterTemplate]
-strCharacterName="ADVENT Engineer"
+strCharacterName="ADVENT Grenadier"
 
 [AdvGrenadierM1_GrenadeLauncher X2WeaponTemplate]
 FriendlyName="ADVENT Grenade Launcher"
@@ -277,7 +277,7 @@ FriendlyName="ADVENT Grenade Launcher"
 FriendlyName="ADVENT Mag Rifle"
 
 [AdvGrenadierM2 X2CharacterTemplate]
-strCharacterName="ADVENT Grenadier"
+strCharacterName="ADVENT Advanced Grenadier"
 
 [AdvGrenadierM2_GrenadeLauncher X2WeaponTemplate]
 FriendlyName="ADVENT Grenade Launcher"
@@ -286,7 +286,7 @@ FriendlyName="ADVENT Grenade Launcher"
 FriendlyName="ADVENT Mag Rifle"
 
 [AdvGrenadierM3 X2CharacterTemplate]
-strCharacterName="ADVENT Heavy Grenadier"
+strCharacterName="ADVENT Elite Grenadier"
 
 [AdvGrenadierM3_GrenadeLauncher X2WeaponTemplate]
 FriendlyName="ADVENT Grenade Launcher"
@@ -333,7 +333,7 @@ strCharacterName="ADVENT Rocketeer"
 FriendlyName="ADVENT Mag Rifle"
 
 [AdvRocketeerM2 X2CharacterTemplate]
-strCharacterName="ADVENT Heavy Rocketeer"
+strCharacterName="ADVENT Advanced Rocketeer"
 
 [AdvRocketeerM2_WPN X2WeaponTemplate]
 FriendlyName="ADVENT Mag Rifle"
@@ -363,10 +363,10 @@ FriendlyName="Heavy MEC Minigun"
 ;;;;;;;;;;;;;;;;;;;;;;;;;; DroneM1-2 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [LWDroneM1 X2CharacterTemplate]
-strCharacterName="ADVENT Surveillance Drone"
+strCharacterName="ADVENT Drone"
 
 [LWDroneM2 X2CharacterTemplate]
-strCharacterName="ADVENT Hunter Drone"
+strCharacterName="ADVENT Advanced Drone"
 
 [LWDroneM1_WPN X2WeaponTemplate]
 FriendlyName="Drone Shock"
@@ -383,7 +383,7 @@ AbilityDescName="shock weapon"
 ;;;;;;;;;;;;;;;;;;;;;;;;;; AdvMecArcherM1 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [AdvMECArcherM1 X2CharacterTemplate]
-strCharacterName="MEC Archer"
+strCharacterName="ADVENT MEC Archer"
 
 [AdvMECArcherM1_WPN X2WeaponTemplate]
 FriendlyName="MEC Minigun"
@@ -400,7 +400,7 @@ AbilityDescName="micromissiles"
 ;;;;;;;;;;;;;;;;;;;;;;;;;; AdvMecArcherM2 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [AdvMECArcherM2 X2CharacterTemplate]
-strCharacterName="MEC Longbow"
+strCharacterName="ADVENT MEC Longbow"
 
 [AdvMECArcherM2_WPN X2WeaponTemplate]
 FriendlyName="MEC Minigun"
@@ -436,7 +436,7 @@ AbilityDescName="mag rifle"
 ; End translation
 
 [AdvSergeantM2 X2CharacterTemplate]
-strCharacterName="ADVENT First Sergeant"
+strCharacterName="ADVENT Elite Sergeant"
 
 [AdvSergeantM2_WPN X2WeaponTemplate]
 FriendlyName="ADVENT Mag Rifle"
@@ -490,7 +490,7 @@ AbilityDescName="mag rifle"
 ; End translation
 
 [AdvGeneralM2_LW X2CharacterTemplate]
-strCharacterName="ADVENT General"
+strCharacterName="ADVENT High General"
 
 [AdvGeneralM2_LW_WPN X2WeaponTemplate]
 FriendlyName="ADVENT Mag Rifle"
@@ -499,6 +499,20 @@ AbilityDescName="mag rifle"
 ; End translation
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; ABILITIES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[BD_Guardian X2AbilityTemplate]
+LocFriendlyName="Guardian"
+LocLongDescription="On the first successful overwatch shot of the turn, there is a <Ability:GUARDIAN_PROC_CHANCE/>% chance that a second shot will be taken."
+LocHelpText="With every successful Overwatch shot, there is a <Ability:GUARDIAN_PROC_CHANCE/>% chance that another shot will be taken."
+LocFlyOverText="Guardian"
+LocPromotionPopupText="<Bullet/> Only a single second overwatch shots may can be taken per-turn with this ability.<br/>"
+
+[BD_Sentinel X2AbilityTemplate]
+LocFriendlyName="Sentinel"
+LocLongDescription="On the first successful overwatch shot of the turn, there is a <Ability:SENTINEL_PROC_CHANCE/>% chance that a second shot will be taken."
+LocHelpText="With every successful Overwatch shot, there is a <Ability:SENTINEL_PROC_CHANCE/>% chance that another shot will be taken."
+LocFlyOverText="Sentinel"
+LocPromotionPopupText="<Bullet/> Only a single second overwatch shots may can be taken per-turn with this ability.<br/>"
 
 [BD_WarCry_LW X2AbilityTemplate]
 LocFriendlyName="War Cry"
@@ -554,9 +568,9 @@ LocMissMessage="Missed!"
 [BD_Personalshield_LW X2AbilityTemplate]
 LocFriendlyName="Personal Shield"
 LocFlyOverText="Personal Shield"
-LocHelpText="Grants 5 points of ablative armor. 5-turn cooldown."
-LocLongDescription="Grants 5 points of ablative armor. 5-turn cooldown."
-LocPromotionPopupText="<Bullet/> Grants 5 points of ablative armor.<br/><Bullet/> 5-turn cooldown.<br/><Bullet/> Uses one action; does not end turn.<br/>"
+LocHelpText="Grants <Ability:PERSONAL_SHIELD_XCOM_HP/> points of ablative armor. <Ability:PERSONAL_SHIELD_XCOM_DURATION/>-turn cooldown."
+LocLongDescription="Grants <Ability:PERSONAL_SHIELD_XCOM_HP/> points of ablative armor. <Ability:PERSONAL_SHIELD_XCOM_DURATION/>-turn cooldown."
+LocPromotionPopupText="<Bullet/> Grants <Ability:PERSONAL_SHIELD_XCOM_HP/> points of ablative armor.<br/><Bullet/> <Ability:PERSONAL_SHIELD_XCOM_DURATION/>-turn cooldown.<br/><Bullet/> Uses one action; does not end turn.<br/>"
 
 [BD_MassReanimation_LW X2AbilityTemplate]
 LocFriendlyName="Mass Reanimate"
@@ -586,14 +600,14 @@ LocFriendlyName="Lightning Reflexes"
 LocFlyOverText="Lightning Reflexes"
 LocLongDescription="Reaction fire shots against you have a significantly decreased chance to hit. The bonus goes down with each additional reaction shot you face."
 LocHelpText="Reaction fire shots against you have a decreased chance to hit."
-LocPromotionPopupText="<Bullet/> Reaction fire shots against you have a significantly decreased chance to hit.<br/><Bullet/> The first reaction shot against you during a turn is at -100 to hit; the second at -80; the third at -60; the fourth at -40, and the fifth at -20. Further reaction shots at are normal to hit chances.<br/>"
+LocPromotionPopupText="<Bullet/> Reaction fire shots against you have a significantly decreased chance to hit.<br/><Bullet/> The first reaction shot against you during a turn is at -<Ability:LR_LW_FIRST_SHOT_PENALTY/> to hit; each subsequent shot increases the hit chance by <Ability:LR_LW_PENALTY_REDUCTION_PER_SHOT/>.<br/>"
 
 [BD_LockedOn_LW X2AbilityTemplate]
 LocFriendlyName="Locked On"
 LocFlyOverText="Locked On"
-LocLongDescription="Gain +10 aim for successive shots at the same enemy unit."
-LocHelpText="Gain +10 aim for successive shots at the same enemy unit."
-LocPromotionPopupText="<Bullet/> Gain +10 aim for repeated shots with your primary weapon at the same target. Not cumulative, and only applies to enemy units.<br/><Bullet/> Area-of-Effect-based shots do not grant the bonus."
+LocLongDescription="Gain +<Ability:LOCKEDON_AIM_BONUS/> aim and +<Ability:LOCKEDON_CRIT_BONUS/> critical chance for successive shots at the same enemy unit."
+LocHelpText="Gain +<Ability:LOCKEDON_AIM_BONUS/> aim and +<Ability:LOCKEDON_CRIT_BONUS/> critical chance for successive shots at the same enemy unit."
+LocPromotionPopupText="<Bullet/> Gain +<Ability:LOCKEDON_AIM_BONUS/> aim and +<Ability:LOCKEDON_CRIT_BONUS/> critical chance for repeated shots with your primary weapon at the same target. Not cumulative, and only applies to enemy units.<br/><Bullet/> Area-of-Effect-based shots do not grant the bonus."
 
 [BD_TraverseFire_LW X2AbilityTemplate]
 LocFriendlyName="Traverse Fire"
@@ -612,30 +626,30 @@ LocPromotionPopupText="<Bullet/> Taking a standard shot with your primary weapon
 [BD_Infighter_LW X2AbilityTemplate]
 LocFriendlyName="Infighter"
 LocFlyOverText="Infighter"
-LocLongDescription="Gain 25 dodge against attacks within four tiles."
-LocHelpText="Gain 25 dodge against attacks within four tiles."
-LocPromotionPopupText="<Bullet/> Gain 25 dodge against attacks within four tiles.<br/><Bullet/> Dodge bonus also applies to melee attacks.<br/>"
+LocLongDescription="Gain +<Ability:INFIGHTER_DODGE_BONUS/> dodge against attacks within <Ability:INFIGHTER_MAX_TILES/> tiles."
+LocHelpText="Gain +<Ability:INFIGHTER_DODGE_BONUS/> dodge against attacks within <Ability:INFIGHTER_MAX_TILES/> tiles."
+LocPromotionPopupText="<Bullet/> Gain +<Ability:INFIGHTER_DODGE_BONUS/> dodge against attacks within <Ability:INFIGHTER_MAX_TILES/> tiles.<br/><Bullet/> Dodge bonus also applies to melee attacks.<br/>"
 
 [BD_TacticalSense_LW X2AbilityTemplate]
 LocFriendlyName="Tactical Sense"
 LocFlyOverText="Tactical Sense"
-LocLongDescription="Gain 5 defense for each enemy you can see, up to a maximum of 20 defense."
-LocHelpText="Gain 5 defense for each enemy you can see, up to a maximum of 20 defense."
-LocPromotionPopupText="<Bullet/> Gain 5 defense for each living enemy you can see, up to a maximum of 20 defense.<br/><Bullet/> Units visible at squadsight ranges do not confer bonus.<br/>"
+LocLongDescription="Gain +<Ability:TACTICAL_SENSE_DEF_BONUS_PER_ENEMY/> defense for each enemy you can see, up to a maximum of +<Ability:TACTICAL_SENSE_MAX_DEF_BONUS/> defense."
+LocHelpText="Gain +<Ability:TACTICAL_SENSE_DEF_BONUS_PER_ENEMY/> defense for each enemy you can see, up to a maximum of +<Ability:TACTICAL_SENSE_MAX_DEF_BONUS/> defense."
+LocPromotionPopupText="<Bullet/> Gain +<Ability:TACTICAL_SENSE_DEF_BONUS_PER_ENEMY/> defense for each living enemy you can see, up to a maximum of +<Ability:TACTICAL_SENSE_MAX_DEF_BONUS/> defense.<br/><Bullet/> Units visible at squadsight ranges do not confer bonus.<br/>"
 
 [BD_DamnGoodGround_LW X2AbilityTemplate]
 LocFriendlyName="Damn Good Ground"
 LocFlyOverText="Damn Good Ground"
-LocLongDescription="Confers +10 aim and +10 defense against targets at a lower elevation."
-LocHelpText="Confers +10 aim and +10 defense against targets at a lower elevation."
-LocPromotionPopupText="<Bullet/> Confers +10 aim and +10 defense against targets at a lower elevation.<br/>"
+LocLongDescription="Confers +<Ability:DGG_AIM_BONUS/> aim and +<Ability:DGG_DEF_BONUS/> defense against targets at a lower elevation."
+LocHelpText="Confers +<Ability:DGG_AIM_BONUS/> aim and +<Ability:DGG_DEF_BONUS/> defense against targets at a lower elevation."
+LocPromotionPopupText="<Bullet/> Confers +<Ability:DGG_AIM_BONUS/> aim and +<Ability:DGG_DEF_BONUS/> defense against targets at a lower elevation.<br/>"
 
 [BD_Executioner_LW X2AbilityTemplate]
 LocFriendlyName="Executioner"
 LocFlyOverText="Executioner"
-LocLongDescription="Confers +10 aim and +10 critical chance against targets at half or less of their original hit points."
-LocHelpText="Confers +10 aim and +10 critical chance against targets at half or less of their original hit points."
-LocPromotionPopupText="<Bullet/> Confers +10 aim and +10 critical chance against targets at half or less of their original hit points.<br/>"
+LocLongDescription="Confers +<Ability:EXECUTIONER_AIM_BONUS/> aim and +<Ability:EXECUTIONER_CRIT_BONUS/> critical chance against targets at half or less of their original hit points."
+LocHelpText="Confers +<Ability:EXECUTIONER_AIM_BONUS/> aim and +<Ability:EXECUTIONER_CRIT_BONUS/> critical chance against targets at half or less of their original hit points."
+LocPromotionPopupText="<Bullet/> Confers +<Ability:EXECUTIONER_AIM_BONUS/> aim and +<Ability:EXECUTIONER_CRIT_BONUS/> critical chance against targets at half or less of their original hit points.<br/>"
 
 [HitandRun X2AbilityTemplate]
 LocFriendlyName="Hit and Run"
@@ -648,7 +662,7 @@ LocPromotionPopupText="<Bullet/> Once per turn, gain an additional move action a
 [BD_AreaSuppression_LW X2AbilityTemplate]
 LocFriendlyName="Area Suppression"
 LocFlyOverText="Area Suppression"
-LocLongDescription="Fire a barrage that pins down multiple targets within a 3-tile radius, granting reaction fire against the first one that moves, and imposing a <Ability:SUPPRESSIONPENALTY/> penalty all targets' aim until suppression is removed."
+LocLongDescription="Fire a barrage that pins down multiple targets within a <Ability:AREA_SUPPRESSION_RADIUS/>-tile radius, granting reaction fire against the first one that moves, and imposing a <Ability:SUPPRESSIONPENALTY/> penalty all targets' aim until suppression is removed."
 LocHelpText="Suppress multiple targets within an area of effect."
 LocPromotionPopupText="<Bullet/> The first unit that attempts to move will face reaction fire, and suppression will be cancelled.<br/><Bullet/> Does not work with shotguns or sniper rifles<br/><Bullet/> Suppression costs <Ability:SelfAmmoCost/> ammo points to use, but has no cooldown.<br/><Bullet/> Suppression will be canceled if the suppressing unit is damaged.<br/><Bullet/> If multiple units suppress a target, the aim penalty will stack.<br/>"
 
@@ -657,16 +671,16 @@ LocPromotionPopupText="<Bullet/> The first unit that attempts to move will face 
 [BD_Aggression_LW X2AbilityTemplate]
 LocFriendlyName="Aggression"
 LocFlyOverText="Aggression"
-LocLongDescription="Gain +5 critical chance for each enemy you can see, up to a maximum of 30."
-LocHelpText="Gain +5 critical chance for each enemy you can see, up to a maximum of 30."
-LocPromotionPopupText="<Bullet/> Gain +5 critical chance for each enemy you can see, up to a maximum of 30.<br/><Bullet/> Units visible at squadsight ranges do confer bonus.<br/>"
+LocLongDescription="Gain +<Ability:AGGRESSION_CRIT_BONUS_PER_ENEMY/> critical chance for each enemy you can see, up to a maximum of +<Ability:AGGRESSION_MAX_CRIT_BONUS/>."
+LocHelpText="Gain +<Ability:AGGRESSION_CRIT_BONUS_PER_ENEMY/> critical chance for each enemy you can see, up to a maximum of +<Ability:AGGRESSION_MAX_CRIT_BONUS/>."
+LocPromotionPopupText="<Bullet/> Gain +<Ability:AGGRESSION_CRIT_BONUS_PER_ENEMYY/> critical chance for each enemy you can see, up to a maximum of <Ability:AGGRESSION_MAX_CRIT_BONUS/>.<br/><Bullet/> Units visible at squadsight ranges do confer bonus.<br/>"
 
 [HardTarget X2AbilityTemplate]
 LocFriendlyName="Hard Target"
 LocFlyOverText="Hard Target"
-LocLongDescription="Gain 5 dodge per enemy you can see, up to a maximum of +30."
-LocHelpText="Gain 5 dodge per enemy you can see, up to a maximum of +30."
-LocPromotionPopupText="<Bullet/> Gain 5 dodge per enemy you can see, up to a maximum of +30.<br/><Bullet/> Units visible at squadsight ranges do not confer bonus.<br/><Bullet/> This ability does not provide defensive bonuses if the unit is disoriented, stunned, panicking, on fire or otherwise impaired."
+LocLongDescription="Gain +<Ability:HT_DODGE_BONUS_PER_ENEMY/> dodge per enemy you can see, up to a maximum of +<Ability:HT_DODGE_BONUS_PER_ENEMY/>."
+LocHelpText="Gain +<Ability:HT_DODGE_BONUS_PER_ENEMY/> dodge per enemy you can see, up to a maximum of <+Ability:HT_DODGE_BONUS_PER_ENEMY/>."
+LocPromotionPopupText="<Bullet/> Gain +<Ability:HT_DODGE_BONUS_PER_ENEMY/> dodge per enemy you can see, up to a maximum of <+Ability:HT_DODGE_BONUS_PER_ENEMY/>.<br/><Bullet/> Units visible at squadsight ranges do not confer bonus.<br/><Bullet/> This ability does not provide defensive bonuses if the unit is disoriented, stunned, panicking, on fire or otherwise impaired."
 
 [BD_HitandSlither_LW X2AbilityTemplate]
 LocFriendlyName="Hit and Slither"
@@ -679,42 +693,42 @@ LocPromotionPopupText="<Bullet/> Once per turn, gain an additional move action a
 LocFriendlyName="Bring 'Em On"
 LocFlyOverText="Bring 'Em On"
 ; LWOTC Needs Translation
-LocLongDescription="Gain +1 damage on critical hits for every two enemies you can see, up to a maximum of +8. Works for the soldier's <Ability:BOUND_WEAPON_NAME/> and explosives."
-LocHelpText="Gain +1 damage on critical hits for every two enemies you can see, up to a maximum of +8. Works for the soldier's <Ability:BOUND_WEAPON_NAME/> and explosives."
-LocPromotionPopupText="<Bullet/> Gain +1 damage on critical hits for every two enemies you can see, up to a maximum of +8.<br/><Bullet/> Units visible at squadsight ranges do confer bonus.<br/><Bullet/> Applies to damage from the soldier's <Ability:BOUND_WEAPON_NAME/> and, if the soldier has Biggest Booms, explosives (damaging grenades, rockets, etc.).<br/>"
+LocLongDescription="Gain <Ability:BEO_BONUS_CRIT_DAMAGE_PER_ENEMY/> damage on critical hits for every two enemies you can see, up to a maximum of <Ability:BEO_MAX_BONUS_CRIT_DAMAGE/>. Works for the soldier's <Ability:BOUND_WEAPON_NAME/> and explosives."
+LocHelpText="Gain <Ability:BEO_BONUS_CRIT_DAMAGE_PER_ENEMY/> damage on critical hits for every two enemies you can see, up to a maximum of <Ability:BEO_MAX_BONUS_CRIT_DAMAGE/>. Works for the soldier's <Ability:BOUND_WEAPON_NAME/> and explosives."
+LocPromotionPopupText="<Bullet/> Gain <Ability:BEO_BONUS_CRIT_DAMAGE_PER_ENEMY/> damage on critical hits for every two enemies you can see, up to a maximum of <Ability:BEO_MAX_BONUS_CRIT_DAMAGE/>.<br/><Bullet/> Units visible at squadsight ranges do confer bonus.<br/><Bullet/> Applies to damage from the soldier's <Ability:BOUND_WEAPON_NAME/> and, if the soldier has Biggest Booms, explosives (damaging grenades, rockets, etc.).<br/>"
 ; End Translation
 
 [BD_CloseandPersonal_LW X2AbilityTemplate]
 LocFriendlyName="Close and Personal"
 LocFlyOverText="Close and Personal"
-LocLongDescription="Confers +30 critical chance against adjacent targets. The bonus declines with distance from the target."
-LocHelpText="Confers +30 critical chance against adjacent targets. The bonus declines with distance from the target."
-LocPromotionPopupText="<Bullet/> Confers +30 critical chance against adjacent targets.<br/><Bullet/> Bonus reduced by 5% for each additional tile of distance from the target, down to 0% at 7 or more tiles.<br/>"
+LocLongDescription="Confers <Ability:CRITBOOST/> critical chance against adjacent targets. The bonus declines with distance from the target."
+LocHelpText="Confers <Ability:CRITBOOST/> critical chance against adjacent targets. The bonus declines with distance from the target."
+LocPromotionPopupText="<Bullet/> Confers <Ability:CRITBOOST/> critical chance against adjacent targets.<br/><Bullet/> Bonus reduces for each additional tile of distance from the target.<br/>"
 
 [BD_CloseCombatSpecialist_LW X2AbilityTemplate]
 LocFriendlyName="Close Combat Specialist"
 LocFlyOverText="Close Combat Specialist"
 ; LWOTC Needs Translation (3)
-LocLongDescription="Fire a free reaction shot with your primary weapon at any visible enemy within four tiles who moves or fires."
-LocHelpText="Fire a free reaction shot at any visible enemy within four tiles who moves or fires."
+LocLongDescription="Fire a free reaction shot with your primary weapon at any visible enemy within <Ability:CCS_RANGE/> tiles who moves or fires."
+LocHelpText="Fire a free reaction shot at any visible enemy within <Ability:CCS_RANGE/> tiles who moves or fires."
 ; End Translation (3)
-LocPromotionPopupText="<Bullet/> Will not trigger if soldier is concealed.<br/><Bullet/> You may shoot at each enemy with this ability once per turn.<br/><Bullet/> Each shot requires 2 ammo.<br/>""
+LocPromotionPopupText="<Bullet/> Will not trigger if soldier is concealed.<br/><Bullet/> You may shoot at each enemy with this ability once per turn.<br/><Bullet/> Each shot requires <ABILITY:CCS_AMMO_PER_SHOT/> ammo.<br/>""
 
 [BD_CloseCombatSpecialist_LWAttack X2AbilityTemplate]
 LocFriendlyName="Close Combat Specialist"
 LocFlyOverText="Close Combat Specialist"
 ; LWOTC Needs Translation (2)
-LocLongDescription="During enemy turns, fire a free reaction shot with your <Ability:BOUND_WEAPON_NAME/> at any visible enemy within four tiles who moves or fires."
+LocLongDescription="During enemy turns, fire a free reaction shot with your <Ability:BOUND_WEAPON_NAME/> at any visible enemy within <Ability:CCS_RANGE/> tiles who moves or fires."
 ; End Translation (2)
-LocHelpText="During enemy turns, Fire a free reaction shot at any visible enemy within four tiles who moves or fires."
-LocPromotionPopupText="<Bullet/> Will not trigger if soldier is concealed.<br/><Bullet/> You may shoot at each enemy with this ability once per turn.<br/><Bullet/> Each shot requires 2 ammo.<br/>""
+LocHelpText="During enemy turns, Fire a free reaction shot at any visible enemy within <Ability:CCS_RANGE/> tiles who moves or fires."
+LocPromotionPopupText="<Bullet/> Will not trigger if soldier is concealed.<br/><Bullet/> You may shoot at each enemy with this ability once per turn.<br/><Bullet/> Each shot requires <ABILITY:CCS_AMMO_PER_SHOT/> ammo.<br/>""
 
-[BD_DamageControl_LW X2AbilityTemplate]
+[BD_DamageControl_LWPassive X2AbilityTemplate]
 LocFriendlyName="Damage Control"
 LocFlyOverText="Damage Control"
-LocLongDescription="After taking damage, gain 2 armor through the end of the turn."
-LocHelpText="After taking damage, gain 2 armor through the end of the turn."
-LocPromotionPopupText="<Bullet/> Your armor hardens temporarily after an impact. After taking damage, gain 2 armor through the end of the next turn.
+LocLongDescription="After taking damage, gain +<ABILITY:DAMAGE_CONTROL_BONUS_ARMOR/> armor through the end of the turn."
+LocHelpText="After taking damage, gain +<ABILITY:DAMAGE_CONTROL_BONUS_ARMOR/> armor through the end of the turn."
+LocPromotionPopupText="<Bullet/> Your armor hardens temporarily after an impact. After taking damage, gain +<ABILITY:DAMAGE_CONTROL_BONUS_ARMOR/> armor through the end of the next turn.
 
 [BD_Defilade_LW X2AbilityTemplate]
 LocFriendlyName="Defilade"
@@ -737,15 +751,15 @@ LocPromotionPopupText="<Bullet/> Soldiers within Command Range of the Officer re
 [BD_DepthPerception_LW X2AbilityTemplate]
 LocFriendlyName="Depth Perception"
 LocFlyOverText="Depth Perception"
-LocLongDescription="Gain 5 aim and reduce enemies' dodge by 25 when at a higher elevation than your target."
-LocHelpText="Gain 5 aim and reduce enemies' dodge by 25 when at a higher elevation than your target."
-LocPromotionPopupText="<Bullet/> Gain 5 aim and reduce enemies' dodge by 25 when at a higher elevation than your target.<br/>"
+LocLongDescription="Gain <ABILITY:DGG_AIM_BONUS/> aim and reduce enemies' dodge by <ABILITY:DGG_DEF_BONUS/> when at a higher elevation than your target."
+LocHelpText="Gain <ABILITY:DGG_AIM_BONUS/> aim and reduce enemies' dodge by <ABILITY:DGG_DEF_BONUS/> when at a higher elevation than your target."
+LocPromotionPopupText="<Bullet/> Gain <ABILITY:DGG_AIM_BONUS/> aim and reduce enemies' dodge by <ABILITY:DGG_DEF_BONUS/> when at a higher elevation than your target.<br/>"
 
 [BD_Lonewolf_LW X2AbilityTemplate]
 LocFriendlyName="Lone Wolf"
 LocFlyOverText="Lone Wolf"
-LocLongDescription="Gain bonus Aim and Defense when at least <Ability:LONEWOLF_MIN_BONUS_TILES/> tiles distant from any ally, with a maximum of +<Ability:LONEWOLF_AIM_BONUS/>/+<Ability:LONEWOLF_DEF_BONUS/> at <Ability:LONEWOLF_MIN_DIST_TILES/>+ tiles."
-LocHelpText="Gain bonus Aim and Defense when at least <Ability:LONEWOLF_MIN_BONUS_TILES/> tiles distant from any ally, with a maximum of +<Ability:LONEWOLF_AIM_BONUS/>/+<Ability:LONEWOLF_DEF_BONUS/> at <Ability:LONEWOLF_MIN_DIST_TILES/>+ tiles."
+LocLongDescription="Gain bonus Aim and Defense with increasing distance from the nearest ally, with a maximum of +<Ability:LONEWOLF_AIM_BONUS/>/+<Ability:LONEWOLF_DEF_BONUS/> at <Ability:LONEWOLF_MIN_DIST_TILES/>+ tiles."
+LocHelpText="Gain bonus Aim and Defense with increasing distance from the nearest ally, with a maximum of +<Ability:LONEWOLF_AIM_BONUS/>/+<Ability:LONEWOLF_DEF_BONUS/> at <Ability:LONEWOLF_MIN_DIST_TILES/>+ tiles."
 LocPromotionPopupText="<Bullet/> Gain +<Ability:LONEWOLF_AIM_PER_TILE/> Aim and +<Ability:LONEWOLF_DEF_PER_TILE/> Defense for each tile of distance between this soldier and the nearest ally, starting at <Ability:LONEWOLF_MIN_BONUS_TILES/> tiles distant.<br/><Bullet/> Bonuses cap at +<Ability:LONEWOLF_AIM_BONUS/> Aim, +<Ability:LONEWOLF_DEF_BONUS/> Defense when <Ability:LONEWOLF_MIN_DIST_TILES/> or more tiles from the nearest ally.<br/><Bullet/> This ability does not provide defensive bonuses if the unit is disoriented, stunned, panicking, on fire or otherwise impaired."
 
 [BD_LowProfile_LW X2AbilityTemplate]
@@ -758,21 +772,21 @@ LocPromotionPopupText="<Bullet/> Makes partial cover count as full.<br/>"
 [BD_WilltoSurvive_LW X2AbilityTemplate]
 LocFriendlyName="Will to Survive"
 LocFlyOverText="Will to Survive"
-LocLongDescription="Enemy damage is reduced by 1 when in cover and attacked through that cover. Also grants 5 will."
+LocLongDescription="Enemy damage is reduced by <Ability:W2S_HIGH_COVER_ARMOR_BONUS/> when in cover and attacked through that cover. Also grants <ABILITY:WILLTOSURVIVE_WILLBONUS> will."
 LocHelpText="Enemy damage is reduced by 1 when in cover and attacked through that cover."
 LocPromotionPopupText="<Bullet/> Enemy damage is reduced by 1 when in cover and attacked through that cover.<br/><Bullet/> Cover against explosives and other indirect attacks is calculated from the point of the explosion.<br/><Bullet/> Armor piercing effects do not eliminate this bonus.<br/><Bullet/> This unit also permanently gains 5 will.<br/><Bullet/> This ability does not provide defensive bonuses if the unit is disoriented, stunned, panicking, on fire or otherwise impaired."
 
 [BD_Evasive_LW X2AbilityTemplate]
 LocFriendlyName="Evasive"
-LocFlyOverText="Evasive: +100 Dodge"
-LocLongDescription="Start each mission with 100 bonus dodge. The bonus is removed after you take damage for the first time."
-LocHelpText="Gain 100 dodge until you take damage."
+LocFlyOverText="Evasive: <ABILITY:EVASIVE_DODGE_BONUS/> Dodge"
+LocLongDescription="Start each mission with <ABILITY:EVASIVE_DODGE_BONUS/> bonus dodge. The bonus is removed after you take damage for the first time."
+LocHelpText="Gain <ABILITY:EVASIVE_DODGE_BONUS> dodge until you take damage."
 LocPromotionPopupText="<Bullet/> This ability will typically turn the first hit on a soldier into a graze, but being hit with undodgeable attacks will remove it without any bonus being applied."
 
 [RemoveBD_Evasive_LW X2AbilityTemplate]
 LocFriendlyName="Evasive bonus lost"
 LocFlyOverText="Evasive bonus lost"
-LocLongDescription="Start each mission with 100 bonus dodge. The bonus is removed after you take damage for the first time."
+LocLongDescription="Start each mission with <ABILITY:EVASIVE_DODGE_BONUS> bonus dodge. The bonus is removed after you take damage for the first time."
 LocHelpText="Gain 100 dodge until you take damage."
 LocPromotionPopupText="<Bullet/> This ability will typically turn the first hit on a soldier into a graze, but being hit with undodgeable attacks will remove it without any bonus being applied."
 

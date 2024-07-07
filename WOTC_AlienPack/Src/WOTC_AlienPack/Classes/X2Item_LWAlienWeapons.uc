@@ -614,10 +614,6 @@ static function X2DataTemplate CreateTemplate_Sidewinder_WPN(name TemplateName)
 	{	
 		Template.Abilities.AddItem('BD_HitAndSlither_LW');
 	}
-	if (TemplateName == 'SidewinderM3_WPN')
-	{
-		Template.Abilities.AddItem('HuntersInstinct');
-	}
 	
 	// This all the resources; sounds, animations, models, physics, the works.
 	Template.GameArchetype = "LWSidewinderSMG.Archetypes.WP_Sidewinder_SMG";  
@@ -700,7 +696,6 @@ static function X2DataTemplate CreateTemplate_AdvGunner_WPN(name TemplateName)
 	return Template;
 }
 
-
 static function X2DataTemplate CreateTemplate_AdvSentry_WPN(name TemplateName)
 {
 	local X2WeaponTemplate Template;
@@ -738,16 +733,14 @@ static function X2DataTemplate CreateTemplate_AdvSentry_WPN(name TemplateName)
 		
 	if (TemplateName == 'AdvSentryM2_WPN')
 	{
-		Template.Abilities.AddItem('CoolUnderPressure');
-		Template.Abilities.AddItem('Sentinel');
 		Template.Abilities.AddItem('CoveringFire');
+		Template.Abilities.AddItem('BD_Guardian');
 	}
 
 	if (TemplateName == 'AdvSentryM3_WPN')
 	{
-		Template.Abilities.AddItem('CoolUnderPressure');
-		Template.Abilities.AddItem('Sentinel');
 		Template.Abilities.AddItem('CoveringFire');
+		Template.Abilities.AddItem('BD_Sentinel');
 	}
 
 	Template.GameArchetype = "WP_AssaultRifle_MG.WP_AssaultRifle_MG_Advent";
@@ -1481,18 +1474,19 @@ static function X2DataTemplate CreateTemplate_AdvElite_WPN(name TemplateName)
 		case 'AdvSergeantM1_WPN':
 		Template.BaseDamage = default.AdvSergeantM1_WPN_BASEDAMAGE;
 		Template.iIdealRange = default.AdvSergeantM1_IDEALRANGE;
+		Template.Abilities.AddItem('Suppression');
 		break;
 		
 		case 'AdvSergeantM2_WPN':
 		Template.BaseDamage = default.AdvSergeantM2_WPN_BASEDAMAGE;
 		Template.iIdealRange = default.AdvSergeantM2_IDEALRANGE;
 		Template.Abilities.Additem('BD_LockedOn_LW');
+		Template.Abilities.AddItem('Suppression');
 		break;
 		
 		case 'AdvShockTroop_WPN':
 		Template.BaseDamage = default.AdvShockTroop_WPN_BASEDAMAGE; 
 		Template.iIdealRange = default.AdvShockTroop_IDEALRANGE;
-		Template.Abilities.AddItem('BD_BringEmOn_LW');
 		break;
 		
 		case 'AdvCommando_WPN':
