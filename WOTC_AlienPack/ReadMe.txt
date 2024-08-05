@@ -1,60 +1,34 @@
-﻿Alien Pack mod for XCOM2
-Port of Pavonis Interactive's Alien Pack for WOTC
-http://www.pavonisinteractive.com/
+﻿## Alien Pack
+This alien pack is a port of the
+[original](https://steamcommunity.com/sharedfiles/filedetails/?id=577474474)
+LW2 alien pack for long war 2. 
 
-This mod adds a series of new alien and ADVENT enemies to the campaign:
+The port uses a smattering of the original LW2 code, along with additions from members of the LWOTC team who ported most of the content over into LWOTC but never got around to releasing the pack as astandalone item (& who can blame them!).
 
-* Muton Centurion, a Muton leader with the ability to inspire its allies
-* Muton Elite, a powerful Muton who can dominate in battle
-* ADVENT Drone, a small, nimble crowd-control robot that hunts for hidden enemies
-* Naja, an alien sharpshooter related to the Viper
-* Sidewinder, a speedy alien skirmisher related to the Viper
-* Sectoid Commander, a stronger sectoid with area-of-effect abilities
-* ADVENT MEC Archer, a mechanized unit built to bombard at long ranges
-* ADVENT Sentry, a soldier specializing in overwatch abilities
-* ADVENT Grenadier, a soldier with a grenade launcher
-* ADVENT Rocketeer, a soldier with a rocket launcher
-* ADVENT Gunner, a suppression specialist
-* Many of these have upgraded versions that appear later in the campaign, and the mod includes upgraded Vipers and Archons as well, for a total of 29 new enemies for you to face.
+Anyway, the original mod was developed to add new enemies to vanilla XCOM 2 but it was never updated with WOTC compatibility so this mod aims to put that right. I should add that some of the enemies have been created as standalone packs already so if using this, please unsubscribe to the standalone enemies otherwise it will mess with your spawn lists (and you'll get double the amounts of certain enemies etc.).
 
-The mod also includes an ini-configurable system to build and color new types of ADVENT troopers using base-game parts. Some aliens can also be recolored with this system. The ini file that manages this is WOTC_AlienVariations.
+The enemies included in this pack are:
 
-----------------------------------
+Advent Gunner (M1, M2, M3) - Cannon trooper capable of shredding, average to poor aim
+Advent Engineer (M1, M2, M3) - Trooper equipped with grenade launcher, can launch flashbangs, frags, poison & incendiary grenades
+Advent Rocketeer (M1, M2, M3) - Trooper equipped with gauntlet-style rocket launcher
+Advent Sentry (M1, M2, M3) - Trooper specialising in overwatch with covering fire & cool under pressure
+Muton (M2, M3) - More robust & high damage versions of vanilla - centurion (M3) has war cry which boosts allies' stats
+Viper (M2, M3) - More robust & high damage versions of vanilla 
+Naja (M1, M2, M3) - Viper-sniper - high aim, squadsight, large engagement distance but quite squishy - positional play critical! (no bind / pull).
+Sidewinder (M1, M2, M3) - Flanking viper - High crit damage, average robustness, no bind / pull
+Sectoid Commander (M2) - Has mass mindspin and mass zombie spawn (among other abilities - see main LW2 pack for more details).
 
-Non-Steam Workshop manual installations:
 
-1) Copy the contents of the mod package to the directory \Steam\steamapps\common\XCOM 2\XComGame\Mods\
+Please note that as of v0.1, the chryssalid soldier & hive queen have been removed - their AI & abilities were not changed from the vanilla game so essentially these just became 'bullet sponge' versions of the vanilla enemies & weren't particularly engaging (the hive queen burrowing and running away in particular seemed very 'off' to me). If this mod is well recieved, I may decide to add some of my own chryssalids to the pack to add a bit of variety but I didn't want to incorporate Hive or ABA chryssalids in the pack so it would have maximum capability with both of these other (excellent) mods.
 
-Manually Uninstalling the mod
+I've made a couple of small balance tweaks from the original LW pack - see below, these can all be altered or returned to the default values from the LW2 pack in config if you'd prefer.
 
-1) Remove the folder \Steam\steamapps\common\XCOM 2\XComGame\Mods\WOTC_AlienPack\
+Lowered sentry mag tier damage by 1 to make the jump from M1 to M2 a bit less jarring
+Added some shredding to the advent gunner's cannon & increased damage spread
+Tweaked the Naja cross all tiers (tightened damage spread, decreased optimal engagement distance by a few tiles and lowered damage output slightly - in testing, I found that being squadsight sniped from miles away with high damage output & very little counter-play didn't make for a very engaging experience!)
+Reduced sidewinder base damage but increased critical damage to make the unit behave a bit more distinctly (i.e. Generally a low-ish risk enemy if encountered head-on but can be deadly if they catch you out of position).
 
-Note: Upgrading from v1 of this mod (which only had the Muton Centurion) and loading tactical saves in which a Muton Centurion is present may cause buggy behavior.
+The rest of the enemies' stats have not been modified. 
 
-----------------------------------
-
-CREDITS
-
-Concept Artists
-Dana Henderson (http://www.danaillustration.com/)
-James "JCLewis" Karlson
-
-Modeling and textures
-Muton Centurion, ADVENT Drone, Naja, Sidewinder, Sectoid Commander, MEC Archer: James "JCLewis" Karlson
-Muton Elite, Hive Queen: Chris "CapnBubs" Mansell (Twitter: @capnbubs)
-
-Additional Artwork / Technical Artistry
-Alexander "XMarksTheSpot" Behne
-Dana Henderson
-
-Technical Lead
-Rachel "Amineri" Norman
-
-Design Lead
-John Lumpkin
-
-Playtesting
-Tim "Bilfdoffle" Evans
-Lance D. Allen
-Xavier Wynns
-Matt Price
+In terms of the AI, this pack uses the vast majority from the vanilla LW2 pack with just a few minor tweaks here & there (I had to remove some unit behaviours which did not play well without some of the underlying LW2 architecture behind it - in particular I had to remove some of the  'hunker /  try to remove burning' behaviours which are not part of unmodded WOTC.). I suspect that adding the 'hunker to all enemies' mod will adjust the AI for everything so probably will still play OK with this but please let me know if you have issues with it.

@@ -730,17 +730,24 @@ static function X2DataTemplate CreateTemplate_AdvSentry_WPN(name TemplateName)
 	Template.Abilities.AddItem('Reload');
 	Template.Abilities.AddItem('HotLoadAmmo');
 	Template.Abilities.AddItem('BD_ReadyForAnything_LW');
-		
+
+	if (TemplateName == 'AdvSentryM1_WPN')
+	{
+		Template.Abilities.AddItem('SentryM1_ReactionFire');
+	}
+
 	if (TemplateName == 'AdvSentryM2_WPN')
 	{
 		Template.Abilities.AddItem('CoveringFire');
 		Template.Abilities.AddItem('BD_Guardian');
+		Template.Abilities.AddItem('SentryM2_ReactionFire');
 	}
 
 	if (TemplateName == 'AdvSentryM3_WPN')
 	{
 		Template.Abilities.AddItem('CoveringFire');
 		Template.Abilities.AddItem('BD_Sentinel');
+		Template.Abilities.AddItem('SentryM3_ReactionFire');
 	}
 
 	Template.GameArchetype = "WP_AssaultRifle_MG.WP_AssaultRifle_MG_Advent";

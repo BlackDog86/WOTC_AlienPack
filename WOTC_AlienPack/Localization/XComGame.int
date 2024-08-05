@@ -500,6 +500,27 @@ AbilityDescName="mag rifle"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; ABILITIES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+[SentryM1_ReactionFire X2AbilityTemplate]
+LocFriendlyName="Sentry Reactions"
+LocLongDescription="Sentries have lower penalties to reaction fire shots than typical units."
+LocHelpText="Sentries have lower penalties to reaction fire shots than typical units."
+LocFlyOverText="Sentry Reactions"
+LocPromotionPopupText="<Bullet/> Sentries have lower penalties to reaction fire shots than typical units.<br/>"
+
+[SentryM2_ReactionFire X2AbilityTemplate]
+LocFriendlyName="Sentry Reactions"
+LocLongDescription="Sentries have lower penalties to reaction fire shots than typical units."
+LocHelpText="Sentries have lower penalties to reaction fire shots than typical units."
+LocFlyOverText="Sentry Reactions"
+LocPromotionPopupText="<Bullet/> Sentries have lower penalties to reaction fire shots than typical units.<br/>"
+
+[SentryM3_ReactionFire X2AbilityTemplate]
+LocFriendlyName="Sentry Reactions"
+LocLongDescription="Sentries have lower penalties to reaction fire shots than typical units."
+LocHelpText="Sentries have lower penalties to reaction fire shots than typical units."
+LocFlyOverText="Sentry Reactions"
+LocPromotionPopupText="<Bullet/> Sentries have lower penalties to reaction fire shots than typical units.<br/>"
+
 [BD_Guardian X2AbilityTemplate]
 LocFriendlyName="Guardian"
 LocLongDescription="On the first successful overwatch shot of the turn, there is a <Ability:GUARDIAN_PROC_CHANCE/>% chance that a second shot will be taken."

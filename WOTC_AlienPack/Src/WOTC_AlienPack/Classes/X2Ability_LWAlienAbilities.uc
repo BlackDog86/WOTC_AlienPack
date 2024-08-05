@@ -56,8 +56,9 @@ var config int VIPERM2M3_ADDITIONAL_POISON_DAMAGE;
 var config int SIDEWINDER_ADDITIONAL_POISON_DAMAGE;
 var config int NAJA_ADDITIONAL_POISON_DAMAGE;
 
-var config int SENTRYM2_UNDER_PRESSURE_BONUS;
-var config int SENTRYM3_UNDER_PRESSURE_BONUS;
+var config float SENTRYM1_REACTION_PENALTY;
+var config float SENTRYM2_REACTION_PENALTY;
+var config float SENTRYM3_REACTION_PENALTY;
 
 var localized string strBayonetChargePenalty;
 
@@ -86,6 +87,9 @@ static function array<X2DataTemplate> CreateTemplates()
 	Templates.AddItem(CreateLostBladestorm());
 	Templates.AddItem(BD_RocketLauncherAbility());
 	Templates.AddItem(CreateLWViperPoisonSpitAbilities());
+	Templates.AddItem(SentryM1_ReactionFire());
+	Templates.AddItem(SentryM2_ReactionFire());
+	Templates.AddItem(SentryM3_ReactionFire());
 	return Templates;
 }
 
@@ -1481,15 +1485,14 @@ static function X2DataTemplate CreateLostBladestormAttack()
 	return Template;
 }
 
-
-static function X2AbilityTemplate CoolUnderABitOfPressure()
+static function X2AbilityTemplate SentryM1_ReactionFire()
 {
 	local X2AbilityTemplate						Template;
 	local X2AbilityTargetStyle                  TargetStyle;
 	local X2AbilityTrigger						Trigger;
-	local X2Effect_ModifyReactionFire           ReactionFire;
+	local X2Effect_AdjustOWPenalty				ReactionFire;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'CoolUnderABitOfPressure');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'SentryM1_ReactionFire');
 	Template.IconImage = "img:///UILibrary_PerkIcons.UIPerk_coolpressure";
 
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
@@ -1504,8 +1507,8 @@ static function X2AbilityTemplate CoolUnderABitOfPressure()
 	Trigger = new class'X2AbilityTrigger_UnitPostBeginPlay';
 	Template.AbilityTriggers.AddItem(Trigger);
 
-	ReactionFire = new class'X2Effect_ModifyReactionFire';
-	ReactionFire.ReactionModifier = default.SENTRYM2_UNDER_PRESSURE_BONUS;
+	ReactionFire = new class'X2Effect_AdjustOWPenalty';
+	ReactionFire.NewReactionFirePenalty = default.SENTRYM1_REACTION_PENALTY;
 	ReactionFire.BuildPersistentEffect(1, true, true, true);
 	ReactionFire.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage,,,Template.AbilitySourceName);
 	Template.AddTargetEffect(ReactionFire);
@@ -1516,14 +1519,14 @@ static function X2AbilityTemplate CoolUnderABitOfPressure()
 	return Template;
 }
 
-static function X2AbilityTemplate CoolUnderSomePressure()
+static function X2AbilityTemplate SentryM2_ReactionFire()
 {
 	local X2AbilityTemplate						Template;
 	local X2AbilityTargetStyle                  TargetStyle;
 	local X2AbilityTrigger						Trigger;
-	local X2Effect_ModifyReactionFire           ReactionFire;
+	local X2Effect_AdjustOWPenalty				ReactionFire;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'CoolUnderSomePressure');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'SentryM2_ReactionFire');
 	Template.IconImage = "img:///UILibrary_PerkIcons.UIPerk_coolpressure";
 
 	Template.AbilitySourceName = 'eAbilitySource_Perk';
@@ -1538,8 +1541,8 @@ static function X2AbilityTemplate CoolUnderSomePressure()
 	Trigger = new class'X2AbilityTrigger_UnitPostBeginPlay';
 	Template.AbilityTriggers.AddItem(Trigger);
 
-	ReactionFire = new class'X2Effect_ModifyReactionFire';
-	ReactionFire.ReactionModifier = default.SENTRYM3_UNDER_PRESSURE_BONUS;
+	ReactionFire = new class'X2Effect_AdjustOWPenalty';
+	ReactionFire.NewReactionFirePenalty = default.SENTRYM2_REACTION_PENALTY;
 	ReactionFire.BuildPersistentEffect(1, true, true, true);
 	ReactionFire.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage,,,Template.AbilitySourceName);
 	Template.AddTargetEffect(ReactionFire);
@@ -1549,3 +1552,38 @@ static function X2AbilityTemplate CoolUnderSomePressure()
 
 	return Template;
 }
+
+static function X2AbilityTemplate SentryM3_ReactionFire()
+{
+	local X2AbilityTemplate						Template;
+	local X2AbilityTargetStyle                  TargetStyle;
+	local X2AbilityTrigger						Trigger;
+	local X2Effect_AdjustOWPenalty				ReactionFire;
+
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'SentryM3_ReactionFire');
+	Template.IconImage = "img:///UILibrary_PerkIcons.UIPerk_coolpressure";
+
+	Template.AbilitySourceName = 'eAbilitySource_Perk';
+	Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
+	Template.Hostility = eHostility_Neutral;
+
+	Template.AbilityToHitCalc = default.DeadEye;
+
+	TargetStyle = new class'X2AbilityTarget_Self';
+	Template.AbilityTargetStyle = TargetStyle;
+
+	Trigger = new class'X2AbilityTrigger_UnitPostBeginPlay';
+	Template.AbilityTriggers.AddItem(Trigger);
+
+	ReactionFire = new class'X2Effect_AdjustOWPenalty';
+	ReactionFire.NewReactionFirePenalty = default.SENTRYM2_REACTION_PENALTY;
+	ReactionFire.BuildPersistentEffect(1, true, true, true);
+	ReactionFire.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage,,,Template.AbilitySourceName);
+	Template.AddTargetEffect(ReactionFire);
+
+	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
+	//  NOTE: No visualization on purpose!
+
+	return Template;
+}
+
