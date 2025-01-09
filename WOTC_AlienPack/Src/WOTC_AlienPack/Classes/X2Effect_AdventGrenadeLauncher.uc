@@ -26,13 +26,13 @@ simulated protected function OnEffectAdded(const out EffectAppliedData ApplyEffe
 	AbilityTemplate = AbilityManager.FindAbilityTemplate('LaunchGrenade');
 	if(AbilityTemplate == none)
 	{
-		`REDSCREEN("ADVENT Grenade Launcher : No Launch Grenade ability template found");
+		`log("ADVENT Grenade Launcher : No Launch Grenade ability template found",,'BDLOG');
 		return;
 	}
 	SecondaryWeapon = UnitState.GetSecondaryWeapon();
 	if(SecondaryWeapon == none)
 	{
-		`REDSCREEN("ADVENT Grenade Launcher : No item found in secondary slot");
+		`log("ADVENT Grenade Launcher : No item found in secondary slot",,'BDLOG');
 		return;
 	}
 
@@ -47,7 +47,7 @@ simulated protected function OnEffectAdded(const out EffectAppliedData ApplyEffe
 
 		if (X2GrenadeTemplate(InventoryItem.GetMyTemplate()) != none)
 		{
-			`APDEBUG("ADVENT Grenade Launcher: Is Grenade. Adding Ability" @ AbilityTemplate.DataName @ "for weapon" @ SecondaryWeapon.GetMyTemplateName() @ "using ammo" @ InventoryItem.GetMyTemplateName());
+			`log("ADVENT Grenade Launcher: Is Grenade. Adding Ability" @ AbilityTemplate.DataName @ "for weapon" @ SecondaryWeapon.GetMyTemplateName() @ "using ammo" @ InventoryItem.GetMyTemplateName(),,'BDLOG');
 			`TACTICALRULES.InitAbilityForUnit(AbilityTemplate, UnitState, NewGameState, SecondaryWeapon.GetReference(), InventoryItem.GetReference());
 		}
 	}

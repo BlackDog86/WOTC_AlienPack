@@ -6,55 +6,55 @@
 
 class X2Ability_LWAlienAbilities extends X2Ability config(WOTC_AlienPack);
 
-var config float WARCRY_RADIUS_METERS;
-var config int WARCRY_DURATION;
-var config int WARCRY_COOLDOWN;
-var config int WARCRY_ACTIONCOST;
-var config int WARCRY_MUTON_OFFENSE_BONUS;
-var config int WARCRY_MUTON_WILL_BONUS;
-var config int WARCRY_MUTON_MOBILITY_BONUS;
-var config int WARCRY_OTHER_OFFENSE_BONUS;
-var config int WARCRY_OTHER_WILL_BONUS;
-var config int WARCRY_OTHER_MOBILITY_BONUS;
-var config int BAYONETCHARGE_PENALTY_DURATION;
-var config int BAYONETCHARGE_DEFENSE_PENALTY;
-var config int BAYONETCHARGE_COOLDOWN;
+var config float BD_WARCRY_RADIUS_METERS;
+var config int BD_WARCRY_DURATION;
+var config int BD_WARCRY_COOLDOWN;
+var config int BD_WARCRY_ACTIONCOST;
+var config int BD_WARCRY_MUTON_OFFENSE_BONUS;
+var config int BD_WARCRY_MUTON_WILL_BONUS;
+var config int BD_WARCRY_MUTON_MOBILITY_BONUS;
+var config int BD_WARCRY_OTHER_OFFENSE_BONUS;
+var config int BD_WARCRY_OTHER_WILL_BONUS;
+var config int BD_WARCRY_OTHER_MOBILITY_BONUS;
+var config int BD_BAYONETCHARGE_PENALTY_DURATION;
+var config int BD_BAYONETCHARGE_DEFENSE_PENALTY;
+var config int BD_BAYONETCHARGE_COOLDOWN;
 var config array <string> WARCRY_MUTON_BONUS;
 var config array <string> WARCRY_OTHER_BONUS;
-var config float MASS_MINDSPIN_TILES_RADIUS;
+var config float BD_MASS_MINDSPIN_TILES_RADIUS;
 
-var config int PERSONAL_SHIELD_COOLDOWN;
-var config int PERSONAL_SHIELD_DURATION;
-var config int PERSONAL_SHIELD_HP;
-var config int PERSONAL_SHIELD_ACTION_COST;
+var config int BD_PERSONAL_SHIELD_COOLDOWN;
+var config int BD_PERSONAL_SHIELD_DURATION;
+var config int BD_PERSONAL_SHIELD_HP;
+var config int BD_PERSONAL_SHIELD_ACTION_COST;
 
-var config float MASS_MINDSPIN_LW_CONE_END_DIAMETER;
-var config float MASS_MINDSPIN_LW_CONE_LENGTH;
+var config float BD_MASS_MINDSPIN_LW_CONE_END_DIAMETER;
+var config float BD_MASS_MINDSPIN_LW_CONE_LENGTH;
 
-var config int MASS_REANIMATION_LW_MIN_ACTION_COST;
-var config int MASS_REANIMATION_LW_LOCAL_COOLDOWN;
-var config int MASS_REANIMATION_LW_GLOBAL_COOLDOWN;
-var config int MASS_REANIMATION_LW_RADIUS_METERS;
-var config int MASS_REANIMATION_LW_RANGE_METERS;
+var config int BD_MASS_REANIMATION_LW_MIN_ACTION_COST;
+var config int BD_MASS_REANIMATION_LW_LOCAL_COOLDOWN;
+var config int BD_MASS_REANIMATION_LW_GLOBAL_COOLDOWN;
+var config int BD_MASS_REANIMATION_LW_RADIUS_METERS;
+var config int BD_MASS_REANIMATION_LW_RANGE_METERS;
 
-var config int DRONE_REPAIR_ACTION_COST;
-var config int DRONE_STUN_HIT_MODIFIER;
-var config int DRONE_STUN_ACTION_POINT_DAMAGE;
-var config int STUNNER_COOLDOWN;
+var config int BD_DRONE_REPAIR_ACTION_COST;
+var config int BD_DRONE_STUN_HIT_MODIFIER;
+var config int BD_DRONE_STUN_ACTION_POINT_DAMAGE;
+var config int BD_STUNNER_COOLDOWN;
 
-var config int CHRYSSALID_SOLDIER_SLASH_BONUS_DAMAGE;
+var config int BD_CHRYSSALID_SOLDIER_SLASH_BONUS_DAMAGE;
 var config int HIVE_QUEEN_SLASH_BONUS_DAMAGE;
 
-var config int STANDALONE_PINIONS_LOCAL_COOLDOWN;
-var config int STANDALONE_PINIONS_GLOBAL_COOLDOWN;
-var config int STANDALONE_PINIONS_TARGETING_AREA_RADIUS;
-var config int STANDALONE_PINIONS_NUM_TARGETS;
-var config int STANDALONE_PINIONS_SELECTION_RANGE;
-var config int STANDALONE_PINIONS_IMPACT_RADIUS_METERS;
+var config int BD_STANDALONE_PINIONS_LOCAL_COOLDOWN;
+var config int BD_STANDALONE_PINIONS_GLOBAL_COOLDOWN;
+var config int BD_STANDALONE_PINIONS_TARGETING_AREA_RADIUS;
+var config int BD_STANDALONE_PINIONS_NUM_TARGETS;
+var config int BD_STANDALONE_PINIONS_SELECTION_RANGE;
+var config int BD_STANDALONE_PINIONS_IMPACT_RADIUS_METERS;
 
-var config int VIPERM2M3_ADDITIONAL_POISON_DAMAGE;
-var config int SIDEWINDER_ADDITIONAL_POISON_DAMAGE;
-var config int NAJA_ADDITIONAL_POISON_DAMAGE;
+var config int BD_VIPERM2M3_ADDITIONAL_POISON_DAMAGE;
+var config int BD_SIDEWINDER_ADDITIONAL_POISON_DAMAGE;
+var config int BD_NAJA_ADDITIONAL_POISON_DAMAGE;
 
 var config float SENTRYM1_REACTION_PENALTY;
 var config float SENTRYM2_REACTION_PENALTY;
@@ -139,7 +139,7 @@ static function X2AbilityTemplate CreateMutonM2_LWAbility_BayonetCharge()
 	Template.IconImage = "img:///Texture2D'UILibrary_BD_LWAlienPack.LWCenturion_AbilityBayonetCharge64'";
 	
 	Cooldown = new class'X2AbilityCooldown';
-	Cooldown.iNumTurns = default.BAYONETCHARGE_COOLDOWN;
+	Cooldown.iNumTurns = default.BD_BAYONETCHARGE_COOLDOWN;
 	Template.AbilityCooldown = Cooldown;
 
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
@@ -156,17 +156,17 @@ static function X2AbilityTemplate CreateMutonM2_LWAbility_BayonetCharge()
 	kTag = XGParamTag(`XEXPANDCONTEXT.FindTag("XGParam"));
 	if (kTag != none)
 	{
-		kTag.IntValue0 = default.BAYONETCHARGE_PENALTY_DURATION;
-		kTag.IntValue1 = default.BAYONETCHARGE_DEFENSE_PENALTY;
+		kTag.IntValue0 = default.BD_BAYONETCHARGE_PENALTY_DURATION;
+		kTag.IntValue1 = default.BD_BAYONETCHARGE_DEFENSE_PENALTY;
 		strPenalty = `XEXPAND.ExpandString(default.strBayonetChargePenalty);
 	} else {
 		strPenalty = "Placeholder Centurion penalty (no XGParamTag)";
 	}
-	StatEffect.BuildPersistentEffect(default.BAYONETCHARGE_PENALTY_DURATION, false, true, false, eGameRule_PlayerTurnEnd);
+	StatEffect.BuildPersistentEffect(default.BD_BAYONETCHARGE_PENALTY_DURATION, false, true, false, eGameRule_PlayerTurnEnd);
 	//StatEffect.SetDisplayInfo (ePerkBuff_Penalty, Template.LocFriendlyName, Template.GetMyHelpText(), Template.IconImage,,, Template.AbilitySourceName); // adjust
 	StatEffect.SetDisplayInfo (ePerkBuff_Penalty, Template.LocFriendlyName, strPenalty, Template.IconImage,,, Template.AbilitySourceName); // adjust
 	StatEffect.DuplicateResponse = eDupe_Refresh;
-	StatEffect.AddPersistentStatChange (eStat_Defense, float (default.BAYONETCHARGE_DEFENSE_PENALTY));
+	StatEffect.AddPersistentStatChange (eStat_Defense, float (default.BD_BAYONETCHARGE_DEFENSE_PENALTY));
 	Template.AddShooterEffect(StatEffect);
 
 	StandardMelee = new class'X2AbilityToHitCalc_StandardMelee';
@@ -234,12 +234,12 @@ static function X2AbilityTemplate CreateMutonM2_LWAbility_WarCry()
 	Template.Hostility = eHostility_Neutral;
 
 	ActionPointCost = new class'X2AbilityCost_ActionPoints';
-	ActionPointCost.iNumPoints = default.WARCRY_ACTIONCOST;
+	ActionPointCost.iNumPoints = default.BD_WARCRY_ACTIONCOST;
 	ActionPointCost.bfreeCost = false;
 	Template.AbilityCosts.AddItem(ActionPointCost);
 
 	Cooldown = new class'X2AbilityCooldown';
-	Cooldown.iNumTurns = default.WARCRY_COOLDOWN;
+	Cooldown.iNumTurns = default.BD_WARCRY_COOLDOWN;
 	Template.AbilityCooldown = Cooldown;
 
 	Template.AbilityToHitCalc = default.Deadeye;
@@ -250,7 +250,7 @@ static function X2AbilityTemplate CreateMutonM2_LWAbility_WarCry()
 	Template.AbilityShooterConditions.AddItem(default.LivingShooterProperty);
 
 	RadiusMultiTarget = new class'X2AbilityMultiTarget_Radius';
-	RadiusMultiTarget.fTargetRadius = default.WARCRY_RADIUS_METERS;
+	RadiusMultiTarget.fTargetRadius = default.BD_WARCRY_RADIUS_METERS;
 	RadiusMultiTarget.bIgnoreBlockingCover = true;
 	Template.AbilityMultiTargetStyle = RadiusMultiTarget;
 
@@ -271,7 +271,7 @@ static function X2AbilityTemplate CreateMutonM2_LWAbility_WarCry()
 
 	StatEffect = new class'X2Effect_WarCry';
 
-	StatEffect.BuildPersistentEffect(default.WARCRY_DURATION, false, true, false, eGameRule_PlayerTurnEnd);
+	StatEffect.BuildPersistentEffect(default.BD_WARCRY_DURATION, false, true, false, eGameRule_PlayerTurnEnd);
 	//StatEffect.SetDisplayInfo (ePerkBuff_Bonus, Template.LocFriendlyName, Template.GetMyHelpText(), Template.IconImage,,, Template.AbilitySourceName); // adjust
 	StatEffect.SetDisplayInfo (ePerkBuff_Bonus, Template.LocFriendlyName, class'X2Effect_WarCry'.default.strWarCryFriendlyDesc, Template.IconImage,,, Template.AbilitySourceName);
 
@@ -286,13 +286,13 @@ static function X2AbilityTemplate CreateMutonM2_LWAbility_WarCry()
 		StatEffect.AddCharacterNameLow (name(AlienName));
 	}
 
-	StatEffect.AddPersistentStatChange (eStat_Offense, float (default.WARCRY_MUTON_OFFENSE_BONUS), true);
-	StatEffect.AddPersistentStatChange (eStat_Mobility, float (default.WARCRY_MUTON_MOBILITY_BONUS), true);
-	StatEffect.AddPersistentStatChange (eStat_Will, float (default.WARCRY_MUTON_WILL_BONUS), true);
+	StatEffect.AddPersistentStatChange (eStat_Offense, float (default.BD_WARCRY_MUTON_OFFENSE_BONUS), true);
+	StatEffect.AddPersistentStatChange (eStat_Mobility, float (default.BD_WARCRY_MUTON_MOBILITY_BONUS), true);
+	StatEffect.AddPersistentStatChange (eStat_Will, float (default.BD_WARCRY_MUTON_WILL_BONUS), true);
 
-	StatEffect.AddPersistentStatChange (eStat_Offense, float (default.WARCRY_OTHER_OFFENSE_BONUS), false);
-	StatEffect.AddPersistentStatChange (eStat_Mobility, float (default.WARCRY_OTHER_MOBILITY_BONUS), false);
-	StatEffect.AddPersistentStatChange (eStat_Will, float (default.WARCRY_OTHER_WILL_BONUS), false);
+	StatEffect.AddPersistentStatChange (eStat_Offense, float (default.BD_WARCRY_OTHER_OFFENSE_BONUS), false);
+	StatEffect.AddPersistentStatChange (eStat_Mobility, float (default.BD_WARCRY_OTHER_MOBILITY_BONUS), false);
+	StatEffect.AddPersistentStatChange (eStat_Will, float (default.BD_WARCRY_OTHER_WILL_BONUS), false);
 
 	//Template.AddShooterEffect(StatEffect); This would make Centurion gain bonuses from own War Cry
 	Template.AddMultiTargetEffect(StatEffect);
@@ -456,7 +456,7 @@ static function X2DataTemplate CreateDroneRepairAbility()
 	Template.AbilityTargetStyle = SingleTarget;
 
 	ActionPointCost = new class'X2AbilityCost_ActionPoints';
-	ActionPointCost.iNumPoints = default.DRONE_REPAIR_ACTION_COST;
+	ActionPointCost.iNumPoints = default.BD_DRONE_REPAIR_ACTION_COST;
 	ActionPointCost.bConsumeAllPoints = false;
 	Template.AbilityCosts.AddItem(ActionPointCost);
 
@@ -524,14 +524,14 @@ static function X2AbilityTemplate AddDroneMeleeStun()
 	Template.AbilityCosts.AddItem(ActionPointCost);
 
 	Cooldown = new class'X2AbilityCooldown';
-	Cooldown.iNumTurns = default.STUNNER_COOLDOWN;
+	Cooldown.iNumTurns = default.BD_STUNNER_COOLDOWN;
 	Template.AbilityCooldown = Cooldown;
 
 	HitCalc = new class'X2AbilityToHitCalc_StandardAim';
-	HitCalc.BuiltInHitMod = default.DRONE_STUN_HIT_MODIFIER;
+	HitCalc.BuiltInHitMod = default.BD_DRONE_STUN_HIT_MODIFIER;
 	Template.AbilityToHitCalc = HitCalc;
 
-	StunnedEffect = class'X2StatusEffects'.static.CreateStunnedStatusEffect(default.DRONE_STUN_ACTION_POINT_DAMAGE, 100);
+	StunnedEffect = class'X2StatusEffects'.static.CreateStunnedStatusEffect(default.BD_DRONE_STUN_ACTION_POINT_DAMAGE, 100);
 	StunnedEffect.bRemoveWhenSourceDies = false;
 	Template.AddTargetEffect(StunnedEffect);
 
@@ -654,9 +654,9 @@ static function X2DataTemplate CreateMassMindspinAbility()
 
 	ConeMultiTarget = new class'X2AbilityMultiTarget_Cone';
 	ConeMultiTarget.bExcludeSelfAsTargetIfWithinRadius = true;
-	ConeMultiTarget.ConeEndDiameter = 12 * default.MASS_MINDSPIN_LW_CONE_END_DIAMETER;
+	ConeMultiTarget.ConeEndDiameter = 12 * default.BD_MASS_MINDSPIN_LW_CONE_END_DIAMETER;
 	ConeMultiTarget.fTargetRadius = 99.0;
-	ConeMultiTarget.ConeLength=default.MASS_MINDSPIN_LW_CONE_LENGTH;
+	ConeMultiTarget.ConeLength=default.BD_MASS_MINDSPIN_LW_CONE_LENGTH;
 	ConeMultiTarget.bIgnoreBlockingCover = true;
 	Template.AbilityMultiTargetStyle = ConeMultiTarget;
 
@@ -762,7 +762,7 @@ static function X2DataTemplate CreateMassReanimateAbility()
 	//attempted new targeting method
 	CursorTarget = new class'X2AbilityTarget_Cursor';
 	CursorTarget.bRestrictToSquadsightRange = true;
-	CursorTarget.FixedAbilityRange = default.MASS_REANIMATION_LW_RANGE_METERS;
+	CursorTarget.FixedAbilityRange = default.BD_MASS_REANIMATION_LW_RANGE_METERS;
 	Template.AbilityTargetStyle = CursorTarget;
 
 	//Template.AbilityTargetStyle = default.SelfTarget;
@@ -774,17 +774,17 @@ static function X2DataTemplate CreateMassReanimateAbility()
 	Template.AddShooterEffectExclusions();
 
 	ActionPointCost = new class'X2AbilityCost_ActionPoints';
-	ActionPointCost.iNumPoints = default.MASS_REANIMATION_LW_MIN_ACTION_COST;
+	ActionPointCost.iNumPoints = default.BD_MASS_REANIMATION_LW_MIN_ACTION_COST;
 	ActionPointCost.bConsumeAllPoints = true;
 	Template.AbilityCosts.AddItem(ActionPointCost);
 
 	Cooldown = new class'X2AbilityCooldown_LocalAndGlobal';
-	Cooldown.iNumTurns = default.MASS_REANIMATION_LW_LOCAL_COOLDOWN;
-	Cooldown.NumGlobalTurns = default.MASS_REANIMATION_LW_GLOBAL_COOLDOWN;
+	Cooldown.iNumTurns = default.BD_MASS_REANIMATION_LW_LOCAL_COOLDOWN;
+	Cooldown.NumGlobalTurns = default.BD_MASS_REANIMATION_LW_GLOBAL_COOLDOWN;
 	Template.AbilityCooldown = Cooldown;
 
 	RadiusMultiTarget = new class'X2AbilityMultiTarget_Radius';
-	RadiusMultiTarget.fTargetRadius = default.MASS_REANIMATION_LW_RADIUS_METERS;
+	RadiusMultiTarget.fTargetRadius = default.BD_MASS_REANIMATION_LW_RADIUS_METERS;
 	RadiusMultiTarget.bIgnoreBlockingCover = true;
 	RadiusMultiTarget.bAllowDeadMultiTargetUnits = true;
 	RadiusMultiTarget.bExcludeSelfAsTargetIfWithinRadius = true;
@@ -945,18 +945,18 @@ static function X2DataTemplate CreatePersonalShieldAbility()
 	Template.AddShooterEffectExclusions(SkipExclusions);
 
 	ActionPointCost = new class'X2AbilityCost_ActionPoints';
-	ActionPointCost.iNumPoints = default.PERSONAL_SHIELD_ACTION_COST;
+	ActionPointCost.iNumPoints = default.BD_PERSONAL_SHIELD_ACTION_COST;
 	ActionPointCost.bConsumeAllPoints = false;
 	Template.AbilityCosts.AddItem(ActionPointCost);
 
 	Cooldown = new class'X2AbilityCooldown';
-	Cooldown.iNumTurns = default.PERSONAL_SHIELD_COOLDOWN;
+	Cooldown.iNumTurns = default.BD_PERSONAL_SHIELD_COOLDOWN;
 	Template.AbilityCooldown = Cooldown;
 
 	PersonalShieldEffect = new class'X2Effect_EnergyShield';
-	PersonalShieldEffect.BuildPersistentEffect(default.PERSONAL_SHIELD_DURATION, false, true, false, eGameRule_PlayerTurnEnd);
+	PersonalShieldEffect.BuildPersistentEffect(default.BD_PERSONAL_SHIELD_DURATION, false, true, false, eGameRule_PlayerTurnEnd);
 	PersonalShieldEffect.SetDisplayInfo (ePerkBuff_Bonus, Template.LocFriendlyName, Template.GetMyHelpText(), Template.IconImage,,, Template.AbilitySourceName);
-	PersonalShieldEffect.AddPersistentStatChange(eStat_ShieldHP, default.PERSONAL_SHIELD_HP);
+	PersonalShieldEffect.AddPersistentStatChange(eStat_ShieldHP, default.BD_PERSONAL_SHIELD_HP);
 	PersonalShieldEffect.EffectName='PersonalShield';
 	Template.AddTargetEffect(PersonalShieldEffect);
 
@@ -1082,7 +1082,7 @@ static function X2AbilityTemplate CreateChryssalidSoldierSlashAbility()
 	Template.AbilityTriggers.AddItem(default.UnitPostBeginPlayTrigger);
 	Template.bIsPassive = true;
 	DamageEffect = new class'X2Effect_HiveQueenSlash';
-	DamageEffect.BonusDamage = default.CHRYSSALID_SOLDIER_SLASH_BONUS_DAMAGE;
+	DamageEffect.BonusDamage = default.BD_CHRYSSALID_SOLDIER_SLASH_BONUS_DAMAGE;
 	DamageEffect.BuildPersistentEffect(1, true, false, false);
 	DamageEffect.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,, 'eAbilitySource_Perk');
 	Template.AddTargetEffect(DamageEffect);
@@ -1248,8 +1248,8 @@ local X2AbilityTemplate Template;
 	Template.AbilityCosts.AddItem(ActionPointCost);
 
 	Cooldown = new class'X2AbilityCooldown_LocalAndGlobal';
-	Cooldown.iNumTurns = default.STANDALONE_PINIONS_LOCAL_COOLDOWN;
-	Cooldown.NumGlobalTurns = default.STANDALONE_PINIONS_GLOBAL_COOLDOWN;
+	Cooldown.iNumTurns = default.BD_STANDALONE_PINIONS_LOCAL_COOLDOWN;
+	Cooldown.NumGlobalTurns = default.BD_STANDALONE_PINIONS_GLOBAL_COOLDOWN;
 	Template.AbilityCooldown = Cooldown;
 
 	UnitProperty = new class'X2Condition_UnitProperty';
@@ -1273,12 +1273,12 @@ local X2AbilityTemplate Template;
 	Template.AbilityMultiTargetConditions.AddItem(UnitProperty);
 
 	BlazingPinionsMultiTarget = new class'X2AbilityMultiTarget_BlazingPinions';
-	BlazingPinionsMultiTarget.fTargetRadius = default.STANDALONE_PINIONS_TARGETING_AREA_RADIUS;
-	BlazingPinionsMultiTarget.NumTargetsRequired = default.STANDALONE_PINIONS_NUM_TARGETS;
+	BlazingPinionsMultiTarget.fTargetRadius = default.BD_STANDALONE_PINIONS_TARGETING_AREA_RADIUS;
+	BlazingPinionsMultiTarget.NumTargetsRequired = default.BD_STANDALONE_PINIONS_NUM_TARGETS;
 	Template.AbilityMultiTargetStyle = BlazingPinionsMultiTarget;
 
 	CursorTarget = new class'X2AbilityTarget_Cursor';
-	CursorTarget.FixedAbilityRange = default.STANDALONE_PINIONS_SELECTION_RANGE;
+	CursorTarget.FixedAbilityRange = default.BD_STANDALONE_PINIONS_SELECTION_RANGE;
 	Template.AbilityTargetStyle = CursorTarget;
 
 	//Delayed Effect to cause the second Blazing Pinions stage to occur
@@ -1342,7 +1342,7 @@ static function X2AbilityTemplate StandalonePinionsStage2Ability()
 	Template.AddShooterEffect(RemoveEffects);
 
 	RadMultiTarget = new class'X2AbilityMultiTarget_Radius';
-	RadMultiTarget.fTargetRadius = default.STANDALONE_PINIONS_IMPACT_RADIUS_METERS;
+	RadMultiTarget.fTargetRadius = default.BD_STANDALONE_PINIONS_IMPACT_RADIUS_METERS;
 
 	Template.AbilityMultiTargetStyle = RadMultiTarget;
 

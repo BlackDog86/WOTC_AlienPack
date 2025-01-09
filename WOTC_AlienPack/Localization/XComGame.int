@@ -218,7 +218,7 @@ AbilityDescName="cannon"
 ; End translation
 
 [AdvGunnerM2 X2CharacterTemplate]
-strCharacterName="ADVENT Advanced Gunner"
+strCharacterName="Advanced Gunner"
 
 [AdvGunnerM2_WPN X2WeaponTemplate]
 FriendlyName="AutoMag"
@@ -227,7 +227,7 @@ AbilityDescName="cannon"
 ; End translation
 
 [AdvGunnerM3 X2CharacterTemplate]
-strCharacterName="ADVENT Elite Gunner"
+strCharacterName="Elite Gunner"
 
 [AdvGunnerM3_WPN X2WeaponTemplate]
 FriendlyName="AutoMag"
@@ -248,7 +248,7 @@ AbilityDescName="mag rifle"
 ; End translation
 
 [AdvSentryM2 X2CharacterTemplate]
-strCharacterName="ADVENT Advanced Sentry"
+strCharacterName="Advanced Sentry"
 
 [AdvSentryM2_WPN X2WeaponTemplate]
 FriendlyName="ADVENT Mag Rifle"
@@ -257,7 +257,7 @@ AbilityDescName="mag rifle"
 ; End translation
 
 [AdvSentryM3 X2CharacterTemplate]
-strCharacterName="ADVENT Elite Sentry"
+strCharacterName="Elite Sentry"
 
 [AdvSentryM3_WPN X2WeaponTemplate]
 FriendlyName="ADVENT Mag Rifle"
@@ -277,7 +277,7 @@ FriendlyName="ADVENT Grenade Launcher"
 FriendlyName="ADVENT Mag Rifle"
 
 [AdvGrenadierM2 X2CharacterTemplate]
-strCharacterName="ADVENT Advanced Grenadier"
+strCharacterName="Advanced Grenadier"
 
 [AdvGrenadierM2_GrenadeLauncher X2GrenadeLauncherTemplate]
 FriendlyName="ADVENT Grenade Launcher"
@@ -286,7 +286,7 @@ FriendlyName="ADVENT Grenade Launcher"
 FriendlyName="ADVENT Mag Rifle"
 
 [AdvGrenadierM3 X2CharacterTemplate]
-strCharacterName="ADVENT Elite Grenadier"
+strCharacterName="Elite Grenadier"
 
 [AdvGrenadierM3_GrenadeLauncher X2GrenadeLauncherTemplate]
 FriendlyName="ADVENT Grenade Launcher"
@@ -333,13 +333,13 @@ strCharacterName="ADVENT Rocketeer"
 FriendlyName="ADVENT Mag Rifle"
 
 [AdvRocketeerM2 X2CharacterTemplate]
-strCharacterName="ADVENT Advanced Rocketeer"
+strCharacterName="Advanced Rocketeer"
 
 [AdvRocketeerM2_WPN X2WeaponTemplate]
 FriendlyName="ADVENT Mag Rifle"
 
 [AdvRocketeerM3 X2CharacterTemplate]
-strCharacterName="ADVENT Elite Rocketeer"
+strCharacterName="Elite Rocketeer"
 
 [AdvRocketeerM3_WPN X2WeaponTemplate]
 FriendlyName="ADVENT Mag Rifle"
@@ -366,7 +366,7 @@ FriendlyName="Heavy MEC Minigun"
 strCharacterName="ADVENT Drone"
 
 [LWDroneM2 X2CharacterTemplate]
-strCharacterName="ADVENT Advanced Drone"
+strCharacterName="Advanced Drone"
 
 [LWDroneM1_WPN X2WeaponTemplate]
 FriendlyName="Drone Shock"
@@ -436,7 +436,7 @@ AbilityDescName="mag rifle"
 ; End translation
 
 [AdvSergeantM2 X2CharacterTemplate]
-strCharacterName="ADVENT Elite Sergeant"
+strCharacterName="Elite Sergeant"
 
 [AdvSergeantM2_WPN X2WeaponTemplate]
 FriendlyName="ADVENT Mag Rifle"
@@ -523,15 +523,15 @@ LocPromotionPopupText="<Bullet/> Sentries have lower penalties to reaction fire 
 
 [BD_Guardian X2AbilityTemplate]
 LocFriendlyName="Guardian"
-LocLongDescription="On the first successful overwatch shot of the turn, there is a <Ability:GUARDIAN_PROC_CHANCE/>% chance that a second shot will be taken."
-LocHelpText="With every successful Overwatch shot, there is a <Ability:GUARDIAN_PROC_CHANCE/>% chance that another shot will be taken."
+LocLongDescription="On the first successful overwatch shot of the turn, there is a <Ability:BD_GUARDIAN_PROC_CHANCE/>% chance that a second shot will be taken."
+LocHelpText="With every successful Overwatch shot, there is a <Ability:BD_GUARDIAN_PROC_CHANCE/>% chance that another shot will be taken."
 LocFlyOverText="Guardian"
 LocPromotionPopupText="<Bullet/> Only a single second overwatch shots may can be taken per-turn with this ability.<br/>"
 
 [BD_Sentinel X2AbilityTemplate]
 LocFriendlyName="Sentinel"
-LocLongDescription="On the first successful overwatch shot of the turn, there is a <Ability:SENTINEL_PROC_CHANCE/>% chance that a second shot will be taken."
-LocHelpText="With every successful Overwatch shot, there is a <Ability:SENTINEL_PROC_CHANCE/>% chance that another shot will be taken."
+LocLongDescription="On the first successful overwatch shot of the turn, there is a <Ability:BD_SENTINEL_PROC_CHANCE/>% chance that a second shot will be taken."
+LocHelpText="With every successful Overwatch shot, there is a <Ability:BD_SENTINEL_PROC_CHANCE/>% chance that another shot will be taken."
 LocFlyOverText="Sentinel"
 LocPromotionPopupText="<Bullet/> Only a single second overwatch shots may can be taken per-turn with this ability.<br/>"
 
@@ -589,9 +589,9 @@ LocMissMessage="Missed!"
 [BD_Personalshield_LW X2AbilityTemplate]
 LocFriendlyName="Personal Shield"
 LocFlyOverText="Personal Shield"
-LocHelpText="Grants <Ability:PERSONAL_SHIELD_XCOM_HP/> points of ablative armor. <Ability:PERSONAL_SHIELD_XCOM_DURATION/>-turn cooldown."
-LocLongDescription="Grants <Ability:PERSONAL_SHIELD_XCOM_HP/> points of ablative armor. <Ability:PERSONAL_SHIELD_XCOM_DURATION/>-turn cooldown."
-LocPromotionPopupText="<Bullet/> Grants <Ability:PERSONAL_SHIELD_XCOM_HP/> points of ablative armor.<br/><Bullet/> <Ability:PERSONAL_SHIELD_XCOM_DURATION/>-turn cooldown.<br/><Bullet/> Uses one action; does not end turn.<br/>"
+LocHelpText="Grants <Ability:BD_PERSONAL_SHIELD_XCOM_HP/> points of ablative armor. <Ability:BD_PERSONAL_SHIELD_XCOM_DURATION/>-turn cooldown."
+LocLongDescription="Grants <Ability:BD_PERSONAL_SHIELD_XCOM_HP/> points of ablative armor. <Ability:BD_PERSONAL_SHIELD_XCOM_DURATION/>-turn cooldown."
+LocPromotionPopupText="<Bullet/> Grants <Ability:BD_PERSONAL_SHIELD_XCOM_HP/> points of ablative armor.<br/><Bullet/> <Ability:BD_PERSONAL_SHIELD_XCOM_DURATION/>-turn cooldown.<br/><Bullet/> Uses one action; does not end turn.<br/>"
 
 [BD_MassReanimation_LW X2AbilityTemplate]
 LocFriendlyName="Mass Reanimate"
@@ -621,14 +621,14 @@ LocFriendlyName="Lightning Reflexes"
 LocFlyOverText="Lightning Reflexes"
 LocLongDescription="Reaction fire shots against you have a significantly decreased chance to hit. The bonus goes down with each additional reaction shot you face."
 LocHelpText="Reaction fire shots against you have a decreased chance to hit."
-LocPromotionPopupText="<Bullet/> Reaction fire shots against you have a significantly decreased chance to hit.<br/><Bullet/> The first reaction shot against you during a turn is at -<Ability:LR_LW_FIRST_SHOT_PENALTY/> to hit; each subsequent shot increases the hit chance by <Ability:LR_LW_PENALTY_REDUCTION_PER_SHOT/>.<br/>"
+LocPromotionPopupText="<Bullet/> Reaction fire shots against you have a significantly decreased chance to hit.<br/><Bullet/> The first reaction shot against you during a turn is at -<Ability:BD_LR_LW_FIRST_SHOT_PENALTY/> to hit; each subsequent shot increases the hit chance by <Ability:BD_LR_LW_PENALTY_REDUCTION_PER_SHOT/>.<br/>"
 
 [BD_LockedOn_LW X2AbilityTemplate]
 LocFriendlyName="Locked On"
 LocFlyOverText="Locked On"
-LocLongDescription="Gain +<Ability:LOCKEDON_AIM_BONUS/> aim and +<Ability:LOCKEDON_CRIT_BONUS/> critical chance for successive shots at the same enemy unit."
-LocHelpText="Gain +<Ability:LOCKEDON_AIM_BONUS/> aim and +<Ability:LOCKEDON_CRIT_BONUS/> critical chance for successive shots at the same enemy unit."
-LocPromotionPopupText="<Bullet/> Gain +<Ability:LOCKEDON_AIM_BONUS/> aim and +<Ability:LOCKEDON_CRIT_BONUS/> critical chance for repeated shots with your primary weapon at the same target. Not cumulative, and only applies to enemy units.<br/><Bullet/> Area-of-Effect-based shots do not grant the bonus."
+LocLongDescription="Gain +<Ability:BD_LOCKEDON_AIM_BONUS/> aim and +<Ability:BD_LOCKEDON_CRIT_BONUS/> critical chance for successive shots at the same enemy unit."
+LocHelpText="Gain +<Ability:BD_LOCKEDON_AIM_BONUS/> aim and +<Ability:BD_LOCKEDON_CRIT_BONUS/> critical chance for successive shots at the same enemy unit."
+LocPromotionPopupText="<Bullet/> Gain +<Ability:BD_LOCKEDON_AIM_BONUS/> aim and +<Ability:BD_LOCKEDON_CRIT_BONUS/> critical chance for repeated shots with your primary weapon at the same target. Not cumulative, and only applies to enemy units.<br/><Bullet/> Area-of-Effect-based shots do not grant the bonus."
 
 [BD_TraverseFire_LW X2AbilityTemplate]
 LocFriendlyName="Traverse Fire"
@@ -647,30 +647,30 @@ LocPromotionPopupText="<Bullet/> Taking a standard shot with your primary weapon
 [BD_Infighter_LW X2AbilityTemplate]
 LocFriendlyName="Infighter"
 LocFlyOverText="Infighter"
-LocLongDescription="Gain +<Ability:INFIGHTER_DODGE_BONUS/> dodge against attacks within <Ability:INFIGHTER_MAX_TILES/> tiles."
-LocHelpText="Gain +<Ability:INFIGHTER_DODGE_BONUS/> dodge against attacks within <Ability:INFIGHTER_MAX_TILES/> tiles."
-LocPromotionPopupText="<Bullet/> Gain +<Ability:INFIGHTER_DODGE_BONUS/> dodge against attacks within <Ability:INFIGHTER_MAX_TILES/> tiles.<br/><Bullet/> Dodge bonus also applies to melee attacks.<br/>"
+LocLongDescription="Gain +<Ability:BD_INFIGHTER_DODGE_BONUS/> dodge against attacks within <Ability:BD_INFIGHTER_MAX_TILES/> tiles."
+LocHelpText="Gain +<Ability:BD_INFIGHTER_DODGE_BONUS/> dodge against attacks within <Ability:BD_INFIGHTER_MAX_TILES/> tiles."
+LocPromotionPopupText="<Bullet/> Gain +<Ability:BD_INFIGHTER_DODGE_BONUS/> dodge against attacks within <Ability:BD_INFIGHTER_MAX_TILES/> tiles.<br/><Bullet/> Dodge bonus also applies to melee attacks.<br/>"
 
 [BD_TacticalSense_LW X2AbilityTemplate]
 LocFriendlyName="Tactical Sense"
 LocFlyOverText="Tactical Sense"
-LocLongDescription="Gain +<Ability:TACTICAL_SENSE_DEF_BONUS_PER_ENEMY/> defense for each enemy you can see, up to a maximum of +<Ability:TACTICAL_SENSE_MAX_DEF_BONUS/> defense."
-LocHelpText="Gain +<Ability:TACTICAL_SENSE_DEF_BONUS_PER_ENEMY/> defense for each enemy you can see, up to a maximum of +<Ability:TACTICAL_SENSE_MAX_DEF_BONUS/> defense."
-LocPromotionPopupText="<Bullet/> Gain +<Ability:TACTICAL_SENSE_DEF_BONUS_PER_ENEMY/> defense for each living enemy you can see, up to a maximum of +<Ability:TACTICAL_SENSE_MAX_DEF_BONUS/> defense.<br/><Bullet/> Units visible at squadsight ranges do not confer bonus.<br/>"
+LocLongDescription="Gain +<Ability:BD_TACTICAL_SENSE_DEF_BONUS_PER_ENEMY/> defense for each enemy you can see, up to a maximum of +<Ability:BD_TACTICAL_SENSE_MAX_DEF_BONUS/> defense."
+LocHelpText="Gain +<Ability:BD_TACTICAL_SENSE_DEF_BONUS_PER_ENEMY/> defense for each enemy you can see, up to a maximum of +<Ability:BD_TACTICAL_SENSE_MAX_DEF_BONUS/> defense."
+LocPromotionPopupText="<Bullet/> Gain +<Ability:BD_TACTICAL_SENSE_DEF_BONUS_PER_ENEMY/> defense for each living enemy you can see, up to a maximum of +<Ability:BD_TACTICAL_SENSE_MAX_DEF_BONUS/> defense.<br/><Bullet/> Units visible at squadsight ranges do not confer bonus.<br/>"
 
 [BD_DamnGoodGround_LW X2AbilityTemplate]
 LocFriendlyName="Damn Good Ground"
 LocFlyOverText="Damn Good Ground"
-LocLongDescription="Confers +<Ability:DGG_AIM_BONUS/> aim and +<Ability:DGG_DEF_BONUS/> defense against targets at a lower elevation."
-LocHelpText="Confers +<Ability:DGG_AIM_BONUS/> aim and +<Ability:DGG_DEF_BONUS/> defense against targets at a lower elevation."
-LocPromotionPopupText="<Bullet/> Confers +<Ability:DGG_AIM_BONUS/> aim and +<Ability:DGG_DEF_BONUS/> defense against targets at a lower elevation.<br/>"
+LocLongDescription="Confers +<Ability:BD_DGG_AIM_BONUS/> aim and +<Ability:BD_DGG_DEF_BONUS/> defense against targets at a lower elevation."
+LocHelpText="Confers +<Ability:BD_DGG_AIM_BONUS/> aim and +<Ability:BD_DGG_DEF_BONUS/> defense against targets at a lower elevation."
+LocPromotionPopupText="<Bullet/> Confers +<Ability:BD_DGG_AIM_BONUS/> aim and +<Ability:BD_DGG_DEF_BONUS/> defense against targets at a lower elevation.<br/>"
 
 [BD_Executioner_LW X2AbilityTemplate]
 LocFriendlyName="Executioner"
 LocFlyOverText="Executioner"
-LocLongDescription="Confers +<Ability:EXECUTIONER_AIM_BONUS/> aim and +<Ability:EXECUTIONER_CRIT_BONUS/> critical chance against targets at half or less of their original hit points."
-LocHelpText="Confers +<Ability:EXECUTIONER_AIM_BONUS/> aim and +<Ability:EXECUTIONER_CRIT_BONUS/> critical chance against targets at half or less of their original hit points."
-LocPromotionPopupText="<Bullet/> Confers +<Ability:EXECUTIONER_AIM_BONUS/> aim and +<Ability:EXECUTIONER_CRIT_BONUS/> critical chance against targets at half or less of their original hit points.<br/>"
+LocLongDescription="Confers +<Ability:BD_EXECUTIONER_AIM_BONUS/> aim and +<Ability:BD_EXECUTIONER_CRIT_BONUS/> critical chance against targets at half or less of their original hit points."
+LocHelpText="Confers +<Ability:BD_EXECUTIONER_AIM_BONUS/> aim and +<Ability:BD_EXECUTIONER_CRIT_BONUS/> critical chance against targets at half or less of their original hit points."
+LocPromotionPopupText="<Bullet/> Confers +<Ability:BD_EXECUTIONER_AIM_BONUS/> aim and +<Ability:BD_EXECUTIONER_CRIT_BONUS/> critical chance against targets at half or less of their original hit points.<br/>"
 
 [HitandRun X2AbilityTemplate]
 LocFriendlyName="Hit and Run"
@@ -683,7 +683,7 @@ LocPromotionPopupText="<Bullet/> Once per turn, gain an additional move action a
 [BD_AreaSuppression_LW X2AbilityTemplate]
 LocFriendlyName="Area Suppression"
 LocFlyOverText="Area Suppression"
-LocLongDescription="Fire a barrage that pins down multiple targets within a <Ability:AREA_SUPPRESSION_RADIUS/>-tile radius, granting reaction fire against the first one that moves, and imposing a <Ability:SUPPRESSIONPENALTY/> penalty all targets' aim until suppression is removed."
+LocLongDescription="Fire a barrage that pins down multiple targets within a <Ability:BD_AREA_SUPPRESSION_RADIUS/>-tile radius, granting reaction fire against the first one that moves, and imposing a <Ability:SUPPRESSIONPENALTY/> penalty all targets' aim until suppression is removed."
 LocHelpText="Suppress multiple targets within an area of effect."
 LocPromotionPopupText="<Bullet/> The first unit that attempts to move will face reaction fire, and suppression will be cancelled.<br/><Bullet/> Does not work with shotguns or sniper rifles<br/><Bullet/> Suppression costs <Ability:SelfAmmoCost/> ammo points to use, but has no cooldown.<br/><Bullet/> Suppression will be canceled if the suppressing unit is damaged.<br/><Bullet/> If multiple units suppress a target, the aim penalty will stack.<br/>"
 
@@ -692,9 +692,9 @@ LocPromotionPopupText="<Bullet/> The first unit that attempts to move will face 
 [BD_Aggression_LW X2AbilityTemplate]
 LocFriendlyName="Aggression"
 LocFlyOverText="Aggression"
-LocLongDescription="Gain +<Ability:AGGRESSION_CRIT_BONUS_PER_ENEMY/> critical chance for each enemy you can see, up to a maximum of +<Ability:AGGRESSION_MAX_CRIT_BONUS/>."
-LocHelpText="Gain +<Ability:AGGRESSION_CRIT_BONUS_PER_ENEMY/> critical chance for each enemy you can see, up to a maximum of +<Ability:AGGRESSION_MAX_CRIT_BONUS/>."
-LocPromotionPopupText="<Bullet/> Gain +<Ability:AGGRESSION_CRIT_BONUS_PER_ENEMYY/> critical chance for each enemy you can see, up to a maximum of <Ability:AGGRESSION_MAX_CRIT_BONUS/>.<br/><Bullet/> Units visible at squadsight ranges do confer bonus.<br/>"
+LocLongDescription="Gain +<Ability:BD_AGGRESSION_CRIT_BONUS_PER_ENEMY/> critical chance for each enemy you can see, up to a maximum of +<Ability:BD_AGGRESSION_MAX_CRIT_BONUS/>."
+LocHelpText="Gain +<Ability:BD_AGGRESSION_CRIT_BONUS_PER_ENEMY/> critical chance for each enemy you can see, up to a maximum of +<Ability:BD_AGGRESSION_MAX_CRIT_BONUS/>."
+LocPromotionPopupText="<Bullet/> Gain +<Ability:BD_AGGRESSION_CRIT_BONUS_PER_ENEMYY/> critical chance for each enemy you can see, up to a maximum of <Ability:BD_AGGRESSION_MAX_CRIT_BONUS/>.<br/><Bullet/> Units visible at squadsight ranges do confer bonus.<br/>"
 
 [HardTarget X2AbilityTemplate]
 LocFriendlyName="Hard Target"
@@ -714,9 +714,9 @@ LocPromotionPopupText="<Bullet/> Once per turn, gain an additional move action a
 LocFriendlyName="Bring 'Em On"
 LocFlyOverText="Bring 'Em On"
 ; LWOTC Needs Translation
-LocLongDescription="Gain <Ability:BEO_BONUS_CRIT_DAMAGE_PER_ENEMY/> damage on critical hits for every two enemies you can see, up to a maximum of <Ability:BEO_MAX_BONUS_CRIT_DAMAGE/>. Works for the soldier's <Ability:BOUND_WEAPON_NAME/> and explosives."
-LocHelpText="Gain <Ability:BEO_BONUS_CRIT_DAMAGE_PER_ENEMY/> damage on critical hits for every two enemies you can see, up to a maximum of <Ability:BEO_MAX_BONUS_CRIT_DAMAGE/>. Works for the soldier's <Ability:BOUND_WEAPON_NAME/> and explosives."
-LocPromotionPopupText="<Bullet/> Gain <Ability:BEO_BONUS_CRIT_DAMAGE_PER_ENEMY/> damage on critical hits for every two enemies you can see, up to a maximum of <Ability:BEO_MAX_BONUS_CRIT_DAMAGE/>.<br/><Bullet/> Units visible at squadsight ranges do confer bonus.<br/><Bullet/> Applies to damage from the soldier's <Ability:BOUND_WEAPON_NAME/> and, if the soldier has Biggest Booms, explosives (damaging grenades, rockets, etc.).<br/>"
+LocLongDescription="Gain <Ability:BD_BEO_BONUS_CRIT_DAMAGE_PER_ENEMY/> damage on critical hits for every two enemies you can see, up to a maximum of <Ability:BD_BEO_MAX_BONUS_CRIT_DAMAGE/>. Works for the soldier's <Ability:BOUND_WEAPON_NAME/> and explosives."
+LocHelpText="Gain <Ability:BD_BEO_BONUS_CRIT_DAMAGE_PER_ENEMY/> damage on critical hits for every two enemies you can see, up to a maximum of <Ability:BD_BEO_MAX_BONUS_CRIT_DAMAGE/>. Works for the soldier's <Ability:BOUND_WEAPON_NAME/> and explosives."
+LocPromotionPopupText="<Bullet/> Gain <Ability:BD_BEO_BONUS_CRIT_DAMAGE_PER_ENEMY/> damage on critical hits for every two enemies you can see, up to a maximum of <Ability:BD_BEO_MAX_BONUS_CRIT_DAMAGE/>.<br/><Bullet/> Units visible at squadsight ranges do confer bonus.<br/><Bullet/> Applies to damage from the soldier's <Ability:BOUND_WEAPON_NAME/> and, if the soldier has Biggest Booms, explosives (damaging grenades, rockets, etc.).<br/>"
 ; End Translation
 
 [BD_CloseandPersonal_LW X2AbilityTemplate]
@@ -730,26 +730,26 @@ LocPromotionPopupText="<Bullet/> Confers <Ability:CRITBOOST/> critical chance ag
 LocFriendlyName="Close Combat Specialist"
 LocFlyOverText="Close Combat Specialist"
 ; LWOTC Needs Translation (3)
-LocLongDescription="Fire a free reaction shot with your primary weapon at any visible enemy within <Ability:CCS_RANGE/> tiles who moves or fires."
-LocHelpText="Fire a free reaction shot at any visible enemy within <Ability:CCS_RANGE/> tiles who moves or fires."
+LocLongDescription="Fire a free reaction shot with your primary weapon at any visible enemy within <Ability:BD_CCS_RANGE/> tiles who moves or fires."
+LocHelpText="Fire a free reaction shot at any visible enemy within <Ability:BD_CCS_RANGE/> tiles who moves or fires."
 ; End Translation (3)
-LocPromotionPopupText="<Bullet/> Will not trigger if soldier is concealed.<br/><Bullet/> You may shoot at each enemy with this ability once per turn.<br/><Bullet/> Each shot requires <ABILITY:CCS_AMMO_PER_SHOT/> ammo.<br/>""
+LocPromotionPopupText="<Bullet/> Will not trigger if soldier is concealed.<br/><Bullet/> You may shoot at each enemy with this ability once per turn.<br/><Bullet/> Each shot requires <ABILITY:BD_CCS_AMMO_PER_SHOT/> ammo.<br/>""
 
 [BD_CloseCombatSpecialist_LWAttack X2AbilityTemplate]
 LocFriendlyName="Close Combat Specialist"
 LocFlyOverText="Close Combat Specialist"
 ; LWOTC Needs Translation (2)
-LocLongDescription="During enemy turns, fire a free reaction shot with your <Ability:BOUND_WEAPON_NAME/> at any visible enemy within <Ability:CCS_RANGE/> tiles who moves or fires."
+LocLongDescription="During enemy turns, fire a free reaction shot with your <Ability:BOUND_WEAPON_NAME/> at any visible enemy within <Ability:BD_CCS_RANGE/> tiles who moves or fires."
 ; End Translation (2)
-LocHelpText="During enemy turns, Fire a free reaction shot at any visible enemy within <Ability:CCS_RANGE/> tiles who moves or fires."
-LocPromotionPopupText="<Bullet/> Will not trigger if soldier is concealed.<br/><Bullet/> You may shoot at each enemy with this ability once per turn.<br/><Bullet/> Each shot requires <ABILITY:CCS_AMMO_PER_SHOT/> ammo.<br/>""
+LocHelpText="During enemy turns, Fire a free reaction shot at any visible enemy within <Ability:BD_CCS_RANGE/> tiles who moves or fires."
+LocPromotionPopupText="<Bullet/> Will not trigger if soldier is concealed.<br/><Bullet/> You may shoot at each enemy with this ability once per turn.<br/><Bullet/> Each shot requires <ABILITY:BD_CCS_AMMO_PER_SHOT/> ammo.<br/>""
 
 [BD_DamageControl_LWPassive X2AbilityTemplate]
 LocFriendlyName="Damage Control"
 LocFlyOverText="Damage Control"
-LocLongDescription="After taking damage, gain +<ABILITY:DAMAGE_CONTROL_BONUS_ARMOR/> armor through the end of the turn."
-LocHelpText="After taking damage, gain +<ABILITY:DAMAGE_CONTROL_BONUS_ARMOR/> armor through the end of the turn."
-LocPromotionPopupText="<Bullet/> Your armor hardens temporarily after an impact. After taking damage, gain +<ABILITY:DAMAGE_CONTROL_BONUS_ARMOR/> armor through the end of the next turn.
+LocLongDescription="After taking damage, gain +<ABILITY:BD_DAMAGE_CONTROL_BONUS_ARMOR/> armor through the end of the turn."
+LocHelpText="After taking damage, gain +<ABILITY:BD_DAMAGE_CONTROL_BONUS_ARMOR/> armor through the end of the turn."
+LocPromotionPopupText="<Bullet/> Your armor hardens temporarily after an impact. After taking damage, gain +<ABILITY:BD_DAMAGE_CONTROL_BONUS_ARMOR/> armor through the end of the next turn.
 
 [BD_Defilade_LW X2AbilityTemplate]
 LocFriendlyName="Defilade"
@@ -772,16 +772,16 @@ LocPromotionPopupText="<Bullet/> Soldiers within Command Range of the Officer re
 [BD_DepthPerception_LW X2AbilityTemplate]
 LocFriendlyName="Depth Perception"
 LocFlyOverText="Depth Perception"
-LocLongDescription="Gain <ABILITY:DGG_AIM_BONUS/> aim and reduce enemies' dodge by <ABILITY:DGG_DEF_BONUS/> when at a higher elevation than your target."
-LocHelpText="Gain <ABILITY:DGG_AIM_BONUS/> aim and reduce enemies' dodge by <ABILITY:DGG_DEF_BONUS/> when at a higher elevation than your target."
-LocPromotionPopupText="<Bullet/> Gain <ABILITY:DGG_AIM_BONUS/> aim and reduce enemies' dodge by <ABILITY:DGG_DEF_BONUS/> when at a higher elevation than your target.<br/>"
+LocLongDescription="Gain <ABILITY:BD_DGG_AIM_BONUS/> aim and reduce enemies' dodge by <ABILITY:BD_DGG_DEF_BONUS/> when at a higher elevation than your target."
+LocHelpText="Gain <ABILITY:BD_DGG_AIM_BONUS/> aim and reduce enemies' dodge by <ABILITY:BD_DGG_DEF_BONUS/> when at a higher elevation than your target."
+LocPromotionPopupText="<Bullet/> Gain <ABILITY:BD_DGG_AIM_BONUS/> aim and reduce enemies' dodge by <ABILITY:BD_DGG_DEF_BONUS/> when at a higher elevation than your target.<br/>"
 
 [BD_Lonewolf_LW X2AbilityTemplate]
 LocFriendlyName="Lone Wolf"
 LocFlyOverText="Lone Wolf"
-LocLongDescription="Gain bonus Aim and Defense with increasing distance from the nearest ally, with a maximum of +<Ability:LONEWOLF_AIM_BONUS/>/+<Ability:LONEWOLF_DEF_BONUS/> at <Ability:LONEWOLF_MIN_DIST_TILES/>+ tiles."
-LocHelpText="Gain bonus Aim and Defense with increasing distance from the nearest ally, with a maximum of +<Ability:LONEWOLF_AIM_BONUS/>/+<Ability:LONEWOLF_DEF_BONUS/> at <Ability:LONEWOLF_MIN_DIST_TILES/>+ tiles."
-LocPromotionPopupText="<Bullet/> Gain +<Ability:LONEWOLF_AIM_PER_TILE/> Aim and +<Ability:LONEWOLF_DEF_PER_TILE/> Defense for each tile of distance between this soldier and the nearest ally, starting at <Ability:LONEWOLF_MIN_BONUS_TILES/> tiles distant.<br/><Bullet/> Bonuses cap at +<Ability:LONEWOLF_AIM_BONUS/> Aim, +<Ability:LONEWOLF_DEF_BONUS/> Defense when <Ability:LONEWOLF_MIN_DIST_TILES/> or more tiles from the nearest ally.<br/><Bullet/> This ability does not provide defensive bonuses if the unit is disoriented, stunned, panicking, on fire or otherwise impaired."
+LocLongDescription="Gain bonus Aim and Defense with increasing distance from the nearest ally, with a maximum of +<Ability:BD_LONEWOLF_AIM_BONUS/>/+<Ability:BD_LONEWOLF_DEF_BONUS/> at <Ability:BD_LONEWOLF_MIN_DIST_TILES/>+ tiles."
+LocHelpText="Gain bonus Aim and Defense with increasing distance from the nearest ally, with a maximum of +<Ability:BD_LONEWOLF_AIM_BONUS/>/+<Ability:BD_LONEWOLF_DEF_BONUS/> at <Ability:BD_LONEWOLF_MIN_DIST_TILES/>+ tiles."
+LocPromotionPopupText="<Bullet/> Gain +<Ability:BD_LONEWOLF_AIM_PER_TILE/> Aim and +<Ability:BD_LONEWOLF_DEF_PER_TILE/> Defense for each tile of distance between this soldier and the nearest ally, starting at <Ability:LONEWOLF_MIN_BONUS_TILES/> tiles distant.<br/><Bullet/> Bonuses cap at +<Ability:BD_LONEWOLF_AIM_BONUS/> Aim, +<Ability:BD_LONEWOLF_DEF_BONUS/> Defense when <Ability:BD_LONEWOLF_MIN_DIST_TILES/> or more tiles from the nearest ally.<br/><Bullet/> This ability does not provide defensive bonuses if the unit is disoriented, stunned, panicking, on fire or otherwise impaired."
 
 [BD_LowProfile_LW X2AbilityTemplate]
 LocFriendlyName="Low Profile"
@@ -793,21 +793,21 @@ LocPromotionPopupText="<Bullet/> Makes partial cover count as full.<br/>"
 [BD_WilltoSurvive_LW X2AbilityTemplate]
 LocFriendlyName="Will to Survive"
 LocFlyOverText="Will to Survive"
-LocLongDescription="Enemy damage is reduced by <Ability:W2S_HIGH_COVER_ARMOR_BONUS/> when in cover and attacked through that cover. Also grants <ABILITY:WILLTOSURVIVE_WILLBONUS> will."
+LocLongDescription="Enemy damage is reduced by <Ability:BD_W2S_HIGH_COVER_ARMOR_BONUS/> when in cover and attacked through that cover. Also grants <ABILITY:BD_WILLTOSURVIVE_WILLBONUS> will."
 LocHelpText="Enemy damage is reduced by 1 when in cover and attacked through that cover."
 LocPromotionPopupText="<Bullet/> Enemy damage is reduced by 1 when in cover and attacked through that cover.<br/><Bullet/> Cover against explosives and other indirect attacks is calculated from the point of the explosion.<br/><Bullet/> Armor piercing effects do not eliminate this bonus.<br/><Bullet/> This unit also permanently gains 5 will.<br/><Bullet/> This ability does not provide defensive bonuses if the unit is disoriented, stunned, panicking, on fire or otherwise impaired."
 
 [BD_Evasive_LW X2AbilityTemplate]
 LocFriendlyName="Evasive"
-LocFlyOverText="Evasive: <ABILITY:EVASIVE_DODGE_BONUS/> Dodge"
-LocLongDescription="Start each mission with <ABILITY:EVASIVE_DODGE_BONUS/> bonus dodge. The bonus is removed after you take damage for the first time."
-LocHelpText="Gain <ABILITY:EVASIVE_DODGE_BONUS> dodge until you take damage."
+LocFlyOverText="Evasive: <ABILITY:BD_EVASIVE_DODGE_BONUS/> Dodge"
+LocLongDescription="Start each mission with <ABILITY:BD_EVASIVE_DODGE_BONUS/> bonus dodge. The bonus is removed after you take damage for the first time."
+LocHelpText="Gain <ABILITY:BD_EVASIVE_DODGE_BONUS> dodge until you take damage."
 LocPromotionPopupText="<Bullet/> This ability will typically turn the first hit on a soldier into a graze, but being hit with undodgeable attacks will remove it without any bonus being applied."
 
 [RemoveBD_Evasive_LW X2AbilityTemplate]
 LocFriendlyName="Evasive bonus lost"
 LocFlyOverText="Evasive bonus lost"
-LocLongDescription="Start each mission with <ABILITY:EVASIVE_DODGE_BONUS> bonus dodge. The bonus is removed after you take damage for the first time."
+LocLongDescription="Start each mission with <ABILITY:BD_EVASIVE_DODGE_BONUS> bonus dodge. The bonus is removed after you take damage for the first time."
 LocHelpText="Gain 100 dodge until you take damage."
 LocPromotionPopupText="<Bullet/> This ability will typically turn the first hit on a soldier into a graze, but being hit with undodgeable attacks will remove it without any bonus being applied."
 
@@ -815,19 +815,19 @@ LocPromotionPopupText="<Bullet/> This ability will typically turn the first hit 
 [BD_FireDiscipline_LW X2AbilityTemplate]
 LocFriendlyName="Fire Discipline"
 ; LWOTC Needs Translation
-LocLongDescription="All allies within Command Range of the Officer gain +<ABILITY:FIREDISCIPLINE_REACTIONFIRE_BONUS/>% to hit on reaction fire."
+LocLongDescription="All allies within Command Range of the Officer gain +<ABILITY:BD_FIREDISCIPLINE_REACTIONFIRE_BONUS/>% to hit on reaction fire."
 LocHelpText="All allies near Officer gain reaction fire bonus."
 LocFlyOverText="Fire Discipline"
 ;displayed for officer in Officer Ability UI
-LocPromotionPopupText="<Bullet/> All allies within Command Range of the Officer gain +<ABILITY:FIREDISCIPLINE_REACTIONFIRE_BONUS/>% to hit on reaction fire.<br/><Bullet/> Command Range increases with each new Officer level.<br/><Bullet/> This ability does not provide bonuses for the Officer themself.<br/><Bullet/> This ability does not provide bonuses if either the Officer or the soldier are disoriented, stunned, panicking, posioned, on fire or otherwise impaired.<br/><Bullet/> This ability does not provide bonuses for robotic allies and civilians."
+LocPromotionPopupText="<Bullet/> All allies within Command Range of the Officer gain +<ABILITY:BD_FIREDISCIPLINE_REACTIONFIRE_BONUS/>% to hit on reaction fire.<br/><Bullet/> Command Range increases with each new Officer level.<br/><Bullet/> This ability does not provide bonuses for the Officer themself.<br/><Bullet/> This ability does not provide bonuses if either the Officer or the soldier are disoriented, stunned, panicking, posioned, on fire or otherwise impaired.<br/><Bullet/> This ability does not provide bonuses for robotic allies and civilians."
 
 ;Displayed on officer in tactical container
 [BD_FireDiscipline_LWPassive X2AbilityTemplate]
 LocFriendlyName="Fire Discipline"
-LocLongDescription="All allies within Command Range of the Officer gain +<ABILITY:FIREDISCIPLINE_REACTIONFIRE_BONUS/>% to hit on reaction fire."
+LocLongDescription="All allies within Command Range of the Officer gain +<ABILITY:BD_FIREDISCIPLINE_REACTIONFIRE_BONUS/>% to hit on reaction fire."
 LocHelpText="All allies near Officer gain reaction fire bonus."
 LocFlyOverText="Fire Discipline"
-LocPromotionPopupText="<Bullet/> All allies within Command Range of the Officer gain +<ABILITY:FIREDISCIPLINE_REACTIONFIRE_BONUS/>% to hit on reaction fire.<br/><Bullet/> Command Range increases with each new Officer level."
+LocPromotionPopupText="<Bullet/> All allies within Command Range of the Officer gain +<ABILITY:BD_FIREDISCIPLINE_REACTIONFIRE_BONUS/>% to hit on reaction fire.<br/><Bullet/> Command Range increases with each new Officer level."
 ; End Translation
 
 [BD_LostBladestorm_LW X2AbilityTemplate]
@@ -904,3 +904,161 @@ strCharacterName="Lost Grappler"
 
 [TheLostGrapplerHP12_LW X2CharacterTemplate]
 strCharacterName="Lost Grappler"
+
+;-----------------------------------------BODY PART TEMPLATE LOCALIZATION--------------------------
+
+[AdvCaptain_Torso_A_F X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Captain Torso"
+
+[AdvCaptain_LeftArm_A_F X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Captain Left Arm"
+
+[AdvCaptain_RightArm_A_F X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Captain Right Arm"
+
+[AdvCaptain_Legs_A_F X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Captain Legs"
+
+[AdvCaptain_Helmet_A_F X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Captain Helmet"
+
+[AdvCaptain_Torso_A_M X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Captain Torso"
+
+[AdvCaptain_LeftArm_A_M X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Captain Left Arm"
+
+[AdvCaptain_RightArm_A_M X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Captain Right Arm"
+
+[AdvCaptain_Legs_A_M X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Captain Legs"
+
+[AdvCaptain_Helmet_A_M X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Captain Helmet"
+
+[AdvShieldbearer_Torso_A_M X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Shield-Bearer Torso"
+
+[AdvShieldbearer_LeftArm_A_M X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Shield-Bearer Left Arm 1"
+
+[AdvShieldbearer_LeftArm_B_M X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Shield-Bearer Left Arm 2"
+
+[AdvShieldbearer_RightArm_A_M X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Shield-Bearer Right Arm 1"
+
+[AdvShieldbearer_RightArm_B_M X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Shield-Bearer Right Arm 2"
+
+[AdvShieldbearer_Legs_A_M X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Shield-Bearer Legs"
+
+[AdvShieldbearer_Helmet_A_M X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Shield-Bearer Helmet"
+
+[AdvShieldbearer_Torso_A_F X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Shield-Bearer Torso"
+
+[AdvShieldbearer_LeftArm_A_F X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Shield-Bearer Left Arm 1"
+
+[AdvShieldbearer_LeftArm_B_F X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Shield-Bearer Left Arm 2"
+
+[AdvShieldbearer_RightArm_A_F X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Shield-Bearer Right Arm 1"
+
+[AdvShieldbearer_RightArm_B_F X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Shield-Bearer Right Arm 2"
+
+[AdvShieldbearer_Legs_A_F X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Shield-Bearer Legs"
+
+[AdvShieldbearer_Helmet_A_F X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Shield-Bearer Helmet"
+
+[AdvStunLancer_Torso_A_M X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Stun-Lancer Torso"
+
+[AdvStunLancer_LeftArm_A_M X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Stun-Lancer Left Arm"
+
+[AdvStunLancer_RightArm_A_M X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Stun-Lancer Right Arm"
+
+[AdvStunLancer_Legs_A_M X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Stun-Lancer Legs"
+
+[AdvStunLancer_Helmet_A_M X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Stun-Lancer Helmet"
+
+[AdvStunLancer_Torso_A_F X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Stun-Lancer Torso"
+
+[AdvStunLancer_LeftArm_A_F X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Stun-Lancer Left Arm"
+
+[AdvStunLancer_RightArm_A_F X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Stun-Lancer Right Arm"
+
+[AdvStunLancer_Legs_A_F X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Stun-Lancer Legs"
+
+[AdvStunLancer_Helmet_A_F X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Stun-Lancer Helmet"
+
+[AdvTrooper_Torso_A_M X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Trooper Torso"
+
+[AdvTrooper_LeftArm_A_M X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Trooper Left Arm"
+
+[AdvTrooper_RightArm_A_M X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Trooper Right Arm"
+
+[AdvTrooper_Legs_A_M X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Trooper Legs"
+
+[AdvTrooper_Helmet_A_M X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Trooper Helmet"
+
+[AdvTrooper_Torso_A_F X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Trooper Torso"
+
+[AdvTrooper_LeftArm_A_F X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Trooper Left Arm"
+
+[AdvTrooper_RightArm_A_F X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Trooper Right Arm"
+
+[AdvTrooper_Legs_A_F X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Trooper Legs"
+
+[AdvTrooper_Helmet_A_F X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Trooper Helmet"
+
+[AdvGunner_Arms_A_M X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Gunner Arms"
+
+[AdvGunner_Arms_A_F X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Gunner Arms"
+
+[AdvSentry_Arms_A_M X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Sentry Arms"
+
+[AdvSentry_Arms_A_F X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Sentry Arms"
+
+[AdvRocketeer_Arms_A_M X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Rocketeer Arms"
+
+[AdvRocketeer_Arms_A_F X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Rocketeer Arms"
+
+[AdvGrenadier_Arms_A_M X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Grenadier Arms"
+
+[AdvGrenadier_Arms_A_F X2BodyPartTemplate]
+DisplayName="<img src='img:///UILibrary_BD_LWAlienPack.AdventParts_Icon' width='26' height='26' vspace='-4'>ADVENT Grenadier Arms"

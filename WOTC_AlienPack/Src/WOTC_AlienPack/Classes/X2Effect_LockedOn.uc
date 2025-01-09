@@ -1,7 +1,7 @@
 class X2Effect_LockedOn extends X2Effect_Persistent config (WOTC_AlienPack);
 
-var config int LOCKEDON_AIM_BONUS;
-var config int LOCKEDON_CRIT_BONUS;
+var config int BD_LOCKEDON_AIM_BONUS;
+var config int BD_LOCKEDON_CRIT_BONUS;
 
 function RegisterForEvents(XComGameState_Effect EffectGameState)
 {
@@ -29,12 +29,12 @@ function GetToHitModifiers(XComGameState_Effect EffectState, XComGameState_Unit 
 		{
 			ShotMod.ModType = eHit_Success;
 			ShotMod.Reason = FriendlyName;
-			ShotMod.Value = default.LOCKEDON_AIM_BONUS;
+			ShotMod.Value = default.BD_LOCKEDON_AIM_BONUS;
 			ShotModifiers.AddItem(ShotMod);
 
 			ShotMod.ModType = eHit_Crit;
 			ShotMod.Reason = FriendlyName;
-			ShotMod.Value = default.LOCKEDON_CRIT_BONUS;
+			ShotMod.Value = default.BD_LOCKEDON_CRIT_BONUS;
 			ShotModifiers.AddItem(ShotMod);
 		}
 	}

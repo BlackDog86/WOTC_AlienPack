@@ -400,9 +400,6 @@ Creds to the original authors here.
     <Content Include="Src\WOTC_AlienPack\Classes\XComGameState_Effect_EffectCounter.uc">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Src\WOTC_AlienPack\Classes\XComGameState_Effect_IncomingReactionFire.uc">
-      <SubType>Content</SubType>
-    </Content>
     <Content Include="Src\WOTC_AlienPack\Classes\XComGameState_Unit_AlienCustomization.uc">
       <SubType>Content</SubType>
     </Content>

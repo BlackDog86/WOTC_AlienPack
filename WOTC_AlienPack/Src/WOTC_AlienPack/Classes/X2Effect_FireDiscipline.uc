@@ -6,7 +6,7 @@
 class X2Effect_FireDiscipline extends X2Effect_LWOfficerCommandAura
 	config (WOTC_AlienPack);
 
-var config int FIREDISCIPLINE_REACTIONFIRE_BONUS;
+var config int BD_FIREDISCIPLINE_REACTIONFIRE_BONUS;
 
 simulated function ModifyReactionFireSuccess(XComGameState_Unit UnitState, XComGameState_Unit TargetState, out int Modifier)
 {
@@ -16,7 +16,7 @@ simulated function ModifyReactionFireSuccess(XComGameState_Unit UnitState, XComG
 	{
 		if (IsEffectCurrentlyRelevant(EffectState, UnitState))
 		{
-			Modifier = default.FIREDISCIPLINE_REACTIONFIRE_BONUS;
+			Modifier = default.BD_FIREDISCIPLINE_REACTIONFIRE_BONUS;
 		}
 	}
 }

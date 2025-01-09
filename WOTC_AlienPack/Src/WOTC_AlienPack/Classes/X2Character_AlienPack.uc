@@ -1496,7 +1496,7 @@ static function X2CharacterTemplate CreateTemplate_AdvGeneric(name TemplateName)
 	LootVulture.ForceLevel = 0;
 
 	// FOrmat for custom AIs
-	//CharTemplate.strBehaviorTree = "LWAdventSentryRoot"; // new config behavior tree parsing means we could use the group instead
+	CharTemplate.strBehaviorTree = "LWAdventGenericRoot"; // new config behavior tree parsing means we could use the group instead
 
 	// WOTC abilities
 	CharTemplate.Abilities.AddItem('DarkEventAbility_SealedArmor');

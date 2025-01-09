@@ -5,9 +5,9 @@
 //---------------------------------------------------------------------------------------
 class X2Effect_BringEmOn extends X2Effect_Persistent config (WOTC_AlienPack);
 
-var config float BEO_BONUS_CRIT_DAMAGE_PER_ENEMY;
-var config int BEO_MAX_BONUS_CRIT_DAMAGE;
-var config bool BEO_SQUADSIGHT_ENEMIES_APPLY;
+var config float BD_BEO_BONUS_CRIT_DAMAGE_PER_ENEMY;
+var config int BD_BEO_MAX_BONUS_CRIT_DAMAGE;
+var config bool BD_BEO_SQUADSIGHT_ENEMIES_APPLY;
 var config bool APPLIES_TO_EXPLOSIVES;
 
 function int GetAttackingDamageModifier(XComGameState_Effect EffectState, XComGameState_Unit Attacker, Damageable TargetDamageable, XComGameState_Ability AbilityState, const out EffectAppliedData AppliedData, const int CurrentDamage, optional XComGameState NewGameState)
@@ -73,14 +73,14 @@ function int GetAttackingDamageModifier(XComGameState_Effect EffectState, XComGa
             if (TargetUnit != none)
             {
                 BadGuys = Attacker.GetNumVisibleEnemyUnits (true, false, false, -1, false, false);
-				if (Attacker.HasSquadsight() && default.BEO_SQUADSIGHT_ENEMIES_APPLY)
+				if (Attacker.HasSquadsight() && default.BD_BEO_SQUADSIGHT_ENEMIES_APPLY)
 				{
 					class'X2TacticalVisibilityHelpers'.static.GetAllSquadsightEnemiesForUnit(Attacker.ObjectID, arrSSEnemies, -1, false);
 					BadGuys += arrSSEnemies.length;
 				}
 				if (BadGuys > 0)
 				{
-					return clamp (BadGuys * default.BEO_BONUS_CRIT_DAMAGE_PER_ENEMY, 0, default.BEO_MAX_BONUS_CRIT_DAMAGE);
+					return clamp (BadGuys * default.BD_BEO_BONUS_CRIT_DAMAGE_PER_ENEMY, 0, default.BD_BEO_MAX_BONUS_CRIT_DAMAGE);
 				}
             }
         }

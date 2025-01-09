@@ -6,7 +6,7 @@
 
 class X2Effect_TraverseFire extends X2Effect_Persistent config (WOTC_AlienPack);
 
-var config int TF_USES_PER_TURN;
+var config int BD_TF_USES_PER_TURN;
 var config array<name> TF_ABILITYNAMES;
 
 simulated protected function OnEffectAdded(const out EffectAppliedData ApplyEffectParameters, XComGameState_BaseObject kNewTargetState, XComGameState NewGameState, XComGameState_Effect NewEffectState)
@@ -78,7 +78,7 @@ function bool PostAbilityCostPaid(XComGameState_Effect EffectState, XComGameStat
 
 	If (CurrentTFCounter != none)
 	{
-		if (CurrentTFCounter.uses >= default.TF_USES_PER_TURN)		
+		if (CurrentTFCounter.uses >= default.BD_TF_USES_PER_TURN)		
 			return false;
 	}
 	if (XComGameState_Ability(`XCOMHISTORY.GetGameStateForObjectID(EffectState.ApplyEffectParameters.AbilityStateObjectRef.ObjectID)) == none)

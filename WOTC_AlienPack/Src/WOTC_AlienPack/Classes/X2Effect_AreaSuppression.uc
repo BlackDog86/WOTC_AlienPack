@@ -156,10 +156,10 @@ static function bool ShouldRemoveAreaSuppression(XComGameState_Unit SourceUnit, 
 		{
 			if (bBeforeAmmoReduction)
 			{
-				if (WeaponState.Ammo <= (2 * class'X2Ability_PPAlienAbilities'.default.AREA_SUPPRESSION_SHOT_AMMO_COST) - 1)
+				if (WeaponState.Ammo <= (2 * class'X2Ability_PPAlienAbilities'.default.BD_AREA_SUPPRESSION_SHOT_AMMO_COST) - 1)
 					bShouldRemove = true;
 			}
-			else if (WeaponState.Ammo < (2 * class'X2Ability_PPAlienAbilities'.default.AREA_SUPPRESSION_SHOT_AMMO_COST) - 1)
+			else if (WeaponState.Ammo < (2 * class'X2Ability_PPAlienAbilities'.default.BD_AREA_SUPPRESSION_SHOT_AMMO_COST) - 1)
 			{
 				bShouldRemove = true;
 			}

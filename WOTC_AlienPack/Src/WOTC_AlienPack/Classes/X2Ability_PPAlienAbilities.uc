@@ -17,22 +17,22 @@ class X2Ability_PPAlienAbilities extends X2Ability config(WOTC_AlienPack);
 //LockedOn
 //TraverseFire
 
-var config int AREA_SUPPRESSION_AMMO_COST;
-var config int AREA_SUPPRESSION_MAX_SHOTS;
-var config int AREA_SUPPRESSION_SHOT_AMMO_COST;
-var config float AREA_SUPPRESSION_RADIUS;
-var config int WILLTOSURVIVE_WILLBONUS;
-var config int DAMAGE_CONTROL_BONUS_ARMOR;
-var config int AREA_SUPPRESSION_LW_SHOT_AIM_BONUS;
-var config int DANGER_ZONE_BONUS_RADIUS;
-var config int PERSONAL_SHIELD_XCOM_DURATION;
-var config int PERSONAL_SHIELD_XCOM_HP;
-var config int GUARDIAN_PROC_CHANCE;
-var config int SENTINEL_PROC_CHANCE;
-var config int CCS_AMMO_PER_SHOT;
-var config int CCS_RANGE;
-var config bool CCS_PROC_ON_OWN_TURN;
-var config int EVASIVE_DODGE_BONUS;
+var config int BD_AREA_SUPPRESSION_AMMO_COST;
+var config int BD_AREA_SUPPRESSION_MAX_SHOTS;
+var config int BD_AREA_SUPPRESSION_SHOT_AMMO_COST;
+var config float BD_AREA_SUPPRESSION_RADIUS;
+var config int BD_WILLTOSURVIVE_WILLBONUS;
+var config int BD_DAMAGE_CONTROL_BONUS_ARMOR;
+var config int BD_AREA_SUPPRESSION_LW_SHOT_AIM_BONUS;
+var config int BD_DANGER_ZONE_BONUS_RADIUS;
+var config int BD_PERSONAL_SHIELD_XCOM_DURATION;
+var config int BD_PERSONAL_SHIELD_XCOM_HP;
+var config int BD_GUARDIAN_PROC_CHANCE;
+var config int BD_SENTINEL_PROC_CHANCE;
+var config int BD_CCS_AMMO_PER_SHOT;
+var config int BD_CCS_RANGE;
+var config bool BD_CCS_PROC_ON_OWN_TURN;
+var config int BD_EVASIVE_DODGE_BONUS;
 
 static function array<X2DataTemplate> CreateTemplates()
 {
@@ -92,7 +92,7 @@ static function X2AbilityTemplate AddGuardianAbility()
 	PersistentEffect = new class'X2Effect_Guardian_BD';
 	PersistentEffect.BuildPersistentEffect(1, true, false);
 	PersistentEffect.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,, Template.AbilitySourceName);
-	PersistentEffect.ProcChance = default.GUARDIAN_PROC_CHANCE;
+	PersistentEffect.ProcChance = default.BD_GUARDIAN_PROC_CHANCE;
 	Template.AddTargetEffect(PersistentEffect);
 
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
@@ -122,7 +122,7 @@ static function X2AbilityTemplate AddSentinelAbility()
 	PersistentEffect = new class'X2Effect_Guardian_BD';
 	PersistentEffect.BuildPersistentEffect(1, true, false);
 	PersistentEffect.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,, Template.AbilitySourceName);
-	PersistentEffect.ProcChance = default.SENTINEL_PROC_CHANCE;
+	PersistentEffect.ProcChance = default.BD_SENTINEL_PROC_CHANCE;
 	Template.AddTargetEffect(PersistentEffect);
 
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
@@ -203,7 +203,7 @@ static function X2AbilityTemplate AddDamageControlAbility()
 	DamageControlEffect.BuildPersistentEffect(1,false,true,,eGameRule_PlayerTurnBegin);
 	DamageControlEffect.SetDisplayInfo(ePerkBuff_Bonus, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage, true,,Template.AbilitySourceName);
 	DamageControlEffect.DuplicateResponse = eDupe_Ignore;
-	DamageControlEffect.BonusArmor = default.DAMAGE_CONTROL_BONUS_ARMOR;
+	DamageControlEffect.BonusArmor = default.BD_DAMAGE_CONTROL_BONUS_ARMOR;
 	Template.AddTargetEffect(DamageControlEffect);
 	
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
@@ -433,10 +433,10 @@ static function X2AbilityTemplate AddWilltoSurviveAbility()
 	Template.AddTargetEffect(ArmorBonus);
 
 	WillBonus = new class'X2Effect_PersistentStatChange';
-	WillBonus.AddPersistentStatChange(eStat_Will, float(default.WILLTOSURVIVE_WILLBONUS));
+	WillBonus.AddPersistentStatChange(eStat_Will, float(default.BD_WILLTOSURVIVE_WILLBONUS));
 	WillBonus.BuildPersistentEffect (1, true, false, false, eGameRule_PlayerTurnBegin);
 	Template.AddTargetEffect(WillBonus);
-	Template.SetUIStatMarkup(class'XLocalizedData'.default.WillLabel, eStat_Will, default.WILLTOSURVIVE_WILLBONUS);
+	Template.SetUIStatMarkup(class'XLocalizedData'.default.WillLabel, eStat_Will, default.BD_WILLTOSURVIVE_WILLBONUS);
 
 	Template.bcrossclasseligible = false;
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
@@ -480,7 +480,7 @@ static function X2AbilityTemplate CloseCombatSpecialistAttack()
 	Template.AbilityToHitCalc = ToHitCalc;
 
 	AmmoCost = new class 'X2AbilityCost_Ammo';
-	AmmoCost.iAmmo = default.CCS_AMMO_PER_SHOT;
+	AmmoCost.iAmmo = default.BD_CCS_AMMO_PER_SHOT;
 	Template.AbilityCosts.AddItem(AmmoCost);
 	
 	//  trigger on movement
@@ -522,7 +522,7 @@ static function X2AbilityTemplate CloseCombatSpecialistAttack()
 	RangeCondition = new class'X2Condition_UnitProperty';	
 	RangeCondition.RequireWithinRange = true;
 	RangeCondition.ExcludeCivilian = true;
-	RangeCondition.WithinRange = default.CCS_RANGE * 96.0; // multiplier for tiles to unreal units.
+	RangeCondition.WithinRange = default.BD_CCS_RANGE * 96.0; // multiplier for tiles to unreal units.
 	Template.AbilityTargetConditions.AddItem(RangeCondition);
 
 	CloseCombatSpecialistTargetCondition = new class'X2Condition_UnitEffectsWithAbilitySource';
@@ -545,7 +545,7 @@ static function X2AbilityTemplate CloseCombatSpecialistAttack()
 	SuppressedCondition.AddExcludeEffect(class'X2Effect_AreaSuppression'.default.EffectName, 'AA_UnitIsSuppressed');
 	Template.AbilityShooterConditions.AddItem(SuppressedCondition);
 
-	if(!default.CCS_PROC_ON_OWN_TURN)
+	if(!default.BD_CCS_PROC_ON_OWN_TURN)
 	{
 		OwnTurnCondition = new class'X2Condition_NotItsOwnTurn';
 		Template.AbilityShooterConditions.AddItem(OwnTurnCondition);
@@ -678,7 +678,7 @@ static function X2AbilityTemplate AddEvasiveAbility()
 	DodgeBonus = new class'X2Effect_PersistentStatChange';
 	DodgeBonus.BuildPersistentEffect(1,true,true,false);
 	DodgeBonus.SetDisplayInfo (ePerkBuff_Passive,Template.LocFriendlyName, Template.GetMyHelpText(), Template.IconImage,,, Template.AbilitySourceName); 
-	DodgeBonus.AddPersistentStatChange (eStat_Dodge, float (default.EVASIVE_DODGE_BONUS));
+	DodgeBonus.AddPersistentStatChange (eStat_Dodge, float (default.BD_EVASIVE_DODGE_BONUS));
 	DodgeBonus.EffectName='EvasiveEffect';
 	Template.AddTargetEffect(DodgeBonus);
 
@@ -928,10 +928,10 @@ static function X2AbilityTemplate AddLightEmUpAbility()
 	Template.bDisplayInUITooltip = true;
 	Template.bDisplayInUITacticalText = true;
 
-	KnockbackEffect = new class'X2Effect_Knockback';
-	KnockbackEffect.OnlyOnDeath = false;
-	KnockbackEffect.KnockbackDistance = 2;
-	Template.AddTargetEffect(KnockbackEffect);
+	//KnockbackEffect = new class'X2Effect_Knockback';
+	//KnockbackEffect.OnlyOnDeath = false;
+	//KnockbackEffect.KnockbackDistance = 2;
+	//Template.AddTargetEffect(KnockbackEffect);
 
 	Template.OverrideAbilities.AddItem('StandardShot');
 
@@ -1065,7 +1065,7 @@ static function X2AbilityTemplate AddAreaSuppressionAbility()
 	Template.AbilityShooterConditions.AddItem(InventoryCondition2);
 
 	AmmoCost = new class'X2AbilityCost_Ammo';	
-	AmmoCost.iAmmo = default.AREA_SUPPRESSION_AMMO_COST;
+	AmmoCost.iAmmo = default.BD_AREA_SUPPRESSION_AMMO_COST;
 	Template.AbilityCosts.AddItem(AmmoCost);
 
 	ActionPointCost = new class'X2AbilityCost_ActionPoints';
@@ -1075,7 +1075,7 @@ static function X2AbilityTemplate AddAreaSuppressionAbility()
 
 	ReserveActionPointsEffect = new class'X2Effect_ReserveActionPoints';
 	ReserveActionPointsEffect.ReserveType = 'Suppression';
-	ReserveActionPointsEffect.NumPoints = default.AREA_SUPPRESSION_MAX_SHOTS;
+	ReserveActionPointsEffect.NumPoints = default.BD_AREA_SUPPRESSION_MAX_SHOTS;
 	Template.AddShooterEffect(ReserveActionPointsEffect);
 
 	Template.AbilityTargetConditions.AddItem(default.LivingHostileUnitOnlyProperty);
@@ -1094,10 +1094,10 @@ static function X2AbilityTemplate AddAreaSuppressionAbility()
 	RadiusMultiTarget.bAllowDeadMultiTargetUnits = false;
 	RadiusMultiTarget.bExcludeSelfAsTargetIfWithinRadius = true;
 	RadiusMultiTarget.bUseWeaponRadius = false;
-	RadiusMultiTarget.ftargetradius = default.AREA_SUPPRESSION_RADIUS;
+	RadiusMultiTarget.ftargetradius = default.BD_AREA_SUPPRESSION_RADIUS;
 	
 	DangerZoneBonus.RequiredAbility = 'DangerZone';
-	DangerZoneBonus.fBonusRadius = default.DANGER_ZONE_BONUS_RADIUS;
+	DangerZoneBonus.fBonusRadius = default.BD_DANGER_ZONE_BONUS_RADIUS;
 	RadiusMultiTarget.AbilityBonusRadii.AddItem (DangerZoneBonus);
 	Template.AbilityMultiTargetStyle = RadiusMultiTarget;
 	
@@ -1231,11 +1231,11 @@ static function X2AbilityTemplate AreaSuppressionShot_LW()
 	Template.AbilityCosts.AddItem(ReserveActionPointCost);
 	
 	AmmoCost = new class'X2AbilityCost_Ammo';	
-	AmmoCost.iAmmo = default.AREA_SUPPRESSION_SHOT_AMMO_COST;
+	AmmoCost.iAmmo = default.BD_AREA_SUPPRESSION_SHOT_AMMO_COST;
 	Template.AbilityCosts.AddItem(AmmoCost);
 
 	StandardAim = new class'X2AbilityToHitCalc_StandardAim';
-	StandardAim.BuiltInHitMod = default.AREA_SUPPRESSION_LW_SHOT_AIM_BONUS;
+	StandardAim.BuiltInHitMod = default.BD_AREA_SUPPRESSION_LW_SHOT_AIM_BONUS;
 	StandardAim.bReactionFire = true;
 
 	Template.AbilityToHitCalc = StandardAim;
@@ -1369,11 +1369,11 @@ static function X2DataTemplate CreateMutonElite_PersonalShield_XcomAbility()
 	Template.AbilityCosts.AddItem(ChargeCost);
 
 	PersonalShieldEffect = new class'X2Effect_EnergyShield';
-	PersonalShieldEffect.BuildPersistentEffect(default.PERSONAL_SHIELD_XCOM_DURATION, false, true, false, eGameRule_PlayerTurnBegin);
+	PersonalShieldEffect.BuildPersistentEffect(default.BD_PERSONAL_SHIELD_XCOM_DURATION, false, true, false, eGameRule_PlayerTurnBegin);
 	//eGameRule_PlayerTurnBegin
 	PersonalShieldEffect.SetDisplayInfo (ePerkBuff_Bonus, Template.LocFriendlyName, Template.GetMyHelpText(), Template.IconImage,,, Template.AbilitySourceName);
 	
-	PersonalShieldEffect.AddPersistentStatChange(eStat_ShieldHP, default.PERSONAL_SHIELD_XCOM_HP);
+	PersonalShieldEffect.AddPersistentStatChange(eStat_ShieldHP, default.BD_PERSONAL_SHIELD_XCOM_HP);
 	PersonalShieldEffect.EffectName='PersonalShield';
 	Template.AddTargetEffect(PersonalShieldEffect);
 

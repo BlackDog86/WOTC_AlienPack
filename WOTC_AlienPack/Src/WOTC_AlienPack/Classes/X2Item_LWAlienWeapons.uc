@@ -887,11 +887,12 @@ static function X2DataTemplate CreateTemplate_AdvGrenadier_Flashbang()
 	Template.bFriendlyFireWarning = false;
 	Template.Abilities.AddItem('ThrowGrenade');
 
-	Template.ThrownGrenadeEffects.AddItem(class'X2StatusEffects'.static.CreateDisorientedStatusEffect());
+	Template.ThrownGrenadeEffects.AddItem(class'X2StatusEffects'.static.CreateDisorientedStatusEffect(, , false));
 
 	//We need to have an ApplyWeaponDamage for visualization, even if the grenade does 0 damage (makes the unit flinch, shows overwatch removal)
 	WeaponDamageEffect = new class'X2Effect_ApplyWeaponDamage';
 	WeaponDamageEffect.bExplosiveDamage = true;
+	WeaponDamageEffect.DamageTypes.AddItem(class'X2Item_DefaultDamageTypes'.default.DisorientDamageType); // Added to allow 'immune' flyover on TheLost<apc> 
 	Template.ThrownGrenadeEffects.AddItem(WeaponDamageEffect);
 
 	Template.LaunchedGrenadeEffects = Template.ThrownGrenadeEffects;

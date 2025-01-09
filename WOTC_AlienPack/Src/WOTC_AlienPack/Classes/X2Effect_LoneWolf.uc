@@ -6,12 +6,12 @@
 
 class X2Effect_LoneWolf extends X2Effect_Persistent config (WOTC_AlienPack);
 
-var config int LONEWOLF_AIM_PER_TILE;
-var config int LONEWOLF_DEF_PER_TILE;
-var config int LONEWOLF_AIM_BONUS;
-var config int LONEWOLF_DEF_BONUS;
-var config int LONEWOLF_CRIT_BONUS;
-var config int LONEWOLF_MIN_DIST_TILES;
+var config int BD_LONEWOLF_AIM_PER_TILE;
+var config int BD_LONEWOLF_DEF_PER_TILE;
+var config int BD_LONEWOLF_AIM_BONUS;
+var config int BD_LONEWOLF_DEF_BONUS;
+var config int BD_LONEWOLF_CRIT_BONUS;
+var config int BD_LONEWOLF_MIN_DIST_TILES;
 
 function int NearestAllyBeyondRange(XComGameState_Unit LWUnit)
 {
@@ -20,7 +20,7 @@ function int NearestAllyBeyondRange(XComGameState_Unit LWUnit)
 	local XGUnit TestAllyVisualizer;
 	local int NearestAllyTiles;
 
-	NearestAllyTiles = default.LONEWOLF_MIN_DIST_TILES + 1;
+	NearestAllyTiles = default.BD_LONEWOLF_MIN_DIST_TILES + 1;
 
 	foreach `XCOMHISTORY.IterateByClassType (class'XComGameState_Unit', TestAlly)
 	{
@@ -59,7 +59,7 @@ function GetToHitModifiers(XComGameState_Effect EffectState, XComGameState_Unit 
 
 	NearestAllyTiles = NearestAllyBeyondRange(Attacker);
 						
-	AimBonus = Max(default.LONEWOLF_AIM_BONUS - (default.LONEWOLF_MIN_DIST_TILES + 1 - NearestAllyTiles) * default.LONEWOLF_AIM_PER_TILE, 0);
+	AimBonus = Max(default.BD_LONEWOLF_AIM_BONUS - (default.BD_LONEWOLF_MIN_DIST_TILES + 1 - NearestAllyTiles) * default.BD_LONEWOLF_AIM_PER_TILE, 0);
 	if (AimBonus > 0)
 	{
 		SourceWeapon = AbilityState.GetSourceWeapon();
@@ -71,7 +71,7 @@ function GetToHitModifiers(XComGameState_Effect EffectState, XComGameState_Unit 
 			ShotModifiers.AddItem(ShotInfo);
 			ShotInfo.ModType = eHit_Crit;
 			ShotInfo.Reason = FriendlyName;
-			ShotInfo.Value = default.LONEWOLF_CRIT_BONUS;
+			ShotInfo.Value = default.BD_LONEWOLF_CRIT_BONUS;
 			ShotModifiers.AddItem(ShotInfo);
 		}
 	}
@@ -86,7 +86,7 @@ function GetToHitAsTargetModifiers(XComGameState_Effect EffectState, XComGameSta
 		return;
 
 	NearestAllyTiles = NearestAllyBeyondRange(Target);
-	DefenseBonus = Max(default.LONEWOLF_DEF_BONUS - (default.LONEWOLF_MIN_DIST_TILES + 1 - NearestAllyTiles) * default.LONEWOLF_DEF_PER_TILE, 0);
+	DefenseBonus = Max(default.BD_LONEWOLF_DEF_BONUS - (default.BD_LONEWOLF_MIN_DIST_TILES + 1 - NearestAllyTiles) * default.BD_LONEWOLF_DEF_PER_TILE, 0);
 	if (DefenseBonus > 0)
 	{
 		ShotInfo.ModType = eHit_Success;
