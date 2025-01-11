@@ -1494,10 +1494,7 @@ static function X2CharacterTemplate CreateTemplate_AdvGeneric(name TemplateName)
 	LootBase.ForceLevel = 0;
 	LootTimed.ForceLevel = 0;
 	LootVulture.ForceLevel = 0;
-
-	// FOrmat for custom AIs
-	CharTemplate.strBehaviorTree = "LWAdventGenericRoot"; // new config behavior tree parsing means we could use the group instead
-
+	
 	// WOTC abilities
 	CharTemplate.Abilities.AddItem('DarkEventAbility_SealedArmor');
 	CharTemplate.Abilities.AddItem('DarkEventAbility_UndyingLoyalty');
@@ -1506,7 +1503,8 @@ static function X2CharacterTemplate CreateTemplate_AdvGeneric(name TemplateName)
 
 	switch (TemplateName)
 	{
-		case 'AdvSergeantM1':
+		case 'AdvSergeantM1':			
+			CharTemplate.strBehaviorTree = "LWAdventSergeantRoot::CharacterRoot"; 
 			CharTemplate.DefaultLoadout='AdvSergeantM1_Loadout';
 			LootBase.LootTableName='AdvTrooperM2_BaseLoot';
 			LootTimed.LootTableName='AdvTrooperM2_TimedLoot';
@@ -1514,6 +1512,7 @@ static function X2CharacterTemplate CreateTemplate_AdvGeneric(name TemplateName)
 			break;
 
 		case 'AdvSergeantM2':
+			CharTemplate.strBehaviorTree = "LWAdventSergeantRoot::CharacterRoot";
 			CharTemplate.DefaultLoadout='AdvSergeantM2_Loadout';
 			LootBase.LootTableName='AdvTrooperM3_BaseLoot';
 			LootTimed.LootTableName='AdvTrooperM3_TimedLoot';

@@ -928,10 +928,10 @@ static function X2AbilityTemplate AddLightEmUpAbility()
 	Template.bDisplayInUITooltip = true;
 	Template.bDisplayInUITacticalText = true;
 
-	//KnockbackEffect = new class'X2Effect_Knockback';
-	//KnockbackEffect.OnlyOnDeath = false;
-	//KnockbackEffect.KnockbackDistance = 2;
-	//Template.AddTargetEffect(KnockbackEffect);
+	KnockbackEffect = new class'X2Effect_Knockback';
+	KnockbackEffect.OnlyOnDeath = true;
+	KnockbackEffect.KnockbackDistance = 2;
+	Template.AddTargetEffect(KnockbackEffect);
 
 	Template.OverrideAbilities.AddItem('StandardShot');
 
