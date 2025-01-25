@@ -126,6 +126,9 @@ Creds to the original authors here.
     <Content Include="ContentForCook\LWSidewinderSMG.upk">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ContentForCook\LWXAdventTrooper.upk">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ContentForCook\LW_Perk_Blazing_Pinions.upk">
       <SubType>Content</SubType>
     </Content>
