@@ -3,125 +3,125 @@
                      {
                          "fullFileName":  "CharTextures-a_WOTC_AlienPack_DLCTFC_XPACK_.tfc",
                          "originalSize":  65952863,
-                         "lastUpdatedUtc":  638734188743683752
+                         "lastUpdatedUtc":  638740873915915136
                      },
                      {
                          "fullFileName":  "CharTextures_WOTC_AlienPack_DLCTFC_XPACK_.tfc",
                          "originalSize":  13219864,
-                         "lastUpdatedUtc":  638734189030829357
+                         "lastUpdatedUtc":  638740874203234068
                      },
                      {
                          "fullFileName":  "Textures-a_WOTC_AlienPack_DLCTFC_XPACK_.tfc",
                          "originalSize":  891142,
-                         "lastUpdatedUtc":  638734188820957851
+                         "lastUpdatedUtc":  638740873992020394
                      },
                      {
                          "fullFileName":  "Textures_WOTC_AlienPack_DLCTFC_XPACK_.tfc",
                          "originalSize":  5917254,
-                         "lastUpdatedUtc":  638734185598781218
+                         "lastUpdatedUtc":  638740870776267497
                      },
                      {
                          "fullFileName":  "World_WOTC_AlienPack_DLCTFC_XPACK_.tfc",
                          "originalSize":  1557344,
-                         "lastUpdatedUtc":  638734188821582362
+                         "lastUpdatedUtc":  638740873992660981
                      }
                  ],
     "sfPackages":  [
                        {
                            "fullFileName":  "LWAdvDroneMatinee_SF.upk",
-                           "lastUpdatedUtc":  638734185570110968
+                           "lastUpdatedUtc":  638740870716513680
                        },
                        {
                            "fullFileName":  "LWAdvGrenadeLauncher_SF.upk",
-                           "lastUpdatedUtc":  638734185620426890
+                           "lastUpdatedUtc":  638740870818636601
                        },
                        {
                            "fullFileName":  "LW_Perk_MutonM3_SF.upk",
-                           "lastUpdatedUtc":  638734189534535095
+                           "lastUpdatedUtc":  638740874701359935
                        },
                        {
                            "fullFileName":  "LW_Perk_Psi_MassMindspin_SF.upk",
-                           "lastUpdatedUtc":  638734189618223354
+                           "lastUpdatedUtc":  638740874782016144
                        },
                        {
                            "fullFileName":  "LW_Perk_Psi_MassReanimation_SF.upk",
-                           "lastUpdatedUtc":  638734189696231562
+                           "lastUpdatedUtc":  638740874857803062
                        },
                        {
                            "fullFileName":  "LW_Perk_PCS_DamageControl_SF.upk",
-                           "lastUpdatedUtc":  638734189557502479
+                           "lastUpdatedUtc":  638740874722963772
                        },
                        {
                            "fullFileName":  "LW_Perk_CloseCombatSpecialist_SF.upk",
-                           "lastUpdatedUtc":  638734189501467489
+                           "lastUpdatedUtc":  638740874669055953
                        },
                        {
                            "fullFileName":  "LW_Perk_Blazing_Pinions_SF.upk",
-                           "lastUpdatedUtc":  638734189478467147
+                           "lastUpdatedUtc":  638740874646514117
                        },
                        {
                            "fullFileName":  "LWAdvGrenadier_SF.upk",
-                           "lastUpdatedUtc":  638734185989507806
+                           "lastUpdatedUtc":  638740871205538950
                        },
                        {
                            "fullFileName":  "LWAdvGunner_SF.upk",
-                           "lastUpdatedUtc":  638734186503941121
+                           "lastUpdatedUtc":  638740871728877535
                        },
                        {
                            "fullFileName":  "LWAdvMecArcher_SF.upk",
-                           "lastUpdatedUtc":  638734186614155946
+                           "lastUpdatedUtc":  638740871843871414
                        },
                        {
                            "fullFileName":  "LWAdvRocketeer_SF.upk",
-                           "lastUpdatedUtc":  638734186986018818
+                           "lastUpdatedUtc":  638740872211811503
                        },
                        {
                            "fullFileName":  "LWAdvSentry_SF.upk",
-                           "lastUpdatedUtc":  638734187353356087
+                           "lastUpdatedUtc":  638740872579665190
                        },
                        {
                            "fullFileName":  "LWDrone_SF.upk",
-                           "lastUpdatedUtc":  638734187491293621
+                           "lastUpdatedUtc":  638740872716285037
                        },
                        {
                            "fullFileName":  "LWDroneWeapon_SF.upk",
-                           "lastUpdatedUtc":  638734187697389187
+                           "lastUpdatedUtc":  638740872911647373
                        },
                        {
                            "fullFileName":  "LWHiveQueen_SF.upk",
-                           "lastUpdatedUtc":  638734187874429943
+                           "lastUpdatedUtc":  638740873071507646
                        },
                        {
                            "fullFileName":  "LWMutonM2_SF.upk",
-                           "lastUpdatedUtc":  638734187982911637
+                           "lastUpdatedUtc":  638740873157948354
                        },
                        {
                            "fullFileName":  "LWMutonM3_SF.upk",
-                           "lastUpdatedUtc":  638734188051976278
+                           "lastUpdatedUtc":  638740873230629560
                        },
                        {
                            "fullFileName":  "LWMutonM3Rifle_SF.upk",
-                           "lastUpdatedUtc":  638734188250565898
+                           "lastUpdatedUtc":  638740873424817610
                        },
                        {
                            "fullFileName":  "LWNaja_SF.upk",
-                           "lastUpdatedUtc":  638734188326112226
+                           "lastUpdatedUtc":  638740873501434777
                        },
                        {
                            "fullFileName":  "LWSectoidM2_SF.upk",
-                           "lastUpdatedUtc":  638734188710234778
+                           "lastUpdatedUtc":  638740873882124209
                        },
                        {
                            "fullFileName":  "LWSidewinder_SF.upk",
-                           "lastUpdatedUtc":  638734188786769110
+                           "lastUpdatedUtc":  638740873957861674
                        },
                        {
                            "fullFileName":  "LWSidewinderSMG_SF.upk",
-                           "lastUpdatedUtc":  638734188970019907
+                           "lastUpdatedUtc":  638740874138639893
                        },
                        {
                            "fullFileName":  "LWNajaRifle_SF.upk",
-                           "lastUpdatedUtc":  638734188511593657
+                           "lastUpdatedUtc":  638740873683019072
                        },
                        {
                            "fullFileName":  "UILibrary_BD_LWAlienPack_SF.upk",
@@ -129,7 +129,7 @@
                        },
                        {
                            "fullFileName":  "LWXAdventTrooper_SF.upk",
-                           "lastUpdatedUtc":  638734189347905768
+                           "lastUpdatedUtc":  638740874516786433
                        },
                        {
                            "fullFileName":  "LWMutonEliteAutopsy_SF.upk",
