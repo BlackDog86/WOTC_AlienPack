@@ -1576,7 +1576,7 @@ static function X2AbilityTemplate SentryM3_ReactionFire()
 	Template.AbilityTriggers.AddItem(Trigger);
 
 	ReactionFire = new class'X2Effect_AdjustOWPenalty';
-	ReactionFire.NewReactionFirePenalty = default.SENTRYM2_REACTION_PENALTY;
+	ReactionFire.NewReactionFirePenalty = default.SENTRYM3_REACTION_PENALTY;
 	ReactionFire.BuildPersistentEffect(1, true, true, true);
 	ReactionFire.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage,,,Template.AbilitySourceName);
 	Template.AddTargetEffect(ReactionFire);

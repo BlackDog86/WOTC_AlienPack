@@ -473,3 +473,49 @@ static function FinalizeUnitAbilitiesForInit(XComGameState_Unit UnitState, out a
 	}
 	`APTRACE("Ability template doesn't exist on unit!");
 }
+
+exec function printJobInfoToLog()
+{
+	local XComGameStateHistory History;
+	local X2AIJobManager JobMgr;
+	local XComGameState_Unit UnitState;
+	local XComGameState_AIUnitData AIGameState;
+	local int AIUnitDataID;
+	local name JobName;
+	
+	History = `XCOMHISTORY;
+	JobMgr = `AIJOBMGR;
+	
+	foreach History.IterateByClassType(class'XComGameState_Unit', UnitState)
+	{
+		AIUnitDataID = UnitState.GetAIUnitDataID();			
+		// If it's a unit that's controlled by the AI
+		if( AIUnitDataID > 0 )
+		{
+			AIGameState = XComGameState_AIUnitData(History.GetGameStateForObjectID(AIUnitDataID));
+			// Only get the job name if the unit has a job to avoid redscreen
+			if(AIGameState.JobIndex >= 0)
+			{
+			JobName = JobMgr.GetJobName(AIGameState.JobIndex);
+			`log("Unit: " @ UnitState.GetMyTemplateName() @ "ID:" @ UnitState.ObjectID @ "Is Currently Assigned to Job:" @ JobName @ "JobIndex:" @ AIGameState.JobOrderPlacementNumber,,'BDLOG');
+			}
+			else
+			{					
+			`log("Unit: " @ UnitState.GetMyTemplateName() @ "ID:" @ UnitState.ObjectID @ "Has No Job :'(",,'BDLOG');
+			}
+		}
+	}
+}
+
+exec function printMissionJobArrayToLog()
+{
+	local X2AIJobManager JobMgr;
+	local int i;
+
+	JobMgr = `AIJOBMGR;
+	
+	for(i=0; i < JobMgr.ActiveJobList.Job.Length; i++)
+	{
+	`log("Mission Jobs: " @ i @ "Name:" @ JobMgr.ActiveJobList.Job[i],,'BDLOG');
+	}
+}
